@@ -1,0 +1,81 @@
+{
+  "projects": [
+    {
+      "projectId": "95xp9cYcv7HrNWpFWWhbcv",
+      "version": "2.2.1",
+      "dependencies": {},
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "95xp9cYcv7HrNWpFWWhbcv",
+          "type": "projectCss",
+          "checksum": "3bd5e88984ab00759caf5f883f577066"
+        },
+        {
+          "type": "image",
+          "assetId": "pAcQ-9j-MkaY",
+          "checksum": "c263e67c06cb18ec9feeae243a6f8fa0"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "r6wqTHP8pUBDqvkAaarh3E",
+      "version": "0.0.1",
+      "dependencies": {
+        "95xp9cYcv7HrNWpFWWhbcv": "2.2.1"
+      },
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "assetId": "r6wqTHP8pUBDqvkAaarh3E",
+          "type": "projectCss",
+          "checksum": "2823d277b4ca5d9ee53fa464190f5564"
+        },
+        {
+          "type": "image",
+          "assetId": "bSXI1Z8uktJBvH",
+          "checksum": "dd6dc0328be5561986cefb34e26fa55e"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    },
+    {
+      "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+      "version": "latest",
+      "dependencies": {
+        "r6wqTHP8pUBDqvkAaarh3E": "0.0.1"
+      },
+      "lang": "ts",
+      "fileLocks": [
+        {
+          "type": "globalVariant",
+          "assetId": "Du4QaJY8zhmfq",
+          "checksum": "4769b1e26535b0a5d0c04e0fde84ae39"
+        },
+        {
+          "assetId": "adjLdLRA7wsoKYbMFGbDTh",
+          "type": "projectCss",
+          "checksum": "c34c5cabb5896a089e42b60f5efe5e29"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "EhA9mUBKziYx",
+          "checksum": "2c6f86158a02387b666b3a22269173f7"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "EhA9mUBKziYx",
+          "checksum": "2c6f86158a02387b666b3a22269173f7"
+        },
+        {
+          "type": "image",
+          "assetId": "9ENkgWwzE",
+          "checksum": "89b8d262e11935e373f3f65ffbb4d78a"
+        }
+      ],
+      "codegenVersion": "0.0.1"
+    }
+  ],
+  "cliVersion": "0.1.289"
+}

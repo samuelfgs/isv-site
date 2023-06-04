@@ -1,0 +1,125 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "95xp9cYcv7HrNWpFWWhbcv",
+      "projectApiToken": "X9RF4QUgEjfqAlBk6Nl7OhgXLqkhClEfwbGYrPzja9eIAqXGaTkltUmNaeX46ylhQdL0q5oCn6BzRE43wsMyg",
+      "projectName": "[PlasmicKit] Color Tokens",
+      "version": "2.2.1",
+      "cssFilePath": "plasmic/plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css",
+      "components": [],
+      "icons": [],
+      "images": [
+        {
+          "id": "pAcQ-9j-MkaY",
+          "name": "image",
+          "filePath": "../public/plasmic/plasmic_kit_color_tokens/images/image.svg"
+        }
+      ],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": []
+    },
+    {
+      "projectId": "r6wqTHP8pUBDqvkAaarh3E",
+      "projectApiToken": "tcKOQoHLnieyOEcPMxGQFklEzwSvDvxqNrEPG1R5bskUOIg633l9lbP6y0tDbJK48lhPcZgzytZVZrNelTTA",
+      "projectName": "Copy of [PlasmicKit] Q4 Color Tokens",
+      "version": "0.0.1",
+      "cssFilePath": "plasmic/copy_of_plasmic_kit_q_4_color_tokens/plasmic_copy_of_plasmic_kit_q_4_color_tokens.module.css",
+      "components": [],
+      "icons": [],
+      "images": [
+        {
+          "id": "bSXI1Z8uktJBvH",
+          "name": "image",
+          "filePath": "../public/plasmic/copy_of_plasmic_kit_q_4_color_tokens/images/image.svg"
+        }
+      ],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": []
+    },
+    {
+      "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+      "projectApiToken": "6gBAXhp5Lo80bnvCDJMJpE0AhA9zqqdaI015NYYxs4Vk2elrEvL93ZSPLu30nKrhQdAYiKCPkeJg6Pe4V8g",
+      "projectName": "A&D",
+      "version": "latest",
+      "cssFilePath": "plasmic/a_d/plasmic_a_d.module.css",
+      "components": [
+        {
+          "id": "EhA9mUBKziYx",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        }
+      ],
+      "icons": [],
+      "images": [
+        {
+          "id": "9ENkgWwzE",
+          "name": "imgbin_the-beatles-the-rebeatles-project-let-it-be-concert-get-back-png.png",
+          "filePath": "../public/plasmic/a_d/images/imgbinTheBeatlesTheRebeatlesProjectLetItBeConcertGetBackPngpng.png"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "9mjGyP6oNdhBR",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "7GMXgnERt-hcm",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "Du4QaJY8zhmfq",
+        "name": "Screen",
+        "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+        "contextFilePath": "plasmic/a_d/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.289",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.289/dist/plasmic.schema.json"
+}
