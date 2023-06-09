@@ -230,6 +230,7 @@ function PlasmicHomepage__RenderFunc(props: {
             autoPlay={true}
             className={classNames("__wab_instance", sty.htmlVideo)}
             controls={false}
+            loop={true}
             muted={true}
             src={"https://isv-site.vercel.app/video.mp4" as const}
           />

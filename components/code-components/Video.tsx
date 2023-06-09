@@ -23,7 +23,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
         (videoRef as any).defaultMuted = true;
       }
     }, [videoRef])
-    return <video ref={videoRef} {...props} />;
+    return <video ref={videoRef} {...props} playsInline />;
   }
 );
 
