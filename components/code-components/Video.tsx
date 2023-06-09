@@ -19,7 +19,6 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
   (props: VideoProps, ref) => {
     const videoRef = React.useRef<any>();
     React.useEffect(() => {
-      console.log("dale2", videoRef, videoRef.defaultMuted)
       if (videoRef) {
         (videoRef as any).defaultMuted = true;
       }
