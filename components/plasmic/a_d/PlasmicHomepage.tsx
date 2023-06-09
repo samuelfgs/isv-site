@@ -36,7 +36,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { Video } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: RhitNJW5Zu-/codeComponent
+import Video from "../../code-components/Video"; // plasmic-import: Ly9pk7wsNY/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 
@@ -230,7 +230,6 @@ function PlasmicHomepage__RenderFunc(props: {
             autoPlay={true}
             className={classNames("__wab_instance", sty.htmlVideo)}
             controls={false}
-            loop={true}
             muted={true}
             src={"https://isv-site.vercel.app/video.mp4" as const}
           />

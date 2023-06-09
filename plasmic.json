@@ -242,6 +242,12 @@
           "name": "Participantes",
           "displayName": "Participantes",
           "componentImportPath": "./components/code-components/Parallax"
+        },
+        {
+          "id": "Ly9pk7wsNY",
+          "name": "Video",
+          "displayName": "hostless-html-video",
+          "componentImportPath": "./components/code-components/Video"
         }
       ]
     },
