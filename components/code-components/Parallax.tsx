@@ -15,9 +15,9 @@ const calcProgress = (currentProgress: number, left: number, right: number) =>
     : (currentProgress - left) / (right - left);
   
 function Image({name, id, progress, left}: any) {
-  const ref = React.useRef();
-  const title = React.useRef();
-  const desc = React.useRef();
+  const ref = React.useRef<any>();
+  const title = React.useRef<any>();
+  const desc = React.useRef<any>();
 
   React.useLayoutEffect(() => {
     if (!ref.current || !title.current || !desc.current) return ;
@@ -57,8 +57,8 @@ function Image({name, id, progress, left}: any) {
 }
 
 function Voce({name, id, progress, left}: any) {
-  const voce = React.useRef();
-  const botao = React.useRef();
+  const voce = React.useRef<any>();
+  const botao = React.useRef<any>();
 
   React.useLayoutEffect(() => {
     if (!voce.current || !botao.current) return ;
