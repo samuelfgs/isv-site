@@ -232,7 +232,7 @@ function PlasmicHomepage__RenderFunc(props: {
             controls={false}
             loop={true}
             muted={true}
-            src={"http://localhost:3000/video.mp4" as const}
+            src={"https://isv-site.vercel.app/video.mp4" as const}
           />
 
           <Button
