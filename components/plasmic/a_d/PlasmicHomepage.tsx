@@ -36,6 +36,9 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { Video } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: RhitNJW5Zu-/codeComponent
+import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
+import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -43,6 +46,9 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 export type PlasmicHomepage__VariantsArgs = {};
@@ -55,7 +61,12 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  textbox?: p.Flex<"input">;
+  img?: p.Flex<typeof p.PlasmicImg>;
+  separator?: p.Flex<"div">;
+  separator2?: p.Flex<"div">;
+  htmlVideo?: p.Flex<typeof Video>;
+  button?: p.Flex<typeof Button>;
+  participantes?: p.Flex<typeof Participantes>;
 };
 
 export interface DefaultHomepageProps {}
@@ -97,19 +108,6 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const [$queries, setDollarQueries] = React.useState({});
 
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "textbox.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "Some value" as const
-      }
-    ],
-    [$props, $ctx]
-  );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -137,102 +135,131 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__yoeIm
-            )}
-          >
-            {"ADORAÇÃO E DISCIPULADO"}
-          </div>
-          <div className={classNames(projectcss.all, sty.freeBox___5Gqf)} />
+          <p.PlasmicImg
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
+            alt={""}
+            className={classNames(sty.img)}
+            displayHeight={"auto" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"80%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"auto" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/a_d/images/ad20AnosIcon21Png.png",
+              fullWidth: 3666,
+              fullHeight: 2547,
+              aspectRatio: undefined
+            }}
+          />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__oeRW
-            )}
-          >
-            {"PARTICIPAÇÕES"}
-          </div>
           {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__sMAat)} />
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__sMAat)}
+            >
+              <div className={classNames(projectcss.all, sty.freeBox__rsBg)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__zdrmp
+                  )}
+                >
+                  {"20"}
+                </div>
+                <div
+                  data-plasmic-name={"separator"}
+                  data-plasmic-override={overrides.separator}
+                  className={classNames(projectcss.all, sty.separator)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___5P1Yn
+                  )}
+                >
+                  {"21"}
+                </div>
+                <div
+                  data-plasmic-name={"separator2"}
+                  data-plasmic-override={overrides.separator2}
+                  className={classNames(projectcss.all, sty.separator2)}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__hmeKq
+                  )}
+                >
+                  {"OUT"}
+                </div>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fYk58
+                )}
+              >
+                {
+                  "Iremos celebrar os 20 anos de Adoração e Discipulado. \n\nE você não pode ficar fora dessa! \n\nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
+                }
+              </div>
+            </p.Stack>
           ) : null}
           <div
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text__yUbmg
+              sty.text__j4F9
             )}
           >
-            <React.Fragment>
-              <React.Fragment>
-                {
-                  "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template—do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase—press the "
-                }
-              </React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 700 }}
-              >
-                {"Code"}
-              </span>
-              <React.Fragment>
-                {
-                  " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
-                }
-              </React.Fragment>
-            </React.Fragment>
+            {"VOCE FAZ PARTE DISSO!"}
           </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__p6JhF
-            )}
-          >
-            <React.Fragment>
-              <React.Fragment>
-                {
-                  "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template—do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase—press the "
-                }
-              </React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ fontWeight: 700 }}
-              >
-                {"Code"}
-              </span>
-              <React.Fragment>
-                {
-                  " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
-                }
-              </React.Fragment>
-            </React.Fragment>
-          </div>
-          <input
-            data-plasmic-name={"textbox"}
-            data-plasmic-override={overrides.textbox}
-            className={classNames(
-              projectcss.all,
-              projectcss.input,
-              sty.textbox
-            )}
-            onChange={e => {
-              p.generateStateOnChangeProp($state, ["textbox", "value"])(
-                e.target.value
-              );
-            }}
-            placeholder={"Some placeholder" as const}
-            ref={ref => {
-              $refs["textbox"] = ref;
-            }}
-            size={1 as const}
-            type={"text" as const}
-            value={p.generateStateValueProp($state, ["textbox", "value"]) ?? ""}
+          <Video
+            data-plasmic-name={"htmlVideo"}
+            data-plasmic-override={overrides.htmlVideo}
+            autoPlay={true}
+            className={classNames("__wab_instance", sty.htmlVideo)}
+            controls={false}
+            loop={true}
+            muted={true}
+            src={"http://localhost:3000/video.mp4" as const}
           />
+
+          <Button
+            data-plasmic-name={"button"}
+            data-plasmic-override={overrides.button}
+            className={classNames("__wab_instance", sty.button)}
+            color={"yellow" as const}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__kgx8Q
+              )}
+            >
+              {"FAÇA SUA INSCRIÇÃO"}
+            </div>
+          </Button>
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
+              <Participantes
+                data-plasmic-name={"participantes"}
+                data-plasmic-override={overrides.participantes}
+                className={classNames("__wab_instance", sty.participantes)}
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -240,15 +267,33 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textbox"],
-  textbox: ["textbox"]
+  root: [
+    "root",
+    "img",
+    "separator",
+    "separator2",
+    "htmlVideo",
+    "button",
+    "participantes"
+  ],
+  img: ["img"],
+  separator: ["separator"],
+  separator2: ["separator2"],
+  htmlVideo: ["htmlVideo"],
+  button: ["button"],
+  participantes: ["participantes"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  textbox: "input";
+  img: typeof p.PlasmicImg;
+  separator: "div";
+  separator2: "div";
+  htmlVideo: typeof Video;
+  button: typeof Button;
+  participantes: typeof Participantes;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -311,7 +356,12 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    textbox: makeNodeComponent("textbox"),
+    img: makeNodeComponent("img"),
+    separator: makeNodeComponent("separator"),
+    separator2: makeNodeComponent("separator2"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
+    button: makeNodeComponent("button"),
+    participantes: makeNodeComponent("participantes"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

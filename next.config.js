@@ -5,6 +5,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   trailingSlash: true,
+  reactStrictMode: false
 };
 
 module.exports = nextConfig;

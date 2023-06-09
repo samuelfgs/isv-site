@@ -1,0 +1,58 @@
+.block {
+  height: 50vh;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block2 {
+  height: 60vh;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sceneContainer {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sceneContainer > img {
+  max-width: 100%;
+}
+.participantes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10;
+  font-weight: 700;
+  font-size: 1.5em;
+  padding: 10px;
+}
+.participantesNome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10;
+  font-size: 1em;
+  gap: 20px;
+}
+
+.image {
+  height: 300px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row
+}
