@@ -10,23 +10,23 @@ import { registerComponent, usePlasmicCanvasContext } from "@plasmicapp/react-we
 const palestrantes = [
   {
     name: "Adhemar de Campos",
-    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`
+    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
   },
   {
     name: "Asaph Borba",
-    desc: `Asaph Borba é um músico e ministro de adoração brasileiro que por muitos anos tem ministrado por todo o Brasil e outros países em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus, que se tornaram parte da hinologia cristã nacional, entre eles, Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza, e muitos outros gravados por vários ministérios nacionais e internacionais. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
+    desc: `Asaph Borba é um músico e ministro de adoração brasileiro que por muitos anos tem ministrado sevido a Igreja brasileira e internacional. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
   },
   {
     name: "Daniel Souza",
-    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`
+    desc: `Daniel Souza é um ministro de louvor que tem servido a Igreja desde o início dos anos 90. Juntamente com a sua esposa Selma, fundou a iSV sendo discipulado por Jan Gottfridsson e Asaph Borba e trabalhando com ênfase na formação de discípulos para o Senhor Jesus, na cidade de São Vicente.`
   },
   {
     name: "Jan Gottfridson",
-    desc: ""
+    desc: "Jan, como é chamado pelos íntimos, é um dos pastores da Igreja em Porto Alegre e um dos pais da iSV, junto com Asaph Borba. São mais de 30 anos de pastoreio e cuidado."
   },
   {
     name: "Morada",
-    desc: `O Morada é uma banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. Com pouco mais de 10 anos de estrada, o ministério tem alcançado cada vez mais um público diversificado desde crianças aos mais velhos, proporcionando assim, momentos intensos e alegres entre as famílias por onde tem passado. Isso se deve à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som que tocou a todos.`
+    desc: `O Morada é uma banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
   },
 ]
 const calcProgress = (currentProgress: number, left: number, right: number) =>
@@ -74,7 +74,7 @@ function Image({palest, id, progress, left}: any) {
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
     <h1 ref={title} style={{color: "white"}}>{palest.name}</h1>
     <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
-    <p style={{padding: 20, color: "white" }} ref={desc}>{palest.desc}</p>
+    <p style={{padding: 20, color: "white", textAlign: "center" }} ref={desc}>{palest.desc}</p>
   </div>
 }
 
