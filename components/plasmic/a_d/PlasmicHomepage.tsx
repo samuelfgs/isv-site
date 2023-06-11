@@ -168,7 +168,11 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayMaxWidth={"80%" as const}
                 displayMinHeight={"0" as const}
                 displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "desktop")
+                    ? ("500px" as const)
+                    : ("auto" as const)
+                }
                 loading={"lazy" as const}
                 src={{
                   src: "/plasmic/a_d/images/ad20AnosIcon211Png.png",

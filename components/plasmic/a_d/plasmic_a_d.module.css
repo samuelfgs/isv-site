@@ -45,7 +45,6 @@
   --mixin-S5BBox-VkiQUq_letter-spacing: -0.5px;
   --mixin-S5BBox-VkiQUq_line-height: 1.1;
   --mixin-S5BBox-VkiQUq_white-space: pre-wrap;
-  --mixin-OgRJBWtchO_5f_color: var(--token-jDfhDP0rJ);
   --mixin-OgRJBWtchO_5f_white-space: pre-wrap;
   --mixin-85qq_YrkR9jIc_color: #000000;
   --mixin-85qq_YrkR9jIc_font-size: 32px;
@@ -137,10 +136,11 @@
   --mixin-zL6YFg2xa8FGp_font-weight: 600;
   --mixin-zL6YFg2xa8FGp_line-height: 1.5;
   --mixin-zL6YFg2xa8FGp_white-space: pre-wrap;
-  --mixin-BSI_74schePq8_color: var(--token-jDfhDP0rJ);
+  --mixin-BSI_74schePq8_text-decoration-line: underline;
   --mixin-BSI_74schePq8_white-space: pre-wrap;
   --mixin-W_KuFbpVDB_Yc_white-space: pre-wrap;
   --mixin-RKYS-4umQz8k3_white-space: pre-wrap;
+  --mixin-3zi1Lm0q7_white-space: pre-wrap;
 }
 
 :where(.all) {
@@ -493,7 +493,6 @@ a:where(.root_reset.a),
 :where(.root_reset .__wab_expr_html_text) a,
 :where(.root_reset_tags) a,
 a:where(.root_reset_tags) {
-  color: var(--mixin-OgRJBWtchO_5f_color);
 }
 
 :where(.root_reset) h3:where(.h3),
@@ -647,7 +646,7 @@ a:where(.root_reset.a):hover,
 :where(.root_reset .__wab_expr_html_text) a:hover,
 :where(.root_reset_tags) a:hover,
 a:where(.root_reset_tags):hover {
-  color: var(--mixin-BSI_74schePq8_color);
+  text-decoration-line: var(--mixin-BSI_74schePq8_text-decoration-line);
 }
 
 :where(.root_reset) li:where(.li),
@@ -662,4 +661,11 @@ p:where(.root_reset.p),
 :where(.root_reset .__wab_expr_html_text) p,
 :where(.root_reset_tags) p,
 p:where(.root_reset_tags) {
+}
+
+:where(.root_reset) a:where(.a):active,
+a:where(.root_reset.a):active,
+:where(.root_reset .__wab_expr_html_text) a:active,
+:where(.root_reset_tags) a:active,
+a:where(.root_reset_tags):active {
 }

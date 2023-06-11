@@ -51,14 +51,14 @@ import MenuIcon from "./icons/PlasmicIcon__Menu"; // plasmic-import: MpVPVACJ4/i
 import CloseIcon from "./icons/PlasmicIcon__Close"; // plasmic-import: 9oEdsaHjf/icon
 
 export type PlasmicResponsiveMenu__VariantMembers = {
-  isOpen: "isOpen";
+  isOpen2: "isOpen2";
 };
 export type PlasmicResponsiveMenu__VariantsArgs = {
-  isOpen?: SingleBooleanChoiceArg<"isOpen">;
+  isOpen2?: SingleBooleanChoiceArg<"isOpen2">;
 };
 type VariantPropType = keyof PlasmicResponsiveMenu__VariantsArgs;
 export const PlasmicResponsiveMenu__VariantProps = new Array<VariantPropType>(
-  "isOpen"
+  "isOpen2"
 );
 
 export type PlasmicResponsiveMenu__ArgsType = {};
@@ -67,12 +67,10 @@ export const PlasmicResponsiveMenu__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicResponsiveMenu__OverridesType = {
   root?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
-  svg?: p.Flex<"svg">;
 };
 
 export interface DefaultResponsiveMenuProps {
-  isOpen?: SingleBooleanChoiceArg<"isOpen">;
+  isOpen2?: SingleBooleanChoiceArg<"isOpen2">;
   className?: string;
 }
 
@@ -116,10 +114,10 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "isOpen",
+        path: "isOpen2",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isOpen
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.isOpen2
       }
     ],
     [$props, $ctx]
@@ -146,25 +144,25 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
         plasmic_antd_5_hostless_css.plasmic_tokens,
         plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
         sty.root,
-        { [sty.rootisOpen]: hasVariant($state, "isOpen", "isOpen") }
+        { [sty.rootisOpen2]: hasVariant($state, "isOpen2", "isOpen2") }
       )}
     >
-      {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+      {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
         <div
           className={classNames(projectcss.all, sty.freeBox__dPp8K, {
-            [sty.freeBoxisOpen__dPp8KjqrG1]: hasVariant(
+            [sty.freeBoxisOpen2__dPp8KjqrG1]: hasVariant(
               $state,
-              "isOpen",
-              "isOpen"
+              "isOpen2",
+              "isOpen2"
             )
           })}
         >
           <div
             className={classNames(projectcss.all, sty.freeBox__uKGbc, {
-              [sty.freeBoxisOpen__uKGbcjqrG1]: hasVariant(
+              [sty.freeBoxisOpen2__uKGbcjqrG1]: hasVariant(
                 $state,
-                "isOpen",
-                "isOpen"
+                "isOpen2",
+                "isOpen2"
               )
             })}
           >
@@ -180,10 +178,8 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                 platform={"nextjs"}
               >
                 <p.PlasmicImg
-                  data-plasmic-name={"img"}
-                  data-plasmic-override={overrides.img}
                   alt={""}
-                  className={classNames(sty.img)}
+                  className={classNames(sty.img__wk6PY)}
                   displayHeight={"50px" as const}
                   displayMaxHeight={"none" as const}
                   displayMaxWidth={"100%" as const}
@@ -211,10 +207,10 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                 as={"div"}
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__rx398, {
-                  [sty.freeBoxisOpen__rx398JqrG1]: hasVariant(
+                  [sty.freeBoxisOpen2__rx398JqrG1]: hasVariant(
                     $state,
-                    "isOpen",
-                    "isOpen"
+                    "isOpen2",
+                    "isOpen2"
                   )
                 })}
               >
@@ -267,13 +263,17 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                 : true
             ) ? (
               <p.PlasmicIcon
-                data-plasmic-name={"svg"}
-                data-plasmic-override={overrides.svg}
                 PlasmicIconType={
-                  hasVariant($state, "isOpen", "isOpen") ? CloseIcon : MenuIcon
+                  hasVariant($state, "isOpen2", "isOpen2")
+                    ? CloseIcon
+                    : MenuIcon
                 }
-                className={classNames(projectcss.all, sty.svg, {
-                  [sty.svgisOpen]: hasVariant($state, "isOpen", "isOpen")
+                className={classNames(projectcss.all, sty.svg__zmS8F, {
+                  [sty.svgisOpen2__zmS8FjqrG1]: hasVariant(
+                    $state,
+                    "isOpen2",
+                    "isOpen2"
+                  )
                 })}
                 onClick={async event => {
                   const $steps = {};
@@ -288,7 +288,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                               componentUuid: "EjDwpL97hh",
                               argName: "vgroup"
                             },
-                            () => "isOpen"
+                            () => "isOpen2"
                           ),
                           operation: __wrapUserFunction(
                             {
@@ -308,7 +308,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                               componentUuid: "EjDwpL97hh",
                               argName: "value"
                             },
-                            () => "isOpen"
+                            () => "isOpen2"
                           )
                         };
                         return __wrapUserFunction(
@@ -351,57 +351,265 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
               />
             ) : null}
           </div>
-          {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+          {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
             <p.Stack
               as={"div"}
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__g0AHs, {
-                [sty.freeBoxisOpen__g0AHsjqrG1]: hasVariant(
+                [sty.freeBoxisOpen2__g0AHsjqrG1]: hasVariant(
                   $state,
-                  "isOpen",
-                  "isOpen"
+                  "isOpen2",
+                  "isOpen2"
                 )
               })}
             >
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__l3KHc
-                )}
-                component={Link}
-                href={`/inscricao`}
-                platform={"nextjs"}
+              <div
+                className={classNames(projectcss.all, sty.freeBox__bMU3, {
+                  [sty.freeBoxisOpen2__bMU3JqrG1]: hasVariant(
+                    $state,
+                    "isOpen2",
+                    "isOpen2"
+                  )
+                })}
               >
-                {"Faça sua inscrição"}
-              </p.PlasmicLink>
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__d3CDb
-                )}
-                component={Link}
-                href={`/palestrantes`}
-                platform={"nextjs"}
-              >
-                {"Participantes"}
-              </p.PlasmicLink>
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__ubmKc
-                )}
-                component={Link}
-                href={`/fale-conosco`}
-                platform={"nextjs"}
-              >
-                {"Fale conosco"}
-              </p.PlasmicLink>
+                {true ? (
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      sty.link__f7Jkj
+                    )}
+                    component={Link}
+                    href={`/`}
+                    platform={"nextjs"}
+                  >
+                    <p.PlasmicImg
+                      alt={""}
+                      className={classNames(sty.img__d2Hc2)}
+                      displayHeight={"50px" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"100%" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"50px" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: "/plasmic/a_d/images/artboard1Png.png",
+                        fullWidth: 30,
+                        fullHeight: 30,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </p.PlasmicLink>
+                ) : null}
+                {(
+                  hasVariant(globalVariants, "screen", "desktop")
+                    ? true
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? true
+                    : true
+                ) ? (
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__fDf9X, {
+                      [sty.freeBoxisOpen2__fDf9XjqrG1]: hasVariant(
+                        $state,
+                        "isOpen2",
+                        "isOpen2"
+                      )
+                    })}
+                  >
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__zZooK
+                      )}
+                      component={Link}
+                      href={`/inscricao`}
+                      platform={"nextjs"}
+                    >
+                      {"Faça sua inscrição"}
+                    </p.PlasmicLink>
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link___6Rxgz
+                      )}
+                      component={Link}
+                      href={`/palestrantes`}
+                      platform={"nextjs"}
+                    >
+                      {"Palestrantes"}
+                    </p.PlasmicLink>
+                    <p.PlasmicLink
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.a,
+                        projectcss.__wab_text,
+                        sty.link__jnM4A
+                      )}
+                      component={Link}
+                      href={`/fale-conosco`}
+                      platform={"nextjs"}
+                    >
+                      {"Fale conosco"}
+                    </p.PlasmicLink>
+                  </p.Stack>
+                ) : null}
+                {(
+                  hasVariant(globalVariants, "screen", "desktop")
+                    ? true
+                    : hasVariant(globalVariants, "screen", "tablet")
+                    ? true
+                    : true
+                ) ? (
+                  <p.PlasmicIcon
+                    PlasmicIconType={
+                      hasVariant($state, "isOpen2", "isOpen2")
+                        ? CloseIcon
+                        : MenuIcon
+                    }
+                    className={classNames(projectcss.all, sty.svg__hpC8Y, {
+                      [sty.svgisOpen2__hpC8YjqrG1]: hasVariant(
+                        $state,
+                        "isOpen2",
+                        "isOpen2"
+                      )
+                    })}
+                    onClick={async event => {
+                      const $steps = {};
+                      $steps["updateIsOpen"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              vgroup: __wrapUserFunction(
+                                {
+                                  type: "InteractionArgLoc",
+                                  actionName: "updateVariant",
+                                  interactionUuid: "18f4kBErKou",
+                                  componentUuid: "EjDwpL97hh",
+                                  argName: "vgroup"
+                                },
+                                () => "isOpen2"
+                              ),
+                              operation: __wrapUserFunction(
+                                {
+                                  type: "InteractionArgLoc",
+                                  actionName: "updateVariant",
+                                  interactionUuid: "18f4kBErKou",
+                                  componentUuid: "EjDwpL97hh",
+                                  argName: "operation"
+                                },
+                                () => 2
+                              ),
+                              value: __wrapUserFunction(
+                                {
+                                  type: "InteractionArgLoc",
+                                  actionName: "updateVariant",
+                                  interactionUuid: "18f4kBErKou",
+                                  componentUuid: "EjDwpL97hh",
+                                  argName: "value"
+                                },
+                                () => "isOpen2"
+                              )
+                            };
+                            return __wrapUserFunction(
+                              {
+                                type: "InteractionLoc",
+                                actionName: "updateVariant",
+                                interactionUuid: "18f4kBErKou",
+                                componentUuid: "EjDwpL97hh"
+                              },
+                              () =>
+                                (({ vgroup, value }) => {
+                                  if (typeof value === "string") {
+                                    value = [value];
+                                  }
+
+                                  const oldValue = p.get($state, vgroup);
+                                  p.set($state, vgroup, !oldValue);
+                                  return !oldValue;
+                                })?.apply(null, [actionArgs]),
+                              actionArgs
+                            );
+                          })()
+                        : undefined;
+                      if (
+                        typeof $steps["updateIsOpen"] === "object" &&
+                        typeof $steps["updateIsOpen"].then === "function"
+                      ) {
+                        $steps["updateIsOpen"] = await __wrapUserPromise(
+                          {
+                            type: "InteractionLoc",
+                            actionName: "updateVariant",
+                            interactionUuid: "18f4kBErKou",
+                            componentUuid: "EjDwpL97hh"
+                          },
+                          $steps["updateIsOpen"]
+                        );
+                      }
+                    }}
+                    role={"img"}
+                  />
+                ) : null}
+              </div>
+              {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__jjSxP, {
+                    [sty.freeBoxisOpen2__jjSxPjqrG1]: hasVariant(
+                      $state,
+                      "isOpen2",
+                      "isOpen2"
+                    )
+                  })}
+                >
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__l3KHc
+                    )}
+                    component={Link}
+                    href={`/inscricao`}
+                    platform={"nextjs"}
+                  >
+                    {"Faça sua inscrição"}
+                  </p.PlasmicLink>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__d3CDb
+                    )}
+                    component={Link}
+                    href={`/palestrantes`}
+                    platform={"nextjs"}
+                  >
+                    {"Participantes"}
+                  </p.PlasmicLink>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__ubmKc
+                    )}
+                    component={Link}
+                    href={`/fale-conosco`}
+                    platform={"nextjs"}
+                  >
+                    {"Fale conosco"}
+                  </p.PlasmicLink>
+                </p.Stack>
+              ) : null}
             </p.Stack>
           ) : null}
         </div>
@@ -411,17 +619,13 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "svg"],
-  img: ["img"],
-  svg: ["svg"]
+  root: ["root"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  img: typeof p.PlasmicImg;
-  svg: "svg";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -484,8 +688,6 @@ export const PlasmicResponsiveMenu = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
-    svg: makeNodeComponent("svg"),
 
     // Metadata about props expected for PlasmicResponsiveMenu
     internalVariantProps: PlasmicResponsiveMenu__VariantProps,

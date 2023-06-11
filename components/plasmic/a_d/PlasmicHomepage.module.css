@@ -6,7 +6,7 @@
   align-content: flex-start;
   justify-items: center;
   grid-row-gap: 30px;
-  background: url("/plasmic/a_d/images/whatsAppImage20230611At000637Jpeg.jpg") top 50% left 50% / cover repeat;
+  background: url("/plasmic/a_d/images/whatsAppImage20230611At000637Jpeg.jpg") top 50% left 50% / contain repeat;
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -20,6 +20,11 @@
 }
 :where(.root > *) {
   grid-column: 4;
+}
+@media (min-width: 641px) {
+  :where(.root > *) {
+    grid-column: 4;
+  }
 }
 @media (min-width: 1100px) {
   :where(.root > *) {
@@ -73,6 +78,11 @@
 }
 .img___1S6OG > :global(.__wab_img-spacer) > img {
   object-fit: cover;
+}
+@media (min-width: 1100px) {
+  .img___1S6OG {
+    width: 500px;
+  }
 }
 .freeBox__sMAat {
   display: flex;
