@@ -3201,6 +3201,16 @@
       }
     },
     {
+      "name": "faleConoscoMinWidth",
+      "type": "spacing",
+      "value": "100px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+        "id": "--zsfRgRn"
+      }
+    },
+    {
       "name": "formMinWidth",
       "type": "spacing",
       "value": "225px",

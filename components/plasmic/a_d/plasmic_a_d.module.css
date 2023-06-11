@@ -7,6 +7,8 @@
   --plasmic-token-secondary: var(--token-OUN95h6v6);
   --token-uYlbgJ5Hu: 225px;
   --plasmic-token-form-min-width: var(--token-uYlbgJ5Hu);
+  --token---zsfRgRn: 100px;
+  --plasmic-token-fale-conosco-min-width: var(--token---zsfRgRn);
 }
 
 .plasmic_tokens {
