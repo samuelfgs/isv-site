@@ -72,9 +72,9 @@ function Image({palest, id, progress, left}: any) {
     }
   }, [ref, progress]);
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
-    <h1 ref={title} style={{color: "white"}}>{palest.name}</h1>
+    <h1 ref={title} style={{color: "black"}}>{palest.name}</h1>
     <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
-    <p style={{padding: 20, color: "white", textAlign: "center" }} ref={desc}>{palest.desc}</p>
+    <p style={{padding: 20, color: "black", textAlign: "center" }} ref={desc}>{palest.desc}</p>
   </div>
 }
 
