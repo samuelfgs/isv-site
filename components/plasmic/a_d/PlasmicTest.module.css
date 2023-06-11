@@ -21,29 +21,6 @@
 :where(.root > *) {
   grid-column: 4;
 }
-.textInput:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg___9Nnoc {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg___6FQd3 {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.text___2YFwF {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .form:global(.__wab_instance) {
   display: flex;
   flex-direction: column;
@@ -57,52 +34,24 @@
   min-width: 0;
   padding: 8px;
 }
-.formProvider:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-}
-.freeBox {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
+.name:global(.__wab_instance) {
   width: 100%;
-  height: auto;
-  max-width: 100%;
   margin-bottom: 24px;
   min-width: 0;
-  padding: 8px;
 }
-.cepField:global(.__wab_instance) {
-  width: 100%;
-  min-width: 0;
-}
-.text__zRcov {
+.text___8OeBe {
   position: relative;
 }
-.textInput2:global(.__wab_instance) {
+.input:global(.__wab_instance) {
   max-width: 100%;
-}
-.svg__m7VKi {
-  position: relative;
   object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__hWeeG {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
 }
 .formField:global(.__wab_instance) {
   width: 100%;
   margin-bottom: 24px;
   min-width: 0;
 }
-.text__welYd {
+.text___2ZywK {
   position: relative;
 }
 .textArea:global(.__wab_instance) {
@@ -113,7 +62,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.text__xwwpR {
+.text__blCs {
   position: relative;
   width: 100%;
   height: auto;

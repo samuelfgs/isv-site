@@ -6538,15 +6538,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       )
                                                     );
                                                   }}
-                                                  type={
-                                                    hasVariant(
-                                                      globalVariants,
-                                                      "screen",
-                                                      "desktop"
-                                                    )
-                                                      ? ("date" as const)
-                                                      : undefined
-                                                  }
+                                                  type={"date" as const}
                                                   value={
                                                     p.generateStateValueProp(
                                                       $state,

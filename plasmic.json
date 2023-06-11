@@ -333,6 +333,19 @@
           "cssFilePath": "plasmic/a_d/PlasmicConferencia.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "gH1v_XUMcl",
+          "name": "Test",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicTest.tsx",
+          "importSpec": {
+            "modulePath": "../pages/test.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
