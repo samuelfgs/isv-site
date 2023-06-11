@@ -228,7 +228,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {
-                      "Iremos celebrar os 20 anos de Adoração e Discipulado. \n\nE você não pode ficar fora dessa! \n\nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
+                      "Iremos celebrar os 20 anos de Adoração e Discipulado. \nE você não pode ficar fora dessa! \nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
                     }
                   </div>
                 </p.Stack>
