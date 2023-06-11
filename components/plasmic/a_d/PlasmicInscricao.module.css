@@ -410,11 +410,6 @@
     min-width: var(--token-uYlbgJ5Hu);
   }
 }
-.formFieldGroup:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-}
 .freeBox__gvWi3 {
   display: flex;
   position: relative;
@@ -435,8 +430,11 @@
 @media (min-width: 1100px) {
   .freeBox__gvWi3 {
     width: 100%;
+    margin-top: calc(0px + 20px) !important;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: calc(0px + 0px) !important;
     min-width: 0;
-    margin: 0px;
   }
 }
 @media (min-width: 1100px) {
@@ -1024,6 +1022,27 @@
     margin-top: 0px;
   }
 }
+@media (min-width: 1100px) {
+  .freeBox__mB40R > :global(.__wab_flex-container) {
+    margin-left: calc(0px - 10px);
+    width: calc(100% + 10px);
+    margin-top: calc(0px - 0px);
+    height: calc(100% + 0px);
+  }
+}
+@media (min-width: 1100px) {
+  .freeBox__mB40R > :global(.__wab_flex-container) > *,
+  .freeBox__mB40R > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+  .freeBox__mB40R > :global(.__wab_flex-container) > picture > img,
+  .freeBox__mB40R
+    > :global(.__wab_flex-container)
+    > :global(.__wab_slot)
+    > picture
+    > img {
+    margin-left: 10px;
+    margin-top: 0px;
+  }
+}
 .text__mPaEe {
   position: relative;
   width: auto;
@@ -1134,13 +1153,18 @@
   width: 1em;
   height: 1em;
 }
+.dataProvider__nuehj:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
 .text__yuMj {
   position: relative;
   width: auto;
   height: auto;
   max-width: 100%;
   color: var(--token-OUN95h6v6);
-  margin-top: calc(0px + 10px) !important;
+  margin-top: 0px;
 }
 .text__crj9Z {
   position: relative;
@@ -1148,16 +1172,15 @@
   height: auto;
   max-width: 100%;
   color: var(--token-OUN95h6v6);
-  margin-top: calc(0px + 10px) !important;
+  margin-top: 0px;
 }
-.text__yasZc {
+.text__tWat7 {
   position: relative;
   width: auto;
   height: auto;
   max-width: 100%;
   color: var(--token-OUN95h6v6);
-  margin-top: calc(0px + 10px) !important;
-  margin-bottom: 25px;
+  margin-top: 0px;
 }
 .freeBox__tmwrx {
   display: flex;
