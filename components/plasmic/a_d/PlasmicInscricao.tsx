@@ -973,6 +973,64 @@ function PlasmicInscricao__RenderFunc(props: {
                                                 $steps["runCode"]
                                               );
                                           }
+                                          $steps["runCode"] = true
+                                            ? (() => {
+                                                const actionArgs = {
+                                                  customFunction:
+                                                    __wrapUserFunction(
+                                                      {
+                                                        type: "InteractionArgLoc",
+                                                        actionName:
+                                                          "customFunction",
+                                                        interactionUuid:
+                                                          "hlDz-0bmQ",
+                                                        componentUuid:
+                                                          "dYFvLDGEBe",
+                                                        argName:
+                                                          "customFunction"
+                                                      },
+                                                      () => () => {
+                                                        event.preventDefault();
+                                                        return event.stopPropagation();
+                                                      }
+                                                    )
+                                                };
+                                                return __wrapUserFunction(
+                                                  {
+                                                    type: "InteractionLoc",
+                                                    actionName:
+                                                      "customFunction",
+                                                    interactionUuid:
+                                                      "hlDz-0bmQ",
+                                                    componentUuid: "dYFvLDGEBe"
+                                                  },
+                                                  () =>
+                                                    (({ customFunction }) => {
+                                                      return customFunction();
+                                                    })?.apply(null, [
+                                                      actionArgs
+                                                    ]),
+                                                  actionArgs
+                                                );
+                                              })()
+                                            : undefined;
+                                          if (
+                                            typeof $steps["runCode"] ===
+                                              "object" &&
+                                            typeof $steps["runCode"].then ===
+                                              "function"
+                                          ) {
+                                            $steps["runCode"] =
+                                              await __wrapUserPromise(
+                                                {
+                                                  type: "InteractionLoc",
+                                                  actionName: "customFunction",
+                                                  interactionUuid: "hlDz-0bmQ",
+                                                  componentUuid: "dYFvLDGEBe"
+                                                },
+                                                $steps["runCode"]
+                                              );
+                                          }
                                         }}
                                         onChange={(...eventArgs) => {
                                           p.generateStateOnChangeProp($state, [
