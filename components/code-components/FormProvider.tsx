@@ -4,7 +4,7 @@ import { Form } from "antd";
 interface FormProviderProps {
   children: React.ReactNode;
 }
-function FormProvider(props: FormProviderProps) {
+export function FormProvider(props: FormProviderProps) {
   const form = Form.useFormInstance();
   const [form2] = Form.useForm();
   console.log("dale", form, form2?.getFieldsValue());

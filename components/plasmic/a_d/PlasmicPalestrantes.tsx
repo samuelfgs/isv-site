@@ -366,7 +366,6 @@ function PlasmicPalestrantes__RenderFunc(props: {
                   data-plasmic-override={overrides.slider}
                   arrows={false}
                   className={classNames("__wab_instance", sty.slider)}
-                  dots={true}
                 >
                   {(
                     (() => {
