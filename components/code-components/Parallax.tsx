@@ -126,7 +126,7 @@ export function Participantes() {
   <div 
     style={{
         position: "relative",
-        height: `${totalDuration+100}px`,
+        height: `${totalDuration}px`,
     }}
   >
     <Scene duration={totalDuration} triggerHook={"onEnter"}>
