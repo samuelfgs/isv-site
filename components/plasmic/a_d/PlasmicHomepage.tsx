@@ -36,9 +36,10 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
-import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
+import InscricaoButton from "../../InscricaoButton"; // plasmic-import: VrYzW9MhJk/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
 import Palestrante from "../../Palestrante"; // plasmic-import: 5UuQ-pHvfY/component
@@ -67,11 +68,10 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
-  separator?: p.Flex<"div">;
-  separator2?: p.Flex<"div">;
-  htmlVideo?: p.Flex<typeof Video>;
   button?: p.Flex<typeof Button>;
+  responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
+  htmlVideo?: p.Flex<typeof Video>;
+  inscricaoButton?: p.Flex<typeof InscricaoButton>;
   participantes?: p.Flex<typeof Participantes>;
   palestrantesData?: p.Flex<typeof PalestrantesData>;
 };
@@ -147,6 +147,64 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__eDpuD)}
+          >
+            {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
+              <div className={classNames(projectcss.all, sty.freeBox__l7KFk)}>
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___5Qfn8)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jL64G
+                      )}
+                    >
+                      {hasVariant(globalVariants, "screen", "tablet")
+                        ? "Dias 21 e 22 de outubro"
+                        : "21 e 22"}
+                    </div>
+                    {(
+                      hasVariant(globalVariants, "screen", "tablet")
+                        ? true
+                        : true
+                    ) ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___66Sof
+                        )}
+                      >
+                        {"Outubro"}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                  link={`/inscricao`}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eJtZ
+                    )}
+                  >
+                    {"QUERO ME INSCREVER"}
+                  </div>
+                </Button>
+              </div>
+            ) : null}
+          </p.Stack>
           {true ? (
             <ResponsiveMenu
               data-plasmic-name={"responsiveMenu"}
@@ -189,49 +247,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__sMAat)}
                 >
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__rsBg)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__zdrmp
-                      )}
-                    >
-                      {"20"}
-                    </div>
-                    <div
-                      data-plasmic-name={"separator"}
-                      data-plasmic-override={overrides.separator}
-                      className={classNames(projectcss.all, sty.separator)}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___5P1Yn
-                      )}
-                    >
-                      {"21"}
-                    </div>
-                    <div
-                      data-plasmic-name={"separator2"}
-                      data-plasmic-override={overrides.separator2}
-                      className={classNames(projectcss.all, sty.separator2)}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__hmeKq
-                      )}
-                    >
-                      {"OUT"}
-                    </div>
-                  </div>
-                  <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
@@ -255,31 +270,44 @@ function PlasmicHomepage__RenderFunc(props: {
                 src={"https://isv-site.vercel.app/video.mp4" as const}
               />
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__j4F9
-                )}
-              >
-                {"VOCE FAZ PARTE DISSO!"}
-              </div>
-              <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
-                color={"yellow" as const}
-              >
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__mQpkc)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__j4F9
+                    )}
+                  >
+                    {"VOCÊ FAZ PARTE DISSO!"}
+                  </div>
+                  <InscricaoButton
+                    data-plasmic-name={"inscricaoButton"}
+                    data-plasmic-override={overrides.inscricaoButton}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.inscricaoButton
+                    )}
+                  />
+                </p.Stack>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "tablet") ? true : true
+              ) ? (
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__kgx8Q
+                    sty.text__neaTo
                   )}
                 >
-                  {"FAÇA SUA INSCRIÇÃO"}
+                  {"PALESTRANTES"}
                 </div>
-              </Button>
+              ) : null}
               {(
                 hasVariant(globalVariants, "screen", "desktop")
                   ? true
@@ -361,22 +389,47 @@ function PlasmicHomepage__RenderFunc(props: {
                                       sty.palestrante___9VLy5
                                     )}
                                     slot={
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return currentItem.name;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "Adhemar de Campos";
-                                            }
-                                            throw e;
-                                          }
-                                        })()}
-                                      </React.Fragment>
+                                      (
+                                        hasVariant(
+                                          globalVariants,
+                                          "screen",
+                                          "tablet"
+                                        )
+                                          ? true
+                                          : true
+                                      ) ? (
+                                        <div
+                                          className={classNames(
+                                            projectcss.all,
+                                            sty.freeBox__gjJDo
+                                          )}
+                                        >
+                                          <div
+                                            className={classNames(
+                                              projectcss.all,
+                                              projectcss.__wab_text,
+                                              sty.text__xfh2M
+                                            )}
+                                          >
+                                            <React.Fragment>
+                                              {(() => {
+                                                try {
+                                                  return currentItem.name;
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return "Adhemar de Campos";
+                                                  }
+                                                  throw e;
+                                                }
+                                              })()}
+                                            </React.Fragment>
+                                          </div>
+                                        </div>
+                                      ) : null
                                     }
                                     slot2={
                                       <React.Fragment>
@@ -470,22 +523,48 @@ function PlasmicHomepage__RenderFunc(props: {
                                           sty.palestrante___2QivX
                                         )}
                                         slot={
-                                          <React.Fragment>
-                                            {(() => {
-                                              try {
-                                                return currentItem.name;
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return "Adhemar de Campos";
-                                                }
-                                                throw e;
-                                              }
-                                            })()}
-                                          </React.Fragment>
+                                          (
+                                            hasVariant(
+                                              globalVariants,
+                                              "screen",
+                                              "tablet"
+                                            )
+                                              ? true
+                                              : true
+                                          ) ? (
+                                            <div
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__wmsF
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__z6X3N
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return currentItem.name;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "Adhemar de Campos";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </div>
+                                          ) : null
                                         }
                                         slot2={
                                           <React.Fragment>
@@ -548,6 +627,9 @@ function PlasmicHomepage__RenderFunc(props: {
               ) : null}
             </p.Stack>
           ) : null}
+          {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
+            <div className={classNames(projectcss.all, sty.freeBox__gx8Eo)} />
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -557,19 +639,17 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "responsiveMenu",
-    "separator",
-    "separator2",
-    "htmlVideo",
     "button",
+    "responsiveMenu",
+    "htmlVideo",
+    "inscricaoButton",
     "participantes",
     "palestrantesData"
   ],
-  responsiveMenu: ["responsiveMenu"],
-  separator: ["separator"],
-  separator2: ["separator2"],
-  htmlVideo: ["htmlVideo"],
   button: ["button"],
+  responsiveMenu: ["responsiveMenu"],
+  htmlVideo: ["htmlVideo"],
+  inscricaoButton: ["inscricaoButton"],
   participantes: ["participantes"],
   palestrantesData: ["palestrantesData"]
 } as const;
@@ -578,11 +658,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  responsiveMenu: typeof ResponsiveMenu;
-  separator: "div";
-  separator2: "div";
-  htmlVideo: typeof Video;
   button: typeof Button;
+  responsiveMenu: typeof ResponsiveMenu;
+  htmlVideo: typeof Video;
+  inscricaoButton: typeof InscricaoButton;
   participantes: typeof Participantes;
   palestrantesData: typeof PalestrantesData;
 };
@@ -647,11 +726,10 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    responsiveMenu: makeNodeComponent("responsiveMenu"),
-    separator: makeNodeComponent("separator"),
-    separator2: makeNodeComponent("separator2"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
     button: makeNodeComponent("button"),
+    responsiveMenu: makeNodeComponent("responsiveMenu"),
+    htmlVideo: makeNodeComponent("htmlVideo"),
+    inscricaoButton: makeNodeComponent("inscricaoButton"),
     participantes: makeNodeComponent("participantes"),
     palestrantesData: makeNodeComponent("palestrantesData"),
 

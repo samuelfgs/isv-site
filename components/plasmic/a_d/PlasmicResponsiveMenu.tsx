@@ -188,9 +188,9 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                   displayWidth={"50px" as const}
                   loading={"lazy" as const}
                   src={{
-                    src: "/plasmic/a_d/images/artboard1Png.png",
-                    fullWidth: 30,
-                    fullHeight: 30,
+                    src: "/plasmic/a_d/images/ad20AnosIcon21Png.png",
+                    fullWidth: 3666,
+                    fullHeight: 2547,
                     aspectRatio: undefined
                   }}
                 />
@@ -226,6 +226,19 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                   platform={"nextjs"}
                 >
                   {"Faça sua inscrição"}
+                </p.PlasmicLink>
+                <p.PlasmicLink
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__rUs2N
+                  )}
+                  component={Link}
+                  href={`/conferencia`}
+                  platform={"nextjs"}
+                >
+                  {"Conferência"}
                 </p.PlasmicLink>
                 <p.PlasmicLink
                   className={classNames(
@@ -587,13 +600,33 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
+                      sty.link__s2Xj8,
+                      {
+                        [sty.linkisOpen2__s2Xj8JqrG1]: hasVariant(
+                          $state,
+                          "isOpen2",
+                          "isOpen2"
+                        )
+                      }
+                    )}
+                    component={Link}
+                    href={`/conferencia`}
+                    platform={"nextjs"}
+                  >
+                    {"Conferência"}
+                  </p.PlasmicLink>
+                  <p.PlasmicLink
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
                       sty.link__d3CDb
                     )}
                     component={Link}
                     href={`/palestrantes`}
                     platform={"nextjs"}
                   >
-                    {"Participantes"}
+                    {"Palestrantes"}
                   </p.PlasmicLink>
                   <p.PlasmicLink
                     className={classNames(

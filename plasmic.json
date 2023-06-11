@@ -294,6 +294,45 @@
           "cssFilePath": "plasmic/a_d/PlasmicPalestrantesData.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "VrYzW9MhJk",
+          "name": "InscricaoButton",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicInscricaoButton.tsx",
+          "importSpec": {
+            "modulePath": "InscricaoButton.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicInscricaoButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "IvQGOVPg-N",
+          "name": "LastParallax",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicLastParallax.tsx",
+          "importSpec": {
+            "modulePath": "LastParallax.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicLastParallax.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "pFpBRd8Rc1x",
+          "name": "Conferencia",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicConferencia.tsx",
+          "importSpec": {
+            "modulePath": "../pages/conferencia.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicConferencia.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

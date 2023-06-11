@@ -7,6 +7,8 @@ import { gsap } from "gsap";
 import { Button } from "antd";
 import { registerComponent, usePlasmicCanvasContext } from "@plasmicapp/react-web/lib/host";
 import { data as palestrantes } from "./Participantes";
+import LastParallax from "../LastParallax";
+import PlasmicLastParallax from "../plasmic/a_d/PlasmicLastParallax";
 
 const calcProgress = (currentProgress: number, left: number, right: number) =>
   currentProgress < left
@@ -52,7 +54,7 @@ function Image({palest, id, progress, left}: any) {
   }, [ref, progress]);
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
     <h1 ref={title} style={{color: "black", textAlign: "center"}}>{palest.name}</h1>
-    <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
+    <img className="image" src={`/${palest.name}.png`} style={{ width: 250, height: 250 }} ref={ref} />
     <p style={{padding: 20, color: "black", textAlign: "center" }} ref={desc}>{palest.shortDesc}</p>
   </div>
 }
@@ -83,12 +85,14 @@ function Voce({name, id, progress, left}: any) {
     }
   }, [voce, botao, progress]);
   console.log("dale3", progress);
-  return <div style={{display: "flex", alignItems: "center", flexDirection:  "column", gap: 30}}>
-    <h1 ref={voce} style={{fontSize: 60}}>E você...</h1>
-    <div ref={botao}>
-      <Button  type={"primary"} shape={"round"} size={"large"}>Faça sua inscrição</Button>
-    </div>
-  </div>
+  return <PlasmicLastParallax
+    voce={{
+      ref: voce
+    }}
+    botao={{
+      ref: botao
+    }}
+  />
 }
 
 export function Participantes() {
@@ -114,9 +118,10 @@ export function Participantes() {
         return <div>
           <Scene duration={6*globalThis.innerHeight} pin triggerHook={"onLeave"}>
               <div className={styles.sceneContainer} style={{height: "100vh"}}>
-                <div className={styles.participantes} style={{color: "orange"}}>
+                {/* <div className={styles.participantes} style={{color: "orange"}}>
                   Participantes
-                </div>
+                </div> */}
+                <div style={{height: 90}}></div>
                 <div style={{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", height: "100%"}}>
                   {(() => {
                     const total = 0.9;

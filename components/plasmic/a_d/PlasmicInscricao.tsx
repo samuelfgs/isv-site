@@ -321,21 +321,84 @@ function PlasmicInscricao__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__xEypm)}
             >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__umcng
+                )}
+              >
+                {"Inscrição"}
+              </div>
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__oNpL5)}
+                  style={(() => {
+                    try {
+                      return {
+                        order: $state.inForm ? 0 : 1
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  {true ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jgxSk
+                      )}
+                    >
+                      {
+                        "Texto sobre o preco: orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                      }
+                    </div>
+                  ) : null}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__aXdL
+                    )}
+                  >
+                    {"Até 3 anos não paga"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__dAb4G
+                    )}
+                  >
+                    {"Crianças até 6 anos: R$50,00"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__vn2C
+                    )}
+                  >
+                    {"Restante: R$ 120,00"}
+                  </div>
+                </p.Stack>
+              ) : null}
               {true ? (
                 <p.Stack
                   as={"div"}
                   hasGap={true}
                   className={classNames(projectcss.all, sty.freeBox__jLtot)}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__umcng
-                    )}
-                  >
-                    {"Inscrição"}
-                  </div>
                   {(() => {
                     try {
                       return $state.inForm;
@@ -529,6 +592,55 @@ function PlasmicInscricao__RenderFunc(props: {
                               $steps["updateInForm"]
                             );
                           }
+                          $steps["runCode"] = true
+                            ? (() => {
+                                const actionArgs = {
+                                  customFunction: __wrapUserFunction(
+                                    {
+                                      type: "InteractionArgLoc",
+                                      actionName: "customFunction",
+                                      interactionUuid: "u5FwRtq7R",
+                                      componentUuid: "dYFvLDGEBe",
+                                      argName: "customFunction"
+                                    },
+                                    () => () => {
+                                      console.log("dale", window);
+                                      return window.scroll({
+                                        top: 0,
+                                        behavior: "smooth"
+                                      });
+                                    }
+                                  )
+                                };
+                                return __wrapUserFunction(
+                                  {
+                                    type: "InteractionLoc",
+                                    actionName: "customFunction",
+                                    interactionUuid: "u5FwRtq7R",
+                                    componentUuid: "dYFvLDGEBe"
+                                  },
+                                  () =>
+                                    (({ customFunction }) => {
+                                      return customFunction();
+                                    })?.apply(null, [actionArgs]),
+                                  actionArgs
+                                );
+                              })()
+                            : undefined;
+                          if (
+                            typeof $steps["runCode"] === "object" &&
+                            typeof $steps["runCode"].then === "function"
+                          ) {
+                            $steps["runCode"] = await __wrapUserPromise(
+                              {
+                                type: "InteractionLoc",
+                                actionName: "customFunction",
+                                interactionUuid: "u5FwRtq7R",
+                                componentUuid: "dYFvLDGEBe"
+                              },
+                              $steps["runCode"]
+                            );
+                          }
                         }}
                         submitSlot={null}
                         wrapperCol={(() => {
@@ -548,12 +660,23 @@ function PlasmicInscricao__RenderFunc(props: {
                             sty.formProvider
                           )}
                         >
-                          <div
+                          <p.Stack
+                            as={"div"}
+                            hasGap={true}
                             className={classNames(
                               projectcss.all,
                               sty.freeBox__lyJq
                             )}
                           >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___8Rg7C
+                              )}
+                            >
+                              {"Formulário"}
+                            </div>
                             <p.Stack
                               as={"div"}
                               hasGap={true}
@@ -1310,7 +1433,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                 {"Próximo"}
                               </Button>
                             </p.Stack>
-                          </div>
+                          </p.Stack>
                         </FormProvider>
                       </FormWrapper>
                     </div>
