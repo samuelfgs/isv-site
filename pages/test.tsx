@@ -6,7 +6,8 @@ import GlobalContextsProvider from "../components/plasmic/a_d/PlasmicGlobalConte
 import { ScreenVariantProvider } from "../components/plasmic/a_d/PlasmicGlobalVariant__Screen";
 import { PlasmicTest } from "../components/plasmic/a_d/PlasmicTest";
 import { useRouter } from "next/router";
-import DatePicker from 'react-date-picker';
+import DatePicker2 from 'rc-calendar';
+
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 

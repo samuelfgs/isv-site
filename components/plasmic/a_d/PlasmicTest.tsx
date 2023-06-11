@@ -36,13 +36,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { FormWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: TgJFzUZpvQ/codeComponent
-import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: EYHwZh9ILg/codeComponent
-import { AntdInput } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: Vf5hntD2SZ5/codeComponent
-import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: Vf5hntD2SZ5/codeComponentHelper
-import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: pTzGlMptTxd/codeComponent
-import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: pTzGlMptTxd/codeComponentHelper
-import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton"; // plasmic-import: bx9Xzvf5_eu/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -63,12 +56,8 @@ export const PlasmicTest__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicTest__OverridesType = {
   root?: p.Flex<"div">;
-  form?: p.Flex<typeof FormWrapper>;
-  name?: p.Flex<typeof FormItemWrapper>;
-  input?: p.Flex<typeof AntdInput>;
-  formField?: p.Flex<typeof FormItemWrapper>;
-  textArea?: p.Flex<typeof AntdTextArea>;
-  button?: p.Flex<typeof AntdButton>;
+  freeBox?: p.Flex<"div">;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultTestProps {}
@@ -110,31 +99,6 @@ function PlasmicTest__RenderFunc(props: {
 
   const [$queries, setDollarQueries] = React.useState({});
 
-  const stateSpecs = React.useMemo(
-    () => [
-      {
-        path: "form.value",
-        type: "private",
-        variableType: "object",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "input.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      },
-      {
-        path: "textArea.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
-      }
-    ],
-    [$props, $ctx]
-  );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -163,142 +127,23 @@ function PlasmicTest__RenderFunc(props: {
             sty.root
           )}
         >
-          <FormWrapper
-            data-plasmic-name={"form"}
-            data-plasmic-override={overrides.form}
-            className={classNames("__wab_instance", sty.form)}
-            extendedOnValuesChange={p.generateStateOnChangeProp($state, [
-              "form",
-              "value"
-            ])}
-            formItems={[
-              { label: "Name", name: "name", inputType: "Text" },
-              { label: "Message", name: "message", inputType: "Text Area" }
-            ]}
-            labelCol={{ span: 8, horizontalOnly: true }}
-            layout={"vertical" as const}
-            mode={undefined}
-            submitSlot={null}
-            wrapperCol={{ span: 16, horizontalOnly: true }}
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
           >
-            <FormItemWrapper
-              data-plasmic-name={"name"}
-              data-plasmic-override={overrides.name}
-              className={classNames("__wab_instance", sty.name)}
-              label={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___8OeBe
-                  )}
-                >
-                  {"Name"}
-                </div>
-              }
-              name={"name" as const}
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
             >
-              {(() => {
-                const child$Props = {
-                  className: classNames("__wab_instance", sty.input),
-                  onChange: p.generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "value",
-                    ["input", "value"],
-                    AntdInput_Helpers
-                  ),
-                  value: p.generateStateValueProp($state, ["input", "value"])
-                };
-                p.initializeCodeComponentStates(
-                  $state,
-                  [
-                    {
-                      name: "value",
-                      plasmicStateName: "input.value"
-                    }
-                  ],
-                  [],
-                  AntdInput_Helpers ?? {},
-                  child$Props
-                );
-
-                return (
-                  <AntdInput
-                    data-plasmic-name={"input"}
-                    data-plasmic-override={overrides.input}
-                    {...child$Props}
-                  />
-                );
-              })()}
-            </FormItemWrapper>
-            <FormItemWrapper
-              data-plasmic-name={"formField"}
-              data-plasmic-override={overrides.formField}
-              className={classNames("__wab_instance", sty.formField)}
-              label={
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___2ZywK
-                  )}
-                >
-                  {"Message"}
-                </div>
-              }
-              name={"message" as const}
-            >
-              {(() => {
-                const child$Props = {
-                  className: classNames("__wab_instance", sty.textArea),
-                  onChange: p.generateStateOnChangePropForCodeComponents(
-                    $state,
-                    "value",
-                    ["textArea", "value"],
-                    AntdTextArea_Helpers
-                  ),
-                  value: p.generateStateValueProp($state, ["textArea", "value"])
-                };
-                p.initializeCodeComponentStates(
-                  $state,
-                  [
-                    {
-                      name: "value",
-                      plasmicStateName: "textArea.value"
-                    }
-                  ],
-                  [],
-                  AntdTextArea_Helpers ?? {},
-                  child$Props
-                );
-
-                return (
-                  <AntdTextArea
-                    data-plasmic-name={"textArea"}
-                    data-plasmic-override={overrides.textArea}
-                    {...child$Props}
-                  />
-                );
-              })()}
-            </FormItemWrapper>
-            <AntdButton
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
-              submitsForm={true}
-              type={"primary" as const}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__blCs
-                )}
-              >
-                {"Submit"}
-              </div>
-            </AntdButton>
-          </FormWrapper>
+              {"Enter some text"}
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -306,25 +151,17 @@ function PlasmicTest__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "form", "name", "input", "formField", "textArea", "button"],
-  form: ["form", "name", "input", "formField", "textArea", "button"],
-  name: ["name", "input"],
-  input: ["input"],
-  formField: ["formField", "textArea"],
-  textArea: ["textArea"],
-  button: ["button"]
+  root: ["root", "freeBox", "text"],
+  freeBox: ["freeBox", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  form: typeof FormWrapper;
-  name: typeof FormItemWrapper;
-  input: typeof AntdInput;
-  formField: typeof FormItemWrapper;
-  textArea: typeof AntdTextArea;
-  button: typeof AntdButton;
+  freeBox: "div";
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -387,12 +224,8 @@ export const PlasmicTest = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    form: makeNodeComponent("form"),
-    _name: makeNodeComponent("name"),
-    input: makeNodeComponent("input"),
-    formField: makeNodeComponent("formField"),
-    textArea: makeNodeComponent("textArea"),
-    button: makeNodeComponent("button"),
+    freeBox: makeNodeComponent("freeBox"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicTest
     internalVariantProps: PlasmicTest__VariantProps,

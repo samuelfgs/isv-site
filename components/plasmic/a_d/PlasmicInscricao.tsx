@@ -49,6 +49,7 @@ import { ToastProvider } from "../../code-components/Providers"; // plasmic-impo
 import { FormProvider } from "../../code-components/Providers"; // plasmic-import: gzu14pntqz/codeComponent
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: EYHwZh9ILg/codeComponent
 import TextInput from "../../TextInput"; // plasmic-import: nehhorfRRWX/component
+import { FormGroup } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: zEXrWX9naj/codeComponent
 import Select from "../../Select"; // plasmic-import: lCsb7GpUU0b/component
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import Loading from "../../Loading"; // plasmic-import: Of-Yy5_cNa/component
@@ -86,7 +87,11 @@ export type PlasmicInscricao__OverridesType = {
   toastProvider?: p.Flex<typeof ToastProvider>;
   formProvider?: p.Flex<typeof FormProvider>;
   input3?: p.Flex<typeof TextInput>;
+  formFieldGroup?: p.Flex<typeof FormGroup>;
   input6?: p.Flex<typeof TextInput>;
+  select?: p.Flex<typeof Select>;
+  input9?: p.Flex<typeof TextInput>;
+  birthdate?: p.Flex<typeof TextInput>;
   input7?: p.Flex<typeof TextInput>;
   input19?: p.Flex<typeof TextInput>;
   input20?: p.Flex<typeof TextInput>;
@@ -96,7 +101,7 @@ export type PlasmicInscricao__OverridesType = {
   state?: p.Flex<typeof Select>;
   city?: p.Flex<typeof Select>;
   input24?: p.Flex<typeof TextInput>;
-  input12?: p.Flex<typeof TextInput>;
+  input25?: p.Flex<typeof TextInput>;
   loading?: p.Flex<typeof Loading>;
 };
 
@@ -226,12 +231,6 @@ function PlasmicInscricao__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       },
       {
-        path: "input12.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
-      },
-      {
         path: "state.value",
         type: "private",
         variableType: "text",
@@ -245,6 +244,30 @@ function PlasmicInscricao__RenderFunc(props: {
       },
       {
         path: "lastCep",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "input9.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "select.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "birthdate.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "input25.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
@@ -6444,109 +6467,470 @@ function PlasmicInscricao__RenderFunc(props: {
                                             >
                                               {"Formulário"}
                                             </div>
+                                            <div
+                                              className={classNames(
+                                                projectcss.all,
+                                                projectcss.__wab_text,
+                                                sty.text__tMtjR
+                                              )}
+                                            >
+                                              <React.Fragment>
+                                                {(() => {
+                                                  try {
+                                                    return JSON.stringify(
+                                                      $state.form
+                                                    );
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError ||
+                                                      e?.plasmicType ===
+                                                        "PlasmicUndefinedDataError"
+                                                    ) {
+                                                      return "Restante: R$ 120,00";
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })()}
+                                              </React.Fragment>
+                                            </div>
+                                            {true ? (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__mnBzk,
+                                                  "formContainer" as const
+                                                )}
+                                              >
+                                                <FormItemWrapper
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.formField__m5KDq
+                                                  )}
+                                                  label={
+                                                    <div
+                                                      className={classNames(
+                                                        projectcss.all,
+                                                        projectcss.__wab_text,
+                                                        sty.text__pAje
+                                                      )}
+                                                    >
+                                                      {"Nome completo"}
+                                                    </div>
+                                                  }
+                                                  name={"name" as const}
+                                                  rules={[
+                                                    {
+                                                      ruleType: "required",
+                                                      message:
+                                                        "Faltou preencher o nome"
+                                                    }
+                                                  ]}
+                                                >
+                                                  <TextInput
+                                                    data-plasmic-name={"input3"}
+                                                    data-plasmic-override={
+                                                      overrides.input3
+                                                    }
+                                                    className={classNames(
+                                                      "__wab_instance",
+                                                      sty.input3
+                                                    )}
+                                                    onChange={(
+                                                      ...eventArgs
+                                                    ) => {
+                                                      p.generateStateOnChangeProp(
+                                                        $state,
+                                                        ["input3", "value"]
+                                                      )(
+                                                        (e =>
+                                                          e.target
+                                                            ?.value).apply(
+                                                          null,
+                                                          eventArgs
+                                                        )
+                                                      );
+                                                    }}
+                                                    value={
+                                                      p.generateStateValueProp(
+                                                        $state,
+                                                        ["input3", "value"]
+                                                      ) ?? ""
+                                                    }
+                                                  />
+                                                </FormItemWrapper>
+                                              </div>
+                                            ) : null}
+                                            {(
+                                              hasVariant(
+                                                globalVariants,
+                                                "screen",
+                                                "desktop"
+                                              )
+                                                ? true
+                                                : true
+                                            ) ? (
+                                              <p.Stack
+                                                as={"div"}
+                                                hasGap={true}
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__ltu0
+                                                )}
+                                              >
+                                                <div
+                                                  className={classNames(
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text__yha4
+                                                  )}
+                                                >
+                                                  {"Data de nascimento"}
+                                                </div>
+                                                <FormGroup
+                                                  data-plasmic-name={
+                                                    "formFieldGroup"
+                                                  }
+                                                  data-plasmic-override={
+                                                    overrides.formFieldGroup
+                                                  }
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.formFieldGroup
+                                                  )}
+                                                  name={"birthdate2" as const}
+                                                >
+                                                  {true ? (
+                                                    <p.Stack
+                                                      as={"div"}
+                                                      hasGap={true}
+                                                      className={classNames(
+                                                        projectcss.all,
+                                                        sty.freeBox__gl971
+                                                      )}
+                                                    >
+                                                      <FormItemWrapper
+                                                        className={classNames(
+                                                          "__wab_instance",
+                                                          sty.formField__m4VZe
+                                                        )}
+                                                        hideValidationMessage={
+                                                          true
+                                                        }
+                                                        label={
+                                                          <div
+                                                            className={classNames(
+                                                              projectcss.all,
+                                                              projectcss.__wab_text,
+                                                              sty.text__bD1Ku
+                                                            )}
+                                                          >
+                                                            {"Dia"}
+                                                          </div>
+                                                        }
+                                                        name={"day" as const}
+                                                        rules={[
+                                                          {
+                                                            ruleType:
+                                                              "required",
+                                                            message:
+                                                              "Faltou preenc"
+                                                          }
+                                                        ]}
+                                                      >
+                                                        <TextInput
+                                                          data-plasmic-name={
+                                                            "input6"
+                                                          }
+                                                          data-plasmic-override={
+                                                            overrides.input6
+                                                          }
+                                                          className={classNames(
+                                                            "__wab_instance",
+                                                            sty.input6
+                                                          )}
+                                                          onChange={(
+                                                            ...eventArgs
+                                                          ) => {
+                                                            p.generateStateOnChangeProp(
+                                                              $state,
+                                                              [
+                                                                "input6",
+                                                                "value"
+                                                              ]
+                                                            )(
+                                                              (e =>
+                                                                e.target
+                                                                  ?.value).apply(
+                                                                null,
+                                                                eventArgs
+                                                              )
+                                                            );
+                                                          }}
+                                                          type={
+                                                            "number" as const
+                                                          }
+                                                          value={
+                                                            p.generateStateValueProp(
+                                                              $state,
+                                                              [
+                                                                "input6",
+                                                                "value"
+                                                              ]
+                                                            ) ?? ""
+                                                          }
+                                                        />
+                                                      </FormItemWrapper>
+                                                      <FormItemWrapper
+                                                        className={classNames(
+                                                          "__wab_instance",
+                                                          sty.formField__lv8FG
+                                                        )}
+                                                        initialValue={
+                                                          "1" as const
+                                                        }
+                                                        label={
+                                                          <div
+                                                            className={classNames(
+                                                              projectcss.all,
+                                                              projectcss.__wab_text,
+                                                              sty.text___9BdgQ
+                                                            )}
+                                                          >
+                                                            {"Mês"}
+                                                          </div>
+                                                        }
+                                                        name={"month" as const}
+                                                        rules={[
+                                                          {
+                                                            ruleType: "required"
+                                                          }
+                                                        ]}
+                                                      >
+                                                        <Select
+                                                          data-plasmic-name={
+                                                            "select"
+                                                          }
+                                                          data-plasmic-override={
+                                                            overrides.select
+                                                          }
+                                                          className={classNames(
+                                                            "__wab_instance",
+                                                            sty.select
+                                                          )}
+                                                          onChange={(
+                                                            ...eventArgs
+                                                          ) => {
+                                                            p.generateStateOnChangeProp(
+                                                              $state,
+                                                              [
+                                                                "select",
+                                                                "value"
+                                                              ]
+                                                            )(eventArgs[0]);
+                                                          }}
+                                                          options={(() => {
+                                                            try {
+                                                              return [
+                                                                "Janeiro",
+                                                                "Fevereiro",
+                                                                "Março",
+                                                                "Abril",
+                                                                "Maio",
+                                                                "Junho",
+                                                                "Julho",
+                                                                "Agosto",
+                                                                "Setembro",
+                                                                "Outubro",
+                                                                "Novembro",
+                                                                "Dezembro"
+                                                              ].map(
+                                                                (
+                                                                  mes,
+                                                                  index
+                                                                ) => ({
+                                                                  label: mes,
+                                                                  value: `${
+                                                                    index + 1
+                                                                  }`
+                                                                })
+                                                              );
+                                                            } catch (e) {
+                                                              if (
+                                                                e instanceof
+                                                                  TypeError ||
+                                                                e?.plasmicType ===
+                                                                  "PlasmicUndefinedDataError"
+                                                              ) {
+                                                                return [];
+                                                              }
+                                                              throw e;
+                                                            }
+                                                          })()}
+                                                          value={p.generateStateValueProp(
+                                                            $state,
+                                                            ["select", "value"]
+                                                          )}
+                                                        />
+                                                      </FormItemWrapper>
+                                                      <FormItemWrapper
+                                                        className={classNames(
+                                                          "__wab_instance",
+                                                          sty.formField__mxi4K
+                                                        )}
+                                                        hideValidationMessage={
+                                                          true
+                                                        }
+                                                        label={
+                                                          <div
+                                                            className={classNames(
+                                                              projectcss.all,
+                                                              projectcss.__wab_text,
+                                                              sty.text__xp7J
+                                                            )}
+                                                          >
+                                                            {"Ano"}
+                                                          </div>
+                                                        }
+                                                        name={"year" as const}
+                                                        rules={[
+                                                          {
+                                                            ruleType: "required"
+                                                          }
+                                                        ]}
+                                                      >
+                                                        <TextInput
+                                                          data-plasmic-name={
+                                                            "input9"
+                                                          }
+                                                          data-plasmic-override={
+                                                            overrides.input9
+                                                          }
+                                                          className={classNames(
+                                                            "__wab_instance",
+                                                            sty.input9
+                                                          )}
+                                                          onChange={(
+                                                            ...eventArgs
+                                                          ) => {
+                                                            p.generateStateOnChangeProp(
+                                                              $state,
+                                                              [
+                                                                "input9",
+                                                                "value"
+                                                              ]
+                                                            )(
+                                                              (e =>
+                                                                e.target
+                                                                  ?.value).apply(
+                                                                null,
+                                                                eventArgs
+                                                              )
+                                                            );
+                                                          }}
+                                                          type={
+                                                            "number" as const
+                                                          }
+                                                          value={
+                                                            p.generateStateValueProp(
+                                                              $state,
+                                                              [
+                                                                "input9",
+                                                                "value"
+                                                              ]
+                                                            ) ?? ""
+                                                          }
+                                                        />
+                                                      </FormItemWrapper>
+                                                    </p.Stack>
+                                                  ) : null}
+                                                </FormGroup>
+                                              </p.Stack>
+                                            ) : null}
                                             <p.Stack
                                               as={"div"}
                                               hasGap={true}
                                               className={classNames(
                                                 projectcss.all,
-                                                sty.freeBox___2XjeL
+                                                sty.freeBox___2XjeL,
+                                                "formContainer" as const
                                               )}
                                             >
-                                              <FormItemWrapper
-                                                className={classNames(
-                                                  "__wab_instance",
-                                                  sty.formField__m5KDq
-                                                )}
-                                                label={
-                                                  <div
-                                                    className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text__pAje
-                                                    )}
-                                                  >
-                                                    {"Nome completo"}
-                                                  </div>
-                                                }
-                                                name={"name" as const}
-                                              >
-                                                <TextInput
-                                                  data-plasmic-name={"input3"}
-                                                  data-plasmic-override={
-                                                    overrides.input3
-                                                  }
+                                              {(
+                                                hasVariant(
+                                                  globalVariants,
+                                                  "screen",
+                                                  "desktop"
+                                                )
+                                                  ? true
+                                                  : true
+                                              ) ? (
+                                                <div
                                                   className={classNames(
-                                                    "__wab_instance",
-                                                    sty.input3
+                                                    projectcss.all,
+                                                    sty.freeBox___3S7Gb
                                                   )}
-                                                  onChange={(...eventArgs) => {
-                                                    p.generateStateOnChangeProp(
-                                                      $state,
-                                                      ["input3", "value"]
-                                                    )(
-                                                      (e =>
-                                                        e.target?.value).apply(
-                                                        null,
-                                                        eventArgs
-                                                      )
-                                                    );
-                                                  }}
-                                                  value={
-                                                    p.generateStateValueProp(
-                                                      $state,
-                                                      ["input3", "value"]
-                                                    ) ?? ""
-                                                  }
-                                                />
-                                              </FormItemWrapper>
-                                              <FormItemWrapper
-                                                className={classNames(
-                                                  "__wab_instance",
-                                                  sty.formField__m4VZe
-                                                )}
-                                                label={
-                                                  <div
+                                                >
+                                                  <FormItemWrapper
                                                     className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text__bD1Ku
+                                                      "__wab_instance",
+                                                      sty.formField__e5DCb
                                                     )}
+                                                    label={
+                                                      <div
+                                                        className={classNames(
+                                                          projectcss.all,
+                                                          projectcss.__wab_text,
+                                                          sty.text__ihYYr
+                                                        )}
+                                                      >
+                                                        {"Data de nascimento"}
+                                                      </div>
+                                                    }
+                                                    name={"birthdate" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha sua data de nascimento"
+                                                      }
+                                                    ]}
                                                   >
-                                                    {"Data de nascimento"}
-                                                  </div>
-                                                }
-                                                name={"birthdate" as const}
-                                              >
-                                                <TextInput
-                                                  data-plasmic-name={"input6"}
-                                                  data-plasmic-override={
-                                                    overrides.input6
-                                                  }
-                                                  className={classNames(
-                                                    "__wab_instance",
-                                                    sty.input6
-                                                  )}
-                                                  onChange={(...eventArgs) => {
-                                                    p.generateStateOnChangeProp(
-                                                      $state,
-                                                      ["input6", "value"]
-                                                    )(
-                                                      (e =>
-                                                        e.target?.value).apply(
-                                                        null,
-                                                        eventArgs
-                                                      )
-                                                    );
-                                                  }}
-                                                  type={"date" as const}
-                                                  value={
-                                                    p.generateStateValueProp(
-                                                      $state,
-                                                      ["input6", "value"]
-                                                    ) ?? ""
-                                                  }
-                                                />
-                                              </FormItemWrapper>
+                                                    <TextInput
+                                                      data-plasmic-name={
+                                                        "birthdate"
+                                                      }
+                                                      data-plasmic-override={
+                                                        overrides.birthdate
+                                                      }
+                                                      className={classNames(
+                                                        "__wab_instance",
+                                                        sty.birthdate
+                                                      )}
+                                                      onChange={(
+                                                        ...eventArgs
+                                                      ) => {
+                                                        p.generateStateOnChangeProp(
+                                                          $state,
+                                                          ["birthdate", "value"]
+                                                        )(
+                                                          (e =>
+                                                            e.target
+                                                              ?.value).apply(
+                                                            null,
+                                                            eventArgs
+                                                          )
+                                                        );
+                                                      }}
+                                                      value={
+                                                        p.generateStateValueProp(
+                                                          $state,
+                                                          ["birthdate", "value"]
+                                                        ) ?? ""
+                                                      }
+                                                    />
+                                                  </FormItemWrapper>
+                                                </div>
+                                              ) : null}
                                               <FormItemWrapper
                                                 className={classNames(
                                                   "__wab_instance",
@@ -6560,10 +6944,23 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       sty.text___3NcOx
                                                     )}
                                                   >
-                                                    {"Documento de identidade"}
+                                                    {hasVariant(
+                                                      globalVariants,
+                                                      "screen",
+                                                      "desktop"
+                                                    )
+                                                      ? "Documento de identidade"
+                                                      : "Documento de identidade"}
                                                   </div>
                                                 }
                                                 name={"cpf" as const}
+                                                rules={[
+                                                  {
+                                                    ruleType: "required",
+                                                    message:
+                                                      "Por favor, preencha com o CPF ou RG"
+                                                  }
+                                                ]}
                                               >
                                                 <TextInput
                                                   data-plasmic-name={"input7"}
@@ -6620,6 +7017,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       </div>
                                                     }
                                                     name={"cep" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha com um CEP válido"
+                                                      }
+                                                    ]}
                                                   >
                                                     <TextInput
                                                       data-plasmic-name={
@@ -6990,6 +7394,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       </div>
                                                     }
                                                     name={"logradouro" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha o logradouro"
+                                                      }
+                                                    ]}
                                                   >
                                                     <TextInput
                                                       data-plasmic-name={
@@ -7051,6 +7462,14 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           </div>
                                                         }
                                                         name={"number" as const}
+                                                        rules={[
+                                                          {
+                                                            ruleType:
+                                                              "required",
+                                                            message:
+                                                              "Por favor, preencha o número da residência"
+                                                          }
+                                                        ]}
                                                       >
                                                         <TextInput
                                                           data-plasmic-name={
@@ -7174,6 +7593,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       </div>
                                                     }
                                                     name={"bairro" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha o bairro"
+                                                      }
+                                                    ]}
                                                   >
                                                     <TextInput
                                                       data-plasmic-name={
@@ -7226,6 +7652,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       </div>
                                                     }
                                                     name={"state" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha o estado"
+                                                      }
+                                                    ]}
                                                   >
                                                     <Select
                                                       data-plasmic-name={
@@ -7292,6 +7725,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       </div>
                                                     }
                                                     name={"city" as const}
+                                                    rules={[
+                                                      {
+                                                        ruleType: "required",
+                                                        message:
+                                                          "Por favor, preencha a cidade"
+                                                      }
+                                                    ]}
                                                   >
                                                     {(() => {
                                                       try {
@@ -7364,6 +7804,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                   </div>
                                                 }
                                                 name={"telefone" as const}
+                                                rules={[
+                                                  {
+                                                    ruleType: "required",
+                                                    message:
+                                                      "Por favor, preencha o telefone"
+                                                  }
+                                                ]}
                                               >
                                                 <TextInput
                                                   data-plasmic-name={"input24"}
@@ -7397,34 +7844,41 @@ function PlasmicInscricao__RenderFunc(props: {
                                               <FormItemWrapper
                                                 className={classNames(
                                                   "__wab_instance",
-                                                  sty.formField__rCN7
+                                                  sty.formField__mXk6K
                                                 )}
                                                 label={
                                                   <div
                                                     className={classNames(
                                                       projectcss.all,
                                                       projectcss.__wab_text,
-                                                      sty.text__tBi8
+                                                      sty.text__uBoU
                                                     )}
                                                   >
                                                     {"Email"}
                                                   </div>
                                                 }
                                                 name={"email" as const}
+                                                rules={[
+                                                  {
+                                                    ruleType: "required",
+                                                    message:
+                                                      "Por favor, preencha o telefone"
+                                                  }
+                                                ]}
                                               >
                                                 <TextInput
-                                                  data-plasmic-name={"input12"}
+                                                  data-plasmic-name={"input25"}
                                                   data-plasmic-override={
-                                                    overrides.input12
+                                                    overrides.input25
                                                   }
                                                   className={classNames(
                                                     "__wab_instance",
-                                                    sty.input12
+                                                    sty.input25
                                                   )}
                                                   onChange={(...eventArgs) => {
                                                     p.generateStateOnChangeProp(
                                                       $state,
-                                                      ["input12", "value"]
+                                                      ["input25", "value"]
                                                     )(
                                                       (e =>
                                                         e.target?.value).apply(
@@ -7436,7 +7890,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                   value={
                                                     p.generateStateValueProp(
                                                       $state,
-                                                      ["input12", "value"]
+                                                      ["input25", "value"]
                                                     ) ?? ""
                                                   }
                                                 />
@@ -8627,7 +9081,11 @@ const PlasmicDescendants = {
     "toastProvider",
     "formProvider",
     "input3",
+    "formFieldGroup",
     "input6",
+    "select",
+    "input9",
+    "birthdate",
     "input7",
     "input19",
     "input20",
@@ -8637,7 +9095,7 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input12",
+    "input25",
     "loading"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -8646,7 +9104,11 @@ const PlasmicDescendants = {
     "toastProvider",
     "formProvider",
     "input3",
+    "formFieldGroup",
     "input6",
+    "select",
+    "input9",
+    "birthdate",
     "input7",
     "input19",
     "input20",
@@ -8656,13 +9118,17 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input12"
+    "input25"
   ],
   toastProvider: [
     "toastProvider",
     "formProvider",
     "input3",
+    "formFieldGroup",
     "input6",
+    "select",
+    "input9",
+    "birthdate",
     "input7",
     "input19",
     "input20",
@@ -8672,12 +9138,16 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input12"
+    "input25"
   ],
   formProvider: [
     "formProvider",
     "input3",
+    "formFieldGroup",
     "input6",
+    "select",
+    "input9",
+    "birthdate",
     "input7",
     "input19",
     "input20",
@@ -8687,10 +9157,14 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input12"
+    "input25"
   ],
   input3: ["input3"],
+  formFieldGroup: ["formFieldGroup", "input6", "select", "input9"],
   input6: ["input6"],
+  select: ["select"],
+  input9: ["input9"],
+  birthdate: ["birthdate"],
   input7: ["input7"],
   input19: ["input19"],
   input20: ["input20"],
@@ -8700,7 +9174,7 @@ const PlasmicDescendants = {
   state: ["state"],
   city: ["city"],
   input24: ["input24"],
-  input12: ["input12"],
+  input25: ["input25"],
   loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -8713,7 +9187,11 @@ type NodeDefaultElementType = {
   toastProvider: typeof ToastProvider;
   formProvider: typeof FormProvider;
   input3: typeof TextInput;
+  formFieldGroup: typeof FormGroup;
   input6: typeof TextInput;
+  select: typeof Select;
+  input9: typeof TextInput;
+  birthdate: typeof TextInput;
   input7: typeof TextInput;
   input19: typeof TextInput;
   input20: typeof TextInput;
@@ -8723,7 +9201,7 @@ type NodeDefaultElementType = {
   state: typeof Select;
   city: typeof Select;
   input24: typeof TextInput;
-  input12: typeof TextInput;
+  input25: typeof TextInput;
   loading: typeof Loading;
 };
 
@@ -8792,7 +9270,11 @@ export const PlasmicInscricao = Object.assign(
     toastProvider: makeNodeComponent("toastProvider"),
     formProvider: makeNodeComponent("formProvider"),
     input3: makeNodeComponent("input3"),
+    formFieldGroup: makeNodeComponent("formFieldGroup"),
     input6: makeNodeComponent("input6"),
+    select: makeNodeComponent("select"),
+    input9: makeNodeComponent("input9"),
+    birthdate: makeNodeComponent("birthdate"),
     input7: makeNodeComponent("input7"),
     input19: makeNodeComponent("input19"),
     input20: makeNodeComponent("input20"),
@@ -8802,7 +9284,7 @@ export const PlasmicInscricao = Object.assign(
     state: makeNodeComponent("state"),
     city: makeNodeComponent("city"),
     input24: makeNodeComponent("input24"),
-    input12: makeNodeComponent("input12"),
+    input25: makeNodeComponent("input25"),
     loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao

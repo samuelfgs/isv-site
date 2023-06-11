@@ -253,9 +253,26 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__fYk58
                     )}
                   >
-                    {
-                      "Iremos celebrar os 20 anos de Adoração e Discipulado. \nE você não pode ficar fora dessa! \nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
-                    }
+                    <React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontWeight: 700 }}
+                      >
+                        {"20 anos de Adoração e Discipulado. "}
+                      </span>
+                      <React.Fragment>{"\n"}</React.Fragment>
+                      <span
+                        className={"plasmic_default__all plasmic_default__span"}
+                        style={{ fontStyle: "italic" }}
+                      >
+                        {"Você não pode ficar fora dessa!"}
+                      </span>
+                      <React.Fragment>
+                        {
+                          "\nVamos juntos celebrar a Deus pelo que Ele tem feito em nosso meio."
+                        }
+                      </React.Fragment>
+                    </React.Fragment>
                   </div>
                 </p.Stack>
               ) : null}
