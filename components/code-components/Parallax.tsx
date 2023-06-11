@@ -72,7 +72,7 @@ function Image({palest, id, progress, left}: any) {
     }
   }, [ref, progress]);
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
-    <h1 ref={title} style={{color: "black"}}>{palest.name}</h1>
+    <h1 ref={title} style={{color: "black", textAlign: "center"}}>{palest.name}</h1>
     <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
     <p style={{padding: 20, color: "black", textAlign: "center" }} ref={desc}>{palest.desc}</p>
   </div>
@@ -141,12 +141,15 @@ export function Participantes() {
                 <div style={{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", height: "100%"}}>
                   {(() => {
                     const total = 0.9;
-                    const part = 0.9/5;
+                    const first = 0.1;
+                    const part = (total-first)/5;
+                    let left = 0;
                     for (let i = 0; i < palestrantes.length; i++) {
-                      const p = (i+1)*part;
-                      if (progress < p) {
-                        return <Image palest={palestrantes[i]} progress={calcProgress(progress, p-part, p)} left={i%2?true:false}/>
+                      const right = left + part + (i === 0 ? first : 0);
+                      if (progress < right) {
+                        return <Image palest={palestrantes[i]} progress={calcProgress(progress, left, right)} left={i%2?true:false}/>
                       }
+                      left = right;
                     }
                     console.log("dale2", progress);
                     return <Voce progress={calcProgress(progress, total, 1)} />
