@@ -333,6 +333,77 @@ function PlasmicTextInput__RenderFunc(props: {
             e.target.value
           );
         }}
+        onKeyDown={async event => {
+          const $steps = {};
+          $steps["runOnBlur"] =
+            event.keyCode === 13
+              ? (() => {
+                  const actionArgs = {
+                    eventRef: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "invokeEventHandler",
+                        interactionUuid: "6o7CVnLvb",
+                        componentUuid: "nehhorfRRWX",
+                        argName: "eventRef"
+                      },
+                      () => $props["onBlur"]
+                    ),
+                    args: __wrapUserFunction(
+                      {
+                        type: "InteractionArgLoc",
+                        actionName: "invokeEventHandler",
+                        interactionUuid: "6o7CVnLvb",
+                        componentUuid: "nehhorfRRWX",
+                        argName: "args"
+                      },
+                      () => [
+                        (() => {
+                          try {
+                            return event;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()
+                      ]
+                    )
+                  };
+                  return __wrapUserFunction(
+                    {
+                      type: "InteractionLoc",
+                      actionName: "invokeEventHandler",
+                      interactionUuid: "6o7CVnLvb",
+                      componentUuid: "nehhorfRRWX"
+                    },
+                    () =>
+                      (({ eventRef, args }) => {
+                        return eventRef?.(...(args ?? []));
+                      })?.apply(null, [actionArgs]),
+                    actionArgs
+                  );
+                })()
+              : undefined;
+          if (
+            typeof $steps["runOnBlur"] === "object" &&
+            typeof $steps["runOnBlur"].then === "function"
+          ) {
+            $steps["runOnBlur"] = await __wrapUserPromise(
+              {
+                type: "InteractionLoc",
+                actionName: "invokeEventHandler",
+                interactionUuid: "6o7CVnLvb",
+                componentUuid: "nehhorfRRWX"
+              },
+              $steps["runOnBlur"]
+            );
+          }
+        }}
         placeholder={args.placeholder}
         ref={ref => {
           $refs["input"] = ref;

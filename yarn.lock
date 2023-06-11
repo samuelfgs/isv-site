@@ -4728,6 +4728,13 @@ term-size@^2.1.0:
   resolved "https://registry.yarnpkg.com/term-size/-/term-size-2.2.1.tgz#2a6a54840432c2fb6320fea0f415531e90189f54"
   integrity sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==
 
+test_antd5@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/test_antd5/-/test_antd5-1.0.1.tgz#7a5fd96cb1ef97297a17c275c56cb7211b0d2180"
+  integrity sha512-yRMzlJuhkuLLv6ocMGTghLjna4Mg3AidPGV136ugrXxqRZAxzDQrPpv0omKsxfew2xeWpI/Z9YNe2qgXg/5SVg==
+  dependencies:
+    antd "^5.1.6"
+
 text-hex@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/text-hex/-/text-hex-1.0.0.tgz#69dc9c1b17446ee79a92bf5b884bb4b9127506f5"

@@ -14,9 +14,15 @@ import { registerParallax } from '@/components/code-components/Parallax';
 import { registerVideo } from '@/components/code-components/Video';
 import { registerFormProvider } from '@/components/code-components/FormProvider';
 import { registerParticipantes } from '@/components/code-components/Participantes';
+import { registerForm, registerFormGroup, registerFormItem } from 'test_antd5';
 registerParallax();
 registerVideo();
 registerFormProvider();
+
+// registerForm();
+// registerFormGroup();
+// registerFormItem();
+
 // registerParticipantes();
 
 export default function PlasmicHost() {
