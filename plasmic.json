@@ -485,7 +485,13 @@
           "id": "gzu14pntqz",
           "name": "FormProvider",
           "displayName": "Form Provider",
-          "componentImportPath": "./components/code-components/FormProvider"
+          "componentImportPath": "./components/code-components/Providers"
+        },
+        {
+          "id": "v7imNFPsGC",
+          "name": "ToastProvider",
+          "displayName": "Toast Provider",
+          "componentImportPath": "./components/code-components/Providers"
         }
       ]
     },

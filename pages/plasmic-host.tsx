@@ -12,12 +12,12 @@ import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/react-web/lib/
 
 import { registerParallax } from '@/components/code-components/Parallax';
 import { registerVideo } from '@/components/code-components/Video';
-import { registerFormProvider } from '@/components/code-components/FormProvider';
+import { registerProviders } from '@/components/code-components/Providers';
 import { registerParticipantes } from '@/components/code-components/Participantes';
 import { registerForm, registerFormGroup, registerFormItem } from 'test_antd5';
 registerParallax();
 registerVideo();
-registerFormProvider();
+registerProviders();
 
 // registerForm();
 // registerFormGroup();

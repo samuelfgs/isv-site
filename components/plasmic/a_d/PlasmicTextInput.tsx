@@ -326,12 +326,28 @@ function PlasmicTextInput__RenderFunc(props: {
         disabled={
           hasVariant($state, "isDisabled", "isDisabled") ? true : undefined
         }
+        inputMode={(() => {
+          try {
+            return $props.type === "number" ? "numeric" : undefined;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
         name={args.name}
         onBlur={args.onBlur}
         onChange={e => {
+          const value = e.target.value;
+          const fvalue = value.replace(/\D/g, "");
           p.generateStateOnChangeProp($state, ["input", "value"])(
-            e.target.value
+            fvalue
           );
+          $state.value = fvalue
         }}
         onKeyDown={async event => {
           const $steps = {};
@@ -360,6 +376,7 @@ function PlasmicTextInput__RenderFunc(props: {
                       () => [
                         (() => {
                           try {
+                            debugger;
                             return event;
                           } catch (e) {
                             if (
@@ -404,12 +421,37 @@ function PlasmicTextInput__RenderFunc(props: {
             );
           }
         }}
+        pattern={(() => {
+          try {
+            return $props.type === "number" ? "[0-9]*" : undefined;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
         placeholder={args.placeholder}
         ref={ref => {
           $refs["input"] = ref;
         }}
         required={args.required}
-        type={args.type}
+        type={(() => {
+          try {
+            return $props.type === "number" ? "text" : $props.type;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return undefined;
+            }
+            throw e;
+          }
+        })()}
         value={p.generateStateValueProp($state, ["input", "value"]) ?? ""}
       />
 

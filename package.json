@@ -32,6 +32,7 @@
     "react-scroll-parallax": "^3.4.2",
     "react-scrollmagic": "^2.3.0",
     "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.3",
     "slick-carousel": "^1.8.1",
     "test_antd5": "^1.0.1",
     "typescript": "5.1.3"

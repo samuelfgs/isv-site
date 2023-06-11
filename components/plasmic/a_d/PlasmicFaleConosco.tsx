@@ -44,7 +44,7 @@ import {
 } from "@plasmicapp/react-web";
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: TgJFzUZpvQ/codeComponent
-import { FormProvider } from "../../code-components/FormProvider"; // plasmic-import: gzu14pntqz/codeComponent
+import { FormProvider } from "../../code-components/Providers"; // plasmic-import: gzu14pntqz/codeComponent
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: EYHwZh9ILg/codeComponent
 import TextInput from "../../TextInput"; // plasmic-import: nehhorfRRWX/component
 import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: pTzGlMptTxd/codeComponent

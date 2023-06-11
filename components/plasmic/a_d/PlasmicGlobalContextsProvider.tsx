@@ -113,7 +113,7 @@ export default function GlobalContextsProvider(
         css={
           embedCssProps && "css" in embedCssProps
             ? embedCssProps.css!
-            : (".ant-input-number-input, .ant-input {\n    color: black !important\n}\n\n.ant-form-item .ant-form-item-label > label {\n    height: 100%\n}" as const)
+            : (".ant-input-number-input, .ant-input {\n    color: black !important\n}\n\n.ant-form-item .ant-form-item-label > label {\n    height: 100%\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number] {\n  -moz-appearance: textfield;\n}" as const)
         }
       >
         {children}
