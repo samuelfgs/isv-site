@@ -16,7 +16,7 @@
       calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
     )
     minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  padding: 0px;
+  padding: 30px 0px 0px;
 }
 :where(.root > *) {
   grid-column: 4;
@@ -31,6 +31,7 @@
   width: 100%;
   grid-column-start: 1;
   grid-column-end: -1;
+  display: none;
 }
 .freeBox__kUlCm {
   display: flex;

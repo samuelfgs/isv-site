@@ -139,12 +139,13 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <ResponsiveMenu
-            data-plasmic-name={"responsiveMenu"}
-            data-plasmic-override={overrides.responsiveMenu}
-            className={classNames("__wab_instance", sty.responsiveMenu)}
-          />
-
+          {true ? (
+            <ResponsiveMenu
+              data-plasmic-name={"responsiveMenu"}
+              data-plasmic-override={overrides.responsiveMenu}
+              className={classNames("__wab_instance", sty.responsiveMenu)}
+            />
+          ) : null}
           {true ? (
             <p.Stack
               as={"div"}
