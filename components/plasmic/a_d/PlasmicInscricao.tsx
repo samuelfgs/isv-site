@@ -979,8 +979,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 city: data.localidade,
                                                                 state: data.uf
                                                               };
-                                                            return ($state.isLoading =
-                                                              false);
+                                                            return setTimeout(
+                                                              () => {
+                                                                return ($state.isLoading =
+                                                                  false);
+                                                              },
+                                                              2000
+                                                            );
                                                           } catch {
                                                             return ($state.isLoading =
                                                               false);
