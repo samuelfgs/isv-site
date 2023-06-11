@@ -14,11 +14,11 @@ const palestrantes = [
   },
   {
     name: "Asaph Borba",
-    desc: `Asaph Borba é um músico e ministro de adoração brasileiro que por muitos anos tem ministrado sevido a Igreja brasileira e internacional. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
+    desc: `Músico e ministro de adoração brasileiro que por muitos anos tem ministrado sevido a Igreja brasileira e internacional. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
   },
   {
     name: "Daniel Souza",
-    desc: `Daniel Souza é um ministro de louvor que tem servido a Igreja desde o início dos anos 90. Juntamente com a sua esposa Selma, fundou a iSV sendo discipulado por Jan Gottfridsson e Asaph Borba e trabalhando com ênfase na formação de discípulos para o Senhor Jesus, na cidade de São Vicente.`
+    desc: `Ministro de louvor que tem servido a Igreja desde o início dos anos 90. Juntamente com a sua esposa Selma, fundou a iSV sendo discipulado por Jan Gottfridsson e Asaph Borba e trabalhando com ênfase na formação de discípulos para o Senhor Jesus, na cidade de São Vicente.`
   },
   {
     name: "Jan Gottfridson",
@@ -26,7 +26,7 @@ const palestrantes = [
   },
   {
     name: "Morada",
-    desc: `O Morada é uma banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
+    desc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
   },
 ]
 const calcProgress = (currentProgress: number, left: number, right: number) =>
