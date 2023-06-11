@@ -40,6 +40,10 @@ import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh
 import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
+import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
+import Palestrante from "../../Palestrante"; // plasmic-import: 5UuQ-pHvfY/component
+
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -64,12 +68,12 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   separator?: p.Flex<"div">;
   separator2?: p.Flex<"div">;
   htmlVideo?: p.Flex<typeof Video>;
   button?: p.Flex<typeof Button>;
   participantes?: p.Flex<typeof Participantes>;
+  palestrantesData?: p.Flex<typeof PalestrantesData>;
 };
 
 export interface DefaultHomepageProps {}
@@ -110,6 +114,10 @@ function PlasmicHomepage__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
+
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsdu4QaJy8Zhmfq()
+  });
 
   return (
     <React.Fragment>
@@ -153,10 +161,8 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.freeBox__kUlCm)}
             >
               <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
                 alt={""}
-                className={classNames(sty.img)}
+                className={classNames(sty.img___1S6OG)}
                 displayHeight={"auto" as const}
                 displayMaxHeight={"none" as const}
                 displayMaxWidth={"80%" as const}
@@ -270,7 +276,13 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"FAÇA SUA INSCRIÇÃO"}
                 </div>
               </Button>
-              {true ? (
+              {(
+                hasVariant(globalVariants, "screen", "desktop")
+                  ? true
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? true
+                  : true
+              ) ? (
                 <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
                   <Participantes
                     data-plasmic-name={"participantes"}
@@ -278,6 +290,257 @@ function PlasmicHomepage__RenderFunc(props: {
                     className={classNames("__wab_instance", sty.participantes)}
                   />
                 </div>
+              ) : null}
+              {(
+                hasVariant(globalVariants, "screen", "desktop")
+                  ? true
+                  : hasVariant(globalVariants, "screen", "tablet")
+                  ? true
+                  : true
+              ) ? (
+                <PalestrantesData
+                  data-plasmic-name={"palestrantesData"}
+                  data-plasmic-override={overrides.palestrantesData}
+                  className={classNames("__wab_instance", sty.palestrantesData)}
+                >
+                  <ph.DataCtxReader>
+                    {$ctx =>
+                      true ? (
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__x3T27
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__aQ01E
+                            )}
+                          >
+                            {"Palestrantes"}
+                          </div>
+                          {true ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___9ZBgO
+                              )}
+                            >
+                              {(
+                                (() => {
+                                  try {
+                                    return $ctx.palestrantes.slice(0, 3);
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })() ?? []
+                              ).map((currentItem, currentIndex) => (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__z7E7A
+                                  )}
+                                  key={currentIndex}
+                                >
+                                  <Palestrante
+                                    className={classNames(
+                                      "__wab_instance",
+                                      sty.palestrante___9VLy5
+                                    )}
+                                    slot={
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return currentItem.name;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "Adhemar de Campos";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    }
+                                    slot2={
+                                      <React.Fragment>
+                                        {(() => {
+                                          try {
+                                            return currentItem.shortDesc;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                                "PlasmicUndefinedDataError"
+                                            ) {
+                                              return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
+                                            }
+                                            throw e;
+                                          }
+                                        })()}
+                                      </React.Fragment>
+                                    }
+                                  >
+                                    <p.PlasmicImg
+                                      alt={""}
+                                      className={classNames(sty.img___7Wu7N)}
+                                      displayHeight={"100%" as const}
+                                      displayMaxHeight={"none" as const}
+                                      displayMaxWidth={"100%" as const}
+                                      displayMinHeight={"0" as const}
+                                      displayMinWidth={"0" as const}
+                                      displayWidth={"200px" as const}
+                                      loading={"lazy" as const}
+                                      src={(() => {
+                                        try {
+                                          return `/${currentItem.name}.png`;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    />
+                                  </Palestrante>
+                                </div>
+                              ))}
+                            </div>
+                          ) : null}
+                          {true ? (
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__heIkn
+                              )}
+                            >
+                              {true ? (
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__ndmSt
+                                  )}
+                                >
+                                  {(
+                                    (() => {
+                                      try {
+                                        return $ctx.palestrantes.slice(3);
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return [];
+                                        }
+                                        throw e;
+                                      }
+                                    })() ?? []
+                                  ).map((currentItem, currentIndex) => (
+                                    <div
+                                      className={classNames(
+                                        projectcss.all,
+                                        sty.freeBox__u69OZ
+                                      )}
+                                      key={currentIndex}
+                                    >
+                                      <Palestrante
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.palestrante___2QivX
+                                        )}
+                                        slot={
+                                          <React.Fragment>
+                                            {(() => {
+                                              try {
+                                                return currentItem.name;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return "Adhemar de Campos";
+                                                }
+                                                throw e;
+                                              }
+                                            })()}
+                                          </React.Fragment>
+                                        }
+                                        slot2={
+                                          <React.Fragment>
+                                            {(() => {
+                                              try {
+                                                return currentItem.shortDesc;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                    "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
+                                                }
+                                                throw e;
+                                              }
+                                            })()}
+                                          </React.Fragment>
+                                        }
+                                      >
+                                        <p.PlasmicImg
+                                          alt={""}
+                                          className={classNames(
+                                            sty.img___1CQcI
+                                          )}
+                                          displayHeight={"100%" as const}
+                                          displayMaxHeight={"none" as const}
+                                          displayMaxWidth={"100%" as const}
+                                          displayMinHeight={"0" as const}
+                                          displayMinWidth={"0" as const}
+                                          displayWidth={"200px" as const}
+                                          loading={"lazy" as const}
+                                          src={(() => {
+                                            try {
+                                              return `/${currentItem.name}.png`;
+                                            } catch (e) {
+                                              if (
+                                                e instanceof TypeError ||
+                                                e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                              ) {
+                                                return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                                              }
+                                              throw e;
+                                            }
+                                          })()}
+                                        />
+                                      </Palestrante>
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : null}
+                            </div>
+                          ) : null}
+                        </div>
+                      ) : null
+                    }
+                  </ph.DataCtxReader>
+                </PalestrantesData>
               ) : null}
             </p.Stack>
           ) : null}
@@ -291,20 +554,20 @@ const PlasmicDescendants = {
   root: [
     "root",
     "responsiveMenu",
-    "img",
     "separator",
     "separator2",
     "htmlVideo",
     "button",
-    "participantes"
+    "participantes",
+    "palestrantesData"
   ],
   responsiveMenu: ["responsiveMenu"],
-  img: ["img"],
   separator: ["separator"],
   separator2: ["separator2"],
   htmlVideo: ["htmlVideo"],
   button: ["button"],
-  participantes: ["participantes"]
+  participantes: ["participantes"],
+  palestrantesData: ["palestrantesData"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -312,12 +575,12 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
-  img: typeof p.PlasmicImg;
   separator: "div";
   separator2: "div";
   htmlVideo: typeof Video;
   button: typeof Button;
   participantes: typeof Participantes;
+  palestrantesData: typeof PalestrantesData;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -381,12 +644,12 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
-    img: makeNodeComponent("img"),
     separator: makeNodeComponent("separator"),
     separator2: makeNodeComponent("separator2"),
     htmlVideo: makeNodeComponent("htmlVideo"),
     button: makeNodeComponent("button"),
     participantes: makeNodeComponent("participantes"),
+    palestrantesData: makeNodeComponent("palestrantesData"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

@@ -13,9 +13,12 @@ import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/react-web/lib/
 import { registerParallax } from '@/components/code-components/Parallax';
 import { registerVideo } from '@/components/code-components/Video';
 import { registerFormProvider } from '@/components/code-components/FormProvider';
+import { registerParticipantes } from '@/components/code-components/Participantes';
 registerParallax();
 registerVideo();
 registerFormProvider();
+// registerParticipantes();
+
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
 }

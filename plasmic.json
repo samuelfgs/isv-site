@@ -281,6 +281,19 @@
           "cssFilePath": "plasmic/a_d/PlasmicDots.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "PXPe8ME1DQ",
+          "name": "PalestrantesData",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicPalestrantesData.tsx",
+          "importSpec": {
+            "modulePath": "PalestrantesData.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicPalestrantesData.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -395,6 +408,11 @@
           "id": "kXLoQ1EcI",
           "name": "WhatsApp Image 2023-06-09 at 23.21.16.jpeg",
           "filePath": "../public/plasmic/a_d/images/whatsAppImage20230609At232116Jpeg.jpg"
+        },
+        {
+          "id": "T2kguMllV",
+          "name": "WhatsApp Image 2023-06-11 at 00.06.37.jpeg",
+          "filePath": "../public/plasmic/a_d/images/whatsAppImage20230611At000637Jpeg.jpg"
         }
       ],
       "indirect": false,

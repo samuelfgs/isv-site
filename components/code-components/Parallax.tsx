@@ -6,29 +6,8 @@ import { Tween, Timeline, PlayState } from "my-react-gsap";
 import { gsap } from "gsap";
 import { Button } from "antd";
 import { registerComponent, usePlasmicCanvasContext } from "@plasmicapp/react-web/lib/host";
+import { data as palestrantes } from "./Participantes";
 
-const palestrantes = [
-  {
-    name: "Adhemar de Campos",
-    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
-  },
-  {
-    name: "Asaph Borba",
-    desc: `Músico e ministro de adoração brasileiro que por muitos anos tem ministrado sevido a Igreja brasileira e internacional. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
-  },
-  {
-    name: "Daniel Souza",
-    desc: `Ministro de louvor que tem servido a Igreja desde o início dos anos 90. Juntamente com a sua esposa Selma, fundou a iSV sendo discipulado por Jan Gottfridsson e Asaph Borba e trabalhando com ênfase na formação de discípulos para o Senhor Jesus, na cidade de São Vicente.`
-  },
-  {
-    name: "Jan Gottfridson",
-    desc: "Jan, como é chamado pelos íntimos, é um dos pastores da Igreja em Porto Alegre e um dos pais da iSV, junto com Asaph Borba. São mais de 30 anos de pastoreio e cuidado."
-  },
-  {
-    name: "Morada",
-    desc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
-  },
-]
 const calcProgress = (currentProgress: number, left: number, right: number) =>
   currentProgress < left
     ? 0
@@ -74,7 +53,7 @@ function Image({palest, id, progress, left}: any) {
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
     <h1 ref={title} style={{color: "black", textAlign: "center"}}>{palest.name}</h1>
     <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
-    <p style={{padding: 20, color: "black", textAlign: "center" }} ref={desc}>{palest.desc}</p>
+    <p style={{padding: 20, color: "black", textAlign: "center" }} ref={desc}>{palest.shortDesc}</p>
   </div>
 }
 
