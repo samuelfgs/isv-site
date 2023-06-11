@@ -820,7 +820,6 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       },
                                                       () => () => {
                                                         return (() => {
-                                                          console.log("dale3", event.target.value);
                                                           const cep =
                                                             event.target.value;
                                                           if (!cep) {
@@ -930,7 +929,6 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               1000
                                                             );
                                                           } catch {
-                                                            console.log("dale34");
                                                             return ($state.isLoading =
                                                               false);
                                                           }
@@ -987,6 +985,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                             )
                                           );
                                         }}
+                                        type={"number" as const}
                                         value={
                                           p.generateStateValueProp($state, [
                                             "input19",
@@ -1088,6 +1087,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                 )
                                               );
                                             }}
+                                            type={"number" as const}
                                             value={
                                               p.generateStateValueProp($state, [
                                                 "input10",
