@@ -93,11 +93,11 @@ export default function GlobalContextsProvider(
           ? antdConfigProviderProps.themeStyles!
           : true
           ? {
-              fontFamily: "Gotham Thin",
+              fontFamily: "Montserrat",
               fontSize: "16px",
               fontWeight: "400",
               lineHeight: "1.5",
-              color: "#F9F9F8",
+              color: "#1C1C1A",
               letterSpacing: "normal"
             }
           : undefined

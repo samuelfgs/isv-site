@@ -233,15 +233,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   </div>
                 </p.Stack>
               ) : null}
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__j4F9
-                )}
-              >
-                {"VOCE FAZ PARTE DISSO!"}
-              </div>
               <Video
                 data-plasmic-name={"htmlVideo"}
                 data-plasmic-override={overrides.htmlVideo}
@@ -253,6 +244,15 @@ function PlasmicHomepage__RenderFunc(props: {
                 src={"https://isv-site.vercel.app/video.mp4" as const}
               />
 
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__j4F9
+                )}
+              >
+                {"VOCE FAZ PARTE DISSO!"}
+              </div>
               <Button
                 data-plasmic-name={"button"}
                 data-plasmic-override={overrides.button}

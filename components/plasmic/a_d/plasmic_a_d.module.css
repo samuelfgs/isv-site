@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inika%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inika%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
 
 .plasmic_tokens {
   --token-jDfhDP0rJ: var(--token-adNUy7KO6cCMv);
@@ -20,11 +20,11 @@
 }
 
 .plasmic_default_styles {
-  --mixin-1CHSu2wZ7SPcs_font-family: "Gotham Thin";
+  --mixin-1CHSu2wZ7SPcs_font-family: "Montserrat", sans-serif;
   --mixin-1CHSu2wZ7SPcs_font-size: 16px;
   --mixin-1CHSu2wZ7SPcs_font-weight: 400;
   --mixin-1CHSu2wZ7SPcs_font-style: normal;
-  --mixin-1CHSu2wZ7SPcs_color: var(--token-jDfhDP0rJ);
+  --mixin-1CHSu2wZ7SPcs_color: var(--token-OUN95h6v6);
   --mixin-1CHSu2wZ7SPcs_text-align: left;
   --mixin-1CHSu2wZ7SPcs_text-transform: none;
   --mixin-1CHSu2wZ7SPcs_line-height: 1.5;
