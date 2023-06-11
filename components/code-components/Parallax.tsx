@@ -1,5 +1,5 @@
-import { useInView } from "@react-spring/web";
 import React from "react";
+import { useInView } from "@react-spring/web";
 import styles from  "../plasmic/page.module.css";
 import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline, PlayState } from "my-react-gsap";
@@ -7,6 +7,28 @@ import { gsap } from "gsap";
 import { Button } from "antd";
 import { registerComponent, usePlasmicCanvasContext } from "@plasmicapp/react-web/lib/host";
 
+const palestrantes = [
+  {
+    name: "Adhemar de Campos",
+    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`
+  },
+  {
+    name: "Asaph Borba",
+    desc: `Asaph Borba é um músico e ministro de adoração brasileiro que por muitos anos tem ministrado por todo o Brasil e outros países em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus, que se tornaram parte da hinologia cristã nacional, entre eles, Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza, e muitos outros gravados por vários ministérios nacionais e internacionais. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação nos anos 90.`
+  },
+  {
+    name: "Daniel Souza",
+    desc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`
+  },
+  {
+    name: "Jan Gottfridson",
+    desc: ""
+  },
+  {
+    name: "Morada",
+    desc: `O Morada é uma banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. Com pouco mais de 10 anos de estrada, o ministério tem alcançado cada vez mais um público diversificado desde crianças aos mais velhos, proporcionando assim, momentos intensos e alegres entre as famílias por onde tem passado. Isso se deve à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som que tocou a todos.`
+  },
+]
 const calcProgress = (currentProgress: number, left: number, right: number) =>
   currentProgress < left
     ? 0
@@ -14,7 +36,7 @@ const calcProgress = (currentProgress: number, left: number, right: number) =>
     ? 1
     : (currentProgress - left) / (right - left);
   
-function Image({name, id, progress, left}: any) {
+function Image({palest, id, progress, left}: any) {
   const ref = React.useRef<any>();
   const title = React.useRef<any>();
   const desc = React.useRef<any>();
@@ -50,9 +72,9 @@ function Image({name, id, progress, left}: any) {
     }
   }, [ref, progress]);
   return <div style={{display: "flex", alignItems: "center", flexDirection:  "column"}}>
-    <h1 ref={title} style={{color: "white"}}>{name}</h1>
-    <img className="image" src={`/${name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
-    <p style={{padding: 20, color: "white" }} ref={desc}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+    <h1 ref={title} style={{color: "white"}}>{palest.name}</h1>
+    <img className="image" src={`/${palest.name}.png`} style={{ width: 300, height: 300 }} ref={ref} />
+    <p style={{padding: 20, color: "white" }} ref={desc}>{palest.desc}</p>
   </div>
 }
 
@@ -118,13 +140,12 @@ export function Participantes() {
                 </div>
                 <div style={{display: "flex", alignItems: "center", flexDirection: "column", justifyContent: "center", height: "100%"}}>
                   {(() => {
-                    const names = ["Adhemar de Campos", "Asaph Borba", "Daniel Souza", "Jan Gottfridson", "Morada"];
                     const total = 0.9;
                     const part = 0.9/5;
-                    for (let i = 0; i < 5; i++) {
+                    for (let i = 0; i < palestrantes.length; i++) {
                       const p = (i+1)*part;
                       if (progress < p) {
-                        return <Image name={names[i]} progress={calcProgress(progress, p-part, p)} left={i%2?true:false}/>
+                        return <Image palest={palestrantes[i]} progress={calcProgress(progress, p-part, p)} left={i%2?true:false}/>
                       }
                     }
                     console.log("dale2", progress);

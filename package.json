@@ -11,7 +11,9 @@
   "dependencies": {
     "@plasmicapp/cli": "^0.1.289",
     "@plasmicapp/react-web": "^0.2.222",
+    "@plasmicpkgs/antd5": "^0.0.82",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.158",
+    "@plasmicpkgs/plasmic-embed-css": "^0.1.133",
     "@react-spring/parallax": "^9.7.2",
     "@react-spring/web": "^9.7.2",
     "@types/node": "20.2.5",
@@ -29,6 +31,8 @@
     "react-hook-inview": "^4.5.0",
     "react-scroll-parallax": "^3.4.2",
     "react-scrollmagic": "^2.3.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "typescript": "5.1.3"
   }
 }

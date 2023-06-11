@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inika%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700&family=Inika%3Aital%2Cwght%400%2C400%3B0%2C700&display=swap");
 
 .plasmic_tokens {
   --token-jDfhDP0rJ: var(--token-adNUy7KO6cCMv);
   --plasmic-token-primary: var(--token-jDfhDP0rJ);
   --token-OUN95h6v6: var(--token-4eqX2ql80uT8R);
   --plasmic-token-secondary: var(--token-OUN95h6v6);
+  --token-uYlbgJ5Hu: 200px;
+  --plasmic-token-form-min-width: var(--token-uYlbgJ5Hu);
 }
 
 .plasmic_tokens {
@@ -18,7 +20,7 @@
 }
 
 .plasmic_default_styles {
-  --mixin-1CHSu2wZ7SPcs_font-family: "Inter", sans-serif;
+  --mixin-1CHSu2wZ7SPcs_font-family: "Gotham Thin";
   --mixin-1CHSu2wZ7SPcs_font-size: 16px;
   --mixin-1CHSu2wZ7SPcs_font-weight: 400;
   --mixin-1CHSu2wZ7SPcs_font-style: normal;
@@ -43,7 +45,7 @@
   --mixin-S5BBox-VkiQUq_letter-spacing: -0.5px;
   --mixin-S5BBox-VkiQUq_line-height: 1.1;
   --mixin-S5BBox-VkiQUq_white-space: pre-wrap;
-  --mixin-OgRJBWtchO_5f_color: #0070f3;
+  --mixin-OgRJBWtchO_5f_color: var(--token-jDfhDP0rJ);
   --mixin-OgRJBWtchO_5f_white-space: pre-wrap;
   --mixin-85qq_YrkR9jIc_color: #000000;
   --mixin-85qq_YrkR9jIc_font-size: 32px;
@@ -135,7 +137,7 @@
   --mixin-zL6YFg2xa8FGp_font-weight: 600;
   --mixin-zL6YFg2xa8FGp_line-height: 1.5;
   --mixin-zL6YFg2xa8FGp_white-space: pre-wrap;
-  --mixin-BSI_74schePq8_color: #3291ff;
+  --mixin-BSI_74schePq8_color: var(--token-jDfhDP0rJ);
   --mixin-BSI_74schePq8_white-space: pre-wrap;
   --mixin-W_KuFbpVDB_Yc_white-space: pre-wrap;
   --mixin-RKYS-4umQz8k3_white-space: pre-wrap;

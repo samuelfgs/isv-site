@@ -36,13 +36,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Video from "../../code-components/Video"; // plasmic-import: Ly9pk7wsNY/codeComponent
+import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
+import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic_kit_q_4_color_tokens/plasmic_copy_of_plasmic_kit_q_4_color_tokens.module.css"; // plasmic-import: r6wqTHP8pUBDqvkAaarh3E/projectcss
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
@@ -61,6 +63,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
+  responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   img?: p.Flex<typeof p.PlasmicImg>;
   separator?: p.Flex<"div">;
   separator2?: p.Flex<"div">;
@@ -131,134 +134,151 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
             sty.root
           )}
         >
-          <p.PlasmicImg
-            data-plasmic-name={"img"}
-            data-plasmic-override={overrides.img}
-            alt={""}
-            className={classNames(sty.img)}
-            displayHeight={"auto" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"80%" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"auto" as const}
-            loading={"lazy" as const}
-            src={{
-              src: "/plasmic/a_d/images/ad20AnosIcon21Png.png",
-              fullWidth: 3666,
-              fullHeight: 2547,
-              aspectRatio: undefined
-            }}
+          <ResponsiveMenu
+            data-plasmic-name={"responsiveMenu"}
+            data-plasmic-override={overrides.responsiveMenu}
+            className={classNames("__wab_instance", sty.responsiveMenu)}
           />
 
           {true ? (
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__sMAat)}
+              className={classNames(projectcss.all, sty.freeBox__kUlCm)}
             >
-              <div className={classNames(projectcss.all, sty.freeBox__rsBg)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__zdrmp
-                  )}
-                >
-                  {"20"}
-                </div>
-                <div
-                  data-plasmic-name={"separator"}
-                  data-plasmic-override={overrides.separator}
-                  className={classNames(projectcss.all, sty.separator)}
-                />
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"80%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/a_d/images/ad20AnosIcon21Png.png",
+                  fullWidth: 3666,
+                  fullHeight: 2547,
+                  aspectRatio: undefined
+                }}
+              />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text___5P1Yn
-                  )}
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__sMAat)}
                 >
-                  {"21"}
-                </div>
-                <div
-                  data-plasmic-name={"separator2"}
-                  data-plasmic-override={overrides.separator2}
-                  className={classNames(projectcss.all, sty.separator2)}
-                />
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__rsBg)}
+                  >
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zdrmp
+                      )}
+                    >
+                      {"20"}
+                    </div>
+                    <div
+                      data-plasmic-name={"separator"}
+                      data-plasmic-override={overrides.separator}
+                      className={classNames(projectcss.all, sty.separator)}
+                    />
 
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__hmeKq
-                  )}
-                >
-                  {"OUT"}
-                </div>
-              </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text___5P1Yn
+                      )}
+                    >
+                      {"21"}
+                    </div>
+                    <div
+                      data-plasmic-name={"separator2"}
+                      data-plasmic-override={overrides.separator2}
+                      className={classNames(projectcss.all, sty.separator2)}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__hmeKq
+                      )}
+                    >
+                      {"OUT"}
+                    </div>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__fYk58
+                    )}
+                  >
+                    {
+                      "Iremos celebrar os 20 anos de Adoração e Discipulado. \n\nE você não pode ficar fora dessa! \n\nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
+                    }
+                  </div>
+                </p.Stack>
+              ) : null}
               <div
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__fYk58
+                  sty.text__j4F9
                 )}
               >
-                {
-                  "Iremos celebrar os 20 anos de Adoração e Discipulado. \n\nE você não pode ficar fora dessa! \n\nJunto com outros irmãos e convidados especiais, estaremos celebrando e cultuando ao nosso Deus."
-                }
+                {"VOCE FAZ PARTE DISSO!"}
               </div>
-            </p.Stack>
-          ) : null}
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__j4F9
-            )}
-          >
-            {"VOCE FAZ PARTE DISSO!"}
-          </div>
-          <Video
-            data-plasmic-name={"htmlVideo"}
-            data-plasmic-override={overrides.htmlVideo}
-            autoPlay={true}
-            className={classNames("__wab_instance", sty.htmlVideo)}
-            controls={false}
-            loop={true}
-            muted={true}
-            src={"https://isv-site.vercel.app/video.mp4" as const}
-          />
-
-          <Button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames("__wab_instance", sty.button)}
-            color={"yellow" as const}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__kgx8Q
-              )}
-            >
-              {"FAÇA SUA INSCRIÇÃO"}
-            </div>
-          </Button>
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
-              <Participantes
-                data-plasmic-name={"participantes"}
-                data-plasmic-override={overrides.participantes}
-                className={classNames("__wab_instance", sty.participantes)}
+              <Video
+                data-plasmic-name={"htmlVideo"}
+                data-plasmic-override={overrides.htmlVideo}
+                autoPlay={true}
+                className={classNames("__wab_instance", sty.htmlVideo)}
+                controls={false}
+                loop={true}
+                muted={true}
+                src={"https://isv-site.vercel.app/video.mp4" as const}
               />
-            </div>
+
+              <Button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
+                color={"yellow" as const}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__kgx8Q
+                  )}
+                >
+                  {"FAÇA SUA INSCRIÇÃO"}
+                </div>
+              </Button>
+              {true ? (
+                <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
+                  <Participantes
+                    data-plasmic-name={"participantes"}
+                    data-plasmic-override={overrides.participantes}
+                    className={classNames("__wab_instance", sty.participantes)}
+                  />
+                </div>
+              ) : null}
+            </p.Stack>
           ) : null}
         </div>
       </div>
@@ -269,6 +289,7 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "responsiveMenu",
     "img",
     "separator",
     "separator2",
@@ -276,6 +297,7 @@ const PlasmicDescendants = {
     "button",
     "participantes"
   ],
+  responsiveMenu: ["responsiveMenu"],
   img: ["img"],
   separator: ["separator"],
   separator2: ["separator2"],
@@ -288,6 +310,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  responsiveMenu: typeof ResponsiveMenu;
   img: typeof p.PlasmicImg;
   separator: "div";
   separator2: "div";
@@ -356,6 +379,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    responsiveMenu: makeNodeComponent("responsiveMenu"),
     img: makeNodeComponent("img"),
     separator: makeNodeComponent("separator"),
     separator2: makeNodeComponent("separator2"),

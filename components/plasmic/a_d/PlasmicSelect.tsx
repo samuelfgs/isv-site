@@ -44,6 +44,7 @@ import Select__OptionGroup from "../../Select__OptionGroup"; // plasmic-import: 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic_kit_q_4_color_tokens/plasmic_copy_of_plasmic_kit_q_4_color_tokens.module.css"; // plasmic-import: r6wqTHP8pUBDqvkAaarh3E/projectcss
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
 import sty from "./PlasmicSelect.module.css"; // plasmic-import: lCsb7GpUU0b/css
@@ -172,7 +173,6 @@ function PlasmicSelect__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
-
   const $props = {
     ...args,
     ...variants
@@ -245,6 +245,7 @@ function PlasmicSelect__RenderFunc(props: {
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
           plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+          plasmic_antd_5_hostless_css.plasmic_tokens,
           plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
           sty.root,
           {

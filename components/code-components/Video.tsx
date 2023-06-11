@@ -30,7 +30,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
 export default Video;
 
 export const videoMeta: ComponentMeta<VideoProps> = {
-  name: "hostless-html-video",
+  name: "my-hostless-html-video",
   importName: "Video",
   displayName: "HTML Video",
   importPath: "./components/code-components/Video",
