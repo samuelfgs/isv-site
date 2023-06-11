@@ -164,7 +164,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 displayWidth={"auto" as const}
                 loading={"lazy" as const}
                 src={{
-                  src: "/plasmic/a_d/images/ad20AnosIcon21Png.png",
+                  src: "/plasmic/a_d/images/ad20AnosIcon211Png.png",
                   fullWidth: 3666,
                   fullHeight: 2547,
                   aspectRatio: undefined
