@@ -335,19 +335,6 @@
           "componentType": "page"
         },
         {
-          "id": "gH1v_XUMcl",
-          "name": "Test",
-          "type": "managed",
-          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
-          "renderModuleFilePath": "plasmic/a_d/PlasmicTest.tsx",
-          "importSpec": {
-            "modulePath": "../pages/test.tsx"
-          },
-          "cssFilePath": "plasmic/a_d/PlasmicTest.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "w_AtHBUrSY",
           "name": "RequiredField",
           "type": "managed",
@@ -496,6 +483,11 @@
           "id": "eRRtrb8kH",
           "name": "isv",
           "filePath": "../public/plasmic/a_d/images/isv.png"
+        },
+        {
+          "id": "UFwLlFAd-",
+          "name": "AD 20 ANOS - ICON2 (1) (1) (1) (1).png",
+          "filePath": "../public/plasmic/a_d/images/ad20AnosIcon21111Png.png"
         }
       ],
       "indirect": false,

@@ -203,7 +203,31 @@ function PlasmicFaleConosco__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <title key="title">{PlasmicFaleConosco.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicFaleConosco.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicFaleConosco.pageMetadata.title}
+        />
+
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicFaleConosco.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicFaleConosco.pageMetadata.ogImageSrc}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -877,9 +901,10 @@ export const PlasmicFaleConosco = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "AD20 - Fale Conosco",
       description: "",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
       canonical: ""
     }
   }

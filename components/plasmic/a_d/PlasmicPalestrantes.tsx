@@ -157,7 +157,20 @@ function PlasmicPalestrantes__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary" />
+        <title key="title">{PlasmicPalestrantes.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicPalestrantes.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicPalestrantes.pageMetadata.title}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -550,7 +563,7 @@ export const PlasmicPalestrantes = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "AD20 - Palestrantes",
       description: "",
       ogImageSrc: "",
       canonical: ""

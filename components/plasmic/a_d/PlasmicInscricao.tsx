@@ -324,7 +324,31 @@ function PlasmicInscricao__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <title key="title">{PlasmicInscricao.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicInscricao.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicInscricao.pageMetadata.title}
+        />
+
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicInscricao.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicInscricao.pageMetadata.ogImageSrc}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -10768,9 +10792,10 @@ export const PlasmicInscricao = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "AD20 - Inscricao",
       description: "",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
       canonical: ""
     }
   }

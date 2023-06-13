@@ -149,7 +149,31 @@ function PlasmicConferencia__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <Head></Head>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <title key="title">{PlasmicConferencia.pageMetadata.title}</title>
+        <meta
+          key="og:title"
+          property="og:title"
+          content={PlasmicConferencia.pageMetadata.title}
+        />
+        <meta
+          key="twitter:title"
+          name="twitter:title"
+          content={PlasmicConferencia.pageMetadata.title}
+        />
+
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicConferencia.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicConferencia.pageMetadata.ogImageSrc}
+        />
+      </Head>
 
       <style>{`
         body {
@@ -332,9 +356,10 @@ export const PlasmicConferencia = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "",
+      title: "AD20 - Conferência",
       description: "",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
       canonical: ""
     }
   }
