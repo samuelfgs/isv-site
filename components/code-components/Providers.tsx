@@ -27,6 +27,24 @@ export function ToastProvider(props: React.PropsWithChildren<{}>) {
   </DataProvider>
 }
 
+export function BreakpontProvider(props: React.PropsWithChildren<{}>) {
+  const [windowWidth, setWindowWidth] = React.useState(globalThis.innerWidth);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return <DataProvider data={windowWidth >= 1100 ? "Desktop" : windowWidth >= 641 ? "Tablet" : "Mobile"} name={"activeBreakpoint"}>
+    {props.children}
+  </DataProvider>
+}
+
 export function registerProviders() {
   registerComponent(FormProvider, {
     name: "Form Provider",
@@ -47,4 +65,14 @@ export function registerProviders() {
     importPath: "./components/code-components/Providers",
     importName: "ToastProvider"
   });
+  registerComponent(BreakpontProvider, {
+    name: "Breakpoint Provider",
+    providesData: true,
+    isAttachment: true,
+    props: {
+      children: "slot"
+    },
+    importPath: "./components/code-components/Providers",
+    importName: "BreakpontProvider"
+  })
 }

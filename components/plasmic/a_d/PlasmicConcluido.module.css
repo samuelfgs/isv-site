@@ -43,7 +43,7 @@
   grid-column-start: 3;
   grid-column-end: -3;
 }
-.text__elHpj {
+.text__gEiAl {
   position: relative;
   width: 100%;
   height: auto;
@@ -87,12 +87,17 @@
     max-width: 90%;
   }
 }
-.text__yjOk3 {
+.text__xsDpC {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  text-align: justify;
-  margin-bottom: 0px;
-  min-width: 0;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  max-width: 300px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
 }

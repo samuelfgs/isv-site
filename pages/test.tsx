@@ -30,21 +30,38 @@ function Test() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
+  const options = {
+    method: 'POST',
+    params: {
+      email: 'email',
+      'token-sandbox': 'D75941569CC84ED78C8012EBB2354C80',
+      token: 'token-sandbox'
+    },
+    headers: {
+      accept: 'application/xml',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=ISO-8859-1'
+    },
+    data: '{"currency":"BRL","item: id":"1","item: description":"item1","item: amount":"120","item: quantity":"1","item: weight":"abc","shipping: addressRequired":"none"}'
+  };
+
+  React.useEffect(() => {
+
+    (async() => {
+      try {
+        const data = await (await fetch('https://ws.sandbox.pagseguro.uol.com.br/v2/checkout', options)).json();
+        console.log("dale", data);
+      } catch (e) {
+        console.log("dale2", e);
+      }
+    })();
+  }, []);
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicTest
-          input={{
-            render: (props: any, C: any) => <DatePicker
-              format="dd/MM/yyyy"
-              value={selectedDate}
-              onChange={(date) => setSelectedDate(date as any)}
-          />
-          }}
-        />
+        <h1>Hello</h1>
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
