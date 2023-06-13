@@ -103,6 +103,7 @@ export function Participantes() {
     </div>
   }
   const totalDuration = 15*globalThis.innerHeight;
+  const totalDuration2 = 14*globalThis.innerHeight;
   return (
   <Controller>
   <div 
@@ -114,7 +115,7 @@ export function Participantes() {
     <Scene duration={totalDuration} triggerHook={"onEnter"}>
       {(progress: number) => {
         return <div>
-          <Scene duration={6*globalThis.innerHeight} pin triggerHook={"onLeave"}>
+          <Scene duration={totalDuration2} pin triggerHook={"onLeave"}>
               <div className={styles.sceneContainer} style={{height: "100vh"}}>
                 {/* <div className={styles.participantes} style={{color: "orange"}}>
                   Participantes
