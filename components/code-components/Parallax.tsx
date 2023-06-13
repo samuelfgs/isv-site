@@ -84,7 +84,6 @@ function Voce({name, id, progress, left}: any) {
       t2.kill();
     }
   }, [voce, botao, progress]);
-  console.log("dale3", progress);
   return <PlasmicLastParallax
     voce={{
       ref: voce
@@ -103,7 +102,7 @@ export function Participantes() {
       <img src="/Daniel Souza.png" />
     </div>
   }
-  const totalDuration = 7*globalThis.innerHeight;
+  const totalDuration = 15*globalThis.innerHeight;
   return (
   <Controller>
   <div 
@@ -114,7 +113,6 @@ export function Participantes() {
   >
     <Scene duration={totalDuration} triggerHook={"onEnter"}>
       {(progress: number) => {
-        console.log("dale", progress);
         return <div>
           <Scene duration={6*globalThis.innerHeight} pin triggerHook={"onLeave"}>
               <div className={styles.sceneContainer} style={{height: "100vh"}}>
@@ -135,7 +133,6 @@ export function Participantes() {
                       }
                       left = right;
                     }
-                    console.log("dale2", progress);
                     return <Voce progress={calcProgress(progress, total, 1)} />
                   })()}
                 </div>
