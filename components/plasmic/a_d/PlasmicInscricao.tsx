@@ -78,9 +78,11 @@ export type PlasmicInscricao__VariantsArgs = {};
 type VariantPropType = keyof PlasmicInscricao__VariantsArgs;
 export const PlasmicInscricao__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicInscricao__ArgsType = {};
+export type PlasmicInscricao__ArgsType = {
+  endpoint?: string;
+};
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
-export const PlasmicInscricao__ArgProps = new Array<ArgPropType>();
+export const PlasmicInscricao__ArgProps = new Array<ArgPropType>("endpoint");
 
 export type PlasmicInscricao__OverridesType = {
   root?: p.Flex<"div">;
@@ -134,7 +136,16 @@ function PlasmicInscricao__RenderFunc(props: {
   const __nextRouter = useNextRouter();
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          endpoint: "http://localhost:3000" as const
+        },
+        props.args
+      ),
+    [props.args]
+  );
   const $props = {
     ...args,
     ...variants
@@ -9918,7 +9929,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       const data =
                                                                         await (
                                                                           await fetch(
-                                                                            "http://localhost:3000/api/hello",
+                                                                            `${$props.endpoint}/api/hello`,
                                                                             {
                                                                               method:
                                                                                 "POST",
