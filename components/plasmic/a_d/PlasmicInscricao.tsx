@@ -82,12 +82,14 @@ export type PlasmicInscricao__ArgsType = {
   endpoint?: string;
   adultPrice?: number;
   kidsPrice?: number;
+  isInternal?: boolean;
 };
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
 export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
   "endpoint",
   "adultPrice",
-  "kidsPrice"
+  "kidsPrice",
+  "isInternal"
 );
 
 export type PlasmicInscricao__OverridesType = {
@@ -112,6 +114,8 @@ export type PlasmicInscricao__OverridesType = {
   city?: p.Flex<typeof Select>;
   input24?: p.Flex<typeof TextInput>;
   input25?: p.Flex<typeof TextInput>;
+  select3?: p.Flex<typeof Select>;
+  input28?: p.Flex<typeof TextInput>;
   loading?: p.Flex<typeof Loading>;
 };
 
@@ -148,7 +152,8 @@ function PlasmicInscricao__RenderFunc(props: {
         {
           endpoint: "http://localhost:3000" as const,
           adultPrice: 120 as const,
-          kidsPrice: 40 as const
+          kidsPrice: 40 as const,
+          isInternal: false
         },
         props.args
       ),
@@ -292,6 +297,18 @@ function PlasmicInscricao__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "select3.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "input28.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
     [$props, $ctx]
@@ -398,13 +415,89 @@ function PlasmicInscricao__RenderFunc(props: {
                           {"Fique atento aos valores:"}
                         </span>
                         <React.Fragment>
-                          {
-                            "\n\nPessoas de 0 a 2 anos: gratuito*\n\nPessoas de 3 a 9 anos: R$ 40,00\n\nPessoas a partir de 10 anos: R$ 120,00\n\n* Crianças desta faixa de idade não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público."
-                          }
+                          {"\n\nPessoas de 0 a 2 anos: gratuito*\n\n"}
                         </React.Fragment>
                       </React.Fragment>
                     </div>
                   ) : null}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9DiEd
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return `Pessoas de 3 a 9 anos: R$ ${$props.kidsPrice.toLocaleString(
+                            "fr",
+                            {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2
+                            }
+                          )}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___80Umx
+                    )}
+                  >
+                    {"\n"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__sWvB
+                    )}
+                  >
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return `Pessoas a partir de 10 anos: R$ ${$props.adultPrice.toLocaleString(
+                            "fr",
+                            {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2
+                            }
+                          )}`;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__lfhP
+                    )}
+                  >
+                    {
+                      "\n* Crianças desta faixa de idade não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público."
+                    }
+                  </div>
                 </p.Stack>
               ) : null}
               {true ? (
@@ -8198,6 +8291,225 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           }
                                                         />
                                                       </FormItemWrapper>
+                                                      {(() => {
+                                                        try {
+                                                          return $props.isInternal;
+                                                        } catch (e) {
+                                                          if (
+                                                            e instanceof
+                                                              TypeError ||
+                                                            e?.plasmicType ===
+                                                              "PlasmicUndefinedDataError"
+                                                          ) {
+                                                            return true;
+                                                          }
+                                                          throw e;
+                                                        }
+                                                      })() ? (
+                                                        <div
+                                                          className={classNames(
+                                                            projectcss.all,
+                                                            sty.freeBox__ag6Xy
+                                                          )}
+                                                        >
+                                                          <FormItemWrapper
+                                                            className={classNames(
+                                                              "__wab_instance",
+                                                              sty.formField__wYp8T
+                                                            )}
+                                                            initialValue={
+                                                              "São Vicente" as const
+                                                            }
+                                                            label={
+                                                              <div
+                                                                className={classNames(
+                                                                  projectcss.all,
+                                                                  projectcss.__wab_text,
+                                                                  sty.text__nAh
+                                                                )}
+                                                              >
+                                                                {"Localidade"}
+                                                              </div>
+                                                            }
+                                                            name={
+                                                              "localidade" as const
+                                                            }
+                                                            rules={[
+                                                              {
+                                                                ruleType:
+                                                                  "required",
+                                                                message:
+                                                                  "Por favor, preencha a localidade"
+                                                              }
+                                                            ]}
+                                                          >
+                                                            <Select
+                                                              data-plasmic-name={
+                                                                "select3"
+                                                              }
+                                                              data-plasmic-override={
+                                                                overrides.select3
+                                                              }
+                                                              className={classNames(
+                                                                "__wab_instance",
+                                                                sty.select3
+                                                              )}
+                                                              onChange={(
+                                                                ...eventArgs
+                                                              ) => {
+                                                                p.generateStateOnChangeProp(
+                                                                  $state,
+                                                                  [
+                                                                    "select3",
+                                                                    "value"
+                                                                  ]
+                                                                )(eventArgs[0]);
+                                                              }}
+                                                              options={(() => {
+                                                                const __composite =
+                                                                  [
+                                                                    {
+                                                                      value:
+                                                                        null
+                                                                    },
+                                                                    {
+                                                                      value:
+                                                                        null
+                                                                    },
+                                                                    {
+                                                                      value:
+                                                                        null
+                                                                    }
+                                                                  ];
+                                                                __composite[
+                                                                  "0"
+                                                                ]["value"] =
+                                                                  "São Vicente";
+                                                                __composite[
+                                                                  "1"
+                                                                ]["value"] =
+                                                                  "Guarujá";
+                                                                __composite[
+                                                                  "2"
+                                                                ]["value"] =
+                                                                  "Praia Grande";
+                                                                return __composite;
+                                                              })()}
+                                                              value={p.generateStateValueProp(
+                                                                $state,
+                                                                [
+                                                                  "select3",
+                                                                  "value"
+                                                                ]
+                                                              )}
+                                                            />
+                                                          </FormItemWrapper>
+                                                          <FormItemWrapper
+                                                            className={classNames(
+                                                              "__wab_instance",
+                                                              sty.formField__cp32B
+                                                            )}
+                                                            label={
+                                                              true ? (
+                                                                <div
+                                                                  className={classNames(
+                                                                    projectcss.all,
+                                                                    sty.freeBox__zzIWn
+                                                                  )}
+                                                                >
+                                                                  <div
+                                                                    className={classNames(
+                                                                      projectcss.all,
+                                                                      projectcss.__wab_text,
+                                                                      sty.text___3Qy81
+                                                                    )}
+                                                                  >
+                                                                    {hasVariant(
+                                                                      globalVariants,
+                                                                      "screen",
+                                                                      "desktop"
+                                                                    )
+                                                                      ? "Discipulador"
+                                                                      : "Discipulador (Nome completo)"}
+                                                                  </div>
+                                                                  {(
+                                                                    hasVariant(
+                                                                      globalVariants,
+                                                                      "screen",
+                                                                      "desktop"
+                                                                    )
+                                                                      ? true
+                                                                      : true
+                                                                  ) ? (
+                                                                    <div
+                                                                      className={classNames(
+                                                                        projectcss.all,
+                                                                        projectcss.__wab_text,
+                                                                        sty.text__sHp5X
+                                                                      )}
+                                                                    >
+                                                                      {
+                                                                        "(Nome completo)"
+                                                                      }
+                                                                    </div>
+                                                                  ) : null}
+                                                                </div>
+                                                              ) : null
+                                                            }
+                                                            name={
+                                                              "discipulador" as const
+                                                            }
+                                                            rules={[
+                                                              {
+                                                                ruleType:
+                                                                  "required",
+                                                                message:
+                                                                  "Por favor, preencha a localidade"
+                                                              }
+                                                            ]}
+                                                          >
+                                                            <TextInput
+                                                              data-plasmic-name={
+                                                                "input28"
+                                                              }
+                                                              data-plasmic-override={
+                                                                overrides.input28
+                                                              }
+                                                              className={classNames(
+                                                                "__wab_instance",
+                                                                sty.input28
+                                                              )}
+                                                              onChange={(
+                                                                ...eventArgs
+                                                              ) => {
+                                                                p.generateStateOnChangeProp(
+                                                                  $state,
+                                                                  [
+                                                                    "input28",
+                                                                    "value"
+                                                                  ]
+                                                                )(
+                                                                  (e =>
+                                                                    e.target
+                                                                      ?.value).apply(
+                                                                    null,
+                                                                    eventArgs
+                                                                  )
+                                                                );
+                                                              }}
+                                                              value={
+                                                                p.generateStateValueProp(
+                                                                  $state,
+                                                                  [
+                                                                    "input28",
+                                                                    "value"
+                                                                  ]
+                                                                ) ?? ""
+                                                              }
+                                                            />
+                                                          </FormItemWrapper>
+                                                        </div>
+                                                      ) : null}
                                                       <Button
                                                         className={classNames(
                                                           "__wab_instance",
@@ -8259,7 +8571,17 @@ function PlasmicInscricao__RenderFunc(props: {
                                     key: "cpf"
                                   },
                                   { label: "Telefone", key: "telefone" },
-                                  { label: "Email", key: "email" }
+                                  { label: "Email", key: "email" },
+                                  {
+                                    label: "Localidade",
+                                    key: "localidade",
+                                    onlyInternal: true
+                                  },
+                                  {
+                                    label: "Discipulador",
+                                    key: "discipulador",
+                                    onlyInternal: true
+                                  }
                                 ]}
                                 name={"info" as const}
                               >
@@ -8294,7 +8616,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                             {(
                                               (() => {
                                                 try {
-                                                  return $ctx.info;
+                                                  return $ctx.info.filter(
+                                                    row =>
+                                                      !row.onlyInternal ||
+                                                      $props.isInternal
+                                                  );
                                                 } catch (e) {
                                                   if (
                                                     e instanceof TypeError ||
@@ -8956,8 +9282,10 @@ function PlasmicInscricao__RenderFunc(props: {
                                           {(() => {
                                             try {
                                               return `Total: R$ ${(
-                                                $ctx.ageFn.adultos * 120 +
-                                                $ctx.ageFn.criancas * 40
+                                                $ctx.ageFn.adultos *
+                                                  $props.adultPrice +
+                                                $ctx.ageFn.criancas *
+                                                  $props.kidsPrice
                                               ).toLocaleString("fr", {
                                                 minimumFractionDigits: 2,
                                                 maximumFractionDigits: 2
@@ -9564,161 +9892,161 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       $state.inscritos.length >
                                                       1
                                                         ? (() => {
-                                                            const actionArgs = {
-                                                              dataOp:
-                                                                __wrapUserFunction(
+                                                            for (const inscrito of $state.inscritos.slice(1)) {
+                                                              (() => {
+                                                                const actionArgs = {
+                                                                  dataOp:
+                                                                    __wrapUserFunction(
+                                                                      {
+                                                                        type: "InteractionArgLoc",
+                                                                        actionName:
+                                                                          "dataSourceOp",
+                                                                        interactionUuid:
+                                                                          "9Dlyeamae",
+                                                                        componentUuid:
+                                                                          "dYFvLDGEBe",
+                                                                        argName:
+                                                                          "dataOp"
+                                                                      },
+                                                                      () => ({
+                                                                        sourceId:
+                                                                          "du8jW5s7JnVfk4bHYp38RF",
+                                                                        opId: "f8abb791-2fc2-4b54-bd29-b08fecdb278f",
+                                                                        userArgs: {
+                                                                          variables:
+                                                                            [
+                                                                              (() => {
+                                                                                if (
+                                                                                  $ctx.activeBreakpoint ===
+                                                                                  "Desktop"
+                                                                                ) {
+                                                                                  const parts =
+                                                                                    inscrito.birthdate.split(
+                                                                                      "/"
+                                                                                    );
+                                                                                  return {
+                                                                                    ...inscrito,
+                                                                                    birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
+                                                                                    owner_id:
+                                                                                      $steps[
+                                                                                        "ids"
+                                                                                      ]
+                                                                                        .ownerId
+                                                                                  };
+                                                                                } else {
+                                                                                  return {
+                                                                                    ...inscrito,
+                                                                                    birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
+                                                                                    owner_id:
+                                                                                      $steps[
+                                                                                        "ids"
+                                                                                      ]
+                                                                                        .ownerId
+                                                                                  };
+                                                                                }
+                                                                              })()
+                                                                            ]
+                                                                        },
+                                                                        cacheKey:
+                                                                          null,
+                                                                        invalidatedKeys:
+                                                                          [
+                                                                            "plasmic_refresh_all"
+                                                                          ],
+                                                                        roleId: null
+                                                                      })
+                                                                    )
+                                                                };
+                                                                return __wrapUserFunction(
                                                                   {
-                                                                    type: "InteractionArgLoc",
+                                                                    type: "InteractionLoc",
                                                                     actionName:
                                                                       "dataSourceOp",
                                                                     interactionUuid:
                                                                       "9Dlyeamae",
                                                                     componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "dataOp"
+                                                                      "dYFvLDGEBe"
                                                                   },
-                                                                  () => ({
-                                                                    sourceId:
-                                                                      "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "f8abb791-2fc2-4b54-bd29-b08fecdb278f",
-                                                                    userArgs: {
-                                                                      variables:
-                                                                        [
-                                                                          (() => {
-                                                                            const inscrito =
-                                                                              $state
-                                                                                .inscritos[1];
-
-                                                                            if (
-                                                                              $ctx.activeBreakpoint ===
-                                                                              "Desktop"
-                                                                            ) {
-                                                                              const parts =
-                                                                                inscrito.birthdate.split(
-                                                                                  "/"
-                                                                                );
-                                                                              return {
-                                                                                ...inscrito,
-                                                                                birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
-                                                                                owner_id:
-                                                                                  $steps[
-                                                                                    "ids"
-                                                                                  ]
-                                                                                    .ownerId
-                                                                              };
-                                                                            } else {
-                                                                              return {
-                                                                                ...inscrito,
-                                                                                birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
-                                                                                owner_id:
-                                                                                  $steps[
-                                                                                    "ids"
-                                                                                  ]
-                                                                                    .ownerId
-                                                                              };
+                                                                  () =>
+                                                                    (async ({
+                                                                      dataOp,
+                                                                      continueOnError
+                                                                    }) => {
+                                                                      try {
+                                                                        const response =
+                                                                          await executePlasmicDataOp(
+                                                                            dataOp,
+                                                                            {
+                                                                              userAuthToken:
+                                                                                dataSourcesCtx?.userAuthToken
                                                                             }
-                                                                          })()
-                                                                        ]
-                                                                    },
-                                                                    cacheKey:
-                                                                      null,
-                                                                    invalidatedKeys:
-                                                                      [
-                                                                        "plasmic_refresh_all"
-                                                                      ],
-                                                                    roleId: null
-                                                                  })
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
-                                                              {
-                                                                type: "InteractionLoc",
-                                                                actionName:
-                                                                  "dataSourceOp",
-                                                                interactionUuid:
-                                                                  "9Dlyeamae",
-                                                                componentUuid:
-                                                                  "dYFvLDGEBe"
-                                                              },
-                                                              () =>
-                                                                (async ({
-                                                                  dataOp,
-                                                                  continueOnError
-                                                                }) => {
-                                                                  try {
-                                                                    const response =
-                                                                      await executePlasmicDataOp(
-                                                                        dataOp,
-                                                                        {
-                                                                          userAuthToken:
-                                                                            dataSourcesCtx?.userAuthToken
+                                                                          );
+                                                                        if (
+                                                                          dataOp.invalidatedKeys &&
+                                                                          dataOp.invalidatedKeys.find(
+                                                                            key =>
+                                                                              key ===
+                                                                              "plasmic_refresh_all"
+                                                                          )
+                                                                        ) {
+                                                                          await Promise.all(
+                                                                            Array.from(
+                                                                              cache.keys()
+                                                                            ).map(
+                                                                              async key =>
+                                                                                mutate(
+                                                                                  key
+                                                                                )
+                                                                            )
+                                                                          );
+                                                                          return response;
                                                                         }
-                                                                      );
-                                                                    if (
-                                                                      dataOp.invalidatedKeys &&
-                                                                      dataOp.invalidatedKeys.find(
-                                                                        key =>
-                                                                          key ===
-                                                                          "plasmic_refresh_all"
-                                                                      )
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        Array.from(
-                                                                          cache.keys()
-                                                                        ).map(
-                                                                          async key =>
-                                                                            mutate(
-                                                                              key
+                                                                        if (
+                                                                          dataOp.invalidatedKeys
+                                                                        ) {
+                                                                          await Promise.all(
+                                                                            dataOp.invalidatedKeys.map(
+                                                                              async invalidateKey =>
+                                                                                Promise.all(
+                                                                                  Array.from(
+                                                                                    cache.keys()
+                                                                                  ).map(
+                                                                                    async key => {
+                                                                                      if (
+                                                                                        typeof key ===
+                                                                                          "string" &&
+                                                                                        key.includes(
+                                                                                          `.$.${invalidateKey}.$.`
+                                                                                        )
+                                                                                      ) {
+                                                                                        return mutate(
+                                                                                          key
+                                                                                        );
+                                                                                      }
+                                                                                      return Promise.resolve();
+                                                                                    }
+                                                                                  )
+                                                                                )
                                                                             )
-                                                                        )
-                                                                      );
-                                                                      return response;
-                                                                    }
-                                                                    if (
-                                                                      dataOp.invalidatedKeys
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        dataOp.invalidatedKeys.map(
-                                                                          async invalidateKey =>
-                                                                            Promise.all(
-                                                                              Array.from(
-                                                                                cache.keys()
-                                                                              ).map(
-                                                                                async key => {
-                                                                                  if (
-                                                                                    typeof key ===
-                                                                                      "string" &&
-                                                                                    key.includes(
-                                                                                      `.$.${invalidateKey}.$.`
-                                                                                    )
-                                                                                  ) {
-                                                                                    return mutate(
-                                                                                      key
-                                                                                    );
-                                                                                  }
-                                                                                  return Promise.resolve();
-                                                                                }
-                                                                              )
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                    }
-                                                                    return response;
-                                                                  } catch (e) {
-                                                                    if (
-                                                                      !continueOnError
-                                                                    ) {
-                                                                      throw e;
-                                                                    }
-                                                                    return e;
-                                                                  }
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
+                                                                          );
+                                                                        }
+                                                                        return response;
+                                                                      } catch (e) {
+                                                                        if (
+                                                                          !continueOnError
+                                                                        ) {
+                                                                          throw e;
+                                                                        }
+                                                                        return e;
+                                                                      }
+                                                                    })?.apply(
+                                                                      null,
+                                                                      [actionArgs]
+                                                                    ),
+                                                                  actionArgs
+                                                                );
+                                                              })()
+                                                            }
                                                           })()
                                                         : undefined;
                                                     if (
@@ -9762,7 +10090,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   () => ({
                                                                     sourceId:
                                                                       "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "593e6a9a-85e7-40be-a0e2-10de0318b9dd",
+                                                                    opId: "2940ec51-9747-4e91-b420-efa4521276db",
                                                                     userArgs: {
                                                                       variables:
                                                                         [
@@ -9772,11 +10100,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $ctx
                                                                             .ageFn
                                                                             .criancas,
-                                                                          120 *
+                                                                          $props.adultPrice *
                                                                             $ctx
                                                                               .ageFn
                                                                               .adultos +
-                                                                            40 *
+                                                                            $props.kidsPrice *
                                                                               $ctx
                                                                                 .ageFn
                                                                                 .criancas,
@@ -10229,6 +10557,8 @@ const PlasmicDescendants = {
     "city",
     "input24",
     "input25",
+    "select3",
+    "input28",
     "loading"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -10251,7 +10581,9 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input25"
+    "input25",
+    "select3",
+    "input28"
   ],
   form: [
     "form",
@@ -10271,7 +10603,9 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input25"
+    "input25",
+    "select3",
+    "input28"
   ],
   formProvider: [
     "formProvider",
@@ -10290,7 +10624,9 @@ const PlasmicDescendants = {
     "state",
     "city",
     "input24",
-    "input25"
+    "input25",
+    "select3",
+    "input28"
   ],
   input3: ["input3"],
   formFieldGroup: ["formFieldGroup", "input6", "select", "input9"],
@@ -10308,6 +10644,8 @@ const PlasmicDescendants = {
   city: ["city"],
   input24: ["input24"],
   input25: ["input25"],
+  select3: ["select3"],
+  input28: ["input28"],
   loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -10335,6 +10673,8 @@ type NodeDefaultElementType = {
   city: typeof Select;
   input24: typeof TextInput;
   input25: typeof TextInput;
+  select3: typeof Select;
+  input28: typeof TextInput;
   loading: typeof Loading;
 };
 
@@ -10418,6 +10758,8 @@ export const PlasmicInscricao = Object.assign(
     city: makeNodeComponent("city"),
     input24: makeNodeComponent("input24"),
     input25: makeNodeComponent("input25"),
+    select3: makeNodeComponent("select3"),
+    input28: makeNodeComponent("input28"),
     loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao

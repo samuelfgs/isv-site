@@ -39,8 +39,8 @@ function Inscricao2() {
             }
           }}
           endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
-          adultPrice={0.5}
-          kidsPrice={0.2}
+          adultPrice={90}
+          kidsPrice={30}
           isInternal={true}
         />
       </ph.PageParamsProvider>
