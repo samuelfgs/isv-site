@@ -372,6 +372,19 @@
           "cssFilePath": "plasmic/a_d/PlasmicConcluido.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "17NZgiFTbSg",
+          "name": "Inscricao2",
+          "type": "managed",
+          "projectId": "adjLdLRA7wsoKYbMFGbDTh",
+          "renderModuleFilePath": "plasmic/a_d/PlasmicInscricao2.tsx",
+          "importSpec": {
+            "modulePath": "../pages/inscricao-2.tsx"
+          },
+          "cssFilePath": "plasmic/a_d/PlasmicInscricao2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

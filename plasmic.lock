@@ -417,6 +417,16 @@
           "assetId": "adjLdLRA7wsoKYbMFGbDTh",
           "type": "projectCss",
           "checksum": "3d924b858e222c1b9966c78634341e2a"
+        },
+        {
+          "type": "renderModule",
+          "assetId": "17NZgiFTbSg",
+          "checksum": "d78ca9ad093ae16e55896bb39947426d"
+        },
+        {
+          "type": "cssRules",
+          "assetId": "17NZgiFTbSg",
+          "checksum": "d78ca9ad093ae16e55896bb39947426d"
         }
       ],
       "codegenVersion": "0.0.1"
