@@ -264,7 +264,7 @@ function PlasmicFaleConosco__RenderFunc(props: {
                     )}
                   >
                     {
-                      "Ficou com alguma dúvida? \nEnvie uma mensagem e retornaremos assim que possível"
+                      "Ficou com alguma dúvida? \nEnvie uma mensagem e retornaremos"
                     }
                   </div>
                   {true ? (
@@ -493,6 +493,13 @@ function PlasmicFaleConosco__RenderFunc(props: {
                                             </div>
                                           }
                                           name={"name" as const}
+                                          rules={[
+                                            {
+                                              ruleType: "required",
+                                              message:
+                                                "Por favor, preencha seu nome"
+                                            }
+                                          ]}
                                         >
                                           <TextInput
                                             data-plasmic-name={"input"}
@@ -539,6 +546,13 @@ function PlasmicFaleConosco__RenderFunc(props: {
                                             </div>
                                           }
                                           name={"telefone" as const}
+                                          rules={[
+                                            {
+                                              ruleType: "required",
+                                              message:
+                                                "Por favor, preencha seu telefone"
+                                            }
+                                          ]}
                                         >
                                           <TextInput
                                             data-plasmic-name={"input2"}
@@ -585,6 +599,13 @@ function PlasmicFaleConosco__RenderFunc(props: {
                                             </div>
                                           }
                                           name={"email" as const}
+                                          rules={[
+                                            {
+                                              ruleType: "required",
+                                              message:
+                                                "Por favor, preencha seu email"
+                                            }
+                                          ]}
                                         >
                                           <TextInput
                                             data-plasmic-name={"input4"}
@@ -631,6 +652,13 @@ function PlasmicFaleConosco__RenderFunc(props: {
                                             </div>
                                           }
                                           name={"message" as const}
+                                          rules={[
+                                            {
+                                              ruleType: "required",
+                                              message:
+                                                "Por favor, digite sua mensagem"
+                                            }
+                                          ]}
                                         >
                                           {(() => {
                                             const child$Props = {

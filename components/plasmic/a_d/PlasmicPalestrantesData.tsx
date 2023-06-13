@@ -135,29 +135,48 @@ function PlasmicPalestrantesData__RenderFunc(props: {
               return [
                 {
                   name: "Adhemar de Campos",
-                  longDesc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`,
-                  shortDesc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
+                  longDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos, que caminha com Cristo há 45 anos, é um dos mais notórios ministros de louvor e adoração do Brasil, tendo dedicado sua vida a compor músicas, que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985, gravou seu primeiro LP. Já em 1987, em uma ação pioneira, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que, na década de 1980, era um dos poucos produtores de cânticos cristãos com grande projeção.
+
+Seu ministério influenciou gerações, com composições atemporais, que, até hoje, nos tocam, oferecendo valores de uma vida cristã verdadeira.
+`,
+                  shortDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos é um dos mais notórios ministros de louvor e adoração do Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
                 },
                 {
                   name: "Asaph Borba",
-                  longDesc: `Asaph Borba é um músico e ministro de adoração brasileiro que por muitos anos tem ministrado por todo o Brasil e outros países em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus, que se tornaram parte da hinologia cristã nacional, entre eles, Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza, e muitos outros gravados por vários ministérios nacionais e internacionais. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação.`,
-                  shortDesc: `Músico e ministro de adoração brasileiro que por muitos anos tem ministrado servido a Igreja brasileira e internacional. Asaph também é o um dos pais da iSV (Igreja em São Vicente) e faz parte da nossa história desde a sua fundação.`
+                  longDesc: `Asaph Borba é um músico e ministro de adoração brasileiro, que, por muitos anos, tem ministrado por todo o Brasil e em outros países, inclusive no mundo árabe. Ele atua em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus e que se tornaram parte da hinologia cristã nacional. Entre os louvor de sua autoria mais conhecidos, estão Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza e muitos outros.
+
+Jornalista por formação, também lançou diversos livros, entre os quais estão De um Pai para seus Filhos e História Por Trás da Música.
+
+Asaph também é um dos pais da Igreja em São Vicente e faz parte da nossa história desde a sua fundação.
+`,
+                  shortDesc: `Músico e ministro de adoração, há décadas trabalha para edificar, por meio de canções e livros, tanto a Igreja no Brasil quanto ao redor do planeta, inclusive no mundo árabe. É um dos pais da Igreja em São Vicente, fazendo parte de nossa história desde a fundação.`
                 },
                 {
                   name: "Daniel Souza",
-                  longDesc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`,
-                  shortDesc: `Ministro de louvor que tem servido a Igreja desde o início dos anos 90. Juntamente com a sua esposa Selma, fundou a iSV sendo discipulado por Jan Gottfridsson e Asaph Borba e trabalhando com ênfase na formação de discípulos para o Senhor Jesus, na cidade de São Vicente.`
+                  longDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.
+
+Entre suas canções mais conhecidas, estão Corpo e Família, que integra a Harpa Cristã, e Declaramos, que já foi cantada por diversos outros intérpretes. Ele também criou a série Discípulos e Eterna Aliança.
+
+Daniel Souza também escreveu livros. Um deles é o Princípios absolutos para a vida do cristão.
+`,
+                  shortDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.`
                 },
                 {
                   name: "Jan Gottfridson",
-                  desc: "",
+                  longDesc: `Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país. Filho de missionários, tem três filhos, que se chamam Daniel, Jonathan e Michael, todos envolvidos no serviço do santos
+
+Ele também é autor de livros, entre outros, sobre lideranças. Algumas de suas obras são Cinco Mãos e Liderança Espiritual.
+`,
                   shortDesc:
-                    "Jan, como é chamado pelos íntimos, é um dos pastores da Igreja em Porto Alegre e um dos pais da iSV, junto com Asaph Borba. São mais de 30 anos de pastoreio e cuidado."
+                    "Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país."
                 },
                 {
                   name: "Morada",
-                  longDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. Com pouco mais de 10 anos de estrada, o ministério tem alcançado cada vez mais um público diversificado desde crianças aos mais velhos, proporcionando assim, momentos intensos e alegres entre as famílias por onde tem passado. Isso se deve à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som que tocou a todos.`,
-                  shortDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
+                  longDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: “Só Tu és Santo” e “É Tudo Sobre Você”.
+
+Este ministério tem alcançado cada vez mais um público diversificado, desde crianças até aos mais velhos, proporcionando, assim, momentos intensos e alegres entre as famílias. Isso se deve, em parte, à diversidade musical que a banda possui.
+`,
+                  shortDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: "Só Tu és Santo e É Tudo Sobre Você".`
                 }
               ];
             } catch (e) {

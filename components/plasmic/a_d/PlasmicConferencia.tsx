@@ -65,6 +65,7 @@ export type PlasmicConferencia__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   freeBox?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
 };
 
 export interface DefaultConferenciaProps {}
@@ -201,89 +202,44 @@ function PlasmicConferencia__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__yjOk3
+                  sty.text__hpDsv
                 )}
               >
                 <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Sobre o Adoração e Discipulado"}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
+                  <React.Fragment>
                     {
-                      "Desde o ano 2000, o Adoração e Discipulado tem sido um marco na vida da Igreja em São Vicente e de milhares de pessoas espalhadas pelo Brasil. "
+                      "Desde o ano 2000, o Adoração e Discipulado tem sido um marco na vida da Igreja em São Vicente e de milhares de pessoas espalhadas pelo Brasil. \n\nO nome da conferência foi escolhido pelo fato de a Igreja local, ao longo das últimas décadas, entender que o discipulado é muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos.\n\nNeste ano, celebramos a 20ª edição deste marcante evento de nossa história.\n\n"
                     }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {
-                      "O nome da conferência foi escolhido pelo fato de a Igreja local, ao longo das últimas décadas, entender que o discipulado é muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos."
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {
-                      "Neste ano, celebramos a 20ª edição deste marcante evento de nossa história."
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
+                  </React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
                     {"Igreja em São Vicente"}
                   </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {""}
-                  </span>
                 </React.Fragment>
               </div>
             </p.Stack>
           ) : null}
+          <p.PlasmicImg
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
+            alt={""}
+            className={classNames(sty.img)}
+            displayHeight={"auto" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"100%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"auto" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/a_d/images/isv.png",
+              fullWidth: 1080,
+              fullHeight: 1080,
+              aspectRatio: undefined
+            }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -291,9 +247,10 @@ function PlasmicConferencia__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "responsiveMenu", "freeBox"],
+  root: ["root", "responsiveMenu", "freeBox", "img"],
   responsiveMenu: ["responsiveMenu"],
-  freeBox: ["freeBox"]
+  freeBox: ["freeBox"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -302,6 +259,7 @@ type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
   freeBox: "div";
+  img: typeof p.PlasmicImg;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -366,6 +324,7 @@ export const PlasmicConferencia = Object.assign(
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     freeBox: makeNodeComponent("freeBox"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicConferencia
     internalVariantProps: PlasmicConferencia__VariantProps,

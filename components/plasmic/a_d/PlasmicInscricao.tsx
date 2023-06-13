@@ -364,9 +364,26 @@ function PlasmicInscricao__RenderFunc(props: {
                         sty.text__jgxSk
                       )}
                     >
-                      {
-                        "Pessoas de 0 a 2 anos: gratuito*\n\nPessoas de 3 a 9 anos: R$ 40,00\n\nPessoas a partir de 10 anos: R$ 120,00\n\n* Crianças desta faixa de idade não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público."
-                      }
+                      <React.Fragment>
+                        <React.Fragment>
+                          {
+                            "Falta pouco para garantir sua vaga no AD 20 anos.\n\n"
+                          }
+                        </React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ textDecorationLine: "underline" }}
+                        >
+                          {"Fique atento aos valores:"}
+                        </span>
+                        <React.Fragment>
+                          {
+                            "\n\nPessoas de 0 a 2 anos: gratuito*\n\nPessoas de 3 a 9 anos: R$ 40,00\n\nPessoas a partir de 10 anos: R$ 120,00\n\n* Crianças desta faixa de idade não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público."
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
                     </div>
                   ) : null}
                 </p.Stack>
