@@ -109,7 +109,7 @@ export type PlasmicInscricao__OverridesType = {
   loading?: p.Flex<typeof Loading>;
 };
 
-export interface DefaultInscricaoProps {}
+export interface DefaultInscricaoProps { }
 
 const __wrapUserFunction =
   globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
@@ -122,7 +122,7 @@ const __wrapUserPromise =
 function useNextRouter() {
   try {
     return useRouter();
-  } catch {}
+  } catch { }
   return undefined;
 }
 
@@ -455,7 +455,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                   return $state.selectedIndex !== undefined
                                     ? $state.inscritos[$state.selectedIndex]
                                     : $state.inscritos.length > 0
-                                    ? {
+                                      ? {
                                         cep: $state.inscritos[0].cep,
                                         logradouro:
                                           $state.inscritos[0].logradouro,
@@ -466,12 +466,12 @@ function PlasmicInscricao__RenderFunc(props: {
                                         city: $state.inscritos[0].city,
                                         state: $state.inscritos[0].state
                                       }
-                                    : {};
+                                      : {};
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
+                                    "PlasmicUndefinedDataError"
                                   ) {
                                     return undefined;
                                   }
@@ -496,50 +496,50 @@ function PlasmicInscricao__RenderFunc(props: {
                                 const $steps = {};
                                 $steps["updateInscritos2"] = true
                                   ? (() => {
-                                      const actionArgs = {
-                                        customFunction: __wrapUserFunction(
-                                          {
-                                            type: "InteractionArgLoc",
-                                            actionName: "customFunction",
-                                            interactionUuid: "ieeUm_ZahZM",
-                                            componentUuid: "dYFvLDGEBe",
-                                            argName: "customFunction"
-                                          },
-                                          () => () => {
-                                            if (
-                                              $state.selectedIndex === undefined
-                                            ) {
-                                              return $state.inscritos.push(
-                                                $state.form.value
-                                              );
-                                            } else {
-                                              return ($state.inscritos[
-                                                $state.selectedIndex
-                                              ] = $state.form.value);
-                                            }
-                                          }
-                                        )
-                                      };
-                                      return __wrapUserFunction(
+                                    const actionArgs = {
+                                      customFunction: __wrapUserFunction(
                                         {
-                                          type: "InteractionLoc",
+                                          type: "InteractionArgLoc",
                                           actionName: "customFunction",
                                           interactionUuid: "ieeUm_ZahZM",
-                                          componentUuid: "dYFvLDGEBe"
+                                          componentUuid: "dYFvLDGEBe",
+                                          argName: "customFunction"
                                         },
-                                        () =>
-                                          (({ customFunction }) => {
-                                            return customFunction();
-                                          })?.apply(null, [actionArgs]),
-                                        actionArgs
-                                      );
-                                    })()
+                                        () => () => {
+                                          if (
+                                            $state.selectedIndex === undefined
+                                          ) {
+                                            return $state.inscritos.push(
+                                              $state.form.value
+                                            );
+                                          } else {
+                                            return ($state.inscritos[
+                                              $state.selectedIndex
+                                            ] = $state.form.value);
+                                          }
+                                        }
+                                      )
+                                    };
+                                    return __wrapUserFunction(
+                                      {
+                                        type: "InteractionLoc",
+                                        actionName: "customFunction",
+                                        interactionUuid: "ieeUm_ZahZM",
+                                        componentUuid: "dYFvLDGEBe"
+                                      },
+                                      () =>
+                                        (({ customFunction }) => {
+                                          return customFunction();
+                                        })?.apply(null, [actionArgs]),
+                                      actionArgs
+                                    );
+                                  })()
                                   : undefined;
                                 if (
                                   typeof $steps["updateInscritos2"] ===
-                                    "object" &&
+                                  "object" &&
                                   typeof $steps["updateInscritos2"].then ===
-                                    "function"
+                                  "function"
                                 ) {
                                   $steps["updateInscritos2"] =
                                     await __wrapUserPromise(
@@ -554,70 +554,70 @@ function PlasmicInscricao__RenderFunc(props: {
                                 }
                                 $steps["updateInForm"] = true
                                   ? (() => {
-                                      const actionArgs = {
-                                        variable: __wrapUserFunction(
-                                          {
-                                            type: "InteractionArgLoc",
-                                            actionName: "updateVariable",
-                                            interactionUuid: "lgLqiKKeLXe",
-                                            componentUuid: "dYFvLDGEBe",
-                                            argName: "variable"
-                                          },
-                                          () => ({
-                                            objRoot: $state,
-                                            variablePath: ["inForm"]
-                                          })
-                                        ),
-                                        operation: __wrapUserFunction(
-                                          {
-                                            type: "InteractionArgLoc",
-                                            actionName: "updateVariable",
-                                            interactionUuid: "lgLqiKKeLXe",
-                                            componentUuid: "dYFvLDGEBe",
-                                            argName: "operation"
-                                          },
-                                          () => 4
-                                        )
-                                      };
-                                      return __wrapUserFunction(
+                                    const actionArgs = {
+                                      variable: __wrapUserFunction(
                                         {
-                                          type: "InteractionLoc",
+                                          type: "InteractionArgLoc",
                                           actionName: "updateVariable",
                                           interactionUuid: "lgLqiKKeLXe",
-                                          componentUuid: "dYFvLDGEBe"
+                                          componentUuid: "dYFvLDGEBe",
+                                          argName: "variable"
                                         },
-                                        () =>
-                                          (({
-                                            variable,
-                                            value,
-                                            startIndex,
-                                            deleteCount
-                                          }) => {
-                                            if (!variable) {
-                                              return;
-                                            }
-                                            const { objRoot, variablePath } =
-                                              variable;
+                                        () => ({
+                                          objRoot: $state,
+                                          variablePath: ["inForm"]
+                                        })
+                                      ),
+                                      operation: __wrapUserFunction(
+                                        {
+                                          type: "InteractionArgLoc",
+                                          actionName: "updateVariable",
+                                          interactionUuid: "lgLqiKKeLXe",
+                                          componentUuid: "dYFvLDGEBe",
+                                          argName: "operation"
+                                        },
+                                        () => 4
+                                      )
+                                    };
+                                    return __wrapUserFunction(
+                                      {
+                                        type: "InteractionLoc",
+                                        actionName: "updateVariable",
+                                        interactionUuid: "lgLqiKKeLXe",
+                                        componentUuid: "dYFvLDGEBe"
+                                      },
+                                      () =>
+                                        (({
+                                          variable,
+                                          value,
+                                          startIndex,
+                                          deleteCount
+                                        }) => {
+                                          if (!variable) {
+                                            return;
+                                          }
+                                          const { objRoot, variablePath } =
+                                            variable;
 
-                                            const oldValue = p.get(
-                                              objRoot,
-                                              variablePath
-                                            );
-                                            p.set(
-                                              objRoot,
-                                              variablePath,
-                                              !oldValue
-                                            );
-                                            return !oldValue;
-                                          })?.apply(null, [actionArgs]),
-                                        actionArgs
-                                      );
-                                    })()
+                                          const oldValue = p.get(
+                                            objRoot,
+                                            variablePath
+                                          );
+                                          p.set(
+                                            objRoot,
+                                            variablePath,
+                                            !oldValue
+                                          );
+                                          return !oldValue;
+                                        })?.apply(null, [actionArgs]),
+                                      actionArgs
+                                    );
+                                  })()
                                   : undefined;
                                 if (
                                   typeof $steps["updateInForm"] === "object" &&
                                   typeof $steps["updateInForm"].then ===
-                                    "function"
+                                  "function"
                                 ) {
                                   $steps["updateInForm"] =
                                     await __wrapUserPromise(
@@ -632,38 +632,38 @@ function PlasmicInscricao__RenderFunc(props: {
                                 }
                                 $steps["runCode"] = true
                                   ? (() => {
-                                      const actionArgs = {
-                                        customFunction: __wrapUserFunction(
-                                          {
-                                            type: "InteractionArgLoc",
-                                            actionName: "customFunction",
-                                            interactionUuid: "pJkR6THmhz-",
-                                            componentUuid: "dYFvLDGEBe",
-                                            argName: "customFunction"
-                                          },
-                                          () => () => {
-                                            console.log("dale", window);
-                                            return window.scroll({
-                                              top: 0,
-                                              behavior: "smooth"
-                                            });
-                                          }
-                                        )
-                                      };
-                                      return __wrapUserFunction(
+                                    const actionArgs = {
+                                      customFunction: __wrapUserFunction(
                                         {
-                                          type: "InteractionLoc",
+                                          type: "InteractionArgLoc",
                                           actionName: "customFunction",
                                           interactionUuid: "pJkR6THmhz-",
-                                          componentUuid: "dYFvLDGEBe"
+                                          componentUuid: "dYFvLDGEBe",
+                                          argName: "customFunction"
                                         },
-                                        () =>
-                                          (({ customFunction }) => {
-                                            return customFunction();
-                                          })?.apply(null, [actionArgs]),
-                                        actionArgs
-                                      );
-                                    })()
+                                        () => () => {
+                                          console.log("dale", window);
+                                          return window.scroll({
+                                            top: 0,
+                                            behavior: "smooth"
+                                          });
+                                        }
+                                      )
+                                    };
+                                    return __wrapUserFunction(
+                                      {
+                                        type: "InteractionLoc",
+                                        actionName: "customFunction",
+                                        interactionUuid: "pJkR6THmhz-",
+                                        componentUuid: "dYFvLDGEBe"
+                                      },
+                                      () =>
+                                        (({ customFunction }) => {
+                                          return customFunction();
+                                        })?.apply(null, [actionArgs]),
+                                      actionArgs
+                                    );
+                                  })()
                                   : undefined;
                                 if (
                                   typeof $steps["runCode"] === "object" &&
@@ -6557,9 +6557,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 (e =>
                                                                   e.target
                                                                     ?.value).apply(
-                                                                  null,
-                                                                  eventArgs
-                                                                )
+                                                                      null,
+                                                                      eventArgs
+                                                                    )
                                                               );
                                                             }}
                                                             value={
@@ -6659,11 +6659,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         "Desktop"
                                                                         ? true
                                                                         : typeof value ===
-                                                                            "string" &&
-                                                                            value.length >
-                                                                              0 &&
-                                                                            +value <
-                                                                              31;
+                                                                        "string" &&
+                                                                        value.length >
+                                                                        0 &&
+                                                                        +value <
+                                                                        31;
                                                                     }
                                                                   }
                                                                 ]}
@@ -6692,9 +6692,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       (e =>
                                                                         e.target
                                                                           ?.value).apply(
-                                                                        null,
-                                                                        eventArgs
-                                                                      )
+                                                                            null,
+                                                                            eventArgs
+                                                                          )
                                                                     );
                                                                   }}
                                                                   type={
@@ -6744,9 +6744,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         "Desktop"
                                                                         ? true
                                                                         : typeof value ===
-                                                                            "string" &&
-                                                                            value.length >
-                                                                              0;
+                                                                        "string" &&
+                                                                        value.length >
+                                                                        0;
                                                                     }
                                                                   }
                                                                 ]}
@@ -6797,18 +6797,17 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         ) => ({
                                                                           label:
                                                                             mes,
-                                                                          value: `${
-                                                                            index +
+                                                                          value: `${index +
                                                                             1
-                                                                          }`
+                                                                            }`
                                                                         })
                                                                       );
                                                                     } catch (e) {
                                                                       if (
                                                                         e instanceof
-                                                                          TypeError ||
+                                                                        TypeError ||
                                                                         e?.plasmicType ===
-                                                                          "PlasmicUndefinedDataError"
+                                                                        "PlasmicUndefinedDataError"
                                                                       ) {
                                                                         return [];
                                                                       }
@@ -6857,11 +6856,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         "Desktop"
                                                                         ? true
                                                                         : typeof value ===
-                                                                            "string" &&
-                                                                            value.length >
-                                                                              0 &&
-                                                                            value.length <
-                                                                              4;
+                                                                        "string" &&
+                                                                        value.length >
+                                                                        0 &&
+                                                                        value.length <
+                                                                        4;
                                                                     }
                                                                   }
                                                                 ]}
@@ -6890,9 +6889,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       (e =>
                                                                         e.target
                                                                           ?.value).apply(
-                                                                        null,
-                                                                        eventArgs
-                                                                      )
+                                                                            null,
+                                                                            eventArgs
+                                                                          )
                                                                     );
                                                                   }}
                                                                   type={
@@ -7029,22 +7028,22 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         new Date(
                                                                           year,
                                                                           month -
-                                                                            1,
+                                                                          1,
                                                                           day
                                                                         );
                                                                       return (
                                                                         date.getFullYear() ===
-                                                                          year &&
+                                                                        year &&
                                                                         date.getMonth() ===
-                                                                          month -
-                                                                            1 &&
+                                                                        month -
+                                                                        1 &&
                                                                         date.getDate() ===
-                                                                          day
+                                                                        day
                                                                       );
                                                                     }
                                                                     return (
                                                                       typeof value ===
-                                                                        "string" &&
+                                                                      "string" &&
                                                                       isValidDateString(
                                                                         value
                                                                       )
@@ -7080,9 +7079,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   (e =>
                                                                     e.target
                                                                       ?.value).apply(
-                                                                    null,
-                                                                    eventArgs
-                                                                  )
+                                                                        null,
+                                                                        eventArgs
+                                                                      )
                                                                 );
                                                               }}
                                                               value={
@@ -7154,9 +7153,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               (e =>
                                                                 e.target
                                                                   ?.value).apply(
-                                                                null,
-                                                                eventArgs
-                                                              )
+                                                                    null,
+                                                                    eventArgs
+                                                                  )
                                                             );
                                                           }}
                                                           value={
@@ -7224,51 +7223,51 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 $steps[
                                                                   "runCode"
                                                                 ] = true
-                                                                  ? (() => {
+                                                                    ? (() => {
                                                                       const actionArgs =
-                                                                        {
-                                                                          customFunction:
-                                                                            __wrapUserFunction(
-                                                                              {
-                                                                                type: "InteractionArgLoc",
-                                                                                actionName:
-                                                                                  "customFunction",
-                                                                                interactionUuid:
-                                                                                  "LUREI2TvcOX",
-                                                                                componentUuid:
-                                                                                  "dYFvLDGEBe",
-                                                                                argName:
-                                                                                  "customFunction"
-                                                                              },
-                                                                              () =>
-                                                                                () => {
-                                                                                  return (() => {
-                                                                                    const cep =
-                                                                                      event
-                                                                                        .target
-                                                                                        .value;
-                                                                                    if (
-                                                                                      !cep ||
-                                                                                      isNaN(
-                                                                                        +cep
-                                                                                      ) ||
-                                                                                      cep.length !==
-                                                                                        8
-                                                                                    ) {
-                                                                                      return;
-                                                                                    }
-                                                                                    if (
-                                                                                      $state.lastCep ===
-                                                                                      cep
-                                                                                    ) {
-                                                                                      return;
-                                                                                    }
-                                                                                    return ($state.isLoading =
-                                                                                      true);
-                                                                                  })();
-                                                                                }
-                                                                            )
-                                                                        };
+                                                                      {
+                                                                        customFunction:
+                                                                          __wrapUserFunction(
+                                                                            {
+                                                                              type: "InteractionArgLoc",
+                                                                              actionName:
+                                                                                "customFunction",
+                                                                              interactionUuid:
+                                                                                "LUREI2TvcOX",
+                                                                              componentUuid:
+                                                                                "dYFvLDGEBe",
+                                                                              argName:
+                                                                                "customFunction"
+                                                                            },
+                                                                            () =>
+                                                                              () => {
+                                                                                return (() => {
+                                                                                  const cep =
+                                                                                    event
+                                                                                      .target
+                                                                                      .value;
+                                                                                  if (
+                                                                                    !cep ||
+                                                                                    isNaN(
+                                                                                      +cep
+                                                                                    ) ||
+                                                                                    cep.length !==
+                                                                                    8
+                                                                                  ) {
+                                                                                    return;
+                                                                                  }
+                                                                                  if (
+                                                                                    $state.lastCep ===
+                                                                                    cep
+                                                                                  ) {
+                                                                                    return;
+                                                                                  }
+                                                                                  return ($state.isLoading =
+                                                                                    true);
+                                                                                })();
+                                                                              }
+                                                                          )
+                                                                      };
                                                                       return __wrapUserFunction(
                                                                         {
                                                                           type: "InteractionLoc",
@@ -7293,16 +7292,16 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         actionArgs
                                                                       );
                                                                     })()
-                                                                  : undefined;
+                                                                    : undefined;
                                                                 if (
                                                                   typeof $steps[
-                                                                    "runCode"
+                                                                  "runCode"
                                                                   ] ===
-                                                                    "object" &&
+                                                                  "object" &&
                                                                   typeof $steps[
                                                                     "runCode"
                                                                   ].then ===
-                                                                    "function"
+                                                                  "function"
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
@@ -7318,121 +7317,121 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           "dYFvLDGEBe"
                                                                       },
                                                                       $steps[
-                                                                        "runCode"
+                                                                      "runCode"
                                                                       ]
                                                                     );
                                                                 }
                                                                 $steps[
                                                                   "runCode"
                                                                 ] = true
-                                                                  ? (() => {
+                                                                    ? (() => {
                                                                       const actionArgs =
-                                                                        {
-                                                                          customFunction:
-                                                                            __wrapUserFunction(
-                                                                              {
-                                                                                type: "InteractionArgLoc",
-                                                                                actionName:
-                                                                                  "customFunction",
-                                                                                interactionUuid:
-                                                                                  "F8b1dWJxUHf",
-                                                                                componentUuid:
-                                                                                  "dYFvLDGEBe",
-                                                                                argName:
-                                                                                  "customFunction"
-                                                                              },
-                                                                              () =>
-                                                                                () => {
-                                                                                  return (async () => {
-                                                                                    const cepStr =
-                                                                                      event
-                                                                                        .target
-                                                                                        .value;
+                                                                      {
+                                                                        customFunction:
+                                                                          __wrapUserFunction(
+                                                                            {
+                                                                              type: "InteractionArgLoc",
+                                                                              actionName:
+                                                                                "customFunction",
+                                                                              interactionUuid:
+                                                                                "F8b1dWJxUHf",
+                                                                              componentUuid:
+                                                                                "dYFvLDGEBe",
+                                                                              argName:
+                                                                                "customFunction"
+                                                                            },
+                                                                            () =>
+                                                                              () => {
+                                                                                return (async () => {
+                                                                                  const cepStr =
+                                                                                    event
+                                                                                      .target
+                                                                                      .value;
+                                                                                  if (
+                                                                                    isNaN(
+                                                                                      +cepStr
+                                                                                    ) ||
+                                                                                    cepStr.length !==
+                                                                                    8
+                                                                                  ) {
+                                                                                    return;
+                                                                                  }
+                                                                                  const cep =
+                                                                                    +cepStr;
+                                                                                  try {
+                                                                                    const data =
+                                                                                      await (
+                                                                                        await fetch(
+                                                                                          `https://viacep.com.br/ws/${cep}/json/`
+                                                                                        )
+                                                                                      ).json();
                                                                                     if (
-                                                                                      isNaN(
-                                                                                        +cepStr
-                                                                                      ) ||
-                                                                                      cepStr.length !==
-                                                                                        8
+                                                                                      data.erro
                                                                                     ) {
-                                                                                      return;
-                                                                                    }
-                                                                                    const cep =
-                                                                                      +cepStr;
-                                                                                    try {
-                                                                                      const data =
-                                                                                        await (
-                                                                                          await fetch(
-                                                                                            `https://viacep.com.br/ws/${cep}/json/`
-                                                                                          )
-                                                                                        ).json();
-                                                                                      if (
-                                                                                        data.erro
-                                                                                      ) {
-                                                                                        $ctx.toastFn.error(
-                                                                                          "CEP não encontrado",
-                                                                                          {
-                                                                                            pauseOnHover:
-                                                                                              false,
-                                                                                            autoClose: 2500
-                                                                                          }
-                                                                                        );
-                                                                                        setTimeout(
-                                                                                          () => {
-                                                                                            return ($state.isLoading =
-                                                                                              false);
-                                                                                          },
-                                                                                          1000
-                                                                                        );
-                                                                                      }
-                                                                                      const newAddress =
-                                                                                        {
-                                                                                          logradouro:
-                                                                                            data.logradouro,
-                                                                                          bairro:
-                                                                                            data.bairro,
-                                                                                          city: data.localidade,
-                                                                                          state:
-                                                                                            data.uf
-                                                                                        };
-                                                                                      return setTimeout(
-                                                                                        () => {
-                                                                                          $ctx.formProvider?.setFieldsValue(
-                                                                                            {
-                                                                                              ...newAddress
-                                                                                            }
-                                                                                          );
-                                                                                          $state.isLoading =
-                                                                                            false;
-                                                                                          $state.lastCep =
-                                                                                            cepStr;
-                                                                                          return ($state.form.value =
-                                                                                            $ctx.formProvider?.getFieldsValue());
-                                                                                        },
-                                                                                        1000
-                                                                                      );
-                                                                                    } catch {
-                                                                                      $state.isLoading =
-                                                                                        false;
                                                                                       $ctx.toastFn.error(
-                                                                                        "Aconteceu algum erro. Tente novamente",
+                                                                                        "CEP não encontrado",
                                                                                         {
                                                                                           pauseOnHover:
                                                                                             false,
                                                                                           autoClose: 2500
                                                                                         }
                                                                                       );
-                                                                                      return $ctx.formProvider?.setFieldsValue(
-                                                                                        {
-                                                                                          address:
-                                                                                            {}
-                                                                                        }
+                                                                                      setTimeout(
+                                                                                        () => {
+                                                                                          return ($state.isLoading =
+                                                                                            false);
+                                                                                        },
+                                                                                        1000
                                                                                       );
                                                                                     }
-                                                                                  })();
-                                                                                }
-                                                                            )
-                                                                        };
+                                                                                    const newAddress =
+                                                                                    {
+                                                                                      logradouro:
+                                                                                        data.logradouro,
+                                                                                      bairro:
+                                                                                        data.bairro,
+                                                                                      city: data.localidade,
+                                                                                      state:
+                                                                                        data.uf
+                                                                                    };
+                                                                                    return setTimeout(
+                                                                                      () => {
+                                                                                        $ctx.formProvider?.setFieldsValue(
+                                                                                          {
+                                                                                            ...newAddress
+                                                                                          }
+                                                                                        );
+                                                                                        $state.isLoading =
+                                                                                          false;
+                                                                                        $state.lastCep =
+                                                                                          cepStr;
+                                                                                        return ($state.form.value =
+                                                                                          $ctx.formProvider?.getFieldsValue());
+                                                                                      },
+                                                                                      1000
+                                                                                    );
+                                                                                  } catch {
+                                                                                    $state.isLoading =
+                                                                                      false;
+                                                                                    $ctx.toastFn.error(
+                                                                                      "Aconteceu algum erro. Tente novamente",
+                                                                                      {
+                                                                                        pauseOnHover:
+                                                                                          false,
+                                                                                        autoClose: 2500
+                                                                                      }
+                                                                                    );
+                                                                                    return $ctx.formProvider?.setFieldsValue(
+                                                                                      {
+                                                                                        address:
+                                                                                          {}
+                                                                                      }
+                                                                                    );
+                                                                                  }
+                                                                                })();
+                                                                              }
+                                                                          )
+                                                                      };
                                                                       return __wrapUserFunction(
                                                                         {
                                                                           type: "InteractionLoc",
@@ -7457,16 +7456,16 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         actionArgs
                                                                       );
                                                                     })()
-                                                                  : undefined;
+                                                                    : undefined;
                                                                 if (
                                                                   typeof $steps[
-                                                                    "runCode"
+                                                                  "runCode"
                                                                   ] ===
-                                                                    "object" &&
+                                                                  "object" &&
                                                                   typeof $steps[
                                                                     "runCode"
                                                                   ].then ===
-                                                                    "function"
+                                                                  "function"
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
@@ -7482,36 +7481,36 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           "dYFvLDGEBe"
                                                                       },
                                                                       $steps[
-                                                                        "runCode"
+                                                                      "runCode"
                                                                       ]
                                                                     );
                                                                 }
                                                                 $steps[
                                                                   "runCode"
                                                                 ] = true
-                                                                  ? (() => {
+                                                                    ? (() => {
                                                                       const actionArgs =
-                                                                        {
-                                                                          customFunction:
-                                                                            __wrapUserFunction(
-                                                                              {
-                                                                                type: "InteractionArgLoc",
-                                                                                actionName:
-                                                                                  "customFunction",
-                                                                                interactionUuid:
-                                                                                  "hlDz-0bmQ",
-                                                                                componentUuid:
-                                                                                  "dYFvLDGEBe",
-                                                                                argName:
-                                                                                  "customFunction"
-                                                                              },
-                                                                              () =>
-                                                                                () => {
-                                                                                  event.preventDefault();
-                                                                                  return event.stopPropagation();
-                                                                                }
-                                                                            )
-                                                                        };
+                                                                      {
+                                                                        customFunction:
+                                                                          __wrapUserFunction(
+                                                                            {
+                                                                              type: "InteractionArgLoc",
+                                                                              actionName:
+                                                                                "customFunction",
+                                                                              interactionUuid:
+                                                                                "hlDz-0bmQ",
+                                                                              componentUuid:
+                                                                                "dYFvLDGEBe",
+                                                                              argName:
+                                                                                "customFunction"
+                                                                            },
+                                                                            () =>
+                                                                              () => {
+                                                                                event.preventDefault();
+                                                                                return event.stopPropagation();
+                                                                              }
+                                                                          )
+                                                                      };
                                                                       return __wrapUserFunction(
                                                                         {
                                                                           type: "InteractionLoc",
@@ -7536,16 +7535,16 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         actionArgs
                                                                       );
                                                                     })()
-                                                                  : undefined;
+                                                                    : undefined;
                                                                 if (
                                                                   typeof $steps[
-                                                                    "runCode"
+                                                                  "runCode"
                                                                   ] ===
-                                                                    "object" &&
+                                                                  "object" &&
                                                                   typeof $steps[
                                                                     "runCode"
                                                                   ].then ===
-                                                                    "function"
+                                                                  "function"
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
@@ -7561,7 +7560,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           "dYFvLDGEBe"
                                                                       },
                                                                       $steps[
-                                                                        "runCode"
+                                                                      "runCode"
                                                                       ]
                                                                     );
                                                                 }
@@ -7579,9 +7578,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   (e =>
                                                                     e.target
                                                                       ?.value).apply(
-                                                                    null,
-                                                                    eventArgs
-                                                                  )
+                                                                        null,
+                                                                        eventArgs
+                                                                      )
                                                                 );
                                                               }}
                                                               type={
@@ -7650,9 +7649,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   (e =>
                                                                     e.target
                                                                       ?.value).apply(
-                                                                    null,
-                                                                    eventArgs
-                                                                  )
+                                                                        null,
+                                                                        eventArgs
+                                                                      )
                                                                 );
                                                               }}
                                                               value={
@@ -7727,9 +7726,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       (e =>
                                                                         e.target
                                                                           ?.value).apply(
-                                                                        null,
-                                                                        eventArgs
-                                                                      )
+                                                                            null,
+                                                                            eventArgs
+                                                                          )
                                                                     );
                                                                   }}
                                                                   type={
@@ -7792,9 +7791,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       (e =>
                                                                         e.target
                                                                           ?.value).apply(
-                                                                        null,
-                                                                        eventArgs
-                                                                      )
+                                                                            null,
+                                                                            eventArgs
+                                                                          )
                                                                     );
                                                                   }}
                                                                   value={
@@ -7862,9 +7861,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   (e =>
                                                                     e.target
                                                                       ?.value).apply(
-                                                                    null,
-                                                                    eventArgs
-                                                                  )
+                                                                        null,
+                                                                        eventArgs
+                                                                      )
                                                                 );
                                                               }}
                                                               value={
@@ -7941,9 +7940,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 } catch (e) {
                                                                   if (
                                                                     e instanceof
-                                                                      TypeError ||
+                                                                    TypeError ||
                                                                     e?.plasmicType ===
-                                                                      "PlasmicUndefinedDataError"
+                                                                    "PlasmicUndefinedDataError"
                                                                   ) {
                                                                     return [];
                                                                   }
@@ -7996,9 +7995,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               } catch (e) {
                                                                 if (
                                                                   e instanceof
-                                                                    TypeError ||
+                                                                  TypeError ||
                                                                   e?.plasmicType ===
-                                                                    "PlasmicUndefinedDataError"
+                                                                  "PlasmicUndefinedDataError"
                                                                 ) {
                                                                   return true;
                                                                 }
@@ -8107,9 +8106,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               (e =>
                                                                 e.target
                                                                   ?.value).apply(
-                                                                null,
-                                                                eventArgs
-                                                              )
+                                                                    null,
+                                                                    eventArgs
+                                                                  )
                                                             );
                                                           }}
                                                           value={
@@ -8173,9 +8172,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               (e =>
                                                                 e.target
                                                                   ?.value).apply(
-                                                                null,
-                                                                eventArgs
-                                                              )
+                                                                    null,
+                                                                    eventArgs
+                                                                  )
                                                             );
                                                           }}
                                                           value={
@@ -8258,289 +8257,233 @@ function PlasmicInscricao__RenderFunc(props: {
                                   {$ctx =>
                                     true
                                       ? (
-                                          (() => {
-                                            try {
-                                              return $state.inscritos;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return [];
-                                              }
-                                              throw e;
+                                        (() => {
+                                          try {
+                                            return $state.inscritos;
+                                          } catch (e) {
+                                            if (
+                                              e instanceof TypeError ||
+                                              e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                            ) {
+                                              return [];
                                             }
-                                          })() ?? []
-                                        ).map((currentPerson, currentIndex) => (
-                                          <p.Stack
-                                            as={"div"}
-                                            hasGap={true}
-                                            className={classNames(
-                                              projectcss.all,
-                                              sty.freeBox__wwlSs
-                                            )}
-                                            key={currentIndex}
-                                          >
-                                            {(
-                                              (() => {
-                                                try {
-                                                  return $ctx.info;
-                                                } catch (e) {
-                                                  if (
-                                                    e instanceof TypeError ||
-                                                    e?.plasmicType ===
-                                                      "PlasmicUndefinedDataError"
-                                                  ) {
-                                                    return [];
-                                                  }
-                                                  throw e;
+                                            throw e;
+                                          }
+                                        })() ?? []
+                                      ).map((currentPerson, currentIndex) => (
+                                        <p.Stack
+                                          as={"div"}
+                                          hasGap={true}
+                                          className={classNames(
+                                            projectcss.all,
+                                            sty.freeBox__wwlSs
+                                          )}
+                                          key={currentIndex}
+                                        >
+                                          {(
+                                            (() => {
+                                              try {
+                                                return $ctx.info;
+                                              } catch (e) {
+                                                if (
+                                                  e instanceof TypeError ||
+                                                  e?.plasmicType ===
+                                                  "PlasmicUndefinedDataError"
+                                                ) {
+                                                  return [];
                                                 }
-                                              })() ?? []
-                                            ).map(
-                                              (currentItem, currentIndex) => (
-                                                <p.Stack
-                                                  as={"div"}
-                                                  hasGap={true}
-                                                  className={classNames(
-                                                    projectcss.all,
-                                                    sty.freeBox__mB40R
-                                                  )}
-                                                  key={currentIndex}
-                                                >
-                                                  <div
-                                                    className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text__mPaEe
-                                                    )}
-                                                  >
-                                                    <React.Fragment>
-                                                      {(() => {
-                                                        try {
-                                                          return currentItem.label;
-                                                        } catch (e) {
-                                                          if (
-                                                            e instanceof
-                                                              TypeError ||
-                                                            e?.plasmicType ===
-                                                              "PlasmicUndefinedDataError"
-                                                          ) {
-                                                            return "";
-                                                          }
-                                                          throw e;
-                                                        }
-                                                      })()}
-                                                    </React.Fragment>
-                                                  </div>
-                                                  <div
-                                                    className={classNames(
-                                                      projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text___98IIi
-                                                    )}
-                                                  >
-                                                    <React.Fragment>
-                                                      {(() => {
-                                                        try {
-                                                          return currentItem.key ===
-                                                            "address"
-                                                            ? `${
-                                                                currentPerson.logradouro
-                                                              } ${
-                                                                currentPerson.number
-                                                              }${
-                                                                currentPerson.complemento
-                                                                  ? ` (${currentPerson.complemento})`
-                                                                  : ""
-                                                              }, ${
-                                                                currentPerson.bairro
-                                                              } - ${
-                                                                currentPerson.city
-                                                              } - ${
-                                                                currentPerson.state
-                                                              } - ${
-                                                                currentPerson.cep
-                                                              }`
-                                                            : currentItem.key ===
-                                                              "birthdate"
-                                                            ? (() => {
-                                                                if (
-                                                                  $ctx.activeBreakpoint ===
-                                                                  "Desktop"
-                                                                ) {
-                                                                  return currentPerson.birthdate;
-                                                                } else {
-                                                                  const {
-                                                                    day,
-                                                                    month,
-                                                                    year
-                                                                  } =
-                                                                    currentPerson.birthdate2;
-                                                                  var date =
-                                                                    new Date(
-                                                                      +year,
-                                                                      +month -
-                                                                        1,
-                                                                      +day
-                                                                    );
-                                                                  return date.toLocaleString(
-                                                                    "en-GB",
-                                                                    {
-                                                                      day: "2-digit",
-                                                                      month:
-                                                                        "2-digit",
-                                                                      year: "numeric"
-                                                                    }
-                                                                  );
-                                                                }
-                                                              })()
-                                                            : currentPerson[
-                                                                currentItem.key
-                                                              ];
-                                                        } catch (e) {
-                                                          if (
-                                                            e instanceof
-                                                              TypeError ||
-                                                            e?.plasmicType ===
-                                                              "PlasmicUndefinedDataError"
-                                                          ) {
-                                                            return "";
-                                                          }
-                                                          throw e;
-                                                        }
-                                                      })()}
-                                                    </React.Fragment>
-                                                  </div>
-                                                </p.Stack>
-                                              )
-                                            )}
-                                            {true ? (
+                                                throw e;
+                                              }
+                                            })() ?? []
+                                          ).map(
+                                            (currentItem, currentIndex) => (
                                               <p.Stack
                                                 as={"div"}
                                                 hasGap={true}
                                                 className={classNames(
                                                   projectcss.all,
-                                                  sty.freeBox__wr3Fe
+                                                  sty.freeBox__mB40R
                                                 )}
+                                                key={currentIndex}
                                               >
-                                                <Button
+                                                <div
                                                   className={classNames(
-                                                    "__wab_instance",
-                                                    sty.button__ra5St
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text__mPaEe
                                                   )}
-                                                  color={"softBlue" as const}
-                                                  onClick={async event => {
-                                                    const $steps = {};
-                                                    $steps[
-                                                      "updateSelectedPerson"
-                                                    ] = true
-                                                      ? (() => {
-                                                          const actionArgs = {
-                                                            variable:
-                                                              __wrapUserFunction(
-                                                                {
-                                                                  type: "InteractionArgLoc",
-                                                                  actionName:
-                                                                    "updateVariable",
-                                                                  interactionUuid:
-                                                                    "xutNGXi2X",
-                                                                  componentUuid:
-                                                                    "dYFvLDGEBe",
-                                                                  argName:
-                                                                    "variable"
-                                                                },
-                                                                () => ({
-                                                                  objRoot:
-                                                                    $state,
-                                                                  variablePath:
-                                                                    [
-                                                                      "selectedIndex"
-                                                                    ]
-                                                                })
-                                                              ),
-                                                            operation:
-                                                              __wrapUserFunction(
-                                                                {
-                                                                  type: "InteractionArgLoc",
-                                                                  actionName:
-                                                                    "updateVariable",
-                                                                  interactionUuid:
-                                                                    "xutNGXi2X",
-                                                                  componentUuid:
-                                                                    "dYFvLDGEBe",
-                                                                  argName:
-                                                                    "operation"
-                                                                },
-                                                                () => 0
-                                                              ),
-                                                            value:
-                                                              __wrapUserFunction(
-                                                                {
-                                                                  type: "InteractionArgLoc",
-                                                                  actionName:
-                                                                    "updateVariable",
-                                                                  interactionUuid:
-                                                                    "xutNGXi2X",
-                                                                  componentUuid:
-                                                                    "dYFvLDGEBe",
-                                                                  argName:
-                                                                    "value"
-                                                                },
-                                                                () =>
-                                                                  currentIndex
-                                                              )
-                                                          };
-                                                          return __wrapUserFunction(
-                                                            {
-                                                              type: "InteractionLoc",
-                                                              actionName:
-                                                                "updateVariable",
-                                                              interactionUuid:
-                                                                "xutNGXi2X",
-                                                              componentUuid:
-                                                                "dYFvLDGEBe"
-                                                            },
-                                                            () =>
-                                                              (({
-                                                                variable,
-                                                                value,
-                                                                startIndex,
-                                                                deleteCount
-                                                              }) => {
-                                                                if (!variable) {
-                                                                  return;
-                                                                }
+                                                >
+                                                  <React.Fragment>
+                                                    {(() => {
+                                                      try {
+                                                        return currentItem.label;
+                                                      } catch (e) {
+                                                        if (
+                                                          e instanceof
+                                                          TypeError ||
+                                                          e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                        ) {
+                                                          return "";
+                                                        }
+                                                        throw e;
+                                                      }
+                                                    })()}
+                                                  </React.Fragment>
+                                                </div>
+                                                <div
+                                                  className={classNames(
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text___98IIi
+                                                  )}
+                                                >
+                                                  <React.Fragment>
+                                                    {(() => {
+                                                      try {
+                                                        return currentItem.key ===
+                                                          "address"
+                                                          ? `${currentPerson.logradouro
+                                                          } ${currentPerson.number
+                                                          }${currentPerson.complemento
+                                                            ? ` (${currentPerson.complemento})`
+                                                            : ""
+                                                          }, ${currentPerson.bairro
+                                                          } - ${currentPerson.city
+                                                          } - ${currentPerson.state
+                                                          } - ${currentPerson.cep
+                                                          }`
+                                                          : currentItem.key ===
+                                                            "birthdate"
+                                                            ? (() => {
+                                                              if (
+                                                                $ctx.activeBreakpoint ===
+                                                                "Desktop"
+                                                              ) {
+                                                                return currentPerson.birthdate;
+                                                              } else {
                                                                 const {
-                                                                  objRoot,
-                                                                  variablePath
-                                                                } = variable;
-
-                                                                p.set(
-                                                                  objRoot,
-                                                                  variablePath,
-                                                                  value
+                                                                  day,
+                                                                  month,
+                                                                  year
+                                                                } =
+                                                                  currentPerson.birthdate2;
+                                                                var date =
+                                                                  new Date(
+                                                                    +year,
+                                                                    +month -
+                                                                    1,
+                                                                    +day
+                                                                  );
+                                                                return date.toLocaleString(
+                                                                  "en-GB",
+                                                                  {
+                                                                    day: "2-digit",
+                                                                    month:
+                                                                      "2-digit",
+                                                                    year: "numeric"
+                                                                  }
                                                                 );
-                                                                return value;
-                                                              })?.apply(null, [
-                                                                actionArgs
-                                                              ]),
-                                                            actionArgs
-                                                          );
-                                                        })()
-                                                      : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "updateSelectedPerson"
-                                                      ] === "object" &&
-                                                      typeof $steps[
-                                                        "updateSelectedPerson"
-                                                      ].then === "function"
-                                                    ) {
-                                                      $steps[
-                                                        "updateSelectedPerson"
-                                                      ] =
-                                                        await __wrapUserPromise(
+                                                              }
+                                                            })()
+                                                            : currentPerson[
+                                                            currentItem.key
+                                                            ];
+                                                      } catch (e) {
+                                                        if (
+                                                          e instanceof
+                                                          TypeError ||
+                                                          e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                        ) {
+                                                          return "";
+                                                        }
+                                                        throw e;
+                                                      }
+                                                    })()}
+                                                  </React.Fragment>
+                                                </div>
+                                              </p.Stack>
+                                            )
+                                          )}
+                                          {true ? (
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__wr3Fe
+                                              )}
+                                            >
+                                              <Button
+                                                className={classNames(
+                                                  "__wab_instance",
+                                                  sty.button__ra5St
+                                                )}
+                                                color={"softBlue" as const}
+                                                onClick={async event => {
+                                                  const $steps = {};
+                                                  $steps[
+                                                    "updateSelectedPerson"
+                                                  ] = true
+                                                      ? (() => {
+                                                        const actionArgs = {
+                                                          variable:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "xutNGXi2X",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "variable"
+                                                              },
+                                                              () => ({
+                                                                objRoot:
+                                                                  $state,
+                                                                variablePath:
+                                                                  [
+                                                                    "selectedIndex"
+                                                                  ]
+                                                              })
+                                                            ),
+                                                          operation:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "xutNGXi2X",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "operation"
+                                                              },
+                                                              () => 0
+                                                            ),
+                                                          value:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "xutNGXi2X",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "value"
+                                                              },
+                                                              () =>
+                                                                currentIndex
+                                                            )
+                                                        };
+                                                        return __wrapUserFunction(
                                                           {
                                                             type: "InteractionLoc",
                                                             actionName:
@@ -8550,107 +8493,101 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             componentUuid:
                                                               "dYFvLDGEBe"
                                                           },
-                                                          $steps[
-                                                            "updateSelectedPerson"
-                                                          ]
+                                                          () =>
+                                                            (({
+                                                              variable,
+                                                              value,
+                                                              startIndex,
+                                                              deleteCount
+                                                            }) => {
+                                                              if (!variable) {
+                                                                return;
+                                                              }
+                                                              const {
+                                                                objRoot,
+                                                                variablePath
+                                                              } = variable;
+
+                                                              p.set(
+                                                                objRoot,
+                                                                variablePath,
+                                                                value
+                                                              );
+                                                              return value;
+                                                            })?.apply(null, [
+                                                              actionArgs
+                                                            ]),
+                                                          actionArgs
                                                         );
-                                                    }
-                                                    $steps["updateInForm"] =
-                                                      true
-                                                        ? (() => {
-                                                            const actionArgs = {
-                                                              variable:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "0Y6fHorAB",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "variable"
-                                                                  },
-                                                                  () => ({
-                                                                    objRoot:
-                                                                      $state,
-                                                                    variablePath:
-                                                                      ["inForm"]
-                                                                  })
-                                                                ),
-                                                              operation:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "0Y6fHorAB",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "operation"
-                                                                  },
-                                                                  () => 4
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
+                                                      })()
+                                                      : undefined;
+                                                  if (
+                                                    typeof $steps[
+                                                    "updateSelectedPerson"
+                                                    ] === "object" &&
+                                                    typeof $steps[
+                                                      "updateSelectedPerson"
+                                                    ].then === "function"
+                                                  ) {
+                                                    $steps[
+                                                      "updateSelectedPerson"
+                                                    ] =
+                                                      await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "xutNGXi2X",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                        "updateSelectedPerson"
+                                                        ]
+                                                      );
+                                                  }
+                                                  $steps["updateInForm"] =
+                                                    true
+                                                      ? (() => {
+                                                        const actionArgs = {
+                                                          variable:
+                                                            __wrapUserFunction(
                                                               {
-                                                                type: "InteractionLoc",
+                                                                type: "InteractionArgLoc",
                                                                 actionName:
                                                                   "updateVariable",
                                                                 interactionUuid:
                                                                   "0Y6fHorAB",
                                                                 componentUuid:
-                                                                  "dYFvLDGEBe"
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "variable"
                                                               },
-                                                              () =>
-                                                                (({
-                                                                  variable,
-                                                                  value,
-                                                                  startIndex,
-                                                                  deleteCount
-                                                                }) => {
-                                                                  if (
-                                                                    !variable
-                                                                  ) {
-                                                                    return;
-                                                                  }
-                                                                  const {
-                                                                    objRoot,
-                                                                    variablePath
-                                                                  } = variable;
-
-                                                                  const oldValue =
-                                                                    p.get(
-                                                                      objRoot,
-                                                                      variablePath
-                                                                    );
-                                                                  p.set(
-                                                                    objRoot,
-                                                                    variablePath,
-                                                                    !oldValue
-                                                                  );
-                                                                  return !oldValue;
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
-                                                        : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "updateInForm"
-                                                      ] === "object" &&
-                                                      typeof $steps[
-                                                        "updateInForm"
-                                                      ].then === "function"
-                                                    ) {
-                                                      $steps["updateInForm"] =
-                                                        await __wrapUserPromise(
+                                                              () => ({
+                                                                objRoot:
+                                                                  $state,
+                                                                variablePath:
+                                                                  ["inForm"]
+                                                              })
+                                                            ),
+                                                          operation:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "0Y6fHorAB",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "operation"
+                                                              },
+                                                              () => 4
+                                                            )
+                                                        };
+                                                        return __wrapUserFunction(
                                                           {
                                                             type: "InteractionLoc",
                                                             actionName:
@@ -8660,183 +8597,182 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             componentUuid:
                                                               "dYFvLDGEBe"
                                                           },
-                                                          $steps["updateInForm"]
+                                                          () =>
+                                                            (({
+                                                              variable,
+                                                              value,
+                                                              startIndex,
+                                                              deleteCount
+                                                            }) => {
+                                                              if (
+                                                                !variable
+                                                              ) {
+                                                                return;
+                                                              }
+                                                              const {
+                                                                objRoot,
+                                                                variablePath
+                                                              } = variable;
+
+                                                              const oldValue =
+                                                                p.get(
+                                                                  objRoot,
+                                                                  variablePath
+                                                                );
+                                                              p.set(
+                                                                objRoot,
+                                                                variablePath,
+                                                                !oldValue
+                                                              );
+                                                              return !oldValue;
+                                                            })?.apply(
+                                                              null,
+                                                              [actionArgs]
+                                                            ),
+                                                          actionArgs
                                                         );
-                                                    }
-                                                  }}
-                                                  showStartIcon={true}
-                                                  startIcon={
-                                                    <EditIcon
-                                                      className={classNames(
-                                                        projectcss.all,
-                                                        sty.svg__ecLkm
-                                                      )}
-                                                      role={"img"}
-                                                    />
+                                                      })()
+                                                      : undefined;
+                                                  if (
+                                                    typeof $steps[
+                                                    "updateInForm"
+                                                    ] === "object" &&
+                                                    typeof $steps[
+                                                      "updateInForm"
+                                                    ].then === "function"
+                                                  ) {
+                                                    $steps["updateInForm"] =
+                                                      await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "0Y6fHorAB",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps["updateInForm"]
+                                                      );
                                                   }
-                                                >
-                                                  <div
+                                                }}
+                                                showStartIcon={true}
+                                                startIcon={
+                                                  <EditIcon
                                                     className={classNames(
                                                       projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text__tcsAt
+                                                      sty.svg__ecLkm
                                                     )}
-                                                  >
-                                                    {"Editar inscrição"}
-                                                  </div>
-                                                </Button>
-                                                <Button
+                                                    role={"img"}
+                                                  />
+                                                }
+                                              >
+                                                <div
                                                   className={classNames(
-                                                    "__wab_instance",
-                                                    sty.button__elqr5
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text__tcsAt
                                                   )}
-                                                  color={"softRed" as const}
-                                                  onClick={async event => {
-                                                    const $steps = {};
-                                                    $steps["updateInscritos"] =
-                                                      true
-                                                        ? (() => {
-                                                            const actionArgs = {
-                                                              variable:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "QEQaaA-MJ",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "variable"
-                                                                  },
-                                                                  () => ({
-                                                                    objRoot:
-                                                                      $state,
-                                                                    variablePath:
-                                                                      [
-                                                                        "inscritos"
-                                                                      ]
-                                                                  })
-                                                                ),
-                                                              operation:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "QEQaaA-MJ",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "operation"
-                                                                  },
-                                                                  () => 6
-                                                                ),
-                                                              startIndex:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "QEQaaA-MJ",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "startIndex"
-                                                                  },
-                                                                  () =>
-                                                                    (() => {
-                                                                      try {
-                                                                        return currentIndex;
-                                                                      } catch (e) {
-                                                                        if (
-                                                                          e instanceof
-                                                                            TypeError ||
-                                                                          e?.plasmicType ===
-                                                                            "PlasmicUndefinedDataError"
-                                                                        ) {
-                                                                          return undefined;
-                                                                        }
-                                                                        throw e;
-                                                                      }
-                                                                    })()
-                                                                ),
-                                                              deleteCount:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "updateVariable",
-                                                                    interactionUuid:
-                                                                      "QEQaaA-MJ",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "deleteCount"
-                                                                  },
-                                                                  () => 1
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
+                                                >
+                                                  {"Editar inscrição"}
+                                                </div>
+                                              </Button>
+                                              <Button
+                                                className={classNames(
+                                                  "__wab_instance",
+                                                  sty.button__elqr5
+                                                )}
+                                                color={"softRed" as const}
+                                                onClick={async event => {
+                                                  const $steps = {};
+                                                  $steps["updateInscritos"] =
+                                                    true
+                                                      ? (() => {
+                                                        const actionArgs = {
+                                                          variable:
+                                                            __wrapUserFunction(
                                                               {
-                                                                type: "InteractionLoc",
+                                                                type: "InteractionArgLoc",
                                                                 actionName:
                                                                   "updateVariable",
                                                                 interactionUuid:
                                                                   "QEQaaA-MJ",
                                                                 componentUuid:
-                                                                  "dYFvLDGEBe"
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "variable"
+                                                              },
+                                                              () => ({
+                                                                objRoot:
+                                                                  $state,
+                                                                variablePath:
+                                                                  [
+                                                                    "inscritos"
+                                                                  ]
+                                                              })
+                                                            ),
+                                                          operation:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "QEQaaA-MJ",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "operation"
+                                                              },
+                                                              () => 6
+                                                            ),
+                                                          startIndex:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "QEQaaA-MJ",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "startIndex"
                                                               },
                                                               () =>
-                                                                (({
-                                                                  variable,
-                                                                  value,
-                                                                  startIndex,
-                                                                  deleteCount
-                                                                }) => {
-                                                                  if (
-                                                                    !variable
-                                                                  ) {
-                                                                    return;
+                                                                (() => {
+                                                                  try {
+                                                                    return currentIndex;
+                                                                  } catch (e) {
+                                                                    if (
+                                                                      e instanceof
+                                                                      TypeError ||
+                                                                      e?.plasmicType ===
+                                                                      "PlasmicUndefinedDataError"
+                                                                    ) {
+                                                                      return undefined;
+                                                                    }
+                                                                    throw e;
                                                                   }
-                                                                  const {
-                                                                    objRoot,
-                                                                    variablePath
-                                                                  } = variable;
-
-                                                                  const arr =
-                                                                    p.get(
-                                                                      objRoot,
-                                                                      variablePath
-                                                                    );
-                                                                  arr.splice(
-                                                                    startIndex,
-                                                                    deleteCount
-                                                                  );
-                                                                  return arr;
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
-                                                        : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "updateInscritos"
-                                                      ] === "object" &&
-                                                      typeof $steps[
-                                                        "updateInscritos"
-                                                      ].then === "function"
-                                                    ) {
-                                                      $steps[
-                                                        "updateInscritos"
-                                                      ] =
-                                                        await __wrapUserPromise(
+                                                                })()
+                                                            ),
+                                                          deleteCount:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "QEQaaA-MJ",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "deleteCount"
+                                                              },
+                                                              () => 1
+                                                            )
+                                                        };
+                                                        return __wrapUserFunction(
                                                           {
                                                             type: "InteractionLoc",
                                                             actionName:
@@ -8846,37 +8782,93 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             componentUuid:
                                                               "dYFvLDGEBe"
                                                           },
-                                                          $steps[
-                                                            "updateInscritos"
-                                                          ]
+                                                          () =>
+                                                            (({
+                                                              variable,
+                                                              value,
+                                                              startIndex,
+                                                              deleteCount
+                                                            }) => {
+                                                              if (
+                                                                !variable
+                                                              ) {
+                                                                return;
+                                                              }
+                                                              const {
+                                                                objRoot,
+                                                                variablePath
+                                                              } = variable;
+
+                                                              const arr =
+                                                                p.get(
+                                                                  objRoot,
+                                                                  variablePath
+                                                                );
+                                                              arr.splice(
+                                                                startIndex,
+                                                                deleteCount
+                                                              );
+                                                              return arr;
+                                                            })?.apply(
+                                                              null,
+                                                              [actionArgs]
+                                                            ),
+                                                          actionArgs
                                                         );
-                                                    }
-                                                  }}
-                                                  showStartIcon={true}
-                                                  startIcon={
-                                                    <CloseIcon
-                                                      className={classNames(
-                                                        projectcss.all,
-                                                        sty.svg__buYu0
-                                                      )}
-                                                      role={"img"}
-                                                    />
+                                                      })()
+                                                      : undefined;
+                                                  if (
+                                                    typeof $steps[
+                                                    "updateInscritos"
+                                                    ] === "object" &&
+                                                    typeof $steps[
+                                                      "updateInscritos"
+                                                    ].then === "function"
+                                                  ) {
+                                                    $steps[
+                                                      "updateInscritos"
+                                                    ] =
+                                                      await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "QEQaaA-MJ",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                        "updateInscritos"
+                                                        ]
+                                                      );
                                                   }
-                                                >
-                                                  <div
+                                                }}
+                                                showStartIcon={true}
+                                                startIcon={
+                                                  <CloseIcon
                                                     className={classNames(
                                                       projectcss.all,
-                                                      projectcss.__wab_text,
-                                                      sty.text__c8CHv
+                                                      sty.svg__buYu0
                                                     )}
-                                                  >
-                                                    {"Remover inscrição"}
-                                                  </div>
-                                                </Button>
-                                              </p.Stack>
-                                            ) : null}
-                                          </p.Stack>
-                                        ))
+                                                    role={"img"}
+                                                  />
+                                                }
+                                              >
+                                                <div
+                                                  className={classNames(
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text__c8CHv
+                                                  )}
+                                                >
+                                                  {"Remover inscrição"}
+                                                </div>
+                                              </Button>
+                                            </p.Stack>
+                                          ) : null}
+                                        </p.Stack>
+                                      ))
                                       : null
                                   }
                                 </ph.DataCtxReader>
@@ -8957,7 +8949,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               if (
                                                 e instanceof TypeError ||
                                                 e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
+                                                "PlasmicUndefinedDataError"
                                               ) {
                                                 return "Total: R$ 145,00";
                                               }
@@ -8981,7 +8973,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               if (
                                                 e instanceof TypeError ||
                                                 e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
+                                                "PlasmicUndefinedDataError"
                                               ) {
                                                 return "Adultos: 1";
                                               }
@@ -9005,7 +8997,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               if (
                                                 e instanceof TypeError ||
                                                 e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
+                                                "PlasmicUndefinedDataError"
                                               ) {
                                                 return "Adultos: 1";
                                               }
@@ -9029,7 +9021,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               if (
                                                 e instanceof TypeError ||
                                                 e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
+                                                "PlasmicUndefinedDataError"
                                               ) {
                                                 return "Adultos: 1";
                                               }
@@ -9058,121 +9050,6 @@ function PlasmicInscricao__RenderFunc(props: {
                                               $steps["updateSelectedPerson"] =
                                                 true
                                                   ? (() => {
-                                                      const actionArgs = {
-                                                        variable:
-                                                          __wrapUserFunction(
-                                                            {
-                                                              type: "InteractionArgLoc",
-                                                              actionName:
-                                                                "updateVariable",
-                                                              interactionUuid:
-                                                                "b8iNB2OJ9",
-                                                              componentUuid:
-                                                                "dYFvLDGEBe",
-                                                              argName:
-                                                                "variable"
-                                                            },
-                                                            () => ({
-                                                              objRoot: $state,
-                                                              variablePath: [
-                                                                "selectedIndex"
-                                                              ]
-                                                            })
-                                                          ),
-                                                        operation:
-                                                          __wrapUserFunction(
-                                                            {
-                                                              type: "InteractionArgLoc",
-                                                              actionName:
-                                                                "updateVariable",
-                                                              interactionUuid:
-                                                                "b8iNB2OJ9",
-                                                              componentUuid:
-                                                                "dYFvLDGEBe",
-                                                              argName:
-                                                                "operation"
-                                                            },
-                                                            () => 0
-                                                          ),
-                                                        value:
-                                                          __wrapUserFunction(
-                                                            {
-                                                              type: "InteractionArgLoc",
-                                                              actionName:
-                                                                "updateVariable",
-                                                              interactionUuid:
-                                                                "b8iNB2OJ9",
-                                                              componentUuid:
-                                                                "dYFvLDGEBe",
-                                                              argName: "value"
-                                                            },
-                                                            () => undefined
-                                                          )
-                                                      };
-                                                      return __wrapUserFunction(
-                                                        {
-                                                          type: "InteractionLoc",
-                                                          actionName:
-                                                            "updateVariable",
-                                                          interactionUuid:
-                                                            "b8iNB2OJ9",
-                                                          componentUuid:
-                                                            "dYFvLDGEBe"
-                                                        },
-                                                        () =>
-                                                          (({
-                                                            variable,
-                                                            value,
-                                                            startIndex,
-                                                            deleteCount
-                                                          }) => {
-                                                            if (!variable) {
-                                                              return;
-                                                            }
-                                                            const {
-                                                              objRoot,
-                                                              variablePath
-                                                            } = variable;
-
-                                                            p.set(
-                                                              objRoot,
-                                                              variablePath,
-                                                              value
-                                                            );
-                                                            return value;
-                                                          })?.apply(null, [
-                                                            actionArgs
-                                                          ]),
-                                                        actionArgs
-                                                      );
-                                                    })()
-                                                  : undefined;
-                                              if (
-                                                typeof $steps[
-                                                  "updateSelectedPerson"
-                                                ] === "object" &&
-                                                typeof $steps[
-                                                  "updateSelectedPerson"
-                                                ].then === "function"
-                                              ) {
-                                                $steps["updateSelectedPerson"] =
-                                                  await __wrapUserPromise(
-                                                    {
-                                                      type: "InteractionLoc",
-                                                      actionName:
-                                                        "updateVariable",
-                                                      interactionUuid:
-                                                        "b8iNB2OJ9",
-                                                      componentUuid:
-                                                        "dYFvLDGEBe"
-                                                    },
-                                                    $steps[
-                                                      "updateSelectedPerson"
-                                                    ]
-                                                  );
-                                              }
-                                              $steps["updateInForm"] = true
-                                                ? (() => {
                                                     const actionArgs = {
                                                       variable:
                                                         __wrapUserFunction(
@@ -9181,15 +9058,16 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             actionName:
                                                               "updateVariable",
                                                             interactionUuid:
-                                                              "w4p1-23BW",
+                                                              "b8iNB2OJ9",
                                                             componentUuid:
                                                               "dYFvLDGEBe",
-                                                            argName: "variable"
+                                                            argName:
+                                                              "variable"
                                                           },
                                                           () => ({
                                                             objRoot: $state,
                                                             variablePath: [
-                                                              "inForm"
+                                                              "selectedIndex"
                                                             ]
                                                           })
                                                         ),
@@ -9200,12 +9078,27 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             actionName:
                                                               "updateVariable",
                                                             interactionUuid:
-                                                              "w4p1-23BW",
+                                                              "b8iNB2OJ9",
                                                             componentUuid:
                                                               "dYFvLDGEBe",
-                                                            argName: "operation"
+                                                            argName:
+                                                              "operation"
                                                           },
-                                                          () => 4
+                                                          () => 0
+                                                        ),
+                                                      value:
+                                                        __wrapUserFunction(
+                                                          {
+                                                            type: "InteractionArgLoc",
+                                                            actionName:
+                                                              "updateVariable",
+                                                            interactionUuid:
+                                                              "b8iNB2OJ9",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe",
+                                                            argName: "value"
+                                                          },
+                                                          () => undefined
                                                         )
                                                     };
                                                     return __wrapUserFunction(
@@ -9214,7 +9107,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                         actionName:
                                                           "updateVariable",
                                                         interactionUuid:
-                                                          "w4p1-23BW",
+                                                          "b8iNB2OJ9",
                                                         componentUuid:
                                                           "dYFvLDGEBe"
                                                       },
@@ -9233,27 +9126,126 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             variablePath
                                                           } = variable;
 
-                                                          const oldValue =
-                                                            p.get(
-                                                              objRoot,
-                                                              variablePath
-                                                            );
                                                           p.set(
                                                             objRoot,
                                                             variablePath,
-                                                            !oldValue
+                                                            value
                                                           );
-                                                          return !oldValue;
+                                                          return value;
                                                         })?.apply(null, [
                                                           actionArgs
                                                         ]),
                                                       actionArgs
                                                     );
                                                   })()
+                                                  : undefined;
+                                              if (
+                                                typeof $steps[
+                                                "updateSelectedPerson"
+                                                ] === "object" &&
+                                                typeof $steps[
+                                                  "updateSelectedPerson"
+                                                ].then === "function"
+                                              ) {
+                                                $steps["updateSelectedPerson"] =
+                                                  await __wrapUserPromise(
+                                                    {
+                                                      type: "InteractionLoc",
+                                                      actionName:
+                                                        "updateVariable",
+                                                      interactionUuid:
+                                                        "b8iNB2OJ9",
+                                                      componentUuid:
+                                                        "dYFvLDGEBe"
+                                                    },
+                                                    $steps[
+                                                    "updateSelectedPerson"
+                                                    ]
+                                                  );
+                                              }
+                                              $steps["updateInForm"] = true
+                                                ? (() => {
+                                                  const actionArgs = {
+                                                    variable:
+                                                      __wrapUserFunction(
+                                                        {
+                                                          type: "InteractionArgLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "w4p1-23BW",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe",
+                                                          argName: "variable"
+                                                        },
+                                                        () => ({
+                                                          objRoot: $state,
+                                                          variablePath: [
+                                                            "inForm"
+                                                          ]
+                                                        })
+                                                      ),
+                                                    operation:
+                                                      __wrapUserFunction(
+                                                        {
+                                                          type: "InteractionArgLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "w4p1-23BW",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe",
+                                                          argName: "operation"
+                                                        },
+                                                        () => 4
+                                                      )
+                                                  };
+                                                  return __wrapUserFunction(
+                                                    {
+                                                      type: "InteractionLoc",
+                                                      actionName:
+                                                        "updateVariable",
+                                                      interactionUuid:
+                                                        "w4p1-23BW",
+                                                      componentUuid:
+                                                        "dYFvLDGEBe"
+                                                    },
+                                                    () =>
+                                                      (({
+                                                        variable,
+                                                        value,
+                                                        startIndex,
+                                                        deleteCount
+                                                      }) => {
+                                                        if (!variable) {
+                                                          return;
+                                                        }
+                                                        const {
+                                                          objRoot,
+                                                          variablePath
+                                                        } = variable;
+
+                                                        const oldValue =
+                                                          p.get(
+                                                            objRoot,
+                                                            variablePath
+                                                          );
+                                                        p.set(
+                                                          objRoot,
+                                                          variablePath,
+                                                          !oldValue
+                                                        );
+                                                        return !oldValue;
+                                                      })?.apply(null, [
+                                                        actionArgs
+                                                      ]),
+                                                    actionArgs
+                                                  );
+                                                })()
                                                 : undefined;
                                               if (
                                                 typeof $steps[
-                                                  "updateInForm"
+                                                "updateInForm"
                                                 ] === "object" &&
                                                 typeof $steps["updateInForm"]
                                                   .then === "function"
@@ -9303,61 +9295,61 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     const $steps = {};
                                                     $steps["ids"] = true
                                                       ? (() => {
-                                                          const actionArgs = {
-                                                            customFunction:
-                                                              __wrapUserFunction(
-                                                                {
-                                                                  type: "InteractionArgLoc",
-                                                                  actionName:
-                                                                    "customFunction",
-                                                                  interactionUuid:
-                                                                    "89cijdpP7",
-                                                                  componentUuid:
-                                                                    "dYFvLDGEBe",
-                                                                  argName:
-                                                                    "customFunction"
-                                                                },
-                                                                () => () => {
-                                                                  return {
-                                                                    ownerId:
-                                                                      Math.floor(
-                                                                        Math.random() *
-                                                                          100000000
-                                                                      ),
-                                                                    payments:
-                                                                      Math.floor(
-                                                                        Math.random() *
-                                                                          100000000
-                                                                      )
-                                                                  };
-                                                                }
-                                                              )
-                                                          };
-                                                          return __wrapUserFunction(
-                                                            {
-                                                              type: "InteractionLoc",
-                                                              actionName:
-                                                                "customFunction",
-                                                              interactionUuid:
-                                                                "89cijdpP7",
-                                                              componentUuid:
-                                                                "dYFvLDGEBe"
-                                                            },
-                                                            () =>
-                                                              (({
-                                                                customFunction
-                                                              }) => {
-                                                                return customFunction();
-                                                              })?.apply(null, [
-                                                                actionArgs
-                                                              ]),
-                                                            actionArgs
-                                                          );
-                                                        })()
+                                                        const actionArgs = {
+                                                          customFunction:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "customFunction",
+                                                                interactionUuid:
+                                                                  "89cijdpP7",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "customFunction"
+                                                              },
+                                                              () => () => {
+                                                                return {
+                                                                  ownerId:
+                                                                    Math.floor(
+                                                                      Math.random() *
+                                                                      100000000
+                                                                    ),
+                                                                  payments:
+                                                                    Math.floor(
+                                                                      Math.random() *
+                                                                      100000000
+                                                                    )
+                                                                };
+                                                              }
+                                                            )
+                                                        };
+                                                        return __wrapUserFunction(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "customFunction",
+                                                            interactionUuid:
+                                                              "89cijdpP7",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          () =>
+                                                            (({
+                                                              customFunction
+                                                            }) => {
+                                                              return customFunction();
+                                                            })?.apply(null, [
+                                                              actionArgs
+                                                            ]),
+                                                          actionArgs
+                                                        );
+                                                      })()
                                                       : undefined;
                                                     if (
                                                       typeof $steps["ids"] ===
-                                                        "object" &&
+                                                      "object" &&
                                                       typeof $steps["ids"]
                                                         .then === "function"
                                                     ) {
@@ -9377,6 +9369,365 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     }
                                                     $steps["firstRow"] = true
                                                       ? (() => {
+                                                        const actionArgs = {
+                                                          dataOp:
+                                                            __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionArgLoc",
+                                                                actionName:
+                                                                  "dataSourceOp",
+                                                                interactionUuid:
+                                                                  "nwJSpBQiI",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe",
+                                                                argName:
+                                                                  "dataOp"
+                                                              },
+                                                              () => ({
+                                                                sourceId:
+                                                                  "du8jW5s7JnVfk4bHYp38RF",
+                                                                opId: "13fc3b0b-36b0-4a79-84c0-c3d14b6d8337",
+                                                                userArgs: {
+                                                                  variables: [
+                                                                    (() => {
+                                                                      const inscrito =
+                                                                        $state
+                                                                          .inscritos[0];
+
+                                                                      if (
+                                                                        $ctx.activeBreakpoint ===
+                                                                        "Desktop"
+                                                                      ) {
+                                                                        const parts =
+                                                                          inscrito.birthdate.split(
+                                                                            "/"
+                                                                          );
+                                                                        return {
+                                                                          ...inscrito,
+                                                                          birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
+                                                                          id: $steps[
+                                                                            "ids"
+                                                                          ]
+                                                                            .ownerId
+                                                                        };
+                                                                      } else {
+                                                                        return {
+                                                                          ...inscrito,
+                                                                          birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
+                                                                          id: $steps[
+                                                                            "ids"
+                                                                          ]
+                                                                            .ownerId
+                                                                        };
+                                                                      }
+                                                                    })()
+                                                                  ]
+                                                                },
+                                                                cacheKey:
+                                                                  null,
+                                                                invalidatedKeys:
+                                                                  [
+                                                                    "plasmic_refresh_all"
+                                                                  ],
+                                                                roleId: null
+                                                              })
+                                                            )
+                                                        };
+                                                        return __wrapUserFunction(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "dataSourceOp",
+                                                            interactionUuid:
+                                                              "nwJSpBQiI",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          () =>
+                                                            (async ({
+                                                              dataOp,
+                                                              continueOnError
+                                                            }) => {
+                                                              try {
+                                                                const response =
+                                                                  await executePlasmicDataOp(
+                                                                    dataOp,
+                                                                    {
+                                                                      userAuthToken:
+                                                                        dataSourcesCtx?.userAuthToken
+                                                                    }
+                                                                  );
+                                                                if (
+                                                                  dataOp.invalidatedKeys &&
+                                                                  dataOp.invalidatedKeys.find(
+                                                                    key =>
+                                                                      key ===
+                                                                      "plasmic_refresh_all"
+                                                                  )
+                                                                ) {
+                                                                  await Promise.all(
+                                                                    Array.from(
+                                                                      cache.keys()
+                                                                    ).map(
+                                                                      async key =>
+                                                                        mutate(
+                                                                          key
+                                                                        )
+                                                                    )
+                                                                  );
+                                                                  return response;
+                                                                }
+                                                                if (
+                                                                  dataOp.invalidatedKeys
+                                                                ) {
+                                                                  await Promise.all(
+                                                                    dataOp.invalidatedKeys.map(
+                                                                      async invalidateKey =>
+                                                                        Promise.all(
+                                                                          Array.from(
+                                                                            cache.keys()
+                                                                          ).map(
+                                                                            async key => {
+                                                                              if (
+                                                                                typeof key ===
+                                                                                "string" &&
+                                                                                key.includes(
+                                                                                  `.$.${invalidateKey}.$.`
+                                                                                )
+                                                                              ) {
+                                                                                return mutate(
+                                                                                  key
+                                                                                );
+                                                                              }
+                                                                              return Promise.resolve();
+                                                                            }
+                                                                          )
+                                                                        )
+                                                                    )
+                                                                  );
+                                                                }
+                                                                return response;
+                                                              } catch (e) {
+                                                                if (
+                                                                  !continueOnError
+                                                                ) {
+                                                                  throw e;
+                                                                }
+                                                                return e;
+                                                              }
+                                                            })?.apply(null, [
+                                                              actionArgs
+                                                            ]),
+                                                          actionArgs
+                                                        );
+                                                      })()
+                                                      : undefined;
+                                                    if (
+                                                      typeof $steps[
+                                                      "firstRow"
+                                                      ] === "object" &&
+                                                      typeof $steps["firstRow"]
+                                                        .then === "function"
+                                                    ) {
+                                                      $steps["firstRow"] =
+                                                        await __wrapUserPromise(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "dataSourceOp",
+                                                            interactionUuid:
+                                                              "nwJSpBQiI",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          $steps["firstRow"]
+                                                        );
+                                                    }
+                                                    $steps["nextRows"] =
+                                                      $state.inscritos.length >
+                                                        1
+                                                        ? (() => {
+                                                          for (const inscrito of $state.inscritos.slice(1)) {
+                                                            (() => {
+                                                              const actionArgs = {
+                                                                dataOp:
+                                                                  __wrapUserFunction(
+                                                                    {
+                                                                      type: "InteractionArgLoc",
+                                                                      actionName:
+                                                                        "dataSourceOp",
+                                                                      interactionUuid:
+                                                                        "9Dlyeamae",
+                                                                      componentUuid:
+                                                                        "dYFvLDGEBe",
+                                                                      argName:
+                                                                        "dataOp"
+                                                                    },
+                                                                    () => ({
+                                                                      sourceId:
+                                                                        "du8jW5s7JnVfk4bHYp38RF",
+                                                                      opId: "f8abb791-2fc2-4b54-bd29-b08fecdb278f",
+                                                                      userArgs: {
+                                                                        variables:
+                                                                          [
+                                                                            (() => {
+                                                                              if (
+                                                                                $ctx.activeBreakpoint ===
+                                                                                "Desktop"
+                                                                              ) {
+                                                                                const parts =
+                                                                                  inscrito.birthdate.split(
+                                                                                    "/"
+                                                                                  );
+                                                                                return {
+                                                                                  ...inscrito,
+                                                                                  birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
+                                                                                  owner_id:
+                                                                                    $steps[
+                                                                                      "ids"
+                                                                                    ]
+                                                                                      .ownerId
+                                                                                };
+                                                                              } else {
+                                                                                return {
+                                                                                  ...inscrito,
+                                                                                  birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
+                                                                                  owner_id:
+                                                                                    $steps[
+                                                                                      "ids"
+                                                                                    ]
+                                                                                      .ownerId
+                                                                                };
+                                                                              }
+                                                                            })()
+                                                                          ]
+                                                                      },
+                                                                      cacheKey:
+                                                                        null,
+                                                                      invalidatedKeys:
+                                                                        [
+                                                                          "plasmic_refresh_all"
+                                                                        ],
+                                                                      roleId: null
+                                                                    })
+                                                                  )
+                                                              };
+                                                              return __wrapUserFunction(
+                                                                {
+                                                                  type: "InteractionLoc",
+                                                                  actionName:
+                                                                    "dataSourceOp",
+                                                                  interactionUuid:
+                                                                    "9Dlyeamae",
+                                                                  componentUuid:
+                                                                    "dYFvLDGEBe"
+                                                                },
+                                                                () =>
+                                                                  (async ({
+                                                                    dataOp,
+                                                                    continueOnError
+                                                                  }) => {
+                                                                    try {
+                                                                      const response =
+                                                                        await executePlasmicDataOp(
+                                                                          dataOp,
+                                                                          {
+                                                                            userAuthToken:
+                                                                              dataSourcesCtx?.userAuthToken
+                                                                          }
+                                                                        );
+                                                                      if (
+                                                                        dataOp.invalidatedKeys &&
+                                                                        dataOp.invalidatedKeys.find(
+                                                                          key =>
+                                                                            key ===
+                                                                            "plasmic_refresh_all"
+                                                                        )
+                                                                      ) {
+                                                                        await Promise.all(
+                                                                          Array.from(
+                                                                            cache.keys()
+                                                                          ).map(
+                                                                            async key =>
+                                                                              mutate(
+                                                                                key
+                                                                              )
+                                                                          )
+                                                                        );
+                                                                        return response;
+                                                                      }
+                                                                      if (
+                                                                        dataOp.invalidatedKeys
+                                                                      ) {
+                                                                        await Promise.all(
+                                                                          dataOp.invalidatedKeys.map(
+                                                                            async invalidateKey =>
+                                                                              Promise.all(
+                                                                                Array.from(
+                                                                                  cache.keys()
+                                                                                ).map(
+                                                                                  async key => {
+                                                                                    if (
+                                                                                      typeof key ===
+                                                                                      "string" &&
+                                                                                      key.includes(
+                                                                                        `.$.${invalidateKey}.$.`
+                                                                                      )
+                                                                                    ) {
+                                                                                      return mutate(
+                                                                                        key
+                                                                                      );
+                                                                                    }
+                                                                                    return Promise.resolve();
+                                                                                  }
+                                                                                )
+                                                                              )
+                                                                          )
+                                                                        );
+                                                                      }
+                                                                      return response;
+                                                                    } catch (e) {
+                                                                      if (
+                                                                        !continueOnError
+                                                                      ) {
+                                                                        throw e;
+                                                                      }
+                                                                      return e;
+                                                                    }
+                                                                  })?.apply(
+                                                                    null,
+                                                                    [actionArgs]
+                                                                  ),
+                                                                actionArgs
+                                                              );
+                                                            })()
+                                                          }
+                                                        })()
+                                                        : undefined;
+                                                    if (
+                                                      typeof $steps[
+                                                      "nextRows"
+                                                      ] === "object" &&
+                                                      typeof $steps["nextRows"]
+                                                        .then === "function"
+                                                    ) {
+                                                      $steps["nextRows"] =
+                                                        await __wrapUserPromise(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "dataSourceOp",
+                                                            interactionUuid:
+                                                              "9Dlyeamae",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          $steps["nextRows"]
+                                                        );
+                                                    }
+                                                    $steps["postgresCreate"] =
+                                                      true
+                                                        ? (() => {
                                                           const actionArgs = {
                                                             dataOp:
                                                               __wrapUserFunction(
@@ -9385,7 +9736,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   actionName:
                                                                     "dataSourceOp",
                                                                   interactionUuid:
-                                                                    "nwJSpBQiI",
+                                                                    "v6LbkLEe2",
                                                                   componentUuid:
                                                                     "dYFvLDGEBe",
                                                                   argName:
@@ -9394,42 +9745,33 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 () => ({
                                                                   sourceId:
                                                                     "du8jW5s7JnVfk4bHYp38RF",
-                                                                  opId: "13fc3b0b-36b0-4a79-84c0-c3d14b6d8337",
+                                                                  opId: "593e6a9a-85e7-40be-a0e2-10de0318b9dd",
                                                                   userArgs: {
-                                                                    variables: [
-                                                                      (() => {
-                                                                        const inscrito =
-                                                                          $state
-                                                                            .inscritos[0];
-
-                                                                        if (
-                                                                          $ctx.activeBreakpoint ===
-                                                                          "Desktop"
-                                                                        ) {
-                                                                          const parts =
-                                                                            inscrito.birthdate.split(
-                                                                              "/"
-                                                                            );
-                                                                          return {
-                                                                            ...inscrito,
-                                                                            birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
-                                                                            id: $steps[
-                                                                              "ids"
-                                                                            ]
-                                                                              .ownerId
-                                                                          };
-                                                                        } else {
-                                                                          return {
-                                                                            ...inscrito,
-                                                                            birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
-                                                                            id: $steps[
-                                                                              "ids"
-                                                                            ]
-                                                                              .ownerId
-                                                                          };
-                                                                        }
-                                                                      })()
-                                                                    ]
+                                                                    variables:
+                                                                      [
+                                                                        $ctx
+                                                                          .ageFn
+                                                                          .adultos,
+                                                                        $ctx
+                                                                          .ageFn
+                                                                          .criancas,
+                                                                        120 *
+                                                                        $ctx
+                                                                          .ageFn
+                                                                          .adultos +
+                                                                        40 *
+                                                                        $ctx
+                                                                          .ageFn
+                                                                          .criancas,
+                                                                        $steps[
+                                                                          "ids"
+                                                                        ]
+                                                                          .ownerId,
+                                                                        $steps[
+                                                                          "ids"
+                                                                        ]
+                                                                          .payments
+                                                                      ]
                                                                   },
                                                                   cacheKey:
                                                                     null,
@@ -9447,7 +9789,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               actionName:
                                                                 "dataSourceOp",
                                                               interactionUuid:
-                                                                "nwJSpBQiI",
+                                                                "v6LbkLEe2",
                                                               componentUuid:
                                                                 "dYFvLDGEBe"
                                                             },
@@ -9498,7 +9840,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                               async key => {
                                                                                 if (
                                                                                   typeof key ===
-                                                                                    "string" &&
+                                                                                  "string" &&
                                                                                   key.includes(
                                                                                     `.$.${invalidateKey}.$.`
                                                                                   )
@@ -9523,367 +9865,17 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   }
                                                                   return e;
                                                                 }
-                                                              })?.apply(null, [
-                                                                actionArgs
-                                                              ]),
+                                                              })?.apply(
+                                                                null,
+                                                                [actionArgs]
+                                                              ),
                                                             actionArgs
                                                           );
                                                         })()
-                                                      : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "firstRow"
-                                                      ] === "object" &&
-                                                      typeof $steps["firstRow"]
-                                                        .then === "function"
-                                                    ) {
-                                                      $steps["firstRow"] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "dataSourceOp",
-                                                            interactionUuid:
-                                                              "nwJSpBQiI",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps["firstRow"]
-                                                        );
-                                                    }
-                                                    $steps["nextRows"] =
-                                                      $state.inscritos.length >
-                                                      1
-                                                        ? (() => {
-                                                            const actionArgs = {
-                                                              dataOp:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "dataSourceOp",
-                                                                    interactionUuid:
-                                                                      "9Dlyeamae",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "dataOp"
-                                                                  },
-                                                                  () => ({
-                                                                    sourceId:
-                                                                      "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "f8abb791-2fc2-4b54-bd29-b08fecdb278f",
-                                                                    userArgs: {
-                                                                      variables:
-                                                                        [
-                                                                          (() => {
-                                                                            const inscrito =
-                                                                              $state
-                                                                                .inscritos[1];
-
-                                                                            if (
-                                                                              $ctx.activeBreakpoint ===
-                                                                              "Desktop"
-                                                                            ) {
-                                                                              const parts =
-                                                                                inscrito.birthdate.split(
-                                                                                  "/"
-                                                                                );
-                                                                              return {
-                                                                                ...inscrito,
-                                                                                birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
-                                                                                owner_id:
-                                                                                  $steps[
-                                                                                    "ids"
-                                                                                  ]
-                                                                                    .ownerId
-                                                                              };
-                                                                            } else {
-                                                                              return {
-                                                                                ...inscrito,
-                                                                                birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
-                                                                                owner_id:
-                                                                                  $steps[
-                                                                                    "ids"
-                                                                                  ]
-                                                                                    .ownerId
-                                                                              };
-                                                                            }
-                                                                          })()
-                                                                        ]
-                                                                    },
-                                                                    cacheKey:
-                                                                      null,
-                                                                    invalidatedKeys:
-                                                                      [
-                                                                        "plasmic_refresh_all"
-                                                                      ],
-                                                                    roleId: null
-                                                                  })
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
-                                                              {
-                                                                type: "InteractionLoc",
-                                                                actionName:
-                                                                  "dataSourceOp",
-                                                                interactionUuid:
-                                                                  "9Dlyeamae",
-                                                                componentUuid:
-                                                                  "dYFvLDGEBe"
-                                                              },
-                                                              () =>
-                                                                (async ({
-                                                                  dataOp,
-                                                                  continueOnError
-                                                                }) => {
-                                                                  try {
-                                                                    const response =
-                                                                      await executePlasmicDataOp(
-                                                                        dataOp,
-                                                                        {
-                                                                          userAuthToken:
-                                                                            dataSourcesCtx?.userAuthToken
-                                                                        }
-                                                                      );
-                                                                    if (
-                                                                      dataOp.invalidatedKeys &&
-                                                                      dataOp.invalidatedKeys.find(
-                                                                        key =>
-                                                                          key ===
-                                                                          "plasmic_refresh_all"
-                                                                      )
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        Array.from(
-                                                                          cache.keys()
-                                                                        ).map(
-                                                                          async key =>
-                                                                            mutate(
-                                                                              key
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                      return response;
-                                                                    }
-                                                                    if (
-                                                                      dataOp.invalidatedKeys
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        dataOp.invalidatedKeys.map(
-                                                                          async invalidateKey =>
-                                                                            Promise.all(
-                                                                              Array.from(
-                                                                                cache.keys()
-                                                                              ).map(
-                                                                                async key => {
-                                                                                  if (
-                                                                                    typeof key ===
-                                                                                      "string" &&
-                                                                                    key.includes(
-                                                                                      `.$.${invalidateKey}.$.`
-                                                                                    )
-                                                                                  ) {
-                                                                                    return mutate(
-                                                                                      key
-                                                                                    );
-                                                                                  }
-                                                                                  return Promise.resolve();
-                                                                                }
-                                                                              )
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                    }
-                                                                    return response;
-                                                                  } catch (e) {
-                                                                    if (
-                                                                      !continueOnError
-                                                                    ) {
-                                                                      throw e;
-                                                                    }
-                                                                    return e;
-                                                                  }
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
                                                         : undefined;
                                                     if (
                                                       typeof $steps[
-                                                        "nextRows"
-                                                      ] === "object" &&
-                                                      typeof $steps["nextRows"]
-                                                        .then === "function"
-                                                    ) {
-                                                      $steps["nextRows"] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "dataSourceOp",
-                                                            interactionUuid:
-                                                              "9Dlyeamae",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps["nextRows"]
-                                                        );
-                                                    }
-                                                    $steps["postgresCreate"] =
-                                                      true
-                                                        ? (() => {
-                                                            const actionArgs = {
-                                                              dataOp:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "dataSourceOp",
-                                                                    interactionUuid:
-                                                                      "v6LbkLEe2",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "dataOp"
-                                                                  },
-                                                                  () => ({
-                                                                    sourceId:
-                                                                      "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "593e6a9a-85e7-40be-a0e2-10de0318b9dd",
-                                                                    userArgs: {
-                                                                      variables:
-                                                                        [
-                                                                          $ctx
-                                                                            .ageFn
-                                                                            .adultos,
-                                                                          $ctx
-                                                                            .ageFn
-                                                                            .criancas,
-                                                                          120 *
-                                                                            $ctx
-                                                                              .ageFn
-                                                                              .adultos +
-                                                                            40 *
-                                                                              $ctx
-                                                                                .ageFn
-                                                                                .criancas,
-                                                                          $steps[
-                                                                            "ids"
-                                                                          ]
-                                                                            .ownerId,
-                                                                          $steps[
-                                                                            "ids"
-                                                                          ]
-                                                                            .payments
-                                                                        ]
-                                                                    },
-                                                                    cacheKey:
-                                                                      null,
-                                                                    invalidatedKeys:
-                                                                      [
-                                                                        "plasmic_refresh_all"
-                                                                      ],
-                                                                    roleId: null
-                                                                  })
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
-                                                              {
-                                                                type: "InteractionLoc",
-                                                                actionName:
-                                                                  "dataSourceOp",
-                                                                interactionUuid:
-                                                                  "v6LbkLEe2",
-                                                                componentUuid:
-                                                                  "dYFvLDGEBe"
-                                                              },
-                                                              () =>
-                                                                (async ({
-                                                                  dataOp,
-                                                                  continueOnError
-                                                                }) => {
-                                                                  try {
-                                                                    const response =
-                                                                      await executePlasmicDataOp(
-                                                                        dataOp,
-                                                                        {
-                                                                          userAuthToken:
-                                                                            dataSourcesCtx?.userAuthToken
-                                                                        }
-                                                                      );
-                                                                    if (
-                                                                      dataOp.invalidatedKeys &&
-                                                                      dataOp.invalidatedKeys.find(
-                                                                        key =>
-                                                                          key ===
-                                                                          "plasmic_refresh_all"
-                                                                      )
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        Array.from(
-                                                                          cache.keys()
-                                                                        ).map(
-                                                                          async key =>
-                                                                            mutate(
-                                                                              key
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                      return response;
-                                                                    }
-                                                                    if (
-                                                                      dataOp.invalidatedKeys
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        dataOp.invalidatedKeys.map(
-                                                                          async invalidateKey =>
-                                                                            Promise.all(
-                                                                              Array.from(
-                                                                                cache.keys()
-                                                                              ).map(
-                                                                                async key => {
-                                                                                  if (
-                                                                                    typeof key ===
-                                                                                      "string" &&
-                                                                                    key.includes(
-                                                                                      `.$.${invalidateKey}.$.`
-                                                                                    )
-                                                                                  ) {
-                                                                                    return mutate(
-                                                                                      key
-                                                                                    );
-                                                                                  }
-                                                                                  return Promise.resolve();
-                                                                                }
-                                                                              )
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                    }
-                                                                    return response;
-                                                                  } catch (e) {
-                                                                    if (
-                                                                      !continueOnError
-                                                                    ) {
-                                                                      throw e;
-                                                                    }
-                                                                    return e;
-                                                                  }
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
-                                                        : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "postgresCreate"
+                                                      "postgresCreate"
                                                       ] === "object" &&
                                                       typeof $steps[
                                                         "postgresCreate"
@@ -9901,14 +9893,14 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               "dYFvLDGEBe"
                                                           },
                                                           $steps[
-                                                            "postgresCreate"
+                                                          "postgresCreate"
                                                           ]
                                                         );
                                                     }
                                                     $steps[
                                                       "createMercadoPago"
                                                     ] = true
-                                                      ? (() => {
+                                                        ? (() => {
                                                           const actionArgs = {
                                                             customFunction:
                                                               __wrapUserFunction(
@@ -9944,41 +9936,41 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                       .ageFn
                                                                                       .adultos
                                                                                       ? [
-                                                                                          {
-                                                                                            id: 0,
-                                                                                            title:
-                                                                                              "Adultos",
-                                                                                            description:
-                                                                                              "Quantidade de adultos",
-                                                                                            quantity:
-                                                                                              $ctx
-                                                                                                .ageFn
-                                                                                                .adultos,
-                                                                                            currency_id:
-                                                                                              "BRL",
-                                                                                            unit_price: 120
-                                                                                          }
-                                                                                        ]
+                                                                                        {
+                                                                                          id: 0,
+                                                                                          title:
+                                                                                            "Adultos",
+                                                                                          description:
+                                                                                            "Quantidade de adultos",
+                                                                                          quantity:
+                                                                                            $ctx
+                                                                                              .ageFn
+                                                                                              .adultos,
+                                                                                          currency_id:
+                                                                                            "BRL",
+                                                                                          unit_price: 120
+                                                                                        }
+                                                                                      ]
                                                                                       : []),
                                                                                     ...($ctx
                                                                                       .ageFn
                                                                                       .criancas
                                                                                       ? [
-                                                                                          {
-                                                                                            id: 1,
-                                                                                            title:
-                                                                                              "Crianças",
-                                                                                            description:
-                                                                                              "Quantidade de crianças",
-                                                                                            quantity:
-                                                                                              $ctx
-                                                                                                .ageFn
-                                                                                                .criancas,
-                                                                                            currency_id:
-                                                                                              "BRL",
-                                                                                            unit_price: 40
-                                                                                          }
-                                                                                        ]
+                                                                                        {
+                                                                                          id: 1,
+                                                                                          title:
+                                                                                            "Crianças",
+                                                                                          description:
+                                                                                            "Quantidade de crianças",
+                                                                                          quantity:
+                                                                                            $ctx
+                                                                                              .ageFn
+                                                                                              .criancas,
+                                                                                          currency_id:
+                                                                                            "BRL",
+                                                                                          unit_price: 40
+                                                                                        }
+                                                                                      ]
                                                                                       : [])
                                                                                   ],
                                                                                   $state
@@ -10029,10 +10021,10 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             actionArgs
                                                           );
                                                         })()
-                                                      : undefined;
+                                                        : undefined;
                                                     if (
                                                       typeof $steps[
-                                                        "createMercadoPago"
+                                                      "createMercadoPago"
                                                       ] === "object" &&
                                                       typeof $steps[
                                                         "createMercadoPago"
@@ -10052,7 +10044,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               "dYFvLDGEBe"
                                                           },
                                                           $steps[
-                                                            "createMercadoPago"
+                                                          "createMercadoPago"
                                                           ]
                                                         );
                                                     }
@@ -10061,68 +10053,68 @@ function PlasmicInscricao__RenderFunc(props: {
                                                         "createMercadoPago"
                                                       ]
                                                         ? (() => {
-                                                            const actionArgs = {
-                                                              destination:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "navigation",
-                                                                    interactionUuid:
-                                                                      "taOyGV_Kn",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "destination"
-                                                                  },
-                                                                  () =>
-                                                                    (() => {
-                                                                      try {
-                                                                        return $steps[
-                                                                          "createMercadoPago"
-                                                                        ];
-                                                                      } catch (e) {
-                                                                        if (
-                                                                          e instanceof
-                                                                            TypeError ||
-                                                                          e?.plasmicType ===
-                                                                            "PlasmicUndefinedDataError"
-                                                                        ) {
-                                                                          return undefined;
-                                                                        }
-                                                                        throw e;
+                                                          const actionArgs = {
+                                                            destination:
+                                                              __wrapUserFunction(
+                                                                {
+                                                                  type: "InteractionArgLoc",
+                                                                  actionName:
+                                                                    "navigation",
+                                                                  interactionUuid:
+                                                                    "taOyGV_Kn",
+                                                                  componentUuid:
+                                                                    "dYFvLDGEBe",
+                                                                  argName:
+                                                                    "destination"
+                                                                },
+                                                                () =>
+                                                                  (() => {
+                                                                    try {
+                                                                      return $steps[
+                                                                        "createMercadoPago"
+                                                                      ];
+                                                                    } catch (e) {
+                                                                      if (
+                                                                        e instanceof
+                                                                        TypeError ||
+                                                                        e?.plasmicType ===
+                                                                        "PlasmicUndefinedDataError"
+                                                                      ) {
+                                                                        return undefined;
                                                                       }
-                                                                    })()
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
-                                                              {
-                                                                type: "InteractionLoc",
-                                                                actionName:
-                                                                  "navigation",
-                                                                interactionUuid:
-                                                                  "taOyGV_Kn",
-                                                                componentUuid:
-                                                                  "dYFvLDGEBe"
-                                                              },
-                                                              () =>
-                                                                (({
+                                                                      throw e;
+                                                                    }
+                                                                  })()
+                                                              )
+                                                          };
+                                                          return __wrapUserFunction(
+                                                            {
+                                                              type: "InteractionLoc",
+                                                              actionName:
+                                                                "navigation",
+                                                              interactionUuid:
+                                                                "taOyGV_Kn",
+                                                              componentUuid:
+                                                                "dYFvLDGEBe"
+                                                            },
+                                                            () =>
+                                                              (({
+                                                                destination
+                                                              }) => {
+                                                                __nextRouter?.push(
                                                                   destination
-                                                                }) => {
-                                                                  __nextRouter?.push(
-                                                                    destination
-                                                                  );
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
+                                                                );
+                                                              })?.apply(
+                                                                null,
+                                                                [actionArgs]
+                                                              ),
+                                                            actionArgs
+                                                          );
+                                                        })()
                                                         : undefined;
                                                     if (
                                                       typeof $steps[
-                                                        "goToPage"
+                                                      "goToPage"
                                                       ] === "object" &&
                                                       typeof $steps["goToPage"]
                                                         .then === "function"
@@ -10344,17 +10336,17 @@ type NodeComponentProps<T extends NodeNameType> =
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicInscricao__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
     /* Specify args directly as props*/ Omit<
-      PlasmicInscricao__ArgsType,
-      ReservedPropsType
-    > &
+    PlasmicInscricao__ArgsType,
+    ReservedPropsType
+  > &
     /* Specify overrides for each element directly as props*/ Omit<
-      NodeOverridesType<T>,
-      ReservedPropsType | VariantPropType | ArgPropType
-    > &
+    NodeOverridesType<T>,
+    ReservedPropsType | VariantPropType | ArgPropType
+  > &
     /* Specify props for the root element*/ Omit<
-      Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
-      ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
-    >;
+    Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
+    ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
+  >;
 
 function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   type PropsType = NodeComponentProps<NodeName> & { key?: React.Key };
