@@ -22,7 +22,7 @@ function Inscricao() {
                 }
             }
           }}
-          endpoint={process.env.ENDPOINT!}
+          endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
