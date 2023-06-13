@@ -9926,6 +9926,10 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 () => () => {
                                                                   return (async () => {
                                                                     try {
+                                                                      console.log(
+                                                                        "dale",
+                                                                        $props
+                                                                      );
                                                                       const data =
                                                                         await (
                                                                           await fetch(
@@ -9990,7 +9994,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           )
                                                                         ).json();
                                                                       return data.init_point;
-                                                                    } catch {
+                                                                    } catch (error) {
+                                                                      console.log(
+                                                                        "dale",
+                                                                        error
+                                                                      );
                                                                       $ctx.toastFn.error(
                                                                         "Aconteceu um erro! Tente novamente"
                                                                       );
