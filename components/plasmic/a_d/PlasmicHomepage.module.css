@@ -239,7 +239,7 @@
 .freeBox__sMAat {
   display: flex;
   position: relative;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -251,12 +251,12 @@
   padding: 8px;
 }
 .freeBox__sMAat > :global(.__wab_flex-container) {
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   min-width: 0;
-  margin-left: calc(0px - 20px);
-  width: calc(100% + 20px);
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
 }
 .freeBox__sMAat > :global(.__wab_flex-container) > *,
 .freeBox__sMAat > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
@@ -266,7 +266,7 @@
   > :global(.__wab_slot)
   > picture
   > img {
-  margin-left: 20px;
+  margin-top: 20px;
 }
 @media (min-width: 1100px) {
   .freeBox__sMAat {
@@ -280,10 +280,83 @@
   max-width: 100%;
   text-align: center;
   line-height: 2;
+  font-size: 25px;
   min-width: 0;
+}
+@media (min-width: 641px) {
+  .text__fYk58 {
+    font-size: 30px;
+  }
 }
 @media (min-width: 1100px) {
   .text__fYk58 {
+    text-align: center;
+  }
+}
+.text___2U7OO {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  font-size: 20px;
+  text-decoration-line: underline;
+  min-width: 0;
+}
+@media (min-width: 641px) {
+  .text___2U7OO {
+    font-size: 30px;
+  }
+}
+.freeBox__d712 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: var(--token-uEU6XYK55hW0do);
+  margin-left: 8px;
+  margin-right: 8px;
+  min-width: 0;
+  border-radius: 30px;
+  padding: 8px;
+}
+.freeBox__d712 > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.freeBox__d712 > :global(.__wab_flex-container) > *,
+.freeBox__d712 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__d712 > :global(.__wab_flex-container) > picture > img,
+.freeBox__d712
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 20px;
+}
+@media (min-width: 1100px) {
+  .freeBox__d712 {
+    max-width: 80%;
+  }
+}
+.text__sE7Vb {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  line-height: 2;
+  font-size: 30px;
+  min-width: 0;
+}
+@media (min-width: 1100px) {
+  .text__sE7Vb {
     text-align: center;
   }
 }

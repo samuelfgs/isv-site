@@ -253,26 +253,37 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__fYk58
                     )}
                   >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"20 anos de Adoração e Discipulado. "}
-                      </span>
-                      <React.Fragment>{"\n"}</React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontStyle: "italic" }}
-                      >
-                        {"Você não pode ficar fora dessa!"}
-                      </span>
-                      <React.Fragment>
-                        {
-                          "\nVamos juntos celebrar a Deus pelo que Ele tem feito em nosso meio."
-                        }
-                      </React.Fragment>
-                    </React.Fragment>
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "Vamos celebrar os 20 anos de Adoração e Discipulado"
+                      : "Vamos celebrar os \n20 anos de \nAdoração e Discipulado"}
+                  </div>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___2U7OO
+                    )}
+                  >
+                    {"E você pode fazer parte disso! "}
+                  </div>
+                </p.Stack>
+              ) : null}
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__d712)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__sE7Vb
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "tablet")
+                      ? "Dias 21 e 22 de outubro"
+                      : "21 e 22 de outubro"}
                   </div>
                 </p.Stack>
               ) : null}
