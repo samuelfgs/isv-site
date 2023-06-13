@@ -6,9 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("dale2", typeof req.body);
   const [ items, name, email, id ] = JSON.parse(req.body);
-  console.log("dale", items, name, email, id);
   mercadopago.configure(process.env.IS_PROD === "true" ? {
     client_id: process.env.CLIENT_ID!,
     client_secret: process.env.CLIENT_SECRET!
@@ -26,7 +24,7 @@ export default async function handler(
       },
       external_reference: id,
       back_urls: {
-        success: `${process.env.HOST!}/success`
+        success: `${process.env.REACT_PUBLIC_ENDPOINT!}/success`
       },
       auto_return: "approved"
     });
