@@ -4,7 +4,7 @@ import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
 import GlobalContextsProvider from "../components/plasmic/a_d/PlasmicGlobalContextsProvider";
 import { ScreenVariantProvider } from "../components/plasmic/a_d/PlasmicGlobalVariant__Screen";
-import { PlasmicInscricao2 } from "../components/plasmic/a_d/PlasmicInscricao2";
+import { PlasmicInscricao } from "../components/plasmic/a_d/PlasmicInscricao";
 import { useRouter } from "next/router";
 
 function Inscricao2() {
@@ -30,7 +30,7 @@ function Inscricao2() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicInscricao2
+        <PlasmicInscricao
           form={{
             onKeyPress: (event) => {
                 if (event.key === "Enter") {
@@ -39,6 +39,8 @@ function Inscricao2() {
             }
           }}
           endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
+          adultPrice={0.5}
+          kidsPrice={0.2}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

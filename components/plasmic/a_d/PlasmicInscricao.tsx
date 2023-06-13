@@ -80,9 +80,15 @@ export const PlasmicInscricao__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicInscricao__ArgsType = {
   endpoint?: string;
+  adultPrice?: number;
+  kidsPrice?: number;
 };
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
-export const PlasmicInscricao__ArgProps = new Array<ArgPropType>("endpoint");
+export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
+  "endpoint",
+  "adultPrice",
+  "kidsPrice"
+);
 
 export type PlasmicInscricao__OverridesType = {
   root?: p.Flex<"div">;
@@ -140,7 +146,9 @@ function PlasmicInscricao__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          endpoint: "http://localhost:3000" as const
+          endpoint: "http://localhost:3000" as const,
+          adultPrice: 120 as const,
+          kidsPrice: 40 as const
         },
         props.args
       ),
@@ -6631,7 +6639,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   sty.formField__m4VZe
                                                                 )}
                                                                 hideValidationMessage={
-                                                                  true
+                                                                  false
                                                                 }
                                                                 label={
                                                                   true ? (
@@ -6650,7 +6658,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   {
                                                                     ruleType:
                                                                       "advanced",
-                                                                    message: ``,
+                                                                    message:
+                                                                      "Invalido",
                                                                     custom: (
                                                                       rule,
                                                                       value
@@ -6830,7 +6839,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   sty.formField__mxi4K
                                                                 )}
                                                                 hideValidationMessage={
-                                                                  true
+                                                                  false
                                                                 }
                                                                 label={
                                                                   <RequiredField
@@ -6858,11 +6867,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         ? true
                                                                         : typeof value ===
                                                                             "string" &&
-                                                                            value.length >
-                                                                              0 &&
                                                                             value.length ===
                                                                               4;
-                                                                    }
+                                                                    },
+                                                                    message:
+                                                                      "Invalido"
                                                                   }
                                                                 ]}
                                                               >
@@ -9926,10 +9935,6 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 () => () => {
                                                                   return (async () => {
                                                                     try {
-                                                                      console.log(
-                                                                        "dale",
-                                                                        $props
-                                                                      );
                                                                       const data =
                                                                         await (
                                                                           await fetch(
@@ -9956,7 +9961,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                                 .adultos,
                                                                                             currency_id:
                                                                                               "BRL",
-                                                                                            unit_price: 120
+                                                                                            unit_price:
+                                                                                              $props.adultPrice
                                                                                           }
                                                                                         ]
                                                                                       : []),
@@ -9976,7 +9982,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                                 .criancas,
                                                                                             currency_id:
                                                                                               "BRL",
-                                                                                            unit_price: 40
+                                                                                            unit_price:
+                                                                                              $props.kidsPrice
                                                                                           }
                                                                                         ]
                                                                                       : [])
