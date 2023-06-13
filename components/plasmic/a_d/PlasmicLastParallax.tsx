@@ -137,6 +137,7 @@ function PlasmicLastParallax__RenderFunc(props: {
         data-plasmic-name={"botao"}
         data-plasmic-override={overrides.botao}
         className={classNames("__wab_instance", sty.botao)}
+        link={`/inscricao`}
       >
         <div
           data-plasmic-name={"text"}
