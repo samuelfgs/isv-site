@@ -158,7 +158,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicPalestrantes.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -169,6 +169,17 @@ function PlasmicPalestrantes__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={PlasmicPalestrantes.pageMetadata.title}
+        />
+
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicPalestrantes.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicPalestrantes.pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -565,7 +576,8 @@ export const PlasmicPalestrantes = Object.assign(
     pageMetadata: {
       title: "AD20 - Palestrantes",
       description: "",
-      ogImageSrc: "",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
       canonical: ""
     }
   }

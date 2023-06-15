@@ -439,89 +439,57 @@ function PlasmicInscricao__RenderFunc(props: {
                           {"Fique atento aos valores:"}
                         </span>
                         <React.Fragment>
-                          {"\n\nPessoas de 0 a 2 anos: gratuito*\n\n"}
+                          {
+                            "\n\nPessoas de 0 a 4 anos: gratuito*\n\nPessoas de 5 a 10 anos: R$ "
+                          }
+                        </React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span__uaTxR
+                            )}
+                          >
+                            <React.Fragment>
+                              {$props.kidsPrice.toLocaleString("fr", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                              })}
+                            </React.Fragment>
+                          </span>
+                        }
+                        <React.Fragment>
+                          {"**\n\nPessoas a partir de 11 anos: R$ "}
+                        </React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span__l3Jel
+                            )}
+                          >
+                            <React.Fragment>
+                              {$props.adultPrice.toLocaleString("fr", {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                              })}
+                            </React.Fragment>
+                          </span>
+                        }
+                        <React.Fragment>
+                          {
+                            "\n\n* Crianças desta faixa de etária não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público.\n\n** Crianças nessa faixa etária terão área exclusiva com ministração destinada para elas, portanto não poderão ocupar os lugares do auditório principal. Atenção: as vagas destinadas para essa faixa etária são limitadas!"
+                          }
                         </React.Fragment>
                       </React.Fragment>
                     </div>
                   ) : null}
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___9DiEd
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return `Pessoas de 3 a 9 anos: R$ ${$props.kidsPrice.toLocaleString(
-                            "fr",
-                            {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2
-                            }
-                          )}`;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___80Umx
-                    )}
-                  >
-                    {"\n"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sWvB
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return `Pessoas a partir de 10 anos: R$ ${$props.adultPrice.toLocaleString(
-                            "fr",
-                            {
-                              minimumFractionDigits: 2,
-                              maximumFractionDigits: 2
-                            }
-                          )}`;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__lfhP
-                    )}
-                  >
-                    {
-                      "\n* Crianças desta faixa de idade não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público."
-                    }
-                  </div>
                 </p.Stack>
               ) : null}
               {true ? (
@@ -9273,12 +9241,12 @@ function PlasmicInscricao__RenderFunc(props: {
                                     return age;
                                   }
                                   const adultos = $state.inscritos.filter(
-                                    person => calculateAge(person) >= 10
+                                    person => calculateAge(person) >= 11
                                   ).length;
                                   const criancas = $state.inscritos.filter(
                                     person =>
-                                      calculateAge(person) >= 3 &&
-                                      calculateAge(person) <= 9
+                                      calculateAge(person) >= 5 &&
+                                      calculateAge(person) <= 10
                                   ).length;
                                   const babies =
                                     $state.inscritos.length -
@@ -9916,30 +9884,33 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       $state.inscritos.length >
                                                       1
                                                         ? (() => {
-                                                            for (const inscrito of $state.inscritos.slice(1)) {
-                                                              (() => {
-                                                                const actionArgs = {
-                                                                  dataOp:
-                                                                    __wrapUserFunction(
-                                                                      {
-                                                                        type: "InteractionArgLoc",
-                                                                        actionName:
-                                                                          "dataSourceOp",
-                                                                        interactionUuid:
-                                                                          "9Dlyeamae",
-                                                                        componentUuid:
-                                                                          "dYFvLDGEBe",
-                                                                        argName:
-                                                                          "dataOp"
-                                                                      },
-                                                                      () => ({
-                                                                        sourceId:
-                                                                          "du8jW5s7JnVfk4bHYp38RF",
-                                                                        opId: "f8abb791-2fc2-4b54-bd29-b08fecdb278f",
-                                                                        userArgs: {
-                                                                          variables:
-                                                                            [
-                                                                              (() => {
+                                                            const actionArgs = {
+                                                              dataOp:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "dataSourceOp",
+                                                                    interactionUuid:
+                                                                      "9Dlyeamae",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "dataOp"
+                                                                  },
+                                                                  () => ({
+                                                                    sourceId:
+                                                                      "du8jW5s7JnVfk4bHYp38RF",
+                                                                    opId: "bd846157-3935-42ac-95b9-0186fa290b00",
+                                                                    userArgs: {
+                                                                      variables:
+                                                                        [
+                                                                          $state.inscritos
+                                                                            .slice(
+                                                                              1
+                                                                            )
+                                                                            .map(
+                                                                              inscrito => {
                                                                                 if (
                                                                                   $ctx.activeBreakpoint ===
                                                                                   "Desktop"
@@ -9968,109 +9939,108 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                         .ownerId
                                                                                   };
                                                                                 }
-                                                                              })()
-                                                                            ]
-                                                                        },
-                                                                        cacheKey:
-                                                                          null,
-                                                                        invalidatedKeys:
-                                                                          [
-                                                                            "plasmic_refresh_all"
-                                                                          ],
-                                                                        roleId: null
-                                                                      })
-                                                                    )
-                                                                };
-                                                                return __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionLoc",
-                                                                    actionName:
-                                                                      "dataSourceOp",
-                                                                    interactionUuid:
-                                                                      "9Dlyeamae",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe"
-                                                                  },
-                                                                  () =>
-                                                                    (async ({
-                                                                      dataOp,
-                                                                      continueOnError
-                                                                    }) => {
-                                                                      try {
-                                                                        const response =
-                                                                          await executePlasmicDataOp(
-                                                                            dataOp,
-                                                                            {
-                                                                              userAuthToken:
-                                                                                dataSourcesCtx?.userAuthToken
-                                                                            }
-                                                                          );
-                                                                        if (
-                                                                          dataOp.invalidatedKeys &&
-                                                                          dataOp.invalidatedKeys.find(
-                                                                            key =>
-                                                                              key ===
-                                                                              "plasmic_refresh_all"
-                                                                          )
-                                                                        ) {
-                                                                          await Promise.all(
-                                                                            Array.from(
-                                                                              cache.keys()
-                                                                            ).map(
-                                                                              async key =>
-                                                                                mutate(
-                                                                                  key
-                                                                                )
+                                                                              }
                                                                             )
-                                                                          );
-                                                                          return response;
-                                                                        }
-                                                                        if (
-                                                                          dataOp.invalidatedKeys
-                                                                        ) {
-                                                                          await Promise.all(
-                                                                            dataOp.invalidatedKeys.map(
-                                                                              async invalidateKey =>
-                                                                                Promise.all(
-                                                                                  Array.from(
-                                                                                    cache.keys()
-                                                                                  ).map(
-                                                                                    async key => {
-                                                                                      if (
-                                                                                        typeof key ===
-                                                                                          "string" &&
-                                                                                        key.includes(
-                                                                                          `.$.${invalidateKey}.$.`
-                                                                                        )
-                                                                                      ) {
-                                                                                        return mutate(
-                                                                                          key
-                                                                                        );
-                                                                                      }
-                                                                                      return Promise.resolve();
-                                                                                    }
-                                                                                  )
-                                                                                )
-                                                                            )
-                                                                          );
-                                                                        }
-                                                                        return response;
-                                                                      } catch (e) {
-                                                                        if (
-                                                                          !continueOnError
-                                                                        ) {
-                                                                          throw e;
-                                                                        }
-                                                                        return e;
-                                                                      }
-                                                                    })?.apply(
+                                                                        ]
+                                                                    },
+                                                                    cacheKey:
                                                                       null,
-                                                                      [actionArgs]
-                                                                    ),
-                                                                  actionArgs
-                                                                );
-                                                              })()
-                                                            }
+                                                                    invalidatedKeys:
+                                                                      [
+                                                                        "plasmic_refresh_all"
+                                                                      ],
+                                                                    roleId: null
+                                                                  })
+                                                                )
+                                                            };
+                                                            return __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionLoc",
+                                                                actionName:
+                                                                  "dataSourceOp",
+                                                                interactionUuid:
+                                                                  "9Dlyeamae",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe"
+                                                              },
+                                                              () =>
+                                                                (async ({
+                                                                  dataOp,
+                                                                  continueOnError
+                                                                }) => {
+                                                                  try {
+                                                                    const response =
+                                                                      await executePlasmicDataOp(
+                                                                        dataOp,
+                                                                        {
+                                                                          userAuthToken:
+                                                                            dataSourcesCtx?.userAuthToken
+                                                                        }
+                                                                      );
+                                                                    if (
+                                                                      dataOp.invalidatedKeys &&
+                                                                      dataOp.invalidatedKeys.find(
+                                                                        key =>
+                                                                          key ===
+                                                                          "plasmic_refresh_all"
+                                                                      )
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        Array.from(
+                                                                          cache.keys()
+                                                                        ).map(
+                                                                          async key =>
+                                                                            mutate(
+                                                                              key
+                                                                            )
+                                                                        )
+                                                                      );
+                                                                      return response;
+                                                                    }
+                                                                    if (
+                                                                      dataOp.invalidatedKeys
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        dataOp.invalidatedKeys.map(
+                                                                          async invalidateKey =>
+                                                                            Promise.all(
+                                                                              Array.from(
+                                                                                cache.keys()
+                                                                              ).map(
+                                                                                async key => {
+                                                                                  if (
+                                                                                    typeof key ===
+                                                                                      "string" &&
+                                                                                    key.includes(
+                                                                                      `.$.${invalidateKey}.$.`
+                                                                                    )
+                                                                                  ) {
+                                                                                    return mutate(
+                                                                                      key
+                                                                                    );
+                                                                                  }
+                                                                                  return Promise.resolve();
+                                                                                }
+                                                                              )
+                                                                            )
+                                                                        )
+                                                                      );
+                                                                    }
+                                                                    return response;
+                                                                  } catch (e) {
+                                                                    if (
+                                                                      !continueOnError
+                                                                    ) {
+                                                                      throw e;
+                                                                    }
+                                                                    return e;
+                                                                  }
+                                                                })?.apply(
+                                                                  null,
+                                                                  [actionArgs]
+                                                                ),
+                                                              actionArgs
+                                                            );
                                                           })()
                                                         : undefined;
                                                     if (
@@ -10792,7 +10762,7 @@ export const PlasmicInscricao = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "AD20 - Inscricao",
+      title: "AD20 - Inscrição",
       description: "",
       ogImageSrc:
         "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
