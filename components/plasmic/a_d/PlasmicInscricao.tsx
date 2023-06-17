@@ -116,6 +116,7 @@ export type PlasmicInscricao__OverridesType = {
   input25?: p.Flex<typeof TextInput>;
   select3?: p.Flex<typeof Select>;
   input28?: p.Flex<typeof TextInput>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   loading?: p.Flex<typeof Loading>;
 };
 
@@ -309,6 +310,12 @@ function PlasmicInscricao__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "mercadoPagoLink",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ``
       }
     ],
     [$props, $ctx]
@@ -399,7 +406,7 @@ function PlasmicInscricao__RenderFunc(props: {
                 <p.Stack
                   as={"div"}
                   hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__oNpL5)}
+                  className={classNames(projectcss.all, sty.freeBox__vZu6)}
                   style={(() => {
                     try {
                       return {
@@ -421,7 +428,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__jgxSk
+                        sty.text___1VuWm
                       )}
                     >
                       <React.Fragment>
@@ -450,7 +457,7 @@ function PlasmicInscricao__RenderFunc(props: {
                               projectcss.span,
                               projectcss.__wab_text,
                               projectcss.plasmic_default__inline,
-                              sty.span__uaTxR
+                              sty.span__sYPfD
                             )}
                           >
                             <React.Fragment>
@@ -471,7 +478,7 @@ function PlasmicInscricao__RenderFunc(props: {
                               projectcss.span,
                               projectcss.__wab_text,
                               projectcss.plasmic_default__inline,
-                              sty.span__l3Jel
+                              sty.span__b8Fzq
                             )}
                           >
                             <React.Fragment>
@@ -485,6 +492,60 @@ function PlasmicInscricao__RenderFunc(props: {
                         <React.Fragment>
                           {
                             "\n\n* Crianças desta faixa de etária não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público.\n\n** Crianças nessa faixa etária terão área exclusiva com ministração destinada para elas, portanto não poderão ocupar os lugares do auditório principal. Atenção: as vagas destinadas para essa faixa etária são limitadas!"
+                          }
+                        </React.Fragment>
+                      </React.Fragment>
+                    </div>
+                  ) : null}
+                </p.Stack>
+              ) : null}
+              {true ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__oNpL5)}
+                  style={(() => {
+                    try {
+                      return {
+                        order: $state.inForm ? 0 : 1
+                      };
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
+                      }
+                      throw e;
+                    }
+                  })()}
+                >
+                  {true ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__jgxSk
+                      )}
+                    >
+                      <React.Fragment>
+                        <React.Fragment>{""}</React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span__dwBb7
+                            )}
+                          >
+                            {"ATENÇÃO"}
+                          </span>
+                        }
+                        <React.Fragment>
+                          {
+                            "\n\nA data final da venda do 1º Lote com desconto vai até 31/07/23.\nEntão não perca a oportunidade de comprar o seu ingresso com desconto nesse 1º Lote.\n\nValor Promocional 1º Lote: R$ 120,00"
                           }
                         </React.Fragment>
                       </React.Fragment>
@@ -8527,7 +8588,9 @@ function PlasmicInscricao__RenderFunc(props: {
                           ) : null}
                           {(() => {
                             try {
-                              return !$state.inForm;
+                              return (
+                                !$state.inForm && $state.mercadoPagoLink === ""
+                              );
                             } catch (e) {
                               if (
                                 e instanceof TypeError ||
@@ -10388,7 +10451,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     $steps["goToPage"] =
                                                       !!$steps[
                                                         "createMercadoPago"
-                                                      ]
+                                                      ] && !$props.isInternal
                                                         ? (() => {
                                                             const actionArgs = {
                                                               destination:
@@ -10470,6 +10533,137 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           $steps["goToPage"]
                                                         );
                                                     }
+                                                    $steps[
+                                                      "updateMercadoPagoLink"
+                                                    ] =
+                                                      !!$steps[
+                                                        "createMercadoPago"
+                                                      ] && $props.isInternal
+                                                        ? (() => {
+                                                            const actionArgs = {
+                                                              variable:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "hSda2NHtx",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "variable"
+                                                                  },
+                                                                  () => ({
+                                                                    objRoot:
+                                                                      $state,
+                                                                    variablePath:
+                                                                      [
+                                                                        "mercadoPagoLink"
+                                                                      ]
+                                                                  })
+                                                                ),
+                                                              operation:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "hSda2NHtx",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "operation"
+                                                                  },
+                                                                  () => 0
+                                                                ),
+                                                              value:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "hSda2NHtx",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "value"
+                                                                  },
+                                                                  () =>
+                                                                    $steps[
+                                                                      "createMercadoPago"
+                                                                    ]
+                                                                )
+                                                            };
+                                                            return __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "hSda2NHtx",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe"
+                                                              },
+                                                              () =>
+                                                                (({
+                                                                  variable,
+                                                                  value,
+                                                                  startIndex,
+                                                                  deleteCount
+                                                                }) => {
+                                                                  if (
+                                                                    !variable
+                                                                  ) {
+                                                                    return;
+                                                                  }
+                                                                  const {
+                                                                    objRoot,
+                                                                    variablePath
+                                                                  } = variable;
+
+                                                                  p.set(
+                                                                    objRoot,
+                                                                    variablePath,
+                                                                    value
+                                                                  );
+                                                                  return value;
+                                                                })?.apply(
+                                                                  null,
+                                                                  [actionArgs]
+                                                                ),
+                                                              actionArgs
+                                                            );
+                                                          })()
+                                                        : undefined;
+                                                    if (
+                                                      typeof $steps[
+                                                        "updateMercadoPagoLink"
+                                                      ] === "object" &&
+                                                      typeof $steps[
+                                                        "updateMercadoPagoLink"
+                                                      ].then === "function"
+                                                    ) {
+                                                      $steps[
+                                                        "updateMercadoPagoLink"
+                                                      ] =
+                                                        await __wrapUserPromise(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "updateVariable",
+                                                            interactionUuid:
+                                                              "hSda2NHtx",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          $steps[
+                                                            "updateMercadoPagoLink"
+                                                          ]
+                                                        );
+                                                    }
                                                   }}
                                                   showStartIcon={true}
                                                   startIcon={
@@ -10493,6 +10687,83 @@ function PlasmicInscricao__RenderFunc(props: {
                                   )}
                                 </ph.DataCtxReader>
                               </DataProvider>
+                            </p.Stack>
+                          ) : null}
+                          {(() => {
+                            try {
+                              return (
+                                !$state.inForm && $state.mercadoPagoLink !== ""
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox___5WE8V
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__oiPzt
+                                )}
+                              >
+                                {"Link de Pagamento"}
+                              </div>
+                              <p.PlasmicLink
+                                data-plasmic-name={"link"}
+                                data-plasmic-override={overrides.link}
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.a,
+                                  projectcss.__wab_text,
+                                  sty.link
+                                )}
+                                component={Link}
+                                href={(() => {
+                                  try {
+                                    return $state.mercadoPagoLink;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                                platform={"nextjs"}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return $state.mercadoPagoLink;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "Link de Pagamento";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </p.PlasmicLink>
                             </p.Stack>
                           ) : null}
                         </React.Fragment>
@@ -10553,6 +10824,7 @@ const PlasmicDescendants = {
     "input25",
     "select3",
     "input28",
+    "link",
     "loading"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -10577,7 +10849,8 @@ const PlasmicDescendants = {
     "input24",
     "input25",
     "select3",
-    "input28"
+    "input28",
+    "link"
   ],
   form: [
     "form",
@@ -10640,6 +10913,7 @@ const PlasmicDescendants = {
   input25: ["input25"],
   select3: ["select3"],
   input28: ["input28"],
+  link: ["link"],
   loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -10669,6 +10943,7 @@ type NodeDefaultElementType = {
   input25: typeof TextInput;
   select3: typeof Select;
   input28: typeof TextInput;
+  link: "a";
   loading: typeof Loading;
 };
 
@@ -10754,6 +11029,7 @@ export const PlasmicInscricao = Object.assign(
     input25: makeNodeComponent("input25"),
     select3: makeNodeComponent("select3"),
     input28: makeNodeComponent("input28"),
+    link: makeNodeComponent("link"),
     loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao

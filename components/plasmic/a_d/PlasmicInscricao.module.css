@@ -87,6 +87,44 @@
   font-weight: 700;
   min-width: 0;
 }
+.freeBox__vZu6 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  background: #b7b7b721;
+  min-width: 0;
+  padding: 12px;
+}
+.freeBox__vZu6 > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.freeBox__vZu6 > :global(.__wab_flex-container) > *,
+.freeBox__vZu6 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__vZu6 > :global(.__wab_flex-container) > picture > img,
+.freeBox__vZu6
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 0px;
+}
+.text___1VuWm {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: justify;
+  min-width: 0;
+  display: block;
+}
 .freeBox__oNpL5 {
   display: flex;
   position: relative;
@@ -122,8 +160,13 @@
   height: auto;
   max-width: 100%;
   text-align: justify;
+  padding-top: 0px;
   min-width: 0;
   display: block;
+}
+.span__dwBb7 {
+  color: var(--token-hOu6W2okJTCkF);
+  font-size: 20px;
 }
 .freeBox__jLtot {
   display: flex;
@@ -1605,6 +1648,56 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
+}
+.freeBox___5WE8V {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 100px;
+  min-width: 0;
+  padding: 0px;
+}
+.freeBox___5WE8V > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin-top: calc(0px - 30px);
+  height: calc(100% + 30px);
+}
+.freeBox___5WE8V > :global(.__wab_flex-container) > *,
+.freeBox___5WE8V > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___5WE8V > :global(.__wab_flex-container) > picture > img,
+.freeBox___5WE8V
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 30px;
+}
+.text__oiPzt {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  text-decoration-line: underline;
+  font-size: 20px;
+  min-width: 0;
+}
+.link {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  text-align: center;
+  text-decoration-line: underline;
+  font-size: 20px;
+  color: var(--token-ULSWGLb9N229A);
+  min-width: 0;
 }
 .loading:global(.__wab_instance) {
   max-width: 100%;
