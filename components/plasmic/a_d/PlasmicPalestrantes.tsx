@@ -229,7 +229,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
                 )}
               >
                 {
-                  "Nesta edição do Adoração e Discipulado 20, contaremos com participações especiais."
+                  "Nesta edi\u00e7\u00e3o do Adora\u00e7\u00e3o e Discipulado 20, contaremos com participa\u00e7\u00f5es especiais."
                 }
               </div>
             </p.Stack>

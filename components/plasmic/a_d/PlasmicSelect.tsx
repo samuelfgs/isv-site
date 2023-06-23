@@ -441,7 +441,7 @@ function PlasmicSelect__RenderFunc(props: {
                 : false
             )
               ? p.renderPlasmicSlot({
-                  defaultContents: "Select…",
+                  defaultContents: "Select\u2026",
                   value: args.placeholder,
                   className: classNames(sty.slotTargetPlaceholder, {
                     [sty.slotTargetPlaceholdercolor_softBlue]: hasVariant(

@@ -188,7 +188,7 @@ function PlasmicConcluido__RenderFunc(props: {
               sty.text__gEiAl
             )}
           >
-            {"Inscrição efetuada"}
+            {"Inscri\u00e7\u00e3o efetuada"}
           </div>
           {true ? (
             <p.Stack
@@ -206,7 +206,7 @@ function PlasmicConcluido__RenderFunc(props: {
                 )}
               >
                 {
-                  "Parabéns! Sua inscrição para o Adoração e Discipulado 20 Anos foi realizada com sucesso!\n\nEm breve, entraremos em contato, via e-mail, com todas as informações sobre seu check-in para o evento.\n\nAté lá!"
+                  "Parab\u00e9ns! Sua inscri\u00e7\u00e3o para o Adora\u00e7\u00e3o e Discipulado 20 Anos foi realizada com sucesso!\n\nEm breve, entraremos em contato, via e-mail, com todas as informa\u00e7\u00f5es sobre seu check-in para o evento.\n\nAt\u00e9 l\u00e1!"
                 }
               </div>
             </p.Stack>

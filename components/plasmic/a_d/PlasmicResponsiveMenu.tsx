@@ -225,7 +225,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                   href={`/inscricao`}
                   platform={"nextjs"}
                 >
-                  {"Faça sua inscrição"}
+                  {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
                 </p.PlasmicLink>
                 <p.PlasmicLink
                   className={classNames(
@@ -238,7 +238,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                   href={`/conferencia`}
                   platform={"nextjs"}
                 >
-                  {"Conferência"}
+                  {"Confer\u00eancia"}
                 </p.PlasmicLink>
                 <p.PlasmicLink
                   className={classNames(
@@ -444,7 +444,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                       href={`/inscricao`}
                       platform={"nextjs"}
                     >
-                      {"Faça sua inscrição"}
+                      {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
                     </p.PlasmicLink>
                     <p.PlasmicLink
                       className={classNames(
@@ -593,7 +593,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                     href={`/inscricao`}
                     platform={"nextjs"}
                   >
-                    {"Faça sua inscrição"}
+                    {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
                   </p.PlasmicLink>
                   <p.PlasmicLink
                     className={classNames(
@@ -613,7 +613,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                     href={`/conferencia`}
                     platform={"nextjs"}
                   >
-                    {"Conferência"}
+                    {"Confer\u00eancia"}
                   </p.PlasmicLink>
                   <p.PlasmicLink
                     className={classNames(

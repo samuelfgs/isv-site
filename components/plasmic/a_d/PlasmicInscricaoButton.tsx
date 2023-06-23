@@ -119,7 +119,7 @@ function PlasmicInscricaoButton__RenderFunc(props: {
         data-plasmic-override={overrides.text}
         className={classNames(projectcss.all, projectcss.__wab_text, sty.text)}
       >
-        {"FAÇA SUA INSCRIÇÃO"}
+        {"FA\u00c7A SUA INSCRI\u00c7\u00c3O"}
       </div>
     </Button>
   ) as React.ReactElement | null;

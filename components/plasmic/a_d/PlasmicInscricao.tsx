@@ -19,6 +19,7 @@ import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/react-web/lib/host";
+
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   usePlasmicDataConfig,
@@ -400,7 +401,7 @@ function PlasmicInscricao__RenderFunc(props: {
                   sty.text__umcng
                 )}
               >
-                {"Inscrição"}
+                {"Inscri\u00e7\u00e3o"}
               </div>
               {true ? (
                 <p.Stack
@@ -491,7 +492,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         }
                         <React.Fragment>
                           {
-                            "\n\n* Crianças desta faixa de etária não poderão ocupar lugares de pessoas pagantes. Também não haverá atividades recreativas direcionadas a este público.\n\n** Crianças nessa faixa etária terão área exclusiva com ministração destinada para elas, portanto não poderão ocupar os lugares do auditório principal. Atenção: as vagas destinadas para essa faixa etária são limitadas!"
+                            "\n\n* Crian\u00e7as desta faixa de et\u00e1ria n\u00e3o poder\u00e3o ocupar lugares de pessoas pagantes. Tamb\u00e9m n\u00e3o haver\u00e1 atividades recreativas direcionadas a este p\u00fablico.\n\n** Crian\u00e7as nessa faixa et\u00e1ria ter\u00e3o \u00e1rea exclusiva com ministra\u00e7\u00e3o destinada para elas, portanto n\u00e3o poder\u00e3o ocupar os lugares do audit\u00f3rio principal. Aten\u00e7\u00e3o: as vagas destinadas para essa faixa et\u00e1ria s\u00e3o limitadas!"
                           }
                         </React.Fragment>
                       </React.Fragment>
@@ -540,14 +541,49 @@ function PlasmicInscricao__RenderFunc(props: {
                               sty.span__dwBb7
                             )}
                           >
-                            {"ATENÇÃO"}
+                            {"ATEN\u00c7\u00c3O"}
                           </span>
                         }
                         <React.Fragment>
                           {
-                            "\n\nA data final da venda do 1º Lote com desconto vai até 31/07/23.\nEntão não perca a oportunidade de comprar o seu ingresso com desconto nesse 1º Lote.\n\nValor Promocional 1º Lote: R$ 120,00"
+                            "\n\nA data final da venda do 1\u00ba Lote com desconto vai at\u00e9 31/07/23.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 1\u00ba Lote.\n\nValor Promocional 1\u00ba Lote: R$ "
                           }
                         </React.Fragment>
+                        {
+                          <span
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.span,
+                              projectcss.__wab_text,
+                              projectcss.plasmic_default__inline,
+                              sty.span__yRrr
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return $props.adultPrice.toLocaleString(
+                                    "fr",
+                                    {
+                                      minimumFractionDigits: 2,
+                                      maximumFractionDigits: 2
+                                    }
+                                  );
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "120,00";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </span>
+                        }
+                        <React.Fragment>{""}</React.Fragment>
                       </React.Fragment>
                     </div>
                   ) : null}
@@ -6651,7 +6687,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                         sty.text__qVUe
                                                       )}
                                                     >
-                                                      {"Formulário"}
+                                                      {"Formul\u00e1rio"}
                                                     </div>
                                                     {true ? (
                                                       <div
@@ -6881,7 +6917,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       sty.requiredField___7IxPq
                                                                     )}
                                                                   >
-                                                                    {"Mês"}
+                                                                    {"M\u00eas"}
                                                                   </RequiredField>
                                                                 }
                                                                 name={
@@ -7358,7 +7394,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 ruleType:
                                                                   "required",
                                                                 message:
-                                                                  "Por favor, preencha com um CEP válido"
+                                                                  "Por favor, preencha com um CEP v\u00e1lido"
                                                               }
                                                             ]}
                                                           >
@@ -7843,7 +7879,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       sty.text__uXnyi
                                                                     )}
                                                                   >
-                                                                    {"Número"}
+                                                                    {
+                                                                      "N\u00famero"
+                                                                    }
                                                                   </div>
                                                                 }
                                                                 name={
@@ -7854,7 +7892,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                     ruleType:
                                                                       "required",
                                                                     message:
-                                                                      "Preencha o número da residência"
+                                                                      "Preencha o n\u00famero da resid\u00eancia"
                                                                   }
                                                                 ]}
                                                               >
@@ -8371,7 +8409,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               sty.formField__wYp8T
                                                             )}
                                                             initialValue={
-                                                              "São Vicente" as const
+                                                              "S\u00e3o Vicente" as const
                                                             }
                                                             label={
                                                               <div
@@ -8437,11 +8475,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 __composite[
                                                                   "0"
                                                                 ]["value"] =
-                                                                  "São Vicente";
+                                                                  "S\u00e3o Vicente";
                                                                 __composite[
                                                                   "1"
                                                                 ]["value"] =
-                                                                  "Guarujá";
+                                                                  "Guaruj\u00e1";
                                                                 __composite[
                                                                   "2"
                                                                 ]["value"] =
@@ -8570,7 +8608,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                         )}
                                                         submitsForm={true}
                                                       >
-                                                        {"Próximo"}
+                                                        {"Pr\u00f3ximo"}
                                                       </Button>
                                                     </p.Stack>
                                                   </p.Stack>
@@ -9072,7 +9110,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       sty.text__tcsAt
                                                     )}
                                                   >
-                                                    {"Editar inscrição"}
+                                                    {
+                                                      "Editar inscri\u00e7\u00e3o"
+                                                    }
                                                   </div>
                                                 </Button>
                                                 <Button
@@ -9260,7 +9300,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       sty.text__c8CHv
                                                     )}
                                                   >
-                                                    {"Remover inscrição"}
+                                                    {
+                                                      "Remover inscri\u00e7\u00e3o"
+                                                    }
                                                   </div>
                                                 </Button>
                                               </p.Stack>
@@ -9676,7 +9718,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               />
                                             }
                                           >
-                                            {"Adicionar inscrição"}
+                                            {"Adicionar inscri\u00e7\u00e3o"}
                                           </Button>
                                           <ToastProvider
                                             className={classNames(
@@ -9854,7 +9896,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       dataOp,
                                                                       {
                                                                         userAuthToken:
-                                                                          dataSourcesCtx?.userAuthToken
+                                                                          dataSourcesCtx?.userAuthToken,
+                                                                        user: dataSourcesCtx?.user
                                                                       }
                                                                     );
                                                                   if (
@@ -10037,7 +10080,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         dataOp,
                                                                         {
                                                                           userAuthToken:
-                                                                            dataSourcesCtx?.userAuthToken
+                                                                            dataSourcesCtx?.userAuthToken,
+                                                                          user: dataSourcesCtx?.user
                                                                         }
                                                                       );
                                                                     if (
@@ -10125,178 +10169,6 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               "dYFvLDGEBe"
                                                           },
                                                           $steps["nextRows"]
-                                                        );
-                                                    }
-                                                    $steps["postgresCreate"] =
-                                                      true
-                                                        ? (() => {
-                                                            const actionArgs = {
-                                                              dataOp:
-                                                                __wrapUserFunction(
-                                                                  {
-                                                                    type: "InteractionArgLoc",
-                                                                    actionName:
-                                                                      "dataSourceOp",
-                                                                    interactionUuid:
-                                                                      "v6LbkLEe2",
-                                                                    componentUuid:
-                                                                      "dYFvLDGEBe",
-                                                                    argName:
-                                                                      "dataOp"
-                                                                  },
-                                                                  () => ({
-                                                                    sourceId:
-                                                                      "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "2940ec51-9747-4e91-b420-efa4521276db",
-                                                                    userArgs: {
-                                                                      variables:
-                                                                        [
-                                                                          $ctx
-                                                                            .ageFn
-                                                                            .adultos,
-                                                                          $ctx
-                                                                            .ageFn
-                                                                            .criancas,
-                                                                          $props.adultPrice *
-                                                                            $ctx
-                                                                              .ageFn
-                                                                              .adultos +
-                                                                            $props.kidsPrice *
-                                                                              $ctx
-                                                                                .ageFn
-                                                                                .criancas,
-                                                                          $steps[
-                                                                            "ids"
-                                                                          ]
-                                                                            .ownerId,
-                                                                          $steps[
-                                                                            "ids"
-                                                                          ]
-                                                                            .payments
-                                                                        ]
-                                                                    },
-                                                                    cacheKey:
-                                                                      null,
-                                                                    invalidatedKeys:
-                                                                      [
-                                                                        "plasmic_refresh_all"
-                                                                      ],
-                                                                    roleId: null
-                                                                  })
-                                                                )
-                                                            };
-                                                            return __wrapUserFunction(
-                                                              {
-                                                                type: "InteractionLoc",
-                                                                actionName:
-                                                                  "dataSourceOp",
-                                                                interactionUuid:
-                                                                  "v6LbkLEe2",
-                                                                componentUuid:
-                                                                  "dYFvLDGEBe"
-                                                              },
-                                                              () =>
-                                                                (async ({
-                                                                  dataOp,
-                                                                  continueOnError
-                                                                }) => {
-                                                                  try {
-                                                                    const response =
-                                                                      await executePlasmicDataOp(
-                                                                        dataOp,
-                                                                        {
-                                                                          userAuthToken:
-                                                                            dataSourcesCtx?.userAuthToken
-                                                                        }
-                                                                      );
-                                                                    if (
-                                                                      dataOp.invalidatedKeys &&
-                                                                      dataOp.invalidatedKeys.find(
-                                                                        key =>
-                                                                          key ===
-                                                                          "plasmic_refresh_all"
-                                                                      )
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        Array.from(
-                                                                          cache.keys()
-                                                                        ).map(
-                                                                          async key =>
-                                                                            mutate(
-                                                                              key
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                      return response;
-                                                                    }
-                                                                    if (
-                                                                      dataOp.invalidatedKeys
-                                                                    ) {
-                                                                      await Promise.all(
-                                                                        dataOp.invalidatedKeys.map(
-                                                                          async invalidateKey =>
-                                                                            Promise.all(
-                                                                              Array.from(
-                                                                                cache.keys()
-                                                                              ).map(
-                                                                                async key => {
-                                                                                  if (
-                                                                                    typeof key ===
-                                                                                      "string" &&
-                                                                                    key.includes(
-                                                                                      `.$.${invalidateKey}.$.`
-                                                                                    )
-                                                                                  ) {
-                                                                                    return mutate(
-                                                                                      key
-                                                                                    );
-                                                                                  }
-                                                                                  return Promise.resolve();
-                                                                                }
-                                                                              )
-                                                                            )
-                                                                        )
-                                                                      );
-                                                                    }
-                                                                    return response;
-                                                                  } catch (e) {
-                                                                    if (
-                                                                      !continueOnError
-                                                                    ) {
-                                                                      throw e;
-                                                                    }
-                                                                    return e;
-                                                                  }
-                                                                })?.apply(
-                                                                  null,
-                                                                  [actionArgs]
-                                                                ),
-                                                              actionArgs
-                                                            );
-                                                          })()
-                                                        : undefined;
-                                                    if (
-                                                      typeof $steps[
-                                                        "postgresCreate"
-                                                      ] === "object" &&
-                                                      typeof $steps[
-                                                        "postgresCreate"
-                                                      ].then === "function"
-                                                    ) {
-                                                      $steps["postgresCreate"] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "dataSourceOp",
-                                                            interactionUuid:
-                                                              "v6LbkLEe2",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "postgresCreate"
-                                                          ]
                                                         );
                                                     }
                                                     $steps[
@@ -10445,6 +10317,180 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           },
                                                           $steps[
                                                             "createMercadoPago"
+                                                          ]
+                                                        );
+                                                    }
+                                                    $steps["postgresCreate"] =
+                                                      !!$steps[
+                                                        "createMercadoPago"
+                                                      ]
+                                                        ? (() => {
+                                                            const actionArgs = {
+                                                              dataOp:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "dataSourceOp",
+                                                                    interactionUuid:
+                                                                      "v6LbkLEe2",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "dataOp"
+                                                                  },
+                                                                  () => ({
+                                                                    sourceId:
+                                                                      "du8jW5s7JnVfk4bHYp38RF",
+                                                                    opId: "4968239f-549d-4216-a95d-9f789536b783",
+                                                                    userArgs: {
+                                                                      variables:
+                                                                        [
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .adultos,
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .criancas,
+                                                                          $steps[
+                                                                            "createMercadoPago"
+                                                                          ],
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .adultos *
+                                                                            $props.adultPrice +
+                                                                            $ctx
+                                                                              .ageFn
+                                                                              .criancas *
+                                                                              $props.kidsPrice,
+                                                                          $steps[
+                                                                            "ids"
+                                                                          ]
+                                                                            .ownerId
+                                                                        ]
+                                                                    },
+                                                                    cacheKey:
+                                                                      null,
+                                                                    invalidatedKeys:
+                                                                      [
+                                                                        "plasmic_refresh_all"
+                                                                      ],
+                                                                    roleId: null
+                                                                  })
+                                                                )
+                                                            };
+                                                            return __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionLoc",
+                                                                actionName:
+                                                                  "dataSourceOp",
+                                                                interactionUuid:
+                                                                  "v6LbkLEe2",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe"
+                                                              },
+                                                              () =>
+                                                                (async ({
+                                                                  dataOp,
+                                                                  continueOnError
+                                                                }) => {
+                                                                  try {
+                                                                    const response =
+                                                                      await executePlasmicDataOp(
+                                                                        dataOp,
+                                                                        {
+                                                                          userAuthToken:
+                                                                            dataSourcesCtx?.userAuthToken,
+                                                                          user: dataSourcesCtx?.user
+                                                                        }
+                                                                      );
+                                                                    if (
+                                                                      dataOp.invalidatedKeys &&
+                                                                      dataOp.invalidatedKeys.find(
+                                                                        key =>
+                                                                          key ===
+                                                                          "plasmic_refresh_all"
+                                                                      )
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        Array.from(
+                                                                          cache.keys()
+                                                                        ).map(
+                                                                          async key =>
+                                                                            mutate(
+                                                                              key
+                                                                            )
+                                                                        )
+                                                                      );
+                                                                      return response;
+                                                                    }
+                                                                    if (
+                                                                      dataOp.invalidatedKeys
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        dataOp.invalidatedKeys.map(
+                                                                          async invalidateKey =>
+                                                                            Promise.all(
+                                                                              Array.from(
+                                                                                cache.keys()
+                                                                              ).map(
+                                                                                async key => {
+                                                                                  if (
+                                                                                    typeof key ===
+                                                                                      "string" &&
+                                                                                    key.includes(
+                                                                                      `.$.${invalidateKey}.$.`
+                                                                                    )
+                                                                                  ) {
+                                                                                    return mutate(
+                                                                                      key
+                                                                                    );
+                                                                                  }
+                                                                                  return Promise.resolve();
+                                                                                }
+                                                                              )
+                                                                            )
+                                                                        )
+                                                                      );
+                                                                    }
+                                                                    return response;
+                                                                  } catch (e) {
+                                                                    if (
+                                                                      !continueOnError
+                                                                    ) {
+                                                                      throw e;
+                                                                    }
+                                                                    return e;
+                                                                  }
+                                                                })?.apply(
+                                                                  null,
+                                                                  [actionArgs]
+                                                                ),
+                                                              actionArgs
+                                                            );
+                                                          })()
+                                                        : undefined;
+                                                    if (
+                                                      typeof $steps[
+                                                        "postgresCreate"
+                                                      ] === "object" &&
+                                                      typeof $steps[
+                                                        "postgresCreate"
+                                                      ].then === "function"
+                                                    ) {
+                                                      $steps["postgresCreate"] =
+                                                        await __wrapUserPromise(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "dataSourceOp",
+                                                            interactionUuid:
+                                                              "v6LbkLEe2",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          $steps[
+                                                            "postgresCreate"
                                                           ]
                                                         );
                                                     }
@@ -10676,7 +10722,9 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     />
                                                   }
                                                 >
-                                                  {"Finalizar inscrição"}
+                                                  {
+                                                    "Finalizar inscri\u00e7\u00e3o"
+                                                  }
                                                 </Button>
                                               )}
                                             </ph.DataCtxReader>

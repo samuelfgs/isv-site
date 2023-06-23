@@ -342,12 +342,9 @@ function PlasmicTextInput__RenderFunc(props: {
         name={args.name}
         onBlur={args.onBlur}
         onChange={e => {
-          const value = e.target.value;
-          const fvalue = value.replace(/\D/g, "");
           p.generateStateOnChangeProp($state, ["input", "value"])(
-            fvalue
+            e.target.value
           );
-          $state.value = fvalue
         }}
         onKeyDown={async event => {
           const $steps = {};
@@ -376,7 +373,6 @@ function PlasmicTextInput__RenderFunc(props: {
                       () => [
                         (() => {
                           try {
-                            debugger;
                             return event;
                           } catch (e) {
                             if (

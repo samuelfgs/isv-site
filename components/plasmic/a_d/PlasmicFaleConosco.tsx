@@ -19,6 +19,7 @@ import { useRouter } from "next/router";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/react-web/lib/host";
+
 import { usePlasmicDataSourceContext } from "@plasmicapp/data-sources-context";
 import {
   usePlasmicDataConfig,
@@ -288,7 +289,7 @@ function PlasmicFaleConosco__RenderFunc(props: {
                     )}
                   >
                     {
-                      "Ficou com alguma dúvida? \nEnvie uma mensagem e retornaremos"
+                      "Ficou com alguma d\u00favida? \nEnvie uma mensagem e retornaremos"
                     }
                   </div>
                   {true ? (
@@ -398,7 +399,8 @@ function PlasmicFaleConosco__RenderFunc(props: {
                                                   dataOp,
                                                   {
                                                     userAuthToken:
-                                                      dataSourcesCtx?.userAuthToken
+                                                      dataSourcesCtx?.userAuthToken,
+                                                    user: dataSourcesCtx?.user
                                                   }
                                                 );
                                               if (

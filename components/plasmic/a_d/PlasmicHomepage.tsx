@@ -278,8 +278,8 @@ function PlasmicHomepage__RenderFunc(props: {
                     )}
                   >
                     {hasVariant(globalVariants, "screen", "tablet")
-                      ? "Vamos celebrar os 20 anos de Adoração e Discipulado"
-                      : "Vamos celebrar os \n20 anos de \nAdoração e Discipulado"}
+                      ? "Vamos celebrar os 20 anos de Adora\u00e7\u00e3o e Discipulado"
+                      : "Vamos celebrar os \n20 anos de \nAdora\u00e7\u00e3o e Discipulado"}
                   </div>
                   <div
                     className={classNames(
@@ -288,7 +288,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text___2U7OO
                     )}
                   >
-                    {"E você pode fazer parte disso! "}
+                    {"E voc\u00ea pode fazer parte disso! "}
                   </div>
                 </p.Stack>
               ) : null}
@@ -335,7 +335,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       sty.text__j4F9
                     )}
                   >
-                    {"VOCÊ FAZ PARTE DISSO!"}
+                    {"VOC\u00ca FAZ PARTE DISSO!"}
                   </div>
                   <InscricaoButton
                     data-plasmic-name={"inscricaoButton"}

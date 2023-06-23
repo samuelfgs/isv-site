@@ -131,7 +131,7 @@ function PlasmicLastParallax__RenderFunc(props: {
         data-plasmic-override={overrides.voce}
         className={classNames(projectcss.all, projectcss.__wab_text, sty.voce)}
       >
-        {"E VOCÊ..."}
+        {"E VOC\u00ca..."}
       </div>
       <Button
         data-plasmic-name={"botao"}
@@ -148,7 +148,7 @@ function PlasmicLastParallax__RenderFunc(props: {
             sty.text
           )}
         >
-          {"FAÇA SUA INSCRIÇÃO"}
+          {"FA\u00c7A SUA INSCRI\u00c7\u00c3O"}
         </div>
       </Button>
     </p.Stack>

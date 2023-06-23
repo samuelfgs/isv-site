@@ -212,7 +212,7 @@ function PlasmicConferencia__RenderFunc(props: {
               sty.text__elHpj
             )}
           >
-            {"Sobre o Adoração e Discipulado"}
+            {"Sobre o Adora\u00e7\u00e3o e Discipulado"}
           </div>
           {true ? (
             <p.Stack
@@ -232,14 +232,14 @@ function PlasmicConferencia__RenderFunc(props: {
                 <React.Fragment>
                   <React.Fragment>
                     {
-                      "Desde o ano 2000, o Adoração e Discipulado tem sido um marco na vida da Igreja em São Vicente e de milhares de pessoas espalhadas pelo Brasil. \n\nO nome da conferência foi escolhido pelo fato de a Igreja local, ao longo das últimas décadas, entender que o discipulado é muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos.\n\nNeste ano, celebramos a 20ª edição deste marcante evento de nossa história.\n\n"
+                      "Desde o ano 2000, o Adora\u00e7\u00e3o e Discipulado tem sido um marco na vida da Igreja em S\u00e3o Vicente e de milhares de pessoas espalhadas pelo Brasil. \n\nO nome da confer\u00eancia foi escolhido pelo fato de a Igreja local, ao longo das \u00faltimas d\u00e9cadas, entender que o discipulado \u00e9 muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos.\n\nNeste ano, celebramos a 20\u00aa edi\u00e7\u00e3o deste marcante evento de nossa hist\u00f3ria.\n\n"
                     }
                   </React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ fontWeight: 700 }}
                   >
-                    {"Igreja em São Vicente"}
+                    {"Igreja em S\u00e3o Vicente"}
                   </span>
                 </React.Fragment>
               </div>
