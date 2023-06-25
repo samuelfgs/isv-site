@@ -84,13 +84,15 @@ export type PlasmicInscricao__ArgsType = {
   adultPrice?: number;
   kidsPrice?: number;
   isInternal?: boolean;
+  isSv?: boolean;
 };
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
 export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
   "endpoint",
   "adultPrice",
   "kidsPrice",
-  "isInternal"
+  "isInternal",
+  "isSv"
 );
 
 export type PlasmicInscricao__OverridesType = {
@@ -118,6 +120,7 @@ export type PlasmicInscricao__OverridesType = {
   select3?: p.Flex<typeof Select>;
   input28?: p.Flex<typeof TextInput>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
+  select2?: p.Flex<typeof Select>;
   loading?: p.Flex<typeof Loading>;
 };
 
@@ -155,7 +158,8 @@ function PlasmicInscricao__RenderFunc(props: {
           endpoint: "http://localhost:3000" as const,
           adultPrice: 120 as const,
           kidsPrice: 40 as const,
-          isInternal: false
+          isInternal: false,
+          isSv: true
         },
         props.args
       ),
@@ -317,6 +321,18 @@ function PlasmicInscricao__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
+      },
+      {
+        path: "select2.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "paymentId",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
     [$props, $ctx]
@@ -10342,7 +10358,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   () => ({
                                                                     sourceId:
                                                                       "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "4968239f-549d-4216-a95d-9f789536b783",
+                                                                    opId: "56bb4ddd-1fcd-4a42-a311-4a3a2d4ede01",
                                                                     userArgs: {
                                                                       variables:
                                                                         [
@@ -10366,7 +10382,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $steps[
                                                                             "ids"
                                                                           ]
-                                                                            .ownerId
+                                                                            .ownerId,
+                                                                          $steps[
+                                                                            "ids"
+                                                                          ]
+                                                                            .payments
                                                                         ]
                                                                     },
                                                                     cacheKey:
@@ -10710,6 +10730,133 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           ]
                                                         );
                                                     }
+                                                    $steps["updatePaymentId"] =
+                                                      true
+                                                        ? (() => {
+                                                            const actionArgs = {
+                                                              variable:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "AUnoCZV_M",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "variable"
+                                                                  },
+                                                                  () => ({
+                                                                    objRoot:
+                                                                      $state,
+                                                                    variablePath:
+                                                                      [
+                                                                        "paymentId"
+                                                                      ]
+                                                                  })
+                                                                ),
+                                                              operation:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "AUnoCZV_M",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "operation"
+                                                                  },
+                                                                  () => 0
+                                                                ),
+                                                              value:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "updateVariable",
+                                                                    interactionUuid:
+                                                                      "AUnoCZV_M",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "value"
+                                                                  },
+                                                                  () =>
+                                                                    $steps[
+                                                                      "ids"
+                                                                    ].payments
+                                                                )
+                                                            };
+                                                            return __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionLoc",
+                                                                actionName:
+                                                                  "updateVariable",
+                                                                interactionUuid:
+                                                                  "AUnoCZV_M",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe"
+                                                              },
+                                                              () =>
+                                                                (({
+                                                                  variable,
+                                                                  value,
+                                                                  startIndex,
+                                                                  deleteCount
+                                                                }) => {
+                                                                  if (
+                                                                    !variable
+                                                                  ) {
+                                                                    return;
+                                                                  }
+                                                                  const {
+                                                                    objRoot,
+                                                                    variablePath
+                                                                  } = variable;
+
+                                                                  p.set(
+                                                                    objRoot,
+                                                                    variablePath,
+                                                                    value
+                                                                  );
+                                                                  return value;
+                                                                })?.apply(
+                                                                  null,
+                                                                  [actionArgs]
+                                                                ),
+                                                              actionArgs
+                                                            );
+                                                          })()
+                                                        : undefined;
+                                                    if (
+                                                      typeof $steps[
+                                                        "updatePaymentId"
+                                                      ] === "object" &&
+                                                      typeof $steps[
+                                                        "updatePaymentId"
+                                                      ].then === "function"
+                                                    ) {
+                                                      $steps[
+                                                        "updatePaymentId"
+                                                      ] =
+                                                        await __wrapUserPromise(
+                                                          {
+                                                            type: "InteractionLoc",
+                                                            actionName:
+                                                              "updateVariable",
+                                                            interactionUuid:
+                                                              "AUnoCZV_M",
+                                                            componentUuid:
+                                                              "dYFvLDGEBe"
+                                                          },
+                                                          $steps[
+                                                            "updatePaymentId"
+                                                          ]
+                                                        );
+                                                    }
                                                   }}
                                                   showStartIcon={true}
                                                   startIcon={
@@ -10740,7 +10887,9 @@ function PlasmicInscricao__RenderFunc(props: {
                           {(() => {
                             try {
                               return (
-                                !$state.inForm && $state.mercadoPagoLink !== ""
+                                !$state.inForm &&
+                                $state.mercadoPagoLink !== "" &&
+                                !$props.isSv
                               );
                             } catch (e) {
                               if (
@@ -10814,6 +10963,254 @@ function PlasmicInscricao__RenderFunc(props: {
                               </p.PlasmicLink>
                             </p.Stack>
                           ) : null}
+                          {(() => {
+                            try {
+                              return (
+                                !$state.inForm &&
+                                $state.mercadoPagoLink !== "" &&
+                                $props.isSv
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return true;
+                              }
+                              throw e;
+                            }
+                          })() ? (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__yIxh
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__duqO7
+                                )}
+                              >
+                                {"M\u00e9todo de Pagamento"}
+                              </div>
+                              <Select
+                                data-plasmic-name={"select2"}
+                                data-plasmic-override={overrides.select2}
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.select2
+                                )}
+                                onChange={(...eventArgs) => {
+                                  p.generateStateOnChangeProp($state, [
+                                    "select2",
+                                    "value"
+                                  ])(eventArgs[0]);
+                                }}
+                                options={(() => {
+                                  const __composite = [
+                                    { value: null, label: null },
+                                    { value: null, label: null },
+                                    { value: null, label: null }
+                                  ];
+                                  __composite["0"]["value"] = "pix";
+                                  __composite["0"]["label"] = "Pix";
+                                  __composite["1"]["value"] = "credito";
+                                  __composite["1"]["label"] = "Credito";
+                                  __composite["2"]["value"] = "debito";
+                                  __composite["2"]["label"] = "Debito";
+                                  return __composite;
+                                })()}
+                                value={p.generateStateValueProp($state, [
+                                  "select2",
+                                  "value"
+                                ])}
+                              />
+
+                              <Button
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button__uLfmp
+                                )}
+                                onClick={async event => {
+                                  const $steps = {};
+                                  $steps["postgresUpdateMany"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          dataOp: __wrapUserFunction(
+                                            {
+                                              type: "InteractionArgLoc",
+                                              actionName: "dataSourceOp",
+                                              interactionUuid: "N-X0Sz3_s",
+                                              componentUuid: "dYFvLDGEBe",
+                                              argName: "dataOp"
+                                            },
+                                            () => ({
+                                              sourceId:
+                                                "du8jW5s7JnVfk4bHYp38RF",
+                                              opId: "068bfcd0-5658-489c-96d3-a4a69f8ff76b",
+                                              userArgs: {
+                                                conditions: [$state.paymentId],
+                                                variables: [
+                                                  $state.select2.value
+                                                ]
+                                              },
+                                              cacheKey: null,
+                                              invalidatedKeys: [
+                                                "plasmic_refresh_all"
+                                              ],
+                                              roleId: null
+                                            })
+                                          )
+                                        };
+                                        return __wrapUserFunction(
+                                          {
+                                            type: "InteractionLoc",
+                                            actionName: "dataSourceOp",
+                                            interactionUuid: "N-X0Sz3_s",
+                                            componentUuid: "dYFvLDGEBe"
+                                          },
+                                          () =>
+                                            (async ({
+                                              dataOp,
+                                              continueOnError
+                                            }) => {
+                                              try {
+                                                const response =
+                                                  await executePlasmicDataOp(
+                                                    dataOp,
+                                                    {
+                                                      userAuthToken:
+                                                        dataSourcesCtx?.userAuthToken,
+                                                      user: dataSourcesCtx?.user
+                                                    }
+                                                  );
+                                                if (
+                                                  dataOp.invalidatedKeys &&
+                                                  dataOp.invalidatedKeys.find(
+                                                    key =>
+                                                      key ===
+                                                      "plasmic_refresh_all"
+                                                  )
+                                                ) {
+                                                  await Promise.all(
+                                                    Array.from(
+                                                      cache.keys()
+                                                    ).map(async key =>
+                                                      mutate(key)
+                                                    )
+                                                  );
+                                                  return response;
+                                                }
+                                                if (dataOp.invalidatedKeys) {
+                                                  await Promise.all(
+                                                    dataOp.invalidatedKeys.map(
+                                                      async invalidateKey =>
+                                                        Promise.all(
+                                                          Array.from(
+                                                            cache.keys()
+                                                          ).map(async key => {
+                                                            if (
+                                                              typeof key ===
+                                                                "string" &&
+                                                              key.includes(
+                                                                `.$.${invalidateKey}.$.`
+                                                              )
+                                                            ) {
+                                                              return mutate(
+                                                                key
+                                                              );
+                                                            }
+                                                            return Promise.resolve();
+                                                          })
+                                                        )
+                                                    )
+                                                  );
+                                                }
+                                                return response;
+                                              } catch (e) {
+                                                if (!continueOnError) {
+                                                  throw e;
+                                                }
+                                                return e;
+                                              }
+                                            })?.apply(null, [actionArgs]),
+                                          actionArgs
+                                        );
+                                      })()
+                                    : undefined;
+                                  if (
+                                    typeof $steps["postgresUpdateMany"] ===
+                                      "object" &&
+                                    typeof $steps["postgresUpdateMany"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["postgresUpdateMany"] =
+                                      await __wrapUserPromise(
+                                        {
+                                          type: "InteractionLoc",
+                                          actionName: "dataSourceOp",
+                                          interactionUuid: "N-X0Sz3_s",
+                                          componentUuid: "dYFvLDGEBe"
+                                        },
+                                        $steps["postgresUpdateMany"]
+                                      );
+                                  }
+                                  $steps["goToConcluido"] = true
+                                    ? (() => {
+                                        const actionArgs = {
+                                          destination: __wrapUserFunction(
+                                            {
+                                              type: "InteractionArgLoc",
+                                              actionName: "navigation",
+                                              interactionUuid: "vNBuUGdZV",
+                                              componentUuid: "dYFvLDGEBe",
+                                              argName: "destination"
+                                            },
+                                            () => `/success`
+                                          )
+                                        };
+                                        return __wrapUserFunction(
+                                          {
+                                            type: "InteractionLoc",
+                                            actionName: "navigation",
+                                            interactionUuid: "vNBuUGdZV",
+                                            componentUuid: "dYFvLDGEBe"
+                                          },
+                                          () =>
+                                            (({ destination }) => {
+                                              __nextRouter?.push(destination);
+                                            })?.apply(null, [actionArgs]),
+                                          actionArgs
+                                        );
+                                      })()
+                                    : undefined;
+                                  if (
+                                    typeof $steps["goToConcluido"] ===
+                                      "object" &&
+                                    typeof $steps["goToConcluido"].then ===
+                                      "function"
+                                  ) {
+                                    $steps["goToConcluido"] =
+                                      await __wrapUserPromise(
+                                        {
+                                          type: "InteractionLoc",
+                                          actionName: "navigation",
+                                          interactionUuid: "vNBuUGdZV",
+                                          componentUuid: "dYFvLDGEBe"
+                                        },
+                                        $steps["goToConcluido"]
+                                      );
+                                  }
+                                }}
+                              >
+                                {"Enviar"}
+                              </Button>
+                            </p.Stack>
+                          ) : null}
                         </React.Fragment>
                       )}
                     </ph.DataCtxReader>
@@ -10873,6 +11270,7 @@ const PlasmicDescendants = {
     "select3",
     "input28",
     "link",
+    "select2",
     "loading"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -10898,7 +11296,8 @@ const PlasmicDescendants = {
     "input25",
     "select3",
     "input28",
-    "link"
+    "link",
+    "select2"
   ],
   form: [
     "form",
@@ -10962,6 +11361,7 @@ const PlasmicDescendants = {
   select3: ["select3"],
   input28: ["input28"],
   link: ["link"],
+  select2: ["select2"],
   loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -10992,6 +11392,7 @@ type NodeDefaultElementType = {
   select3: typeof Select;
   input28: typeof TextInput;
   link: "a";
+  select2: typeof Select;
   loading: typeof Loading;
 };
 
@@ -11078,6 +11479,7 @@ export const PlasmicInscricao = Object.assign(
     select3: makeNodeComponent("select3"),
     input28: makeNodeComponent("input28"),
     link: makeNodeComponent("link"),
+    select2: makeNodeComponent("select2"),
     loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao
