@@ -10383,7 +10383,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   () => ({
                                                                     sourceId:
                                                                       "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "56bb4ddd-1fcd-4a42-a311-4a3a2d4ede01",
+                                                                    opId: "17308747-7db0-42c1-a75e-879d06da0d1f",
                                                                     userArgs: {
                                                                       variables:
                                                                         [
@@ -10411,7 +10411,10 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $steps[
                                                                             "ids"
                                                                           ]
-                                                                            .payments
+                                                                            .payments,
+                                                                          $props.isSv
+                                                                            ? "Igreja"
+                                                                            : "Samuel"
                                                                         ]
                                                                     },
                                                                     cacheKey:
