@@ -9374,6 +9374,15 @@ function PlasmicInscricao__RenderFunc(props: {
                                     adultos -
                                     criancas;
                                   return {
+                                    calcPersonPrice: person => {
+                                      if (calculateAge(person) >= 11) {
+                                        return $props.adultPrice;
+                                      }
+                                      if (calculateAge(person) >= 5) {
+                                        return $props.kidsPrice;
+                                      }
+                                      return 0;
+                                    },
                                     adultos,
                                     criancas,
                                     babies
@@ -9844,7 +9853,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 () => ({
                                                                   sourceId:
                                                                     "du8jW5s7JnVfk4bHYp38RF",
-                                                                  opId: "13fc3b0b-36b0-4a79-84c0-c3d14b6d8337",
+                                                                  opId: "d9534590-41c0-4caf-a751-11e95ff65670",
                                                                   userArgs: {
                                                                     variables: [
                                                                       (() => {
@@ -9866,7 +9875,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             id: $steps[
                                                                               "ids"
                                                                             ]
-                                                                              .ownerId
+                                                                              .ownerId,
+                                                                            price:
+                                                                              $ctx.ageFn.calcPersonPrice(
+                                                                                inscrito
+                                                                              )
                                                                           };
                                                                         } else {
                                                                           return {
@@ -9875,7 +9888,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             id: $steps[
                                                                               "ids"
                                                                             ]
-                                                                              .ownerId
+                                                                              .ownerId,
+                                                                            price:
+                                                                              $ctx.ageFn.calcPersonPrice(
+                                                                                inscrito
+                                                                              )
                                                                           };
                                                                         }
                                                                       })()
@@ -10023,7 +10040,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   () => ({
                                                                     sourceId:
                                                                       "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "bd846157-3935-42ac-95b9-0186fa290b00",
+                                                                    opId: "f26fc8ee-e880-4506-9cbe-df9fd8c09889",
                                                                     userArgs: {
                                                                       variables:
                                                                         [
@@ -10048,7 +10065,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                       $steps[
                                                                                         "ids"
                                                                                       ]
-                                                                                        .ownerId
+                                                                                        .ownerId,
+                                                                                    price:
+                                                                                      $ctx.ageFn.calcPersonPrice(
+                                                                                        inscrito
+                                                                                      )
                                                                                   };
                                                                                 } else {
                                                                                   return {
@@ -10058,7 +10079,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                       $steps[
                                                                                         "ids"
                                                                                       ]
-                                                                                        .ownerId
+                                                                                        .ownerId,
+                                                                                    price:
+                                                                                      $ctx.ageFn.calcPersonPrice(
+                                                                                        inscrito
+                                                                                      )
                                                                                   };
                                                                                 }
                                                                               }
