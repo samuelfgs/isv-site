@@ -1738,7 +1738,7 @@
   font-size: 20px;
   min-width: 0;
 }
-.select2:global(.__wab_instance) {
+.selectPayment:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   width: auto;

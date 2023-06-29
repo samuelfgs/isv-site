@@ -120,7 +120,7 @@ export type PlasmicInscricao__OverridesType = {
   select3?: p.Flex<typeof Select>;
   input28?: p.Flex<typeof TextInput>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
-  select2?: p.Flex<typeof Select>;
+  selectPayment?: p.Flex<typeof Select>;
   loading?: p.Flex<typeof Loading>;
 };
 
@@ -323,7 +323,7 @@ function PlasmicInscricao__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
       },
       {
-        path: "select2.value",
+        path: "selectPayment.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
@@ -10383,7 +10383,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   () => ({
                                                                     sourceId:
                                                                       "du8jW5s7JnVfk4bHYp38RF",
-                                                                    opId: "17308747-7db0-42c1-a75e-879d06da0d1f",
+                                                                    opId: "5d112117-8794-4a1c-a3a7-9f795c294a0b",
                                                                     userArgs: {
                                                                       variables:
                                                                         [
@@ -10414,7 +10414,30 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             .payments,
                                                                           $props.isSv
                                                                             ? "Igreja"
-                                                                            : "Samuel"
+                                                                            : "Samuel",
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .adultos,
+                                                                          $steps
+                                                                            .ids
+                                                                            .payments,
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .criancas,
+                                                                          $steps.createMercadoPago,
+                                                                          $props.lote ??
+                                                                            1,
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .adultos *
+                                                                            $props.adultPrice +
+                                                                            $ctx
+                                                                              .ageFn
+                                                                              .criancas *
+                                                                              $props.kidsPrice,
+                                                                          $steps
+                                                                            .ids
+                                                                            .ownerId
                                                                         ]
                                                                     },
                                                                     cacheKey:
@@ -11026,15 +11049,15 @@ function PlasmicInscricao__RenderFunc(props: {
                                 {"M\u00e9todo de Pagamento"}
                               </div>
                               <Select
-                                data-plasmic-name={"select2"}
-                                data-plasmic-override={overrides.select2}
+                                data-plasmic-name={"selectPayment"}
+                                data-plasmic-override={overrides.selectPayment}
                                 className={classNames(
                                   "__wab_instance",
-                                  sty.select2
+                                  sty.selectPayment
                                 )}
                                 onChange={(...eventArgs) => {
                                   p.generateStateOnChangeProp($state, [
-                                    "select2",
+                                    "selectPayment",
                                     "value"
                                   ])(eventArgs[0]);
                                 }}
@@ -11053,7 +11076,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                   return __composite;
                                 })()}
                                 value={p.generateStateValueProp($state, [
-                                  "select2",
+                                  "selectPayment",
                                   "value"
                                 ])}
                               />
@@ -11079,11 +11102,12 @@ function PlasmicInscricao__RenderFunc(props: {
                                             () => ({
                                               sourceId:
                                                 "du8jW5s7JnVfk4bHYp38RF",
-                                              opId: "fe884d3e-bd17-476a-b773-9d1513b864cb",
+                                              opId: "ff87fb58-e50e-43f2-aca9-b16a8a557375",
                                               userArgs: {
                                                 conditions: [$state.paymentId],
                                                 variables: [
-                                                  $state.select2.value
+                                                  $state.selectPayment.value,
+                                                  $state.selectPayment.value
                                                 ]
                                               },
                                               cacheKey: null,
@@ -11298,7 +11322,7 @@ const PlasmicDescendants = {
     "select3",
     "input28",
     "link",
-    "select2",
+    "selectPayment",
     "loading"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -11325,7 +11349,7 @@ const PlasmicDescendants = {
     "select3",
     "input28",
     "link",
-    "select2"
+    "selectPayment"
   ],
   form: [
     "form",
@@ -11389,7 +11413,7 @@ const PlasmicDescendants = {
   select3: ["select3"],
   input28: ["input28"],
   link: ["link"],
-  select2: ["select2"],
+  selectPayment: ["selectPayment"],
   loading: ["loading"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -11420,7 +11444,7 @@ type NodeDefaultElementType = {
   select3: typeof Select;
   input28: typeof TextInput;
   link: "a";
-  select2: typeof Select;
+  selectPayment: typeof Select;
   loading: typeof Loading;
 };
 
@@ -11507,7 +11531,7 @@ export const PlasmicInscricao = Object.assign(
     select3: makeNodeComponent("select3"),
     input28: makeNodeComponent("input28"),
     link: makeNodeComponent("link"),
-    select2: makeNodeComponent("select2"),
+    selectPayment: makeNodeComponent("selectPayment"),
     loading: makeNodeComponent("loading"),
 
     // Metadata about props expected for PlasmicInscricao
