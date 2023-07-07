@@ -572,9 +572,14 @@
           "name": "DataProvider",
           "displayName": "hostless-data-provider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -594,8 +599,7 @@
           "displayName": "hostless-slider",
           "componentImportPath": "react-slick"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "8PtdGodUbexNYgkuyBUcWu",
@@ -615,8 +619,7 @@
           "displayName": "global-embed-css",
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "ohDidvG9XsCeFumugENU3J",
@@ -828,8 +831,7 @@
           "displayName": "plasmic-antd5-date-picker",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerDatePicker"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "9Vr5YWkf3w7jj6SsTcCEta",
@@ -849,8 +851,7 @@
           "displayName": "hostless-loading-boundary",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     }
   ],
   "globalVariants": {

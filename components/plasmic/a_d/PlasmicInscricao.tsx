@@ -159,7 +159,7 @@ function PlasmicInscricao__RenderFunc(props: {
           adultPrice: 120 as const,
           kidsPrice: 40 as const,
           isInternal: false,
-          isSv: true
+          isSv: false
         },
         props.args
       ),
