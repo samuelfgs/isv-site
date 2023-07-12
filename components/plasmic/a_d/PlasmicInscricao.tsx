@@ -7570,7 +7570,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                       const data =
                                                                                         await (
                                                                                           await fetch(
-                                                                                            `https://viacep.com.br/ws/${cep}/json/`
+                                                                                            `https://viacep.com.br/ws/${cepStr}/json/`
                                                                                           )
                                                                                         ).json();
                                                                                       if (
