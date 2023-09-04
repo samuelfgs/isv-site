@@ -10008,6 +10008,10 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $state
                                                                             .inscritos[0];
                                                                         let obj;
+                                                                        let price = $ctx.ageFn.calcPersonPrice(
+                                                                          inscrito
+                                                                        );
+                                                                        if (price < 10) price = price * 100;
                                                                         if (
                                                                           $ctx.activeBreakpoint ===
                                                                           "Desktop"
@@ -10020,10 +10024,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             {
                                                                               ...inscrito,
                                                                               birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
-                                                                              price:
-                                                                                $ctx.ageFn.calcPersonPrice(
-                                                                                  inscrito
-                                                                                ),
+                                                                              price,
                                                                               id: $steps[
                                                                                 "ids"
                                                                               ]
@@ -10034,10 +10035,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             {
                                                                               ...inscrito,
                                                                               birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
-                                                                              price:
-                                                                                $ctx.ageFn.calcPersonPrice(
-                                                                                  inscrito
-                                                                                ),
+                                                                              price,
                                                                               id: $steps[
                                                                                 "ids"
                                                                               ]
