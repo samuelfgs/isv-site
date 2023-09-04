@@ -27,7 +27,8 @@ export default async function handler(
       back_urls: {
         success: `${process.env.REACT_PUBLIC_ENDPOINT!}/success`
       },
-      auto_return: "approved"
+      auto_return: "approved",
+      notification_url: "https://069f-179-125-130-46.ngrok-free.app/api/webhook/"
     });
 
   res.status(200).json({ ...response.body })
