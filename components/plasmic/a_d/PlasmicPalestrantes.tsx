@@ -48,7 +48,7 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicPalestrantes.module.css"; // plasmic-import: NaYBT353Ya_/css
+import sty from "../a_d_2/PlasmicPalestrantes.module.css"; // plasmic-import: NaYBT353Ya_/css
 
 export type PlasmicPalestrantes__VariantMembers = {};
 export type PlasmicPalestrantes__VariantsArgs = {};
@@ -111,8 +111,10 @@ function PlasmicPalestrantes__RenderFunc(props: {
         },
         props.args
       ),
+
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -151,8 +153,10 @@ function PlasmicPalestrantes__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   return (
@@ -165,6 +169,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
           property="og:title"
           content={PlasmicPalestrantes.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -176,6 +181,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
           property="og:image"
           content={PlasmicPalestrantes.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -273,6 +279,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
                                 },
                                 () => $props["onDotClick"]
                               ),
+
                               args: __wrapUserFunction(
                                 {
                                   type: "InteractionArgLoc",
@@ -478,6 +485,7 @@ const PlasmicDescendants = {
     "palestrante",
     "img"
   ],
+
   responsiveMenu: ["responsiveMenu"],
   text: ["text"],
   dots: ["dots"],
@@ -488,7 +496,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
@@ -505,6 +513,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicPalestrantes__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -540,6 +549,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicPalestrantes__RenderFunc({
       variants,
       args,

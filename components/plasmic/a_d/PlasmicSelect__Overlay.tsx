@@ -44,9 +44,9 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicSelect__Overlay.module.css"; // plasmic-import: QNKCgkyjdXk/css
+import sty from "../a_d_2/PlasmicSelect__Overlay.module.css"; // plasmic-import: QNKCgkyjdXk/css
 
-import SUPER__PlasmicSelect from "./PlasmicSelect"; // plasmic-import: lCsb7GpUU0b/render
+import SUPER__PlasmicSelect from "../a_d_2/PlasmicSelect"; // plasmic-import: lCsb7GpUU0b/render
 
 export type PlasmicSelect__Overlay__VariantMembers = {
   relativePlacement: "top" | "bottom" | "left" | "right";
@@ -129,8 +129,10 @@ function PlasmicSelect__Overlay__RenderFunc(props: {
           $props.relativePlacement
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   const superContexts = {
@@ -257,7 +259,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   top: "div";
@@ -273,6 +275,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicSelect__Overlay__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -308,6 +311,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicSelect__Overlay__RenderFunc({
       variants,
       args,

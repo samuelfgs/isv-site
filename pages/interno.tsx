@@ -2,10 +2,10 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d/PlasmicGlobalVariant__Screen";
-import { PlasmicInscricao } from "../components/plasmic/a_d/PlasmicInscricao";
+import GlobalContextsProvider from "../components/plasmic/a_d_2/PlasmicGlobalContextsProvider";
+import { PlasmicInscricao } from "../components/plasmic/a_d_2/PlasmicInscricao";
 import { useRouter } from "next/router";
+import { validate } from "email-validator";
 
 function Inscricao2() {
   // Use PlasmicInscricao2 to render this component as it was
@@ -42,6 +42,7 @@ function Inscricao2() {
           adultPrice={90}
           kidsPrice={30}
           isInternal={true}
+          emailValidator={validate}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

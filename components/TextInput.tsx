@@ -2,7 +2,8 @@ import * as React from "react";
 import {
   PlasmicTextInput,
   DefaultTextInputProps
-} from "./plasmic/a_d/PlasmicTextInput";
+} from "./plasmic/a_d_2/PlasmicTextInput";
+
 import { TextInputRef } from "@plasmicapp/react-web";
 
 export interface TextInputProps extends DefaultTextInputProps {
@@ -18,6 +19,10 @@ function TextInput_(props: TextInputProps, ref: TextInputRef) {
 
 const TextInput = React.forwardRef(TextInput_);
 
-export default Object.assign(TextInput, {
-  __plumeType: "text-input"
-});
+export default Object.assign(
+  TextInput,
+
+  {
+    __plumeType: "text-input"
+  }
+);

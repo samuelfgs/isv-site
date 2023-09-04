@@ -43,7 +43,7 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicLoading.module.css"; // plasmic-import: Of-Yy5_cNa/css
+import sty from "../a_d_2/PlasmicLoading.module.css"; // plasmic-import: Of-Yy5_cNa/css
 
 export type PlasmicLoading__VariantMembers = {};
 export type PlasmicLoading__VariantsArgs = {};
@@ -147,7 +147,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;
@@ -158,6 +158,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicLoading__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -193,6 +194,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicLoading__RenderFunc({
       variants,
       args,

@@ -1,5 +1,9 @@
 import * as React from "react";
-import { PlasmicSelect, DefaultSelectProps } from "./plasmic/a_d/PlasmicSelect";
+import {
+  PlasmicSelect,
+  DefaultSelectProps
+} from "./plasmic/a_d_2/PlasmicSelect";
+
 import { SelectRef } from "@plasmicapp/react-web";
 import Select__Option from "./Select__Option";
 import Select__OptionGroup from "./Select__OptionGroup";
@@ -14,8 +18,12 @@ function Select_(props: SelectProps, ref: SelectRef) {
 
 const Select = React.forwardRef(Select_);
 
-export default Object.assign(Select, {
-  Option: Select__Option,
-  OptionGroup: Select__OptionGroup,
-  __plumeType: "select"
-});
+export default Object.assign(
+  Select,
+
+  {
+    Option: Select__Option,
+    OptionGroup: Select__OptionGroup,
+    __plumeType: "select"
+  }
+);

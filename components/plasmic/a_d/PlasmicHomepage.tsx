@@ -44,7 +44,7 @@ import { Participantes } from "../../code-components/Parallax"; // plasmic-impor
 import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
 import Palestrante from "../../Palestrante"; // plasmic-import: 5UuQ-pHvfY/component
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_2/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -52,10 +52,10 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
+import sty from "../a_d_2/PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
+import ChecksvgIcon from "../a_d_2/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import IconIcon from "../a_d_2/icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
 
 export type PlasmicHomepage__VariantMembers = {};
 export type PlasmicHomepage__VariantsArgs = {};
@@ -129,6 +129,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -140,6 +141,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -698,6 +700,7 @@ const PlasmicDescendants = {
     "participantes",
     "palestrantesData"
   ],
+
   button: ["button"],
   responsiveMenu: ["responsiveMenu"],
   htmlVideo: ["htmlVideo"],
@@ -707,7 +710,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   button: typeof Button;
@@ -723,6 +726,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -758,6 +762,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicHomepage__RenderFunc({
       variants,
       args,

@@ -44,10 +44,10 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicTextInput.module.css"; // plasmic-import: nehhorfRRWX/css
+import sty from "../a_d_2/PlasmicTextInput.module.css"; // plasmic-import: nehhorfRRWX/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import SearchsvgIcon from "../a_d_2/icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
+import ChecksvgIcon from "../a_d_2/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
 
 export type PlasmicTextInput__VariantMembers = {
   showStartIcon: "showStartIcon";
@@ -165,8 +165,10 @@ function PlasmicTextInput__RenderFunc(props: {
         },
         props.args
       ),
+
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -219,8 +221,10 @@ function PlasmicTextInput__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props["value"]
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
@@ -272,11 +276,13 @@ function PlasmicTextInput__RenderFunc(props: {
               "color",
               "dark"
             ),
+
             [sty.startIconContainerisDisabled]: hasVariant(
               $state,
               "isDisabled",
               "isDisabled"
             ),
+
             [sty.startIconContainershowStartIcon]: hasVariant(
               $state,
               "showStartIcon",
@@ -299,6 +305,7 @@ function PlasmicTextInput__RenderFunc(props: {
                 "color",
                 "dark"
               ),
+
               [sty.slotTargetStartIconshowStartIcon]: hasVariant(
                 $state,
                 "showStartIcon",
@@ -362,6 +369,7 @@ function PlasmicTextInput__RenderFunc(props: {
                       },
                       () => $props["onBlur"]
                     ),
+
                     args: __wrapUserFunction(
                       {
                         type: "InteractionArgLoc",
@@ -461,6 +469,7 @@ function PlasmicTextInput__RenderFunc(props: {
               "color",
               "dark"
             ),
+
             [sty.endIconContainershowEndIcon]: hasVariant(
               $state,
               "showEndIcon",
@@ -483,6 +492,7 @@ function PlasmicTextInput__RenderFunc(props: {
                 "color",
                 "dark"
               ),
+
               [sty.slotTargetEndIconshowEndIcon]: hasVariant(
                 $state,
                 "showEndIcon",
@@ -527,7 +537,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   startIconContainer: "div";
@@ -540,6 +550,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicTextInput__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -575,6 +586,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicTextInput__RenderFunc({
       variants,
       args,

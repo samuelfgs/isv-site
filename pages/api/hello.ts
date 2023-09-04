@@ -6,6 +6,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log("dale", req.body);
   const [ items, name, email, id ] = JSON.parse(req.body);
   mercadopago.configure(process.env.IS_PROD === "true" ? {
     client_id: process.env.CLIENT_ID!,

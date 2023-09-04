@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.289",
-    "@plasmicapp/react-web": "^0.2.234",
+    "@plasmicapp/cli": "^0.1.307",
+    "@plasmicapp/react-web": "^0.2.249",
     "@plasmicpkgs/antd5": "^0.0.82",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.158",
     "@plasmicpkgs/plasmic-embed-css": "^0.1.133",
@@ -22,6 +22,7 @@
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
     "antd": "^5.6.1",
+    "email-validator": "^2.0.4",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "google-auth-library": "^8.8.0",

@@ -2,7 +2,7 @@ import * as React from "react";
 import {
   PlasmicSelect__OptionGroup,
   DefaultSelect__OptionGroupProps
-} from "./plasmic/a_d/PlasmicSelect__OptionGroup";
+} from "./plasmic/a_d_2/PlasmicSelect__OptionGroup";
 
 export interface Select__OptionGroupProps
   extends DefaultSelect__OptionGroupProps {
@@ -13,6 +13,10 @@ function Select__OptionGroup(props: Select__OptionGroupProps) {
   return <PlasmicSelect__OptionGroup {...plasmicProps} />;
 }
 
-export default Object.assign(Select__OptionGroup, {
-  __plumeType: "select-option-group"
-});
+export default Object.assign(
+  Select__OptionGroup,
+
+  {
+    __plumeType: "select-option-group"
+  }
+);

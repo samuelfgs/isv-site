@@ -44,7 +44,7 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicConcluido.module.css"; // plasmic-import: Ho523Dzl8-y/css
+import sty from "../a_d_2/PlasmicConcluido.module.css"; // plasmic-import: Ho523Dzl8-y/css
 
 export type PlasmicConcluido__VariantMembers = {};
 export type PlasmicConcluido__VariantsArgs = {};
@@ -103,8 +103,10 @@ function PlasmicConcluido__RenderFunc(props: {
         },
         props.args
       ),
+
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -143,8 +145,10 @@ function PlasmicConcluido__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   return (
@@ -244,7 +248,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
@@ -257,6 +261,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicConcluido__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -292,6 +297,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicConcluido__RenderFunc({
       variants,
       args,

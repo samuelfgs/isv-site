@@ -57,7 +57,7 @@ import Select from "../../Select"; // plasmic-import: lCsb7GpUU0b/component
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import Loading from "../../Loading"; // plasmic-import: Of-Yy5_cNa/component
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_2/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -65,14 +65,14 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicInscricao.module.css"; // plasmic-import: dYFvLDGEBe/css
+import sty from "../a_d_2/PlasmicInscricao.module.css"; // plasmic-import: dYFvLDGEBe/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
-import EditIcon from "./icons/PlasmicIcon__Edit"; // plasmic-import: Z2RuvoByA/icon
-import CloseIcon from "./icons/PlasmicIcon__Close"; // plasmic-import: 9oEdsaHjf/icon
-import PlusIcon from "./icons/PlasmicIcon__Plus"; // plasmic-import: 4oCsOVXfC/icon
+import SearchsvgIcon from "../a_d_2/icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
+import ChecksvgIcon from "../a_d_2/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import IconIcon from "../a_d_2/icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
+import EditIcon from "../a_d_2/icons/PlasmicIcon__Edit"; // plasmic-import: Z2RuvoByA/icon
+import CloseIcon from "../a_d_2/icons/PlasmicIcon__Close"; // plasmic-import: 9oEdsaHjf/icon
+import PlusIcon from "../a_d_2/icons/PlasmicIcon__Plus"; // plasmic-import: 4oCsOVXfC/icon
 
 export type PlasmicInscricao__VariantMembers = {};
 export type PlasmicInscricao__VariantsArgs = {};
@@ -163,8 +163,10 @@ function PlasmicInscricao__RenderFunc(props: {
         },
         props.args
       ),
+
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -335,8 +337,10 @@ function PlasmicInscricao__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
   const dataSourcesCtx = usePlasmicDataSourceContext();
   const { cache, mutate: swrMutate } = usePlasmicDataConfig();
@@ -356,6 +360,7 @@ function PlasmicInscricao__RenderFunc(props: {
           property="og:title"
           content={PlasmicInscricao.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -367,6 +372,7 @@ function PlasmicInscricao__RenderFunc(props: {
           property="og:image"
           content={PlasmicInscricao.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -485,6 +491,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             </React.Fragment>
                           </span>
                         }
+
                         <React.Fragment>
                           {"**\n\nPessoas a partir de 11 anos: R$ "}
                         </React.Fragment>
@@ -506,6 +513,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             </React.Fragment>
                           </span>
                         }
+
                         <React.Fragment>
                           {
                             "\n\n* Crian\u00e7as desta faixa de et\u00e1ria n\u00e3o poder\u00e3o ocupar lugares de pessoas pagantes. Tamb\u00e9m n\u00e3o haver\u00e1 atividades recreativas direcionadas a este p\u00fablico.\n\n** Crian\u00e7as nessa faixa et\u00e1ria ter\u00e3o \u00e1rea exclusiva com ministra\u00e7\u00e3o destinada para elas, portanto n\u00e3o poder\u00e3o ocupar os lugares do audit\u00f3rio principal. Aten\u00e7\u00e3o: as vagas destinadas para essa faixa et\u00e1ria s\u00e3o limitadas!"
@@ -560,6 +568,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             {"ATEN\u00c7\u00c3O"}
                           </span>
                         }
+
                         <React.Fragment>
                           {
                             "\n\nA data final da venda do 1\u00ba Lote com desconto vai at\u00e9 31/07/23.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 1\u00ba Lote.\n\nValor Promocional 1\u00ba Lote: R$ "
@@ -599,6 +608,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             </React.Fragment>
                           </span>
                         }
+
                         <React.Fragment>{""}</React.Fragment>
                       </React.Fragment>
                     </div>
@@ -774,6 +784,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                             variablePath: ["inForm"]
                                           })
                                         ),
+
                                         operation: __wrapUserFunction(
                                           {
                                             type: "InteractionArgLoc",
@@ -809,11 +820,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                               objRoot,
                                               variablePath
                                             );
+
                                             p.set(
                                               objRoot,
                                               variablePath,
                                               !oldValue
                                             );
+
                                             return !oldValue;
                                           })?.apply(null, [actionArgs]),
                                         actionArgs
@@ -7217,21 +7230,25 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         dateString.split(
                                                                           "/"
                                                                         );
+
                                                                       var day =
                                                                         parseInt(
                                                                           parts[0],
                                                                           10
                                                                         );
+
                                                                       var month =
                                                                         parseInt(
                                                                           parts[1],
                                                                           10
                                                                         );
+
                                                                       var year =
                                                                         parseInt(
                                                                           parts[2],
                                                                           10
                                                                         );
+
                                                                       var date =
                                                                         new Date(
                                                                           year,
@@ -7239,6 +7256,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             1,
                                                                           day
                                                                         );
+
                                                                       return (
                                                                         date.getFullYear() ===
                                                                           year &&
@@ -7497,6 +7515,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                               actionArgs
                                                                             ]
                                                                           ),
+
                                                                         actionArgs
                                                                       );
                                                                     })()
@@ -7513,21 +7532,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
-                                                                  ] =
-                                                                    await __wrapUserPromise(
-                                                                      {
-                                                                        type: "InteractionLoc",
-                                                                        actionName:
-                                                                          "customFunction",
-                                                                        interactionUuid:
-                                                                          "LUREI2TvcOX",
-                                                                        componentUuid:
-                                                                          "dYFvLDGEBe"
-                                                                      },
-                                                                      $steps[
-                                                                        "runCode"
-                                                                      ]
-                                                                    );
+                                                                  ] = await __wrapUserPromise(
+                                                                    {
+                                                                      type: "InteractionLoc",
+                                                                      actionName:
+                                                                        "customFunction",
+                                                                      interactionUuid:
+                                                                        "LUREI2TvcOX",
+                                                                      componentUuid:
+                                                                        "dYFvLDGEBe"
+                                                                    },
+                                                                    $steps[
+                                                                      "runCode"
+                                                                    ]
+                                                                  );
                                                                 }
                                                                 $steps[
                                                                   "runCode"
@@ -7584,6 +7602,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                             autoClose: 2500
                                                                                           }
                                                                                         );
+
                                                                                         setTimeout(
                                                                                           () => {
                                                                                             return ($state.isLoading =
@@ -7609,6 +7628,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                               ...newAddress
                                                                                             }
                                                                                           );
+
                                                                                           $state.isLoading =
                                                                                             false;
                                                                                           $state.lastCep =
@@ -7629,6 +7649,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                           autoClose: 2500
                                                                                         }
                                                                                       );
+
                                                                                       return $ctx.formProvider?.setFieldsValue(
                                                                                         {
                                                                                           address:
@@ -7661,6 +7682,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                               actionArgs
                                                                             ]
                                                                           ),
+
                                                                         actionArgs
                                                                       );
                                                                     })()
@@ -7677,21 +7699,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
-                                                                  ] =
-                                                                    await __wrapUserPromise(
-                                                                      {
-                                                                        type: "InteractionLoc",
-                                                                        actionName:
-                                                                          "customFunction",
-                                                                        interactionUuid:
-                                                                          "F8b1dWJxUHf",
-                                                                        componentUuid:
-                                                                          "dYFvLDGEBe"
-                                                                      },
-                                                                      $steps[
-                                                                        "runCode"
-                                                                      ]
-                                                                    );
+                                                                  ] = await __wrapUserPromise(
+                                                                    {
+                                                                      type: "InteractionLoc",
+                                                                      actionName:
+                                                                        "customFunction",
+                                                                      interactionUuid:
+                                                                        "F8b1dWJxUHf",
+                                                                      componentUuid:
+                                                                        "dYFvLDGEBe"
+                                                                    },
+                                                                    $steps[
+                                                                      "runCode"
+                                                                    ]
+                                                                  );
                                                                 }
                                                                 $steps[
                                                                   "runCode"
@@ -7740,6 +7761,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                               actionArgs
                                                                             ]
                                                                           ),
+
                                                                         actionArgs
                                                                       );
                                                                     })()
@@ -7756,21 +7778,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 ) {
                                                                   $steps[
                                                                     "runCode"
-                                                                  ] =
-                                                                    await __wrapUserPromise(
-                                                                      {
-                                                                        type: "InteractionLoc",
-                                                                        actionName:
-                                                                          "customFunction",
-                                                                        interactionUuid:
-                                                                          "hlDz-0bmQ",
-                                                                        componentUuid:
-                                                                          "dYFvLDGEBe"
-                                                                      },
-                                                                      $steps[
-                                                                        "runCode"
-                                                                      ]
-                                                                    );
+                                                                  ] = await __wrapUserPromise(
+                                                                    {
+                                                                      type: "InteractionLoc",
+                                                                      actionName:
+                                                                        "customFunction",
+                                                                      interactionUuid:
+                                                                        "hlDz-0bmQ",
+                                                                      componentUuid:
+                                                                        "dYFvLDGEBe"
+                                                                    },
+                                                                    $steps[
+                                                                      "runCode"
+                                                                    ]
+                                                                  );
                                                                 }
                                                               }}
                                                               onChange={(
@@ -8488,6 +8509,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         null
                                                                     }
                                                                   ];
+
                                                                 __composite[
                                                                   "0"
                                                                 ]["value"] =
@@ -8828,6 +8850,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         1,
                                                                       +day
                                                                     );
+
                                                                   return date.toLocaleString(
                                                                     "en-GB",
                                                                     {
@@ -8859,6 +8882,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                 </p.Stack>
                                               )
                                             )}
+
                                             {true ? (
                                               <p.Stack
                                                 as={"div"}
@@ -8903,6 +8927,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                     ]
                                                                 })
                                                               ),
+
                                                             operation:
                                                               __wrapUserFunction(
                                                                 {
@@ -8918,6 +8943,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 },
                                                                 () => 0
                                                               ),
+
                                                             value:
                                                               __wrapUserFunction(
                                                                 {
@@ -8965,10 +8991,12 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   variablePath,
                                                                   value
                                                                 );
+
                                                                 return value;
                                                               })?.apply(null, [
                                                                 actionArgs
                                                               ]),
+
                                                             actionArgs
                                                           );
                                                         })()
@@ -8983,21 +9011,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     ) {
                                                       $steps[
                                                         "updateSelectedPerson"
-                                                      ] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "updateVariable",
-                                                            interactionUuid:
-                                                              "xutNGXi2X",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "updateSelectedPerson"
-                                                          ]
-                                                        );
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "xutNGXi2X",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "updateSelectedPerson"
+                                                        ]
+                                                      );
                                                     }
                                                     $steps["updateInForm"] =
                                                       true
@@ -9023,6 +9050,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       ["inForm"]
                                                                   })
                                                                 ),
+
                                                               operation:
                                                                 __wrapUserFunction(
                                                                   {
@@ -9071,16 +9099,19 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       objRoot,
                                                                       variablePath
                                                                     );
+
                                                                   p.set(
                                                                     objRoot,
                                                                     variablePath,
                                                                     !oldValue
                                                                   );
+
                                                                   return !oldValue;
                                                                 })?.apply(
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -9165,6 +9196,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       ]
                                                                   })
                                                                 ),
+
                                                               operation:
                                                                 __wrapUserFunction(
                                                                   {
@@ -9180,6 +9212,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   },
                                                                   () => 6
                                                                 ),
+
                                                               startIndex:
                                                                 __wrapUserFunction(
                                                                   {
@@ -9210,6 +9243,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       }
                                                                     })()
                                                                 ),
+
                                                               deleteCount:
                                                                 __wrapUserFunction(
                                                                   {
@@ -9258,15 +9292,18 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       objRoot,
                                                                       variablePath
                                                                     );
+
                                                                   arr.splice(
                                                                     startIndex,
                                                                     deleteCount
                                                                   );
+
                                                                   return arr;
                                                                 })?.apply(
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -9281,21 +9318,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     ) {
                                                       $steps[
                                                         "updateInscritos"
-                                                      ] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "updateVariable",
-                                                            interactionUuid:
-                                                              "QEQaaA-MJ",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "updateInscritos"
-                                                          ]
-                                                        );
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "QEQaaA-MJ",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "updateInscritos"
+                                                        ]
+                                                      );
                                                     }
                                                   }}
                                                   showStartIcon={true}
@@ -9538,6 +9574,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               ]
                                                             })
                                                           ),
+
                                                         operation:
                                                           __wrapUserFunction(
                                                             {
@@ -9553,6 +9590,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             },
                                                             () => 0
                                                           ),
+
                                                         value:
                                                           __wrapUserFunction(
                                                             {
@@ -9598,10 +9636,12 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               variablePath,
                                                               value
                                                             );
+
                                                             return value;
                                                           })?.apply(null, [
                                                             actionArgs
                                                           ]),
+
                                                         actionArgs
                                                       );
                                                     })()
@@ -9652,6 +9692,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             ]
                                                           })
                                                         ),
+
                                                       operation:
                                                         __wrapUserFunction(
                                                           {
@@ -9697,15 +9738,18 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               objRoot,
                                                               variablePath
                                                             );
+
                                                           p.set(
                                                             objRoot,
                                                             variablePath,
                                                             !oldValue
                                                           );
+
                                                           return !oldValue;
                                                         })?.apply(null, [
                                                           actionArgs
                                                         ]),
+
                                                       actionArgs
                                                     );
                                                   })()
@@ -9783,6 +9827,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         Math.random() *
                                                                           100000000
                                                                       ),
+
                                                                     payments:
                                                                       Math.floor(
                                                                         Math.random() *
@@ -9810,6 +9855,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               })?.apply(null, [
                                                                 actionArgs
                                                               ]),
+
                                                             actionArgs
                                                           );
                                                         })()
@@ -9869,6 +9915,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             inscrito.birthdate.split(
                                                                               "/"
                                                                             );
+
                                                                           return {
                                                                             ...inscrito,
                                                                             birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
@@ -9904,6 +9951,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                     [
                                                                       "plasmic_refresh_all"
                                                                     ],
+
                                                                   roleId: null
                                                                 })
                                                               )
@@ -9933,6 +9981,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         user: dataSourcesCtx?.user
                                                                       }
                                                                     );
+
                                                                   if (
                                                                     dataOp.invalidatedKeys &&
                                                                     dataOp.invalidatedKeys.find(
@@ -9951,6 +10000,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           )
                                                                       )
                                                                     );
+
                                                                     return response;
                                                                   }
                                                                   if (
@@ -9994,6 +10044,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               })?.apply(null, [
                                                                 actionArgs
                                                               ]),
+
                                                             actionArgs
                                                           );
                                                         })()
@@ -10058,6 +10109,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                     inscrito.birthdate.split(
                                                                                       "/"
                                                                                     );
+
                                                                                   return {
                                                                                     ...inscrito,
                                                                                     birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
@@ -10096,6 +10148,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       [
                                                                         "plasmic_refresh_all"
                                                                       ],
+
                                                                     roleId: null
                                                                   })
                                                                 )
@@ -10125,6 +10178,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           user: dataSourcesCtx?.user
                                                                         }
                                                                       );
+
                                                                     if (
                                                                       dataOp.invalidatedKeys &&
                                                                       dataOp.invalidatedKeys.find(
@@ -10143,6 +10197,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             )
                                                                         )
                                                                       );
+
                                                                       return response;
                                                                     }
                                                                     if (
@@ -10187,6 +10242,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -10286,6 +10342,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                         ]
                                                                                       : [])
                                                                                   ],
+
                                                                                   $state
                                                                                     .inscritos[0]
                                                                                     .name,
@@ -10304,9 +10361,11 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                         "dale",
                                                                         error
                                                                       );
+
                                                                       $ctx.toastFn.error(
                                                                         "Aconteceu um erro! Tente novamente"
                                                                       );
+
                                                                       return undefined;
                                                                     }
                                                                   })();
@@ -10331,6 +10390,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               })?.apply(null, [
                                                                 actionArgs
                                                               ]),
+
                                                             actionArgs
                                                           );
                                                         })()
@@ -10345,21 +10405,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     ) {
                                                       $steps[
                                                         "createMercadoPago"
-                                                      ] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "customFunction",
-                                                            interactionUuid:
-                                                              "H4muVK6TP",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "createMercadoPago"
-                                                          ]
-                                                        );
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "customFunction",
+                                                          interactionUuid:
+                                                            "H4muVK6TP",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "createMercadoPago"
+                                                        ]
+                                                      );
                                                     }
                                                     $steps["postgresCreate"] =
                                                       !!$steps[
@@ -10396,6 +10455,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $steps[
                                                                             "createMercadoPago"
                                                                           ],
+
                                                                           $ctx
                                                                             .ageFn
                                                                             .adultos *
@@ -10446,6 +10506,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       [
                                                                         "plasmic_refresh_all"
                                                                       ],
+
                                                                     roleId: null
                                                                   })
                                                                 )
@@ -10475,6 +10536,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           user: dataSourcesCtx?.user
                                                                         }
                                                                       );
+
                                                                     if (
                                                                       dataOp.invalidatedKeys &&
                                                                       dataOp.invalidatedKeys.find(
@@ -10493,6 +10555,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                             )
                                                                         )
                                                                       );
+
                                                                       return response;
                                                                     }
                                                                     if (
@@ -10537,6 +10600,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -10625,6 +10689,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -10680,6 +10745,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       ]
                                                                   })
                                                                 ),
+
                                                               operation:
                                                                 __wrapUserFunction(
                                                                   {
@@ -10695,6 +10761,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   },
                                                                   () => 0
                                                                 ),
+
                                                               value:
                                                                 __wrapUserFunction(
                                                                   {
@@ -10746,11 +10813,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                     variablePath,
                                                                     value
                                                                   );
+
                                                                   return value;
                                                                 })?.apply(
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -10765,21 +10834,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     ) {
                                                       $steps[
                                                         "updateMercadoPagoLink"
-                                                      ] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "updateVariable",
-                                                            interactionUuid:
-                                                              "hSda2NHtx",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "updateMercadoPagoLink"
-                                                          ]
-                                                        );
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "hSda2NHtx",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "updateMercadoPagoLink"
+                                                        ]
+                                                      );
                                                     }
                                                     $steps["updatePaymentId"] =
                                                       true
@@ -10807,6 +10875,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                       ]
                                                                   })
                                                                 ),
+
                                                               operation:
                                                                 __wrapUserFunction(
                                                                   {
@@ -10822,6 +10891,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                   },
                                                                   () => 0
                                                                 ),
+
                                                               value:
                                                                 __wrapUserFunction(
                                                                   {
@@ -10873,11 +10943,13 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                     variablePath,
                                                                     value
                                                                   );
+
                                                                   return value;
                                                                 })?.apply(
                                                                   null,
                                                                   [actionArgs]
                                                                 ),
+
                                                               actionArgs
                                                             );
                                                           })()
@@ -10892,21 +10964,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                     ) {
                                                       $steps[
                                                         "updatePaymentId"
-                                                      ] =
-                                                        await __wrapUserPromise(
-                                                          {
-                                                            type: "InteractionLoc",
-                                                            actionName:
-                                                              "updateVariable",
-                                                            interactionUuid:
-                                                              "AUnoCZV_M",
-                                                            componentUuid:
-                                                              "dYFvLDGEBe"
-                                                          },
-                                                          $steps[
-                                                            "updatePaymentId"
-                                                          ]
-                                                        );
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "updateVariable",
+                                                          interactionUuid:
+                                                            "AUnoCZV_M",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "updatePaymentId"
+                                                        ]
+                                                      );
                                                     }
                                                   }}
                                                   showStartIcon={true}
@@ -11067,6 +11138,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                     { value: null, label: null },
                                     { value: null, label: null }
                                   ];
+
                                   __composite["0"]["value"] = "pix";
                                   __composite["0"]["label"] = "Pix";
                                   __composite["1"]["value"] = "credito";
@@ -11114,6 +11186,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                               invalidatedKeys: [
                                                 "plasmic_refresh_all"
                                               ],
+
                                               roleId: null
                                             })
                                           )
@@ -11140,6 +11213,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       user: dataSourcesCtx?.user
                                                     }
                                                   );
+
                                                 if (
                                                   dataOp.invalidatedKeys &&
                                                   dataOp.invalidatedKeys.find(
@@ -11155,6 +11229,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       mutate(key)
                                                     )
                                                   );
+
                                                   return response;
                                                 }
                                                 if (dataOp.invalidatedKeys) {
@@ -11325,6 +11400,7 @@ const PlasmicDescendants = {
     "selectPayment",
     "loading"
   ],
+
   responsiveMenu: ["responsiveMenu"],
   breakpointProvider: [
     "breakpointProvider",
@@ -11351,6 +11427,7 @@ const PlasmicDescendants = {
     "link",
     "selectPayment"
   ],
+
   form: [
     "form",
     "formProvider",
@@ -11373,6 +11450,7 @@ const PlasmicDescendants = {
     "select3",
     "input28"
   ],
+
   formProvider: [
     "formProvider",
     "input3",
@@ -11394,6 +11472,7 @@ const PlasmicDescendants = {
     "select3",
     "input28"
   ],
+
   input3: ["input3"],
   formFieldGroup: ["formFieldGroup", "input6", "select", "input9"],
   input6: ["input6"],
@@ -11418,7 +11497,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
@@ -11453,6 +11532,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicInscricao__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -11488,6 +11568,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicInscricao__RenderFunc({
       variants,
       args,

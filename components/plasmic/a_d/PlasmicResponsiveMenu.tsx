@@ -37,7 +37,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_2/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -45,10 +45,10 @@ import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
-import sty from "./PlasmicResponsiveMenu.module.css"; // plasmic-import: EjDwpL97hh/css
+import sty from "../a_d_2/PlasmicResponsiveMenu.module.css"; // plasmic-import: EjDwpL97hh/css
 
-import MenuIcon from "./icons/PlasmicIcon__Menu"; // plasmic-import: MpVPVACJ4/icon
-import CloseIcon from "./icons/PlasmicIcon__Close"; // plasmic-import: 9oEdsaHjf/icon
+import MenuIcon from "../a_d_2/icons/PlasmicIcon__Menu"; // plasmic-import: MpVPVACJ4/icon
+import CloseIcon from "../a_d_2/icons/PlasmicIcon__Close"; // plasmic-import: 9oEdsaHjf/icon
 
 export type PlasmicResponsiveMenu__VariantMembers = {
   isOpen2: "isOpen2";
@@ -120,8 +120,10 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.isOpen2
       }
     ],
+
     [$props, $ctx]
   );
+
   const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   const globalVariants = ensureGlobalVariants({
@@ -303,6 +305,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                             },
                             () => "isOpen2"
                           ),
+
                           operation: __wrapUserFunction(
                             {
                               type: "InteractionArgLoc",
@@ -313,6 +316,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                             },
                             () => 2
                           ),
+
                           value: __wrapUserFunction(
                             {
                               type: "InteractionArgLoc",
@@ -509,6 +513,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                                 },
                                 () => "isOpen2"
                               ),
+
                               operation: __wrapUserFunction(
                                 {
                                   type: "InteractionArgLoc",
@@ -519,6 +524,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
                                 },
                                 () => 2
                               ),
+
                               value: __wrapUserFunction(
                                 {
                                   type: "InteractionArgLoc",
@@ -656,7 +662,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
 };
@@ -666,6 +672,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicResponsiveMenu__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -701,6 +708,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicResponsiveMenu__RenderFunc({
       variants,
       args,

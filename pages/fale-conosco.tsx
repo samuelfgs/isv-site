@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d/PlasmicGlobalVariant__Screen";
-import { PlasmicFaleConosco } from "../components/plasmic/a_d/PlasmicFaleConosco";
+import GlobalContextsProvider from "../components/plasmic/a_d_2/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_2/PlasmicGlobalVariant__Screen";
+import { PlasmicFaleConosco } from "../components/plasmic/a_d_2/PlasmicFaleConosco";
 import { useRouter } from "next/router";
 
 function FaleConosco() {
