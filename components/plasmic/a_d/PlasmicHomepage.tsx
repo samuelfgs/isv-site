@@ -36,26 +36,15 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
-import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
-import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
-import InscricaoButton from "../../InscricaoButton"; // plasmic-import: VrYzW9MhJk/component
-import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
-import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
-import Palestrante from "../../Palestrante"; // plasmic-import: 5UuQ-pHvfY/component
-
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_2/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_copy_of_plasmic_kit_q_4_color_tokens_css from "../copy_of_plasmic_kit_q_4_color_tokens/plasmic_copy_of_plasmic_kit_q_4_color_tokens.module.css"; // plasmic-import: r6wqTHP8pUBDqvkAaarh3E/projectcss
-import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../plasmic_kit_color_tokens/plasmic_plasmic_kit_color_tokens.module.css"; // plasmic-import: 95xp9cYcv7HrNWpFWWhbcv/projectcss
 import projectcss from "./plasmic_a_d.module.css"; // plasmic-import: adjLdLRA7wsoKYbMFGbDTh/projectcss
 import sty from "../a_d_2/PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
 
-import ChecksvgIcon from "../a_d_2/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
-import IconIcon from "../a_d_2/icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
+createPlasmicElementProxy;
 
 export type PlasmicHomepage__VariantMembers = {};
 export type PlasmicHomepage__VariantsArgs = {};
@@ -68,12 +57,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
-  responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
-  htmlVideo?: p.Flex<typeof Video>;
-  inscricaoButton?: p.Flex<typeof InscricaoButton>;
-  participantes?: p.Flex<typeof Participantes>;
-  palestrantesData?: p.Flex<typeof PalestrantesData>;
+  textbox?: p.Flex<"input">;
 };
 
 export interface DefaultHomepageProps {}
@@ -100,54 +84,42 @@ function PlasmicHomepage__RenderFunc(props: {
   forNode?: string;
 }) {
   const { variants, overrides, forNode } = props;
-  const __nextRouter = useNextRouter();
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
   };
+
+  const __nextRouter = useNextRouter();
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsdu4QaJy8Zhmfq()
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "textbox.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "Some value" as const
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
   });
 
   return (
     <React.Fragment>
-      <Head>
-        <meta name="twitter:card" content="summary_large_image" />
-        <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
-        <meta
-          key="og:title"
-          property="og:title"
-          content={PlasmicHomepage.pageMetadata.title}
-        />
-
-        <meta
-          key="twitter:title"
-          name="twitter:title"
-          content={PlasmicHomepage.pageMetadata.title}
-        />
-
-        <meta
-          key="og:image"
-          property="og:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
-        />
-
-        <meta
-          key="twitter:image"
-          name="twitter:image"
-          content={PlasmicHomepage.pageMetadata.ogImageSrc}
-        />
-      </Head>
+      <Head></Head>
 
       <style>{`
         body {
@@ -168,522 +140,106 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
-            plasmic_antd_5_hostless_css.plasmic_tokens,
             plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
             sty.root
           )}
         >
-          <p.Stack
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__eDpuD)}
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__yoeIm
+            )}
           >
-            {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__l7KFk)}>
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___5Qfn8)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jL64G
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "tablet")
-                        ? "Dias 21 e 22 de outubro"
-                        : "21 e 22"}
-                    </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "tablet")
-                        ? true
-                        : true
-                    ) ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___66Sof
-                        )}
-                      >
-                        {"Outubro"}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  link={`/inscricao`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eJtZ
-                    )}
-                  >
-                    {"QUERO ME INSCREVER"}
-                  </div>
-                </Button>
-              </div>
-            ) : null}
-          </p.Stack>
+            {"ADORA\u00c7\u00c3O E DISCIPULADO"}
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox___5Gqf)} />
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__oeRW
+            )}
+          >
+            {"PARTICIPA\u00c7\u00d5ES"}
+          </div>
           {true ? (
-            <ResponsiveMenu
-              data-plasmic-name={"responsiveMenu"}
-              data-plasmic-override={overrides.responsiveMenu}
-              className={classNames("__wab_instance", sty.responsiveMenu)}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__sMAat)} />
           ) : null}
-          {true ? (
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__kUlCm)}
-            >
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img___1S6OG)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"80%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "desktop")
-                    ? ("500px" as const)
-                    : ("auto" as const)
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__yUbmg
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>
+                {
+                  "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template\u2014do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase\u2014press the "
                 }
-                loading={"lazy" as const}
-                src={{
-                  src: "/plasmic/a_d/images/ad20AnosIcon211Png.png",
-                  fullWidth: 3666,
-                  fullHeight: 2547,
-                  aspectRatio: undefined
-                }}
-              />
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__sMAat)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fYk58
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "Vamos celebrar os 20 anos de Adora\u00e7\u00e3o e Discipulado"
-                      : "Vamos celebrar os \n20 anos de \nAdora\u00e7\u00e3o e Discipulado"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2U7OO
-                    )}
-                  >
-                    {"E voc\u00ea pode fazer parte disso! "}
-                  </div>
-                </p.Stack>
-              ) : null}
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__d712)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sE7Vb
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "Dias 21 e 22 de outubro"
-                      : "21 e 22 de outubro"}
-                  </div>
-                </p.Stack>
-              ) : null}
-              <Video
-                data-plasmic-name={"htmlVideo"}
-                data-plasmic-override={overrides.htmlVideo}
-                autoPlay={true}
-                className={classNames("__wab_instance", sty.htmlVideo)}
-                controls={false}
-                loop={true}
-                muted={true}
-                src={"https://isv-site.vercel.app/video.mp4" as const}
-              />
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mQpkc)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__j4F9
-                    )}
-                  >
-                    {"VOC\u00ca FAZ PARTE DISSO!"}
-                  </div>
-                  <InscricaoButton
-                    data-plasmic-name={"inscricaoButton"}
-                    data-plasmic-override={overrides.inscricaoButton}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.inscricaoButton
-                    )}
-                  />
-                </p.Stack>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "tablet") ? true : true
-              ) ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__neaTo
-                  )}
-                >
-                  {"PALESTRANTES"}
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "desktop")
-                  ? true
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? true
-                  : true
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
-                  <Participantes
-                    data-plasmic-name={"participantes"}
-                    data-plasmic-override={overrides.participantes}
-                    className={classNames("__wab_instance", sty.participantes)}
-                  />
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "desktop")
-                  ? true
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? true
-                  : true
-              ) ? (
-                <PalestrantesData
-                  data-plasmic-name={"palestrantesData"}
-                  data-plasmic-override={overrides.palestrantesData}
-                  className={classNames("__wab_instance", sty.palestrantesData)}
-                >
-                  <ph.DataCtxReader>
-                    {$ctx =>
-                      true ? (
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__x3T27
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__aQ01E
-                            )}
-                          >
-                            {"Palestrantes"}
-                          </div>
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___9ZBgO
-                              )}
-                            >
-                              {(
-                                (() => {
-                                  try {
-                                    return $ctx.palestrantes.slice(0, 3);
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
-                                    }
-                                    throw e;
-                                  }
-                                })() ?? []
-                              ).map((currentItem, currentIndex) => (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__z7E7A
-                                  )}
-                                  key={currentIndex}
-                                >
-                                  <Palestrante
-                                    className={classNames(
-                                      "__wab_instance",
-                                      sty.palestrante___9VLy5
-                                    )}
-                                    slot={
-                                      (
-                                        hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "tablet"
-                                        )
-                                          ? true
-                                          : true
-                                      ) ? (
-                                        <div
-                                          className={classNames(
-                                            projectcss.all,
-                                            sty.freeBox__gjJDo
-                                          )}
-                                        >
-                                          <div
-                                            className={classNames(
-                                              projectcss.all,
-                                              projectcss.__wab_text,
-                                              sty.text__xfh2M
-                                            )}
-                                          >
-                                            <React.Fragment>
-                                              {(() => {
-                                                try {
-                                                  return currentItem.name;
-                                                } catch (e) {
-                                                  if (
-                                                    e instanceof TypeError ||
-                                                    e?.plasmicType ===
-                                                      "PlasmicUndefinedDataError"
-                                                  ) {
-                                                    return "Adhemar de Campos";
-                                                  }
-                                                  throw e;
-                                                }
-                                              })()}
-                                            </React.Fragment>
-                                          </div>
-                                        </div>
-                                      ) : null
-                                    }
-                                    slot2={
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return currentItem.shortDesc;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
-                                            }
-                                            throw e;
-                                          }
-                                        })()}
-                                      </React.Fragment>
-                                    }
-                                  >
-                                    <p.PlasmicImg
-                                      alt={""}
-                                      className={classNames(sty.img___7Wu7N)}
-                                      displayHeight={"100%" as const}
-                                      displayMaxHeight={"none" as const}
-                                      displayMaxWidth={"100%" as const}
-                                      displayMinHeight={"0" as const}
-                                      displayMinWidth={"0" as const}
-                                      displayWidth={"200px" as const}
-                                      loading={"lazy" as const}
-                                      src={(() => {
-                                        try {
-                                          return `/${currentItem.name}.png`;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
-                                          }
-                                          throw e;
-                                        }
-                                      })()}
-                                    />
-                                  </Palestrante>
-                                </div>
-                              ))}
-                            </div>
-                          ) : null}
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__heIkn
-                              )}
-                            >
-                              {true ? (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__ndmSt
-                                  )}
-                                >
-                                  {(
-                                    (() => {
-                                      try {
-                                        return $ctx.palestrantes.slice(3);
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return [];
-                                        }
-                                        throw e;
-                                      }
-                                    })() ?? []
-                                  ).map((currentItem, currentIndex) => (
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        sty.freeBox__u69OZ
-                                      )}
-                                      key={currentIndex}
-                                    >
-                                      <Palestrante
-                                        className={classNames(
-                                          "__wab_instance",
-                                          sty.palestrante___2QivX
-                                        )}
-                                        slot={
-                                          (
-                                            hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "tablet"
-                                            )
-                                              ? true
-                                              : true
-                                          ) ? (
-                                            <div
-                                              className={classNames(
-                                                projectcss.all,
-                                                sty.freeBox__wmsF
-                                              )}
-                                            >
-                                              <div
-                                                className={classNames(
-                                                  projectcss.all,
-                                                  projectcss.__wab_text,
-                                                  sty.text__z6X3N
-                                                )}
-                                              >
-                                                <React.Fragment>
-                                                  {(() => {
-                                                    try {
-                                                      return currentItem.name;
-                                                    } catch (e) {
-                                                      if (
-                                                        e instanceof
-                                                          TypeError ||
-                                                        e?.plasmicType ===
-                                                          "PlasmicUndefinedDataError"
-                                                      ) {
-                                                        return "Adhemar de Campos";
-                                                      }
-                                                      throw e;
-                                                    }
-                                                  })()}
-                                                </React.Fragment>
-                                              </div>
-                                            </div>
-                                          ) : null
-                                        }
-                                        slot2={
-                                          <React.Fragment>
-                                            {(() => {
-                                              try {
-                                                return currentItem.shortDesc;
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
-                                                }
-                                                throw e;
-                                              }
-                                            })()}
-                                          </React.Fragment>
-                                        }
-                                      >
-                                        <p.PlasmicImg
-                                          alt={""}
-                                          className={classNames(
-                                            sty.img___1CQcI
-                                          )}
-                                          displayHeight={"100%" as const}
-                                          displayMaxHeight={"none" as const}
-                                          displayMaxWidth={"100%" as const}
-                                          displayMinHeight={"0" as const}
-                                          displayMinWidth={"0" as const}
-                                          displayWidth={"200px" as const}
-                                          loading={"lazy" as const}
-                                          src={(() => {
-                                            try {
-                                              return `/${currentItem.name}.png`;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
-                                              }
-                                              throw e;
-                                            }
-                                          })()}
-                                        />
-                                      </Palestrante>
-                                    </div>
-                                  ))}
-                                </div>
-                              ) : null}
-                            </div>
-                          ) : null}
-                        </div>
-                      ) : null
-                    }
-                  </ph.DataCtxReader>
-                </PalestrantesData>
-              ) : null}
-            </p.Stack>
-          ) : null}
-          {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__gx8Eo)} />
-          ) : null}
+              </React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 700 }}
+              >
+                {"Code"}
+              </span>
+              <React.Fragment>
+                {
+                  " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
+                }
+              </React.Fragment>
+            </React.Fragment>
+          </div>
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__p6JhF
+            )}
+          >
+            <React.Fragment>
+              <React.Fragment>
+                {
+                  "If you haven't already done so, go back and learn the basics by going through the Plasmic Levels tutorial.\n\nIt's always easier to start from examples! Add a new page using a template\u2014do this from the list of pages in the top toolbar.\n\nOr press the big blue + button to start inserting items into this page.\n\nIntegrate this project into your codebase\u2014press the "
+                }
+              </React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ fontWeight: 700 }}
+              >
+                {"Code"}
+              </span>
+              <React.Fragment>
+                {
+                  " button in the top right and follow the quickstart instructions.\n\nJoin our Slack community (icon in bottom left) for help any time."
+                }
+              </React.Fragment>
+            </React.Fragment>
+          </div>
+          <input
+            data-plasmic-name={"textbox"}
+            data-plasmic-override={overrides.textbox}
+            className={classNames(
+              projectcss.all,
+              projectcss.input,
+              sty.textbox
+            )}
+            onChange={e => {
+              p.generateStateOnChangeProp($state, ["textbox", "value"])(
+                e.target.value
+              );
+            }}
+            placeholder={"Some placeholder" as const}
+            ref={ref => {
+              $refs["textbox"] = ref;
+            }}
+            size={1 as const}
+            type={"text" as const}
+            value={p.generateStateValueProp($state, ["textbox", "value"]) ?? ""}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -691,34 +247,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "button",
-    "responsiveMenu",
-    "htmlVideo",
-    "inscricaoButton",
-    "participantes",
-    "palestrantesData"
-  ],
-
-  button: ["button"],
-  responsiveMenu: ["responsiveMenu"],
-  htmlVideo: ["htmlVideo"],
-  inscricaoButton: ["inscricaoButton"],
-  participantes: ["participantes"],
-  palestrantesData: ["palestrantesData"]
+  root: ["root", "textbox"],
+  textbox: ["textbox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
-  responsiveMenu: typeof ResponsiveMenu;
-  htmlVideo: typeof Video;
-  inscricaoButton: typeof InscricaoButton;
-  participantes: typeof Participantes;
-  palestrantesData: typeof PalestrantesData;
+  textbox: "input";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -726,7 +263,6 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
 >;
-
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -762,7 +298,6 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
-
     return PlasmicHomepage__RenderFunc({
       variants,
       args,
@@ -783,12 +318,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
-    responsiveMenu: makeNodeComponent("responsiveMenu"),
-    htmlVideo: makeNodeComponent("htmlVideo"),
-    inscricaoButton: makeNodeComponent("inscricaoButton"),
-    participantes: makeNodeComponent("participantes"),
-    palestrantesData: makeNodeComponent("palestrantesData"),
+    textbox: makeNodeComponent("textbox"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
@@ -796,10 +326,9 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "AD20",
+      title: "",
       description: "",
-      ogImageSrc:
-        "https://site-assets.plasmic.app/82149cfdbb4813cc0398b4e443013c4b.png",
+      ogImageSrc: "",
       canonical: ""
     }
   }

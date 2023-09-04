@@ -131,6 +131,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -142,6 +143,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -700,6 +702,7 @@ const PlasmicDescendants = {
     "participantes",
     "palestrantesData"
   ],
+
   button: ["button"],
   responsiveMenu: ["responsiveMenu"],
   htmlVideo: ["htmlVideo"],
@@ -725,6 +728,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -760,6 +764,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
+
     return PlasmicHomepage__RenderFunc({
       variants,
       args,

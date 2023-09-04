@@ -88,6 +88,8 @@ export type PlasmicInscricao__ArgsType = {
   isInternal?: boolean;
   isSv?: boolean;
   emailValidator?: any;
+  lote?: number;
+  isTest?: boolean;
 };
 type ArgPropType = keyof PlasmicInscricao__ArgsType;
 export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
@@ -96,7 +98,9 @@ export const PlasmicInscricao__ArgProps = new Array<ArgPropType>(
   "kidsPrice",
   "isInternal",
   "isSv",
-  "emailValidator"
+  "emailValidator",
+  "lote",
+  "isTest"
 );
 
 export type PlasmicInscricao__OverridesType = {
@@ -161,7 +165,9 @@ function PlasmicInscricao__RenderFunc(props: {
           adultPrice: 120 as const,
           kidsPrice: 40 as const,
           isInternal: false,
-          isSv: true
+          isSv: true,
+          lote: 2 as const,
+          isTest: false
         },
         props.args
       ),
@@ -9907,6 +9913,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                                           ]
                                                                                         : [])
                                                                                     ],
+
                                                                                     $state
                                                                                       .inscritos[0]
                                                                                       .name,
@@ -10000,7 +10007,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                 () => ({
                                                                   sourceId:
                                                                     "du8jW5s7JnVfk4bHYp38RF",
-                                                                  opId: "2bf04a6f-5e84-4d74-97be-2b938a5c5d26",
+                                                                  opId: "4a73a4ea-f542-4bd1-be39-6e538a0482ff",
                                                                   userArgs: {
                                                                     variables: [
                                                                       (() => {
@@ -10008,16 +10015,20 @@ function PlasmicInscricao__RenderFunc(props: {
                                                                           $state
                                                                             .inscritos[0];
                                                                         let obj;
-                                                                        let price = $ctx.ageFn.calcPersonPrice(
-                                                                          inscrito
-                                                                        );
-                                                                        if (price < 10) price = price * 100;
+                                                                        let price =
+                                                                          $ctx.ageFn.calcPersonPrice(
+                                                                            inscrito
+                                                                          );
+                                                                        if (
+                                                                          $props.isTest
+                                                                        )
+                                                                          price = 10;
                                                                         if (
                                                                           $ctx.activeBreakpoint ===
                                                                           "Desktop"
                                                                         ) {
                                                                           const parts =
-                                                                            inscrito.birthdate.split(
+                                                                            inscrito?.birthdate?.split(
                                                                               "/"
                                                                             );
                                                                           obj =
@@ -10372,10 +10383,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           $steps["nextRows"]
                                                         );
                                                     }
-                                                    $steps["postgresCreate"] =
-                                                      !!$steps[
-                                                        "createMercadoPago"
-                                                      ]
+                                                    $steps["postgresCreate2"] =
+                                                      true
                                                         ? (() => {
                                                             const actionArgs = {
                                                               dataOp:
@@ -10527,6 +10536,186 @@ function PlasmicInscricao__RenderFunc(props: {
                                                         : undefined;
                                                     if (
                                                       typeof $steps[
+                                                        "postgresCreate2"
+                                                      ] === "object" &&
+                                                      typeof $steps[
+                                                        "postgresCreate2"
+                                                      ].then === "function"
+                                                    ) {
+                                                      $steps[
+                                                        "postgresCreate2"
+                                                      ] = await __wrapUserPromise(
+                                                        {
+                                                          type: "InteractionLoc",
+                                                          actionName:
+                                                            "dataSourceOp",
+                                                          interactionUuid:
+                                                            "v6LbkLEe2",
+                                                          componentUuid:
+                                                            "dYFvLDGEBe"
+                                                        },
+                                                        $steps[
+                                                          "postgresCreate2"
+                                                        ]
+                                                      );
+                                                    }
+                                                    $steps["postgresCreate"] =
+                                                      !!$steps[
+                                                        "createMercadoPago"
+                                                      ]
+                                                        ? (() => {
+                                                            const actionArgs = {
+                                                              dataOp:
+                                                                __wrapUserFunction(
+                                                                  {
+                                                                    type: "InteractionArgLoc",
+                                                                    actionName:
+                                                                      "dataSourceOp",
+                                                                    interactionUuid:
+                                                                      "g3faAXsypP5A",
+                                                                    componentUuid:
+                                                                      "dYFvLDGEBe",
+                                                                    argName:
+                                                                      "dataOp"
+                                                                  },
+                                                                  () => ({
+                                                                    sourceId:
+                                                                      "du8jW5s7JnVfk4bHYp38RF",
+                                                                    opId: "159d27f4-c379-4fcf-9f0a-f9648a7c7838",
+                                                                    userArgs: {
+                                                                      variables:
+                                                                        [
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .adultos,
+                                                                          $steps
+                                                                            .ids
+                                                                            .payments,
+                                                                          $ctx
+                                                                            .ageFn
+                                                                            .criancas,
+                                                                          $props.lote ??
+                                                                            1,
+                                                                          $props.isTest
+                                                                            ? 10
+                                                                            : $ctx
+                                                                                .ageFn
+                                                                                .adultos *
+                                                                                $props.adultPrice +
+                                                                              $ctx
+                                                                                .ageFn
+                                                                                .criancas *
+                                                                                $props.kidsPrice,
+                                                                          $steps
+                                                                            .ids
+                                                                            .ownerId,
+                                                                          $steps.createMercadoPago
+                                                                        ]
+                                                                    },
+                                                                    cacheKey:
+                                                                      null,
+                                                                    invalidatedKeys:
+                                                                      [
+                                                                        "plasmic_refresh_all"
+                                                                      ],
+                                                                    roleId: null
+                                                                  })
+                                                                )
+                                                            };
+                                                            return __wrapUserFunction(
+                                                              {
+                                                                type: "InteractionLoc",
+                                                                actionName:
+                                                                  "dataSourceOp",
+                                                                interactionUuid:
+                                                                  "g3faAXsypP5A",
+                                                                componentUuid:
+                                                                  "dYFvLDGEBe"
+                                                              },
+                                                              () =>
+                                                                (async ({
+                                                                  dataOp,
+                                                                  continueOnError
+                                                                }) => {
+                                                                  try {
+                                                                    const response =
+                                                                      await executePlasmicDataOp(
+                                                                        dataOp,
+                                                                        {
+                                                                          userAuthToken:
+                                                                            dataSourcesCtx?.userAuthToken,
+                                                                          user: dataSourcesCtx?.user
+                                                                        }
+                                                                      );
+                                                                    if (
+                                                                      dataOp.invalidatedKeys &&
+                                                                      dataOp.invalidatedKeys.find(
+                                                                        key =>
+                                                                          key ===
+                                                                          "plasmic_refresh_all"
+                                                                      )
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        Array.from(
+                                                                          cache.keys()
+                                                                        ).map(
+                                                                          async key =>
+                                                                            mutate(
+                                                                              key
+                                                                            )
+                                                                        )
+                                                                      );
+
+                                                                      return response;
+                                                                    }
+                                                                    if (
+                                                                      dataOp.invalidatedKeys
+                                                                    ) {
+                                                                      await Promise.all(
+                                                                        dataOp.invalidatedKeys.map(
+                                                                          async invalidateKey =>
+                                                                            Promise.all(
+                                                                              Array.from(
+                                                                                cache.keys()
+                                                                              ).map(
+                                                                                async key => {
+                                                                                  if (
+                                                                                    typeof key ===
+                                                                                      "string" &&
+                                                                                    key.includes(
+                                                                                      `.$.${invalidateKey}.$.`
+                                                                                    )
+                                                                                  ) {
+                                                                                    return mutate(
+                                                                                      key
+                                                                                    );
+                                                                                  }
+                                                                                  return Promise.resolve();
+                                                                                }
+                                                                              )
+                                                                            )
+                                                                        )
+                                                                      );
+                                                                    }
+                                                                    return response;
+                                                                  } catch (e) {
+                                                                    if (
+                                                                      !continueOnError
+                                                                    ) {
+                                                                      throw e;
+                                                                    }
+                                                                    return e;
+                                                                  }
+                                                                })?.apply(
+                                                                  null,
+                                                                  [actionArgs]
+                                                                ),
+                                                              actionArgs
+                                                            );
+                                                          })()
+                                                        : undefined;
+                                                    if (
+                                                      typeof $steps[
                                                         "postgresCreate"
                                                       ] === "object" &&
                                                       typeof $steps[
@@ -10540,7 +10729,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                             actionName:
                                                               "dataSourceOp",
                                                             interactionUuid:
-                                                              "v6LbkLEe2",
+                                                              "g3faAXsypP5A",
                                                             componentUuid:
                                                               "dYFvLDGEBe"
                                                           },

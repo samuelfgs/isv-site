@@ -42,6 +42,7 @@ function Inscricao2() {
           adultPrice={0.2}
           kidsPrice={0.1}
           emailValidator={validate}
+          isTest={true}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

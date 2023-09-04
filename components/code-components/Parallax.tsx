@@ -8,7 +8,7 @@ import { Button } from "antd";
 import { registerComponent, usePlasmicCanvasContext } from "@plasmicapp/react-web/lib/host";
 import { data as palestrantes } from "./Participantes";
 import LastParallax from "../LastParallax";
-import PlasmicLastParallax from "../plasmic/a_d/PlasmicLastParallax";
+import PlasmicLastParallax from "../plasmic/a_d_2/PlasmicLastParallax";
 
 const calcProgress = (currentProgress: number, left: number, right: number) =>
   currentProgress < left
