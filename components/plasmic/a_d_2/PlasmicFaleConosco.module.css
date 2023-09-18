@@ -145,31 +145,8 @@
     margin-top: calc(0px + 20px) !important;
   }
 }
-.button__di0Jv:global(.__wab_instance) {
-  max-width: 100%;
+.faleConosco2:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
-}
-.img {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 80px;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.text__lpHyV {
-  padding-bottom: 0px;
-  font-size: 20px;
-}
-.svg__zh0Si {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
 }
 .text__lb9Kx {
   width: 100%;
@@ -463,7 +440,7 @@
     min-width: var(--token---zsfRgRn);
   }
 }
-.button__q10Zq:global(.__wab_instance) {
+.button:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

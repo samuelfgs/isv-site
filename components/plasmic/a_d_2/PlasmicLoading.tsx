@@ -65,14 +65,6 @@ export interface DefaultLoadingProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -125,13 +117,13 @@ function PlasmicLoading__RenderFunc(props: {
         data-plasmic-override={overrides.img}
         alt={""}
         className={classNames(sty.img)}
-        displayHeight={"200px" as const}
-        displayMaxHeight={"none" as const}
-        displayMaxWidth={"100%" as const}
-        displayMinHeight={"0" as const}
-        displayMinWidth={"0" as const}
-        displayWidth={"200px" as const}
-        loading={"lazy" as const}
+        displayHeight={"200px"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"100%"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"200px"}
+        loading={"lazy"}
         src={{
           src: "/plasmic/a_d_2/images/loadinggif.gif",
           fullWidth: 176,
@@ -149,7 +141,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;

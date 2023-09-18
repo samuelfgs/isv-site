@@ -120,7 +120,6 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1240px;
-    display: flex;
     padding: 0px;
   }
 }
@@ -377,6 +376,10 @@
     flex-shrink: 0;
   }
 }
+.faleconosco3:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
 .freeBox__mQpkc {
   display: flex;
   position: relative;
@@ -555,11 +558,6 @@
   min-width: 0;
   padding: 8px;
 }
-@media (min-width: 641px) {
-  .freeBox__gjJDo {
-    display: flex;
-  }
-}
 .freeBox__heIkn {
   display: flex;
   position: relative;
@@ -621,11 +619,6 @@
   max-width: 100%;
   min-width: 0;
   padding: 8px;
-}
-@media (min-width: 641px) {
-  .freeBox__wmsF {
-    display: flex;
-  }
 }
 .freeBox__gx8Eo {
   position: relative;

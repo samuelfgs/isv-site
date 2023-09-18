@@ -134,14 +134,6 @@ export interface DefaultTextInputProps extends pp.BaseTextInputProps {
   color?: SingleChoiceArg<"dark">;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -267,54 +259,52 @@ function PlasmicTextInput__RenderFunc(props: {
       )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
-      {(hasVariant($state, "showStartIcon", "showStartIcon") ? true : true) ? (
-        <div
-          data-plasmic-name={"startIconContainer"}
-          data-plasmic-override={overrides.startIconContainer}
-          className={classNames(projectcss.all, sty.startIconContainer, {
-            [sty.startIconContainer___focusVisibleWithin]:
-              triggers.focusVisibleWithin_root,
-            [sty.startIconContainercolor_dark]: hasVariant(
+      <div
+        data-plasmic-name={"startIconContainer"}
+        data-plasmic-override={overrides.startIconContainer}
+        className={classNames(projectcss.all, sty.startIconContainer, {
+          [sty.startIconContainer___focusVisibleWithin]:
+            triggers.focusVisibleWithin_root,
+          [sty.startIconContainercolor_dark]: hasVariant(
+            $state,
+            "color",
+            "dark"
+          ),
+          [sty.startIconContainerisDisabled]: hasVariant(
+            $state,
+            "isDisabled",
+            "isDisabled"
+          ),
+          [sty.startIconContainershowStartIcon]: hasVariant(
+            $state,
+            "showStartIcon",
+            "showStartIcon"
+          )
+        })}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <SearchsvgIcon
+              className={classNames(projectcss.all, sty.svg__jPqx0)}
+              role={"img"}
+            />
+          ),
+
+          value: args.startIcon,
+          className: classNames(sty.slotTargetStartIcon, {
+            [sty.slotTargetStartIconcolor_dark]: hasVariant(
               $state,
               "color",
               "dark"
             ),
-            [sty.startIconContainerisDisabled]: hasVariant(
-              $state,
-              "isDisabled",
-              "isDisabled"
-            ),
-            [sty.startIconContainershowStartIcon]: hasVariant(
+            [sty.slotTargetStartIconshowStartIcon]: hasVariant(
               $state,
               "showStartIcon",
               "showStartIcon"
             )
-          })}
-        >
-          {p.renderPlasmicSlot({
-            defaultContents: (
-              <SearchsvgIcon
-                className={classNames(projectcss.all, sty.svg__jPqx0)}
-                role={"img"}
-              />
-            ),
-
-            value: args.startIcon,
-            className: classNames(sty.slotTargetStartIcon, {
-              [sty.slotTargetStartIconcolor_dark]: hasVariant(
-                $state,
-                "color",
-                "dark"
-              ),
-              [sty.slotTargetStartIconshowStartIcon]: hasVariant(
-                $state,
-                "showStartIcon",
-                "showStartIcon"
-              )
-            })
-          })}
-        </div>
-      ) : null}
+          })
+        })}
+      </div>
       <input
         data-plasmic-name={"input"}
         data-plasmic-override={overrides.input}
@@ -359,69 +349,33 @@ function PlasmicTextInput__RenderFunc(props: {
             event.keyCode === 13
               ? (() => {
                   const actionArgs = {
-                    eventRef: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "invokeEventHandler",
-                        interactionUuid: "6o7CVnLvb",
-                        componentUuid: "nehhorfRRWX",
-                        argName: "eventRef"
-                      },
-                      () => $props["onBlur"]
-                    ),
-                    args: __wrapUserFunction(
-                      {
-                        type: "InteractionArgLoc",
-                        actionName: "invokeEventHandler",
-                        interactionUuid: "6o7CVnLvb",
-                        componentUuid: "nehhorfRRWX",
-                        argName: "args"
-                      },
-                      () => [
-                        (() => {
-                          try {
-                            return event;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return undefined;
-                            }
-                            throw e;
+                    eventRef: $props["onBlur"],
+                    args: [
+                      (() => {
+                        try {
+                          return event;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return undefined;
                           }
-                        })()
-                      ]
-                    )
+                          throw e;
+                        }
+                      })()
+                    ]
                   };
-                  return __wrapUserFunction(
-                    {
-                      type: "InteractionLoc",
-                      actionName: "invokeEventHandler",
-                      interactionUuid: "6o7CVnLvb",
-                      componentUuid: "nehhorfRRWX"
-                    },
-                    () =>
-                      (({ eventRef, args }) => {
-                        return eventRef?.(...(args ?? []));
-                      })?.apply(null, [actionArgs]),
-                    actionArgs
-                  );
+                  return (({ eventRef, args }) => {
+                    return eventRef?.(...(args ?? []));
+                  })?.apply(null, [actionArgs]);
                 })()
               : undefined;
           if (
             typeof $steps["runOnBlur"] === "object" &&
             typeof $steps["runOnBlur"].then === "function"
           ) {
-            $steps["runOnBlur"] = await __wrapUserPromise(
-              {
-                type: "InteractionLoc",
-                actionName: "invokeEventHandler",
-                interactionUuid: "6o7CVnLvb",
-                componentUuid: "nehhorfRRWX"
-              },
-              $steps["runOnBlur"]
-            );
+            $steps["runOnBlur"] = await $steps["runOnBlur"];
           }
         }}
         pattern={(() => {
@@ -458,47 +412,41 @@ function PlasmicTextInput__RenderFunc(props: {
         value={p.generateStateValueProp($state, ["input", "value"]) ?? ""}
       />
 
-      {(hasVariant($state, "showEndIcon", "showEndIcon") ? true : true) ? (
-        <div
-          data-plasmic-name={"endIconContainer"}
-          data-plasmic-override={overrides.endIconContainer}
-          className={classNames(projectcss.all, sty.endIconContainer, {
-            [sty.endIconContainercolor_dark]: hasVariant(
+      <div
+        data-plasmic-name={"endIconContainer"}
+        data-plasmic-override={overrides.endIconContainer}
+        className={classNames(projectcss.all, sty.endIconContainer, {
+          [sty.endIconContainercolor_dark]: hasVariant($state, "color", "dark"),
+          [sty.endIconContainershowEndIcon]: hasVariant(
+            $state,
+            "showEndIcon",
+            "showEndIcon"
+          )
+        })}
+      >
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <ChecksvgIcon
+              className={classNames(projectcss.all, sty.svg__z82H)}
+              role={"img"}
+            />
+          ),
+
+          value: args.endIcon,
+          className: classNames(sty.slotTargetEndIcon, {
+            [sty.slotTargetEndIconcolor_dark]: hasVariant(
               $state,
               "color",
               "dark"
             ),
-            [sty.endIconContainershowEndIcon]: hasVariant(
+            [sty.slotTargetEndIconshowEndIcon]: hasVariant(
               $state,
               "showEndIcon",
               "showEndIcon"
             )
-          })}
-        >
-          {p.renderPlasmicSlot({
-            defaultContents: (
-              <ChecksvgIcon
-                className={classNames(projectcss.all, sty.svg__z82H)}
-                role={"img"}
-              />
-            ),
-
-            value: args.endIcon,
-            className: classNames(sty.slotTargetEndIcon, {
-              [sty.slotTargetEndIconcolor_dark]: hasVariant(
-                $state,
-                "color",
-                "dark"
-              ),
-              [sty.slotTargetEndIconshowEndIcon]: hasVariant(
-                $state,
-                "showEndIcon",
-                "showEndIcon"
-              )
-            })
-          })}
-        </div>
-      ) : null}
+          })
+        })}
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
@@ -534,7 +482,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   startIconContainer: "div";

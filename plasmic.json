@@ -1101,6 +1101,32 @@
           "cssFilePath": "plasmic/a_d_2/PlasmicNewPage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "tKxiz2LS2HRq",
+          "name": "FaleConosco2",
+          "type": "managed",
+          "projectId": "eJV4HbfxnEVLnqrd4EbnFE",
+          "renderModuleFilePath": "plasmic/a_d_2/PlasmicFaleConosco2.tsx",
+          "importSpec": {
+            "modulePath": "FaleConosco2.tsx"
+          },
+          "cssFilePath": "plasmic/a_d_2/PlasmicFaleConosco2.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "koE18FDmK_B5",
+          "name": "Faleconosco3",
+          "type": "managed",
+          "projectId": "eJV4HbfxnEVLnqrd4EbnFE",
+          "renderModuleFilePath": "plasmic/a_d_2/PlasmicFaleconosco3.tsx",
+          "importSpec": {
+            "modulePath": "Faleconosco3.tsx"
+          },
+          "cssFilePath": "plasmic/a_d_2/PlasmicFaleconosco3.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -1305,6 +1331,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.307",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.307/dist/plasmic.schema.json"
+  "cliVersion": "0.1.309",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.309/dist/plasmic.schema.json"
 }

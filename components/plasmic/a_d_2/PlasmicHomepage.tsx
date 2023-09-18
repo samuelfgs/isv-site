@@ -39,6 +39,7 @@ import {
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
+import Faleconosco3 from "../../Faleconosco3"; // plasmic-import: koE18FDmK_B5/component
 import InscricaoButton from "../../InscricaoButton"; // plasmic-import: VrYzW9MhJk/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
@@ -73,20 +74,13 @@ export type PlasmicHomepage__OverridesType = {
   button?: p.Flex<typeof Button>;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   htmlVideo?: p.Flex<typeof Video>;
+  faleconosco3?: p.Flex<typeof Faleconosco3>;
   inscricaoButton?: p.Flex<typeof InscricaoButton>;
   participantes?: p.Flex<typeof Participantes>;
   palestrantesData?: p.Flex<typeof PalestrantesData>;
 };
 
 export interface DefaultHomepageProps {}
-
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
 
 function useNextRouter() {
   try {
@@ -131,7 +125,6 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
-
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -143,7 +136,6 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
-
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -180,512 +172,433 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__eDpuD)}
           >
-            {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
-              <div className={classNames(projectcss.all, sty.freeBox__l7KFk)}>
-                {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__l7KFk)}>
+              <div className={classNames(projectcss.all, sty.freeBox___5Qfn8)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jL64G
+                  )}
+                >
+                  {hasVariant(globalVariants, "screen", "tablet")
+                    ? "Dias 21 e 22 de outubro"
+                    : "21 e 22"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___66Sof
+                  )}
+                >
+                  {"Outubro"}
+                </div>
+              </div>
+              <Button
+                data-plasmic-name={"button"}
+                data-plasmic-override={overrides.button}
+                className={classNames("__wab_instance", sty.button)}
+                link={`/inscricao`}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__eJtZ
+                  )}
+                >
+                  {"QUERO ME INSCREVER"}
+                </div>
+              </Button>
+            </div>
+          </p.Stack>
+          <ResponsiveMenu
+            data-plasmic-name={"responsiveMenu"}
+            data-plasmic-override={overrides.responsiveMenu}
+            className={classNames("__wab_instance", sty.responsiveMenu)}
+          />
+
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__kUlCm)}
+          >
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img___1S6OG)}
+              displayHeight={"auto"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"80%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "desktop")
+                  ? "500px"
+                  : "auto"
+              }
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/a_d_2/images/ad20AnosIcon211Png.png",
+                fullWidth: 3666,
+                fullHeight: 2547,
+                aspectRatio: undefined
+              }}
+            />
+
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__sMAat)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__fYk58
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "Vamos celebrar os 20 anos de Adora\u00e7\u00e3o e Discipulado"
+                  : "Vamos celebrar os \n20 anos de \nAdora\u00e7\u00e3o e Discipulado"}
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___2U7OO
+                )}
+              >
+                {"E voc\u00ea pode fazer parte disso! "}
+              </div>
+            </p.Stack>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__d712)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__sE7Vb
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "tablet")
+                  ? "Dias 21 e 22 de outubro"
+                  : "21 e 22 de outubro"}
+              </div>
+            </p.Stack>
+            <Video
+              data-plasmic-name={"htmlVideo"}
+              data-plasmic-override={overrides.htmlVideo}
+              autoPlay={true}
+              className={classNames("__wab_instance", sty.htmlVideo)}
+              controls={false}
+              loop={true}
+              muted={true}
+              src={"https://isv-site.vercel.app/video.mp4"}
+            />
+
+            <Faleconosco3
+              data-plasmic-name={"faleconosco3"}
+              data-plasmic-override={overrides.faleconosco3}
+              className={classNames("__wab_instance", sty.faleconosco3)}
+            />
+
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__mQpkc)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__j4F9
+                )}
+              >
+                {"VOC\u00ca FAZ PARTE DISSO!"}
+              </div>
+              <InscricaoButton
+                data-plasmic-name={"inscricaoButton"}
+                data-plasmic-override={overrides.inscricaoButton}
+                className={classNames("__wab_instance", sty.inscricaoButton)}
+              />
+            </p.Stack>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__neaTo
+              )}
+            >
+              {"PALESTRANTES"}
+            </div>
+            <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
+              <Participantes
+                data-plasmic-name={"participantes"}
+                data-plasmic-override={overrides.participantes}
+                className={classNames("__wab_instance", sty.participantes)}
+              />
+            </div>
+            <PalestrantesData
+              data-plasmic-name={"palestrantesData"}
+              data-plasmic-override={overrides.palestrantesData}
+              className={classNames("__wab_instance", sty.palestrantesData)}
+            >
+              <ph.DataCtxReader>
+                {$ctx => (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox___5Qfn8)}
+                    className={classNames(projectcss.all, sty.freeBox__x3T27)}
                   >
                     <div
                       className={classNames(
                         projectcss.all,
                         projectcss.__wab_text,
-                        sty.text__jL64G
+                        sty.text__aQ01E
                       )}
                     >
-                      {hasVariant(globalVariants, "screen", "tablet")
-                        ? "Dias 21 e 22 de outubro"
-                        : "21 e 22"}
+                      {"Palestrantes"}
                     </div>
-                    {(
-                      hasVariant(globalVariants, "screen", "tablet")
-                        ? true
-                        : true
-                    ) ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___66Sof
-                        )}
-                      >
-                        {"Outubro"}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  link={`/inscricao`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eJtZ
-                    )}
-                  >
-                    {"QUERO ME INSCREVER"}
-                  </div>
-                </Button>
-              </div>
-            ) : null}
-          </p.Stack>
-          {true ? (
-            <ResponsiveMenu
-              data-plasmic-name={"responsiveMenu"}
-              data-plasmic-override={overrides.responsiveMenu}
-              className={classNames("__wab_instance", sty.responsiveMenu)}
-            />
-          ) : null}
-          {true ? (
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__kUlCm)}
-            >
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img___1S6OG)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"80%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={
-                  hasVariant(globalVariants, "screen", "desktop")
-                    ? ("500px" as const)
-                    : ("auto" as const)
-                }
-                loading={"lazy" as const}
-                src={{
-                  src: "/plasmic/a_d_2/images/ad20AnosIcon211Png.png",
-                  fullWidth: 3666,
-                  fullHeight: 2547,
-                  aspectRatio: undefined
-                }}
-              />
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__sMAat)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fYk58
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "Vamos celebrar os 20 anos de Adora\u00e7\u00e3o e Discipulado"
-                      : "Vamos celebrar os \n20 anos de \nAdora\u00e7\u00e3o e Discipulado"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text___2U7OO
-                    )}
-                  >
-                    {"E voc\u00ea pode fazer parte disso! "}
-                  </div>
-                </p.Stack>
-              ) : null}
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__d712)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sE7Vb
-                    )}
-                  >
-                    {hasVariant(globalVariants, "screen", "tablet")
-                      ? "Dias 21 e 22 de outubro"
-                      : "21 e 22 de outubro"}
-                  </div>
-                </p.Stack>
-              ) : null}
-              <Video
-                data-plasmic-name={"htmlVideo"}
-                data-plasmic-override={overrides.htmlVideo}
-                autoPlay={true}
-                className={classNames("__wab_instance", sty.htmlVideo)}
-                controls={false}
-                loop={true}
-                muted={true}
-                src={"https://isv-site.vercel.app/video.mp4" as const}
-              />
-
-              {true ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__mQpkc)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__j4F9
-                    )}
-                  >
-                    {"VOC\u00ca FAZ PARTE DISSO!"}
-                  </div>
-                  <InscricaoButton
-                    data-plasmic-name={"inscricaoButton"}
-                    data-plasmic-override={overrides.inscricaoButton}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.inscricaoButton
-                    )}
-                  />
-                </p.Stack>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "tablet") ? true : true
-              ) ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__neaTo
-                  )}
-                >
-                  {"PALESTRANTES"}
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "desktop")
-                  ? true
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? true
-                  : true
-              ) ? (
-                <div className={classNames(projectcss.all, sty.freeBox__hazcD)}>
-                  <Participantes
-                    data-plasmic-name={"participantes"}
-                    data-plasmic-override={overrides.participantes}
-                    className={classNames("__wab_instance", sty.participantes)}
-                  />
-                </div>
-              ) : null}
-              {(
-                hasVariant(globalVariants, "screen", "desktop")
-                  ? true
-                  : hasVariant(globalVariants, "screen", "tablet")
-                  ? true
-                  : true
-              ) ? (
-                <PalestrantesData
-                  data-plasmic-name={"palestrantesData"}
-                  data-plasmic-override={overrides.palestrantesData}
-                  className={classNames("__wab_instance", sty.palestrantesData)}
-                >
-                  <ph.DataCtxReader>
-                    {$ctx =>
-                      true ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___9ZBgO
+                      )}
+                    >
+                      {(
+                        (() => {
+                          try {
+                            return $ctx.palestrantes.slice(0, 3);
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })() ?? []
+                      ).map((currentItem, currentIndex) => (
                         <div
                           className={classNames(
                             projectcss.all,
-                            sty.freeBox__x3T27
+                            sty.freeBox__z7E7A
                           )}
+                          key={currentIndex}
                         >
-                          <div
+                          <Palestrante
                             className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__aQ01E
+                              "__wab_instance",
+                              sty.palestrante___9VLy5
                             )}
-                          >
-                            {"Palestrantes"}
-                          </div>
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox___9ZBgO
-                              )}
-                            >
-                              {(
-                                (() => {
-                                  try {
-                                    return $ctx.palestrantes.slice(0, 3);
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return [];
-                                    }
-                                    throw e;
-                                  }
-                                })() ?? []
-                              ).map((currentItem, currentIndex) => (
+                            slot={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__gjJDo
+                                )}
+                              >
                                 <div
                                   className={classNames(
                                     projectcss.all,
-                                    sty.freeBox__z7E7A
-                                  )}
-                                  key={currentIndex}
-                                >
-                                  <Palestrante
-                                    className={classNames(
-                                      "__wab_instance",
-                                      sty.palestrante___9VLy5
-                                    )}
-                                    slot={
-                                      (
-                                        hasVariant(
-                                          globalVariants,
-                                          "screen",
-                                          "tablet"
-                                        )
-                                          ? true
-                                          : true
-                                      ) ? (
-                                        <div
-                                          className={classNames(
-                                            projectcss.all,
-                                            sty.freeBox__gjJDo
-                                          )}
-                                        >
-                                          <div
-                                            className={classNames(
-                                              projectcss.all,
-                                              projectcss.__wab_text,
-                                              sty.text__xfh2M
-                                            )}
-                                          >
-                                            <React.Fragment>
-                                              {(() => {
-                                                try {
-                                                  return currentItem.name;
-                                                } catch (e) {
-                                                  if (
-                                                    e instanceof TypeError ||
-                                                    e?.plasmicType ===
-                                                      "PlasmicUndefinedDataError"
-                                                  ) {
-                                                    return "Adhemar de Campos";
-                                                  }
-                                                  throw e;
-                                                }
-                                              })()}
-                                            </React.Fragment>
-                                          </div>
-                                        </div>
-                                      ) : null
-                                    }
-                                    slot2={
-                                      <React.Fragment>
-                                        {(() => {
-                                          try {
-                                            return currentItem.shortDesc;
-                                          } catch (e) {
-                                            if (
-                                              e instanceof TypeError ||
-                                              e?.plasmicType ===
-                                                "PlasmicUndefinedDataError"
-                                            ) {
-                                              return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
-                                            }
-                                            throw e;
-                                          }
-                                        })()}
-                                      </React.Fragment>
-                                    }
-                                  >
-                                    <p.PlasmicImg
-                                      alt={""}
-                                      className={classNames(sty.img___7Wu7N)}
-                                      displayHeight={"100%" as const}
-                                      displayMaxHeight={"none" as const}
-                                      displayMaxWidth={"100%" as const}
-                                      displayMinHeight={"0" as const}
-                                      displayMinWidth={"0" as const}
-                                      displayWidth={"200px" as const}
-                                      loading={"lazy" as const}
-                                      src={(() => {
-                                        try {
-                                          return `/${currentItem.name}.png`;
-                                        } catch (e) {
-                                          if (
-                                            e instanceof TypeError ||
-                                            e?.plasmicType ===
-                                              "PlasmicUndefinedDataError"
-                                          ) {
-                                            return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
-                                          }
-                                          throw e;
-                                        }
-                                      })()}
-                                    />
-                                  </Palestrante>
-                                </div>
-                              ))}
-                            </div>
-                          ) : null}
-                          {true ? (
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__heIkn
-                              )}
-                            >
-                              {true ? (
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    sty.freeBox__ndmSt
+                                    projectcss.__wab_text,
+                                    sty.text__xfh2M
                                   )}
                                 >
-                                  {(
-                                    (() => {
+                                  <React.Fragment>
+                                    {(() => {
                                       try {
-                                        return $ctx.palestrantes.slice(3);
+                                        return currentItem.name;
                                       } catch (e) {
                                         if (
                                           e instanceof TypeError ||
                                           e?.plasmicType ===
                                             "PlasmicUndefinedDataError"
                                         ) {
-                                          return [];
+                                          return "Adhemar de Campos";
                                         }
                                         throw e;
                                       }
-                                    })() ?? []
-                                  ).map((currentItem, currentIndex) => (
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        sty.freeBox__u69OZ
-                                      )}
-                                      key={currentIndex}
-                                    >
-                                      <Palestrante
-                                        className={classNames(
-                                          "__wab_instance",
-                                          sty.palestrante___2QivX
-                                        )}
-                                        slot={
-                                          (
-                                            hasVariant(
-                                              globalVariants,
-                                              "screen",
-                                              "tablet"
-                                            )
-                                              ? true
-                                              : true
-                                          ) ? (
-                                            <div
-                                              className={classNames(
-                                                projectcss.all,
-                                                sty.freeBox__wmsF
-                                              )}
-                                            >
-                                              <div
-                                                className={classNames(
-                                                  projectcss.all,
-                                                  projectcss.__wab_text,
-                                                  sty.text__z6X3N
-                                                )}
-                                              >
-                                                <React.Fragment>
-                                                  {(() => {
-                                                    try {
-                                                      return currentItem.name;
-                                                    } catch (e) {
-                                                      if (
-                                                        e instanceof
-                                                          TypeError ||
-                                                        e?.plasmicType ===
-                                                          "PlasmicUndefinedDataError"
-                                                      ) {
-                                                        return "Adhemar de Campos";
-                                                      }
-                                                      throw e;
-                                                    }
-                                                  })()}
-                                                </React.Fragment>
-                                              </div>
-                                            </div>
-                                          ) : null
-                                        }
-                                        slot2={
-                                          <React.Fragment>
-                                            {(() => {
-                                              try {
-                                                return currentItem.shortDesc;
-                                              } catch (e) {
-                                                if (
-                                                  e instanceof TypeError ||
-                                                  e?.plasmicType ===
-                                                    "PlasmicUndefinedDataError"
-                                                ) {
-                                                  return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
-                                                }
-                                                throw e;
-                                              }
-                                            })()}
-                                          </React.Fragment>
-                                        }
-                                      >
-                                        <p.PlasmicImg
-                                          alt={""}
-                                          className={classNames(
-                                            sty.img___1CQcI
-                                          )}
-                                          displayHeight={"100%" as const}
-                                          displayMaxHeight={"none" as const}
-                                          displayMaxWidth={"100%" as const}
-                                          displayMinHeight={"0" as const}
-                                          displayMinWidth={"0" as const}
-                                          displayWidth={"200px" as const}
-                                          loading={"lazy" as const}
-                                          src={(() => {
-                                            try {
-                                              return `/${currentItem.name}.png`;
-                                            } catch (e) {
-                                              if (
-                                                e instanceof TypeError ||
-                                                e?.plasmicType ===
-                                                  "PlasmicUndefinedDataError"
-                                              ) {
-                                                return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
-                                              }
-                                              throw e;
-                                            }
-                                          })()}
-                                        />
-                                      </Palestrante>
-                                    </div>
-                                  ))}
+                                    })()}
+                                  </React.Fragment>
                                 </div>
-                              ) : null}
-                            </div>
-                          ) : null}
+                              </div>
+                            }
+                            slot2={
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return currentItem.shortDesc;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            }
+                          >
+                            <p.PlasmicImg
+                              alt={""}
+                              className={classNames(sty.img___7Wu7N)}
+                              displayHeight={"100%"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"200px"}
+                              loading={"lazy"}
+                              src={(() => {
+                                try {
+                                  return `/${currentItem.name}.png`;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          </Palestrante>
                         </div>
-                      ) : null
-                    }
-                  </ph.DataCtxReader>
-                </PalestrantesData>
-              ) : null}
-            </p.Stack>
-          ) : null}
-          {(hasVariant(globalVariants, "screen", "desktop") ? true : true) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__gx8Eo)} />
-          ) : null}
+                      ))}
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__heIkn)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__ndmSt
+                        )}
+                      >
+                        {(
+                          (() => {
+                            try {
+                              return $ctx.palestrantes.slice(3);
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })() ?? []
+                        ).map((currentItem, currentIndex) => (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__u69OZ
+                            )}
+                            key={currentIndex}
+                          >
+                            <Palestrante
+                              className={classNames(
+                                "__wab_instance",
+                                sty.palestrante___2QivX
+                              )}
+                              slot={
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__wmsF
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__z6X3N
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.name;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Adhemar de Campos";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
+                                </div>
+                              }
+                              slot2={
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return currentItem.shortDesc;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              }
+                            >
+                              <p.PlasmicImg
+                                alt={""}
+                                className={classNames(sty.img___1CQcI)}
+                                displayHeight={"100%"}
+                                displayMaxHeight={"none"}
+                                displayMaxWidth={"100%"}
+                                displayMinHeight={"0"}
+                                displayMinWidth={"0"}
+                                displayWidth={"200px"}
+                                loading={"lazy"}
+                                src={(() => {
+                                  try {
+                                    return `/${currentItem.name}.png`;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            </Palestrante>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </ph.DataCtxReader>
+            </PalestrantesData>
+          </p.Stack>
+          <div className={classNames(projectcss.all, sty.freeBox__gx8Eo)} />
         </div>
       </div>
     </React.Fragment>
@@ -698,26 +611,28 @@ const PlasmicDescendants = {
     "button",
     "responsiveMenu",
     "htmlVideo",
+    "faleconosco3",
     "inscricaoButton",
     "participantes",
     "palestrantesData"
   ],
-
   button: ["button"],
   responsiveMenu: ["responsiveMenu"],
   htmlVideo: ["htmlVideo"],
+  faleconosco3: ["faleconosco3"],
   inscricaoButton: ["inscricaoButton"],
   participantes: ["participantes"],
   palestrantesData: ["palestrantesData"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   button: typeof Button;
   responsiveMenu: typeof ResponsiveMenu;
   htmlVideo: typeof Video;
+  faleconosco3: typeof Faleconosco3;
   inscricaoButton: typeof InscricaoButton;
   participantes: typeof Participantes;
   palestrantesData: typeof PalestrantesData;
@@ -728,7 +643,6 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
 >;
-
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -764,7 +678,6 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
         }),
       [props, nodeName]
     );
-
     return PlasmicHomepage__RenderFunc({
       variants,
       args,
@@ -788,6 +701,7 @@ export const PlasmicHomepage = Object.assign(
     button: makeNodeComponent("button"),
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     htmlVideo: makeNodeComponent("htmlVideo"),
+    faleconosco3: makeNodeComponent("faleconosco3"),
     inscricaoButton: makeNodeComponent("inscricaoButton"),
     participantes: makeNodeComponent("participantes"),
     palestrantesData: makeNodeComponent("palestrantesData"),

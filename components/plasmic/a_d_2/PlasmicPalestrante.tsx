@@ -75,14 +75,6 @@ export interface DefaultPalestranteProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -131,56 +123,52 @@ function PlasmicPalestrante__RenderFunc(props: {
       )}
     >
       <div className={classNames(projectcss.all, sty.freeBox__szKGi)}>
-        {true ? (
-          <div className={classNames(projectcss.all, sty.freeBox__f73Zz)}>
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__e86Ow)}
-                  displayHeight={"100%" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"200px" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/a_d_2/images/adhemarDeCampospng.png",
-                    fullWidth: 1080,
-                    fullHeight: 1080,
-                    aspectRatio: undefined
-                  }}
-                />
-              ),
+        <div className={classNames(projectcss.all, sty.freeBox__f73Zz)}>
+          {p.renderPlasmicSlot({
+            defaultContents: (
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__e86Ow)}
+                displayHeight={"100%"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"200px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/a_d_2/images/adhemarDeCampospng.png",
+                  fullWidth: 1080,
+                  fullHeight: 1080,
+                  aspectRatio: undefined
+                }}
+              />
+            ),
 
-              value: args.children
+            value: args.children
+          })}
+        </div>
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__hwY6)}
+        >
+          <div className={classNames(projectcss.all, sty.freeBox__fWlrU)}>
+            {p.renderPlasmicSlot({
+              defaultContents: "Adhemar de Campos",
+              value: args.slot,
+              className: classNames(sty.slotTargetSlot)
             })}
           </div>
-        ) : null}
-        {true ? (
-          <p.Stack
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__hwY6)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__fWlrU)}>
-              {p.renderPlasmicSlot({
-                defaultContents: "Adhemar de Campos",
-                value: args.slot,
-                className: classNames(sty.slotTargetSlot)
-              })}
-            </div>
-            <div className={classNames(projectcss.all, sty.freeBox__ia6Zb)}>
-              {p.renderPlasmicSlot({
-                defaultContents:
-                  "Autor de aproximadamente 1000 can\u00e7\u00f5es, Pr. Adhemar de Campos \u00e9 um dos mais not\u00f3rios ministros de louvor e adora\u00e7\u00e3o no Brasil, dedicando sua vida a compor can\u00e7\u00f5es que ajudam muitos a experimentarem a presen\u00e7a de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo \u00edmpar, realizou a primeira grava\u00e7\u00e3o ao vivo de m\u00fasicas crist\u00e3s. Sua hist\u00f3ria confunde-se com a da m\u00fasica gospel no Brasil, tanto que na d\u00e9cada de 80 era um dos poucos produtores de c\u00e2nticos crist\u00e3os com grande proje\u00e7\u00e3o. Seu minist\u00e9rio influenciou gera\u00e7\u00f5es com composi\u00e7\u00f5es atemporais que at\u00e9 hoje nos tocam, oferecendo valores de uma vida crist\u00e3 verdadeira. S\u00e3o mais de 45 anos de caminhada com Cristo, claramente percept\u00edveis no conjunto de sua obra.",
-                value: args.slot2,
-                className: classNames(sty.slotTargetSlot2)
-              })}
-            </div>
-          </p.Stack>
-        ) : null}
+          <div className={classNames(projectcss.all, sty.freeBox__ia6Zb)}>
+            {p.renderPlasmicSlot({
+              defaultContents:
+                "Autor de aproximadamente 1000 can\u00e7\u00f5es, Pr. Adhemar de Campos \u00e9 um dos mais not\u00f3rios ministros de louvor e adora\u00e7\u00e3o no Brasil, dedicando sua vida a compor can\u00e7\u00f5es que ajudam muitos a experimentarem a presen\u00e7a de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo \u00edmpar, realizou a primeira grava\u00e7\u00e3o ao vivo de m\u00fasicas crist\u00e3s. Sua hist\u00f3ria confunde-se com a da m\u00fasica gospel no Brasil, tanto que na d\u00e9cada de 80 era um dos poucos produtores de c\u00e2nticos crist\u00e3os com grande proje\u00e7\u00e3o. Seu minist\u00e9rio influenciou gera\u00e7\u00f5es com composi\u00e7\u00f5es atemporais que at\u00e9 hoje nos tocam, oferecendo valores de uma vida crist\u00e3 verdadeira. S\u00e3o mais de 45 anos de caminhada com Cristo, claramente percept\u00edveis no conjunto de sua obra.",
+              value: args.slot2,
+              className: classNames(sty.slotTargetSlot2)
+            })}
+          </div>
+        </p.Stack>
       </div>
     </div>
   ) as React.ReactElement | null;
@@ -191,7 +179,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
 };

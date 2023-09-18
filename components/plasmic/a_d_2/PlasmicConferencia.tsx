@@ -72,14 +72,6 @@ export type PlasmicConferencia__OverridesType = {
 
 export interface DefaultConferenciaProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -99,7 +91,7 @@ function PlasmicConferencia__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          activeSlide: 0 as const
+          activeSlide: 0
         },
         props.args
       ),
@@ -221,49 +213,47 @@ function PlasmicConferencia__RenderFunc(props: {
           >
             {"Sobre o Adora\u00e7\u00e3o e Discipulado"}
           </div>
-          {true ? (
-            <p.Stack
-              as={"div"}
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox)}
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__hpDsv
+              )}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__hpDsv
-                )}
-              >
+              <React.Fragment>
                 <React.Fragment>
-                  <React.Fragment>
-                    {
-                      "Desde o ano 2000, o Adora\u00e7\u00e3o e Discipulado tem sido um marco na vida da Igreja em S\u00e3o Vicente e de milhares de pessoas espalhadas pelo Brasil. \n\nO nome da confer\u00eancia foi escolhido pelo fato de a Igreja local, ao longo das \u00faltimas d\u00e9cadas, entender que o discipulado \u00e9 muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos.\n\nNeste ano, celebramos a 20\u00aa edi\u00e7\u00e3o deste marcante evento de nossa hist\u00f3ria.\n\n"
-                    }
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"Igreja em S\u00e3o Vicente"}
-                  </span>
+                  {
+                    "Desde o ano 2000, o Adora\u00e7\u00e3o e Discipulado tem sido um marco na vida da Igreja em S\u00e3o Vicente e de milhares de pessoas espalhadas pelo Brasil. \n\nO nome da confer\u00eancia foi escolhido pelo fato de a Igreja local, ao longo das \u00faltimas d\u00e9cadas, entender que o discipulado \u00e9 muito mais que uma atividade, sendo um estilo de vida que deve transbordar em tudo o que somos e fazemos.\n\nNeste ano, celebramos a 20\u00aa edi\u00e7\u00e3o deste marcante evento de nossa hist\u00f3ria.\n\n"
+                  }
                 </React.Fragment>
-              </div>
-            </p.Stack>
-          ) : null}
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"Igreja em S\u00e3o Vicente"}
+                </span>
+              </React.Fragment>
+            </div>
+          </p.Stack>
           <p.PlasmicImg
             data-plasmic-name={"img"}
             data-plasmic-override={overrides.img}
             alt={""}
             className={classNames(sty.img)}
-            displayHeight={"auto" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"100%" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"auto" as const}
-            loading={"lazy" as const}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"100%"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"auto"}
+            loading={"lazy"}
             src={{
               src: "/plasmic/a_d_2/images/isv.png",
               fullWidth: 1080,
@@ -285,7 +275,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;

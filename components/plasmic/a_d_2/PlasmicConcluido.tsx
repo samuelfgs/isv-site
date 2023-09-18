@@ -72,14 +72,6 @@ export type PlasmicConcluido__OverridesType = {
 
 export interface DefaultConcluidoProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -99,7 +91,7 @@ function PlasmicConcluido__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          activeSlide: 0 as const
+          activeSlide: 0
         },
         props.args
       ),
@@ -197,39 +189,37 @@ function PlasmicConcluido__RenderFunc(props: {
           >
             {"Inscri\u00e7\u00e3o efetuada"}
           </div>
-          {true ? (
-            <p.Stack
-              as={"div"}
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox)}
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__xsDpC
+              )}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xsDpC
-                )}
-              >
-                {
-                  "Parab\u00e9ns! Sua inscri\u00e7\u00e3o para o Adora\u00e7\u00e3o e Discipulado 20 Anos foi realizada com sucesso!\n\nEm breve, entraremos em contato, via e-mail, com todas as informa\u00e7\u00f5es sobre seu check-in para o evento.\n\nAt\u00e9 l\u00e1!"
-                }
-              </div>
-            </p.Stack>
-          ) : null}
+              {
+                "Parab\u00e9ns! Sua inscri\u00e7\u00e3o para o Adora\u00e7\u00e3o e Discipulado 20 Anos foi realizada com sucesso!\n\nEm breve, entraremos em contato, via e-mail, com todas as informa\u00e7\u00f5es sobre seu check-in para o evento.\n\nAt\u00e9 l\u00e1!"
+              }
+            </div>
+          </p.Stack>
           <p.PlasmicImg
             data-plasmic-name={"img"}
             data-plasmic-override={overrides.img}
             alt={""}
             className={classNames(sty.img)}
-            displayHeight={"auto" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"300px" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"auto" as const}
-            loading={"lazy" as const}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"300px"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"auto"}
+            loading={"lazy"}
             src={{
               src: "/plasmic/a_d_2/images/isv.png",
               fullWidth: 1080,
@@ -251,7 +241,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;

@@ -71,14 +71,6 @@ export interface DefaultElementProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -98,8 +90,8 @@ function PlasmicElement__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          color: "red" as const,
-          name: "Daniel Souza" as const
+          color: "red",
+          name: "Daniel Souza"
         },
         props.args
       ),
@@ -141,13 +133,13 @@ function PlasmicElement__RenderFunc(props: {
         data-plasmic-override={overrides.img}
         alt={""}
         className={classNames(sty.img)}
-        displayHeight={"auto" as const}
-        displayMaxHeight={"none" as const}
-        displayMaxWidth={"100%" as const}
-        displayMinHeight={"0" as const}
-        displayMinWidth={"0" as const}
-        displayWidth={"400px" as const}
-        loading={"lazy" as const}
+        displayHeight={"auto"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"100%"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"400px"}
+        loading={"lazy"}
         src={{
           src: "/plasmic/a_d_2/images/beatles.png",
           fullWidth: 8268,
@@ -188,7 +180,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;

@@ -76,14 +76,6 @@ export interface DefaultResponsiveMenuProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -154,10 +146,162 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
         { [sty.rootisOpen2]: hasVariant($state, "isOpen2", "isOpen2") }
       )}
     >
-      {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
+      <div
+        className={classNames(projectcss.all, sty.freeBox__dPp8K, {
+          [sty.freeBoxisOpen2__dPp8KjqrG1]: hasVariant(
+            $state,
+            "isOpen2",
+            "isOpen2"
+          )
+        })}
+      >
         <div
-          className={classNames(projectcss.all, sty.freeBox__dPp8K, {
-            [sty.freeBoxisOpen2__dPp8KjqrG1]: hasVariant(
+          className={classNames(projectcss.all, sty.freeBox__uKGbc, {
+            [sty.freeBoxisOpen2__uKGbcjqrG1]: hasVariant(
+              $state,
+              "isOpen2",
+              "isOpen2"
+            )
+          })}
+        >
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              sty.link___3Bxfm
+            )}
+            component={Link}
+            href={`/`}
+            platform={"nextjs"}
+          >
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__wk6PY)}
+              displayHeight={"50px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"50px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/a_d_2/images/ad20AnosIcon21Png.png",
+                fullWidth: 3666,
+                fullHeight: 2547,
+                aspectRatio: undefined
+              }}
+            />
+          </p.PlasmicLink>
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__rx398, {
+              [sty.freeBoxisOpen2__rx398JqrG1]: hasVariant(
+                $state,
+                "isOpen2",
+                "isOpen2"
+              )
+            })}
+          >
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__o0Hop
+              )}
+              component={Link}
+              href={`/inscricao`}
+              platform={"nextjs"}
+            >
+              {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__rUs2N
+              )}
+              component={Link}
+              href={`/conferencia`}
+              platform={"nextjs"}
+            >
+              {"Confer\u00eancia"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__e7LZr
+              )}
+              component={Link}
+              href={`/palestrantes`}
+              platform={"nextjs"}
+            >
+              {"Palestrantes"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link___8Goel
+              )}
+              component={Link}
+              href={`/fale-conosco`}
+              platform={"nextjs"}
+            >
+              {"Fale conosco"}
+            </p.PlasmicLink>
+          </p.Stack>
+          <p.PlasmicIcon
+            PlasmicIconType={
+              hasVariant($state, "isOpen2", "isOpen2") ? CloseIcon : MenuIcon
+            }
+            className={classNames(projectcss.all, sty.svg__zmS8F, {
+              [sty.svgisOpen2__zmS8FjqrG1]: hasVariant(
+                $state,
+                "isOpen2",
+                "isOpen2"
+              )
+            })}
+            onClick={async event => {
+              const $steps = {};
+              $steps["updateIsOpen"] = true
+                ? (() => {
+                    const actionArgs = {
+                      vgroup: "isOpen2",
+                      operation: 2,
+                      value: "isOpen2"
+                    };
+                    return (({ vgroup, value }) => {
+                      if (typeof value === "string") {
+                        value = [value];
+                      }
+
+                      const oldValue = p.get($state, vgroup);
+                      p.set($state, vgroup, !oldValue);
+                      return !oldValue;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                typeof $steps["updateIsOpen"] === "object" &&
+                typeof $steps["updateIsOpen"].then === "function"
+              ) {
+                $steps["updateIsOpen"] = await $steps["updateIsOpen"];
+              }
+            }}
+            role={"img"}
+          />
+        </div>
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__g0AHs, {
+            [sty.freeBoxisOpen2__g0AHsjqrG1]: hasVariant(
               $state,
               "isOpen2",
               "isOpen2"
@@ -165,495 +309,207 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
           })}
         >
           <div
-            className={classNames(projectcss.all, sty.freeBox__uKGbc, {
-              [sty.freeBoxisOpen2__uKGbcjqrG1]: hasVariant(
+            className={classNames(projectcss.all, sty.freeBox__bMU3, {
+              [sty.freeBoxisOpen2__bMU3JqrG1]: hasVariant(
                 $state,
                 "isOpen2",
                 "isOpen2"
               )
             })}
           >
-            {true ? (
-              <p.PlasmicLink
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  sty.link___3Bxfm
-                )}
-                component={Link}
-                href={`/`}
-                platform={"nextjs"}
-              >
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__wk6PY)}
-                  displayHeight={"50px" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"100%" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"50px" as const}
-                  loading={"lazy" as const}
-                  src={{
-                    src: "/plasmic/a_d_2/images/ad20AnosIcon21Png.png",
-                    fullWidth: 3666,
-                    fullHeight: 2547,
-                    aspectRatio: undefined
-                  }}
-                />
-              </p.PlasmicLink>
-            ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "desktop")
-                ? true
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
-            ) ? (
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__rx398, {
-                  [sty.freeBoxisOpen2__rx398JqrG1]: hasVariant(
-                    $state,
-                    "isOpen2",
-                    "isOpen2"
-                  )
-                })}
-              >
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__o0Hop
-                  )}
-                  component={Link}
-                  href={`/inscricao`}
-                  platform={"nextjs"}
-                >
-                  {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
-                </p.PlasmicLink>
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__rUs2N
-                  )}
-                  component={Link}
-                  href={`/conferencia`}
-                  platform={"nextjs"}
-                >
-                  {"Confer\u00eancia"}
-                </p.PlasmicLink>
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__e7LZr
-                  )}
-                  component={Link}
-                  href={`/palestrantes`}
-                  platform={"nextjs"}
-                >
-                  {"Palestrantes"}
-                </p.PlasmicLink>
-                <p.PlasmicLink
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___8Goel
-                  )}
-                  component={Link}
-                  href={`/fale-conosco`}
-                  platform={"nextjs"}
-                >
-                  {"Fale conosco"}
-                </p.PlasmicLink>
-              </p.Stack>
-            ) : null}
-            {(
-              hasVariant(globalVariants, "screen", "desktop")
-                ? true
-                : hasVariant(globalVariants, "screen", "tablet")
-                ? true
-                : true
-            ) ? (
-              <p.PlasmicIcon
-                PlasmicIconType={
-                  hasVariant($state, "isOpen2", "isOpen2")
-                    ? CloseIcon
-                    : MenuIcon
-                }
-                className={classNames(projectcss.all, sty.svg__zmS8F, {
-                  [sty.svgisOpen2__zmS8FjqrG1]: hasVariant(
-                    $state,
-                    "isOpen2",
-                    "isOpen2"
-                  )
-                })}
-                onClick={async event => {
-                  const $steps = {};
-                  $steps["updateIsOpen"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          vgroup: __wrapUserFunction(
-                            {
-                              type: "InteractionArgLoc",
-                              actionName: "updateVariant",
-                              interactionUuid: "0e9-Cd8Vm",
-                              componentUuid: "EjDwpL97hh",
-                              argName: "vgroup"
-                            },
-                            () => "isOpen2"
-                          ),
-                          operation: __wrapUserFunction(
-                            {
-                              type: "InteractionArgLoc",
-                              actionName: "updateVariant",
-                              interactionUuid: "0e9-Cd8Vm",
-                              componentUuid: "EjDwpL97hh",
-                              argName: "operation"
-                            },
-                            () => 2
-                          ),
-                          value: __wrapUserFunction(
-                            {
-                              type: "InteractionArgLoc",
-                              actionName: "updateVariant",
-                              interactionUuid: "0e9-Cd8Vm",
-                              componentUuid: "EjDwpL97hh",
-                              argName: "value"
-                            },
-                            () => "isOpen2"
-                          )
-                        };
-                        return __wrapUserFunction(
-                          {
-                            type: "InteractionLoc",
-                            actionName: "updateVariant",
-                            interactionUuid: "0e9-Cd8Vm",
-                            componentUuid: "EjDwpL97hh"
-                          },
-                          () =>
-                            (({ vgroup, value }) => {
-                              if (typeof value === "string") {
-                                value = [value];
-                              }
-
-                              const oldValue = p.get($state, vgroup);
-                              p.set($state, vgroup, !oldValue);
-                              return !oldValue;
-                            })?.apply(null, [actionArgs]),
-                          actionArgs
-                        );
-                      })()
-                    : undefined;
-                  if (
-                    typeof $steps["updateIsOpen"] === "object" &&
-                    typeof $steps["updateIsOpen"].then === "function"
-                  ) {
-                    $steps["updateIsOpen"] = await __wrapUserPromise(
-                      {
-                        type: "InteractionLoc",
-                        actionName: "updateVariant",
-                        interactionUuid: "0e9-Cd8Vm",
-                        componentUuid: "EjDwpL97hh"
-                      },
-                      $steps["updateIsOpen"]
-                    );
-                  }
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                sty.link__f7Jkj
+              )}
+              component={Link}
+              href={`/`}
+              platform={"nextjs"}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__d2Hc2)}
+                displayHeight={"50px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"50px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/a_d_2/images/artboard1Png.png",
+                  fullWidth: 30,
+                  fullHeight: 30,
+                  aspectRatio: undefined
                 }}
-                role={"img"}
               />
-            ) : null}
-          </div>
-          {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
+            </p.PlasmicLink>
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__g0AHs, {
-                [sty.freeBoxisOpen2__g0AHsjqrG1]: hasVariant(
+              className={classNames(projectcss.all, sty.freeBox__fDf9X, {
+                [sty.freeBoxisOpen2__fDf9XjqrG1]: hasVariant(
                   $state,
                   "isOpen2",
                   "isOpen2"
                 )
               })}
             >
-              <div
-                className={classNames(projectcss.all, sty.freeBox__bMU3, {
-                  [sty.freeBoxisOpen2__bMU3JqrG1]: hasVariant(
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__zZooK
+                )}
+                component={Link}
+                href={`/inscricao`}
+                platform={"nextjs"}
+              >
+                {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
+              </p.PlasmicLink>
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link___6Rxgz
+                )}
+                component={Link}
+                href={`/palestrantes`}
+                platform={"nextjs"}
+              >
+                {"Palestrantes"}
+              </p.PlasmicLink>
+              <p.PlasmicLink
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__jnM4A
+                )}
+                component={Link}
+                href={`/fale-conosco`}
+                platform={"nextjs"}
+              >
+                {"Fale conosco"}
+              </p.PlasmicLink>
+            </p.Stack>
+            <p.PlasmicIcon
+              PlasmicIconType={
+                hasVariant($state, "isOpen2", "isOpen2") ? CloseIcon : MenuIcon
+              }
+              className={classNames(projectcss.all, sty.svg__hpC8Y, {
+                [sty.svgisOpen2__hpC8YjqrG1]: hasVariant(
+                  $state,
+                  "isOpen2",
+                  "isOpen2"
+                )
+              })}
+              onClick={async event => {
+                const $steps = {};
+                $steps["updateIsOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        vgroup: "isOpen2",
+                        operation: 2,
+                        value: "isOpen2"
+                      };
+                      return (({ vgroup, value }) => {
+                        if (typeof value === "string") {
+                          value = [value];
+                        }
+
+                        const oldValue = p.get($state, vgroup);
+                        p.set($state, vgroup, !oldValue);
+                        return !oldValue;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  typeof $steps["updateIsOpen"] === "object" &&
+                  typeof $steps["updateIsOpen"].then === "function"
+                ) {
+                  $steps["updateIsOpen"] = await $steps["updateIsOpen"];
+                }
+              }}
+              role={"img"}
+            />
+          </div>
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__jjSxP, {
+              [sty.freeBoxisOpen2__jjSxPjqrG1]: hasVariant(
+                $state,
+                "isOpen2",
+                "isOpen2"
+              )
+            })}
+          >
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__l3KHc
+              )}
+              component={Link}
+              href={`/inscricao`}
+              platform={"nextjs"}
+            >
+              {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__s2Xj8,
+                {
+                  [sty.linkisOpen2__s2Xj8JqrG1]: hasVariant(
                     $state,
                     "isOpen2",
                     "isOpen2"
                   )
-                })}
-              >
-                {true ? (
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      sty.link__f7Jkj
-                    )}
-                    component={Link}
-                    href={`/`}
-                    platform={"nextjs"}
-                  >
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__d2Hc2)}
-                      displayHeight={"50px" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"100%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"50px" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: "/plasmic/a_d_2/images/artboard1Png.png",
-                        fullWidth: 30,
-                        fullHeight: 30,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </p.PlasmicLink>
-                ) : null}
-                {(
-                  hasVariant(globalVariants, "screen", "desktop")
-                    ? true
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? true
-                    : true
-                ) ? (
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__fDf9X, {
-                      [sty.freeBoxisOpen2__fDf9XjqrG1]: hasVariant(
-                        $state,
-                        "isOpen2",
-                        "isOpen2"
-                      )
-                    })}
-                  >
-                    <p.PlasmicLink
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__zZooK
-                      )}
-                      component={Link}
-                      href={`/inscricao`}
-                      platform={"nextjs"}
-                    >
-                      {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
-                    </p.PlasmicLink>
-                    <p.PlasmicLink
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___6Rxgz
-                      )}
-                      component={Link}
-                      href={`/palestrantes`}
-                      platform={"nextjs"}
-                    >
-                      {"Palestrantes"}
-                    </p.PlasmicLink>
-                    <p.PlasmicLink
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__jnM4A
-                      )}
-                      component={Link}
-                      href={`/fale-conosco`}
-                      platform={"nextjs"}
-                    >
-                      {"Fale conosco"}
-                    </p.PlasmicLink>
-                  </p.Stack>
-                ) : null}
-                {(
-                  hasVariant(globalVariants, "screen", "desktop")
-                    ? true
-                    : hasVariant(globalVariants, "screen", "tablet")
-                    ? true
-                    : true
-                ) ? (
-                  <p.PlasmicIcon
-                    PlasmicIconType={
-                      hasVariant($state, "isOpen2", "isOpen2")
-                        ? CloseIcon
-                        : MenuIcon
-                    }
-                    className={classNames(projectcss.all, sty.svg__hpC8Y, {
-                      [sty.svgisOpen2__hpC8YjqrG1]: hasVariant(
-                        $state,
-                        "isOpen2",
-                        "isOpen2"
-                      )
-                    })}
-                    onClick={async event => {
-                      const $steps = {};
-                      $steps["updateIsOpen"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              vgroup: __wrapUserFunction(
-                                {
-                                  type: "InteractionArgLoc",
-                                  actionName: "updateVariant",
-                                  interactionUuid: "18f4kBErKou",
-                                  componentUuid: "EjDwpL97hh",
-                                  argName: "vgroup"
-                                },
-                                () => "isOpen2"
-                              ),
-                              operation: __wrapUserFunction(
-                                {
-                                  type: "InteractionArgLoc",
-                                  actionName: "updateVariant",
-                                  interactionUuid: "18f4kBErKou",
-                                  componentUuid: "EjDwpL97hh",
-                                  argName: "operation"
-                                },
-                                () => 2
-                              ),
-                              value: __wrapUserFunction(
-                                {
-                                  type: "InteractionArgLoc",
-                                  actionName: "updateVariant",
-                                  interactionUuid: "18f4kBErKou",
-                                  componentUuid: "EjDwpL97hh",
-                                  argName: "value"
-                                },
-                                () => "isOpen2"
-                              )
-                            };
-                            return __wrapUserFunction(
-                              {
-                                type: "InteractionLoc",
-                                actionName: "updateVariant",
-                                interactionUuid: "18f4kBErKou",
-                                componentUuid: "EjDwpL97hh"
-                              },
-                              () =>
-                                (({ vgroup, value }) => {
-                                  if (typeof value === "string") {
-                                    value = [value];
-                                  }
-
-                                  const oldValue = p.get($state, vgroup);
-                                  p.set($state, vgroup, !oldValue);
-                                  return !oldValue;
-                                })?.apply(null, [actionArgs]),
-                              actionArgs
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        typeof $steps["updateIsOpen"] === "object" &&
-                        typeof $steps["updateIsOpen"].then === "function"
-                      ) {
-                        $steps["updateIsOpen"] = await __wrapUserPromise(
-                          {
-                            type: "InteractionLoc",
-                            actionName: "updateVariant",
-                            interactionUuid: "18f4kBErKou",
-                            componentUuid: "EjDwpL97hh"
-                          },
-                          $steps["updateIsOpen"]
-                        );
-                      }
-                    }}
-                    role={"img"}
-                  />
-                ) : null}
-              </div>
-              {(hasVariant($state, "isOpen2", "isOpen2") ? true : true) ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__jjSxP, {
-                    [sty.freeBoxisOpen2__jjSxPjqrG1]: hasVariant(
-                      $state,
-                      "isOpen2",
-                      "isOpen2"
-                    )
-                  })}
-                >
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__l3KHc
-                    )}
-                    component={Link}
-                    href={`/inscricao`}
-                    platform={"nextjs"}
-                  >
-                    {"Fa\u00e7a sua inscri\u00e7\u00e3o"}
-                  </p.PlasmicLink>
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__s2Xj8,
-                      {
-                        [sty.linkisOpen2__s2Xj8JqrG1]: hasVariant(
-                          $state,
-                          "isOpen2",
-                          "isOpen2"
-                        )
-                      }
-                    )}
-                    component={Link}
-                    href={`/conferencia`}
-                    platform={"nextjs"}
-                  >
-                    {"Confer\u00eancia"}
-                  </p.PlasmicLink>
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__d3CDb
-                    )}
-                    component={Link}
-                    href={`/palestrantes`}
-                    platform={"nextjs"}
-                  >
-                    {"Palestrantes"}
-                  </p.PlasmicLink>
-                  <p.PlasmicLink
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__ubmKc
-                    )}
-                    component={Link}
-                    href={`/fale-conosco`}
-                    platform={"nextjs"}
-                  >
-                    {"Fale conosco"}
-                  </p.PlasmicLink>
-                </p.Stack>
-              ) : null}
-            </p.Stack>
-          ) : null}
-        </div>
-      ) : null}
+                }
+              )}
+              component={Link}
+              href={`/conferencia`}
+              platform={"nextjs"}
+            >
+              {"Confer\u00eancia"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__d3CDb
+              )}
+              component={Link}
+              href={`/palestrantes`}
+              platform={"nextjs"}
+            >
+              {"Palestrantes"}
+            </p.PlasmicLink>
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.link__ubmKc
+              )}
+              component={Link}
+              href={`/fale-conosco`}
+              platform={"nextjs"}
+            >
+              {"Fale conosco"}
+            </p.PlasmicLink>
+          </p.Stack>
+        </p.Stack>
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
@@ -663,7 +519,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
 };

@@ -149,14 +149,6 @@ const PlasmicSelectContext = React.createContext<
   | { variants: PlasmicSelect__VariantsArgs; args: PlasmicSelect__ArgsType }
 >(undefined);
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -583,7 +575,7 @@ function PlasmicSelect__RenderFunc(props: {
             className={classNames("__wab_instance", sty.overlay, {
               [sty.overlayisOpen]: hasVariant($state, "isOpen", "isOpen")
             })}
-            relativePlacement={"bottom" as const}
+            relativePlacement={"bottom"}
           >
             <div
               data-plasmic-name={"optionsContainer"}
@@ -657,7 +649,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   trigger: "button";

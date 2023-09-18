@@ -80,14 +80,6 @@ export type PlasmicPalestrantes__OverridesType = {
 
 export interface DefaultPalestrantesProps {}
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -107,7 +99,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          activeSlide: 0 as const
+          activeSlide: 0
         },
         props.args
       ),
@@ -220,37 +212,90 @@ function PlasmicPalestrantes__RenderFunc(props: {
             className={classNames("__wab_instance", sty.responsiveMenu)}
           />
 
-          {true ? (
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__jaBbe)}
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__jaBbe)}
+          >
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
             >
-              <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text
-                )}
-              >
-                {
-                  "Nesta edi\u00e7\u00e3o do Adora\u00e7\u00e3o e Discipulado 20, contaremos com participa\u00e7\u00f5es especiais."
-                }
-              </div>
-            </p.Stack>
-          ) : null}
+              {
+                "Nesta edi\u00e7\u00e3o do Adora\u00e7\u00e3o e Discipulado 20, contaremos com participa\u00e7\u00f5es especiais."
+              }
+            </div>
+          </p.Stack>
           <p.Stack
             as={"div"}
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__hjp0S)}
           >
-            {true
-              ? (
-                  (() => {
+            {(
+              (() => {
+                try {
+                  return [0, 1, 2, 3, 4];
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })() ?? []
+            ).map((currentItem, currentIndex) => (
+              <div
+                className={classNames(projectcss.all, sty.freeBox___1V5J5)}
+                key={currentIndex}
+                onClick={async event => {
+                  const $steps = {};
+                  $steps["runOnDotClick"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          eventRef: $props["onDotClick"],
+                          args: [
+                            (() => {
+                              try {
+                                return currentIndex;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()
+                          ]
+                        };
+                        return (({ eventRef, args }) => {
+                          return eventRef?.(...(args ?? []));
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    typeof $steps["runOnDotClick"] === "object" &&
+                    typeof $steps["runOnDotClick"].then === "function"
+                  ) {
+                    $steps["runOnDotClick"] = await $steps["runOnDotClick"];
+                  }
+                }}
+              >
+                <Dots
+                  data-plasmic-name={"dots"}
+                  data-plasmic-override={overrides.dots}
+                  className={classNames("__wab_instance", sty.dots)}
+                  isActive={(() => {
                     try {
-                      return [0, 1, 2, 3, 4];
+                      return $props.activeSlide === currentItem;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
@@ -260,90 +305,29 @@ function PlasmicPalestrantes__RenderFunc(props: {
                       }
                       throw e;
                     }
-                  })() ?? []
-                ).map((currentItem, currentIndex) => (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___1V5J5)}
-                    key={currentIndex}
-                    onClick={async event => {
-                      const $steps = {};
-                      $steps["runOnDotClick"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              eventRef: __wrapUserFunction(
-                                {
-                                  type: "InteractionArgLoc",
-                                  actionName: "invokeEventHandler",
-                                  interactionUuid: "xjI9Nv3uk",
-                                  componentUuid: "NaYBT353Ya_",
-                                  argName: "eventRef"
-                                },
-                                () => $props["onDotClick"]
-                              ),
-                              args: __wrapUserFunction(
-                                {
-                                  type: "InteractionArgLoc",
-                                  actionName: "invokeEventHandler",
-                                  interactionUuid: "xjI9Nv3uk",
-                                  componentUuid: "NaYBT353Ya_",
-                                  argName: "args"
-                                },
-                                () => [
-                                  (() => {
-                                    try {
-                                      return currentIndex;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return undefined;
-                                      }
-                                      throw e;
-                                    }
-                                  })()
-                                ]
-                              )
-                            };
-                            return __wrapUserFunction(
-                              {
-                                type: "InteractionLoc",
-                                actionName: "invokeEventHandler",
-                                interactionUuid: "xjI9Nv3uk",
-                                componentUuid: "NaYBT353Ya_"
-                              },
-                              () =>
-                                (({ eventRef, args }) => {
-                                  return eventRef?.(...(args ?? []));
-                                })?.apply(null, [actionArgs]),
-                              actionArgs
-                            );
-                          })()
-                        : undefined;
-                      if (
-                        typeof $steps["runOnDotClick"] === "object" &&
-                        typeof $steps["runOnDotClick"].then === "function"
-                      ) {
-                        $steps["runOnDotClick"] = await __wrapUserPromise(
-                          {
-                            type: "InteractionLoc",
-                            actionName: "invokeEventHandler",
-                            interactionUuid: "xjI9Nv3uk",
-                            componentUuid: "NaYBT353Ya_"
-                          },
-                          $steps["runOnDotClick"]
-                        );
-                      }
-                    }}
+                  })()}
+                />
+              </div>
+            ))}
+          </p.Stack>
+          <div className={classNames(projectcss.all, sty.freeBox__crFvz)}>
+            <PalestrantesData
+              data-plasmic-name={"palestrantesData"}
+              data-plasmic-override={overrides.palestrantesData}
+              className={classNames("__wab_instance", sty.palestrantesData)}
+            >
+              <ph.DataCtxReader>
+                {$ctx => (
+                  <Slider
+                    data-plasmic-name={"slider"}
+                    data-plasmic-override={overrides.slider}
+                    arrows={false}
+                    className={classNames("__wab_instance", sty.slider)}
                   >
-                    <Dots
-                      data-plasmic-name={"dots"}
-                      data-plasmic-override={overrides.dots}
-                      className={classNames("__wab_instance", sty.dots)}
-                      isActive={(() => {
+                    {(
+                      (() => {
                         try {
-                          return $props.activeSlide === currentItem;
+                          return $ctx.palestrantes;
                         } catch (e) {
                           if (
                             e instanceof TypeError ||
@@ -353,121 +337,84 @@ function PlasmicPalestrantes__RenderFunc(props: {
                           }
                           throw e;
                         }
-                      })()}
-                    />
-                  </div>
-                ))
-              : null}
-          </p.Stack>
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__crFvz)}>
-              <PalestrantesData
-                data-plasmic-name={"palestrantesData"}
-                data-plasmic-override={overrides.palestrantesData}
-                className={classNames("__wab_instance", sty.palestrantesData)}
-              >
-                <ph.DataCtxReader>
-                  {$ctx => (
-                    <Slider
-                      data-plasmic-name={"slider"}
-                      data-plasmic-override={overrides.slider}
-                      arrows={false}
-                      className={classNames("__wab_instance", sty.slider)}
-                    >
-                      {(
-                        (() => {
-                          try {
-                            return $ctx.palestrantes;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })() ?? []
-                      ).map((currentItem, currentIndex) => (
-                        <Palestrante
-                          data-plasmic-name={"palestrante"}
-                          data-plasmic-override={overrides.palestrante}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.palestrante
-                          )}
-                          key={currentIndex}
-                          slot={
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return currentItem.name;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "Adhemar de Campos";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          }
-                          slot2={
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return currentItem.longDesc;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          }
-                        >
-                          <p.PlasmicImg
-                            data-plasmic-name={"img"}
-                            data-plasmic-override={overrides.img}
-                            alt={""}
-                            className={classNames(sty.img)}
-                            displayHeight={"100%" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"200px" as const}
-                            loading={"lazy" as const}
-                            src={(() => {
+                      })() ?? []
+                    ).map((currentItem, currentIndex) => (
+                      <Palestrante
+                        data-plasmic-name={"palestrante"}
+                        data-plasmic-override={overrides.palestrante}
+                        className={classNames(
+                          "__wab_instance",
+                          sty.palestrante
+                        )}
+                        key={currentIndex}
+                        slot={
+                          <React.Fragment>
+                            {(() => {
                               try {
-                                return `/${currentItem.name}.png`;
+                                return currentItem.name;
                               } catch (e) {
                                 if (
                                   e instanceof TypeError ||
                                   e?.plasmicType === "PlasmicUndefinedDataError"
                                 ) {
-                                  return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                                  return "Adhemar de Campos";
                                 }
                                 throw e;
                               }
                             })()}
-                          />
-                        </Palestrante>
-                      ))}
-                    </Slider>
-                  )}
-                </ph.DataCtxReader>
-              </PalestrantesData>
-            </div>
-          ) : null}
+                          </React.Fragment>
+                        }
+                        slot2={
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return currentItem.longDesc;
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        }
+                      >
+                        <p.PlasmicImg
+                          data-plasmic-name={"img"}
+                          data-plasmic-override={overrides.img}
+                          alt={""}
+                          className={classNames(sty.img)}
+                          displayHeight={"100%"}
+                          displayMaxHeight={"none"}
+                          displayMaxWidth={"100%"}
+                          displayMinHeight={"0"}
+                          displayMinWidth={"0"}
+                          displayWidth={"200px"}
+                          loading={"lazy"}
+                          src={(() => {
+                            try {
+                              return `/${currentItem.name}.png`;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return "https://site-assets.plasmic.app/6e4631f76206fbc89126315336d4e59c.png";
+                              }
+                              throw e;
+                            }
+                          })()}
+                        />
+                      </Palestrante>
+                    ))}
+                  </Slider>
+                )}
+              </ph.DataCtxReader>
+            </PalestrantesData>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -495,7 +442,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;

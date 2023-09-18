@@ -66,14 +66,6 @@ export interface DefaultSliderProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -122,96 +114,92 @@ function PlasmicSlider__RenderFunc(props: {
       )}
       style={{ position: "relative" }}
     >
-      {true ? (
-        <div
-          className={classNames(projectcss.all, sty.freeBox__vcOo6)}
-          style={(() => {
-            try {
-              return {
-                height: `calc(400px + ${2 * 100}vw)`
-              };
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return { display: "inline-block" };
-              }
-              throw e;
+      <div
+        className={classNames(projectcss.all, sty.freeBox__vcOo6)}
+        style={(() => {
+          try {
+            return {
+              height: `calc(400px + ${2 * 100}vw)`
+            };
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return { display: "inline-block" };
             }
-          })()}
-        >
-          {true
-            ? ([2, 3, 4] ?? []).map((currentItem, currentIndex) => (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__iz80J)}
-                  key={currentIndex}
-                  style={(() => {
-                    try {
-                      return {
-                        position: "absolute",
-                        top: `0`,
-                        left: `${currentIndex * 100}vw`
-                      };
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
-                      }
-                      throw e;
-                    }
-                  })()}
-                >
-                  <Element
-                    data-plasmic-name={"element"}
-                    data-plasmic-override={overrides.element}
-                    className={classNames("__wab_instance", sty.element)}
-                    color={(() => {
-                      try {
-                        return [
-                          "Daniel Souza",
-                          "Asaph Borba",
-                          "Jan Gottfridson",
-                          "Morada",
-                          "Adhemar de Campos"
-                        ][currentIndex];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                    name={(() => {
-                      try {
-                        return [
-                          "Daniel Souza",
-                          "Asaph Borba",
-                          "Jan Gottfridson",
-                          "Morada",
-                          "Adhemar de Campos"
-                        ][currentIndex];
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return undefined;
-                        }
-                        throw e;
-                      }
-                    })()}
-                  />
-                </div>
-              ))
-            : null}
-        </div>
-      ) : null}
+            throw e;
+          }
+        })()}
+      >
+        {([2, 3, 4] ?? []).map((currentItem, currentIndex) => (
+          <div
+            className={classNames(projectcss.all, sty.freeBox__iz80J)}
+            key={currentIndex}
+            style={(() => {
+              try {
+                return {
+                  position: "absolute",
+                  top: `0`,
+                  left: `${currentIndex * 100}vw`
+                };
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
+              }
+            })()}
+          >
+            <Element
+              data-plasmic-name={"element"}
+              data-plasmic-override={overrides.element}
+              className={classNames("__wab_instance", sty.element)}
+              color={(() => {
+                try {
+                  return [
+                    "Daniel Souza",
+                    "Asaph Borba",
+                    "Jan Gottfridson",
+                    "Morada",
+                    "Adhemar de Campos"
+                  ][currentIndex];
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+              name={(() => {
+                try {
+                  return [
+                    "Daniel Souza",
+                    "Asaph Borba",
+                    "Jan Gottfridson",
+                    "Morada",
+                    "Adhemar de Campos"
+                  ][currentIndex];
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   ) as React.ReactElement | null;
 }
@@ -222,7 +210,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   element: typeof Element;

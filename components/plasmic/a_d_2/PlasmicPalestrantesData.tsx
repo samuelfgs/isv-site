@@ -72,14 +72,6 @@ export interface DefaultPalestrantesDataProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
-
 function useNextRouter() {
   try {
     return useRouter();
@@ -110,111 +102,109 @@ function PlasmicPalestrantesData__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   return (
-    true ? (
-      <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
-          plasmic_antd_5_hostless_css.plasmic_tokens,
-          plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
-          sty.root
-        )}
-      >
-        <DataProvider
-          data-plasmic-name={"dataProvider"}
-          data-plasmic-override={overrides.dataProvider}
-          className={classNames("__wab_instance", sty.dataProvider)}
-          data={(() => {
-            try {
-              return [
-                {
-                  name: "Adhemar de Campos",
-                  longDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos, que caminha com Cristo há 45 anos, é um dos mais notórios ministros de louvor e adoração do Brasil, tendo dedicado sua vida a compor músicas, que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985, gravou seu primeiro LP. Já em 1987, em uma ação pioneira, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que, na década de 1980, era um dos poucos produtores de cânticos cristãos com grande projeção.
+    <div
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
+      data-plasmic-root={true}
+      data-plasmic-for-node={forNode}
+      className={classNames(
+        projectcss.all,
+        projectcss.root_reset,
+        projectcss.plasmic_default_styles,
+        projectcss.plasmic_mixins,
+        projectcss.plasmic_tokens,
+        plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+        plasmic_antd_5_hostless_css.plasmic_tokens,
+        plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+        sty.root
+      )}
+    >
+      <DataProvider
+        data-plasmic-name={"dataProvider"}
+        data-plasmic-override={overrides.dataProvider}
+        className={classNames("__wab_instance", sty.dataProvider)}
+        data={(() => {
+          try {
+            return [
+              {
+                name: "Adhemar de Campos",
+                longDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos, que caminha com Cristo há 45 anos, é um dos mais notórios ministros de louvor e adoração do Brasil, tendo dedicado sua vida a compor músicas, que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985, gravou seu primeiro LP. Já em 1987, em uma ação pioneira, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que, na década de 1980, era um dos poucos produtores de cânticos cristãos com grande projeção.
 
 Seu ministério influenciou gerações, com composições atemporais, que, até hoje, nos tocam, oferecendo valores de uma vida cristã verdadeira.
 `,
-                  shortDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos é um dos mais notórios ministros de louvor e adoração do Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
-                },
-                {
-                  name: "Asaph Borba",
-                  longDesc: `Asaph Borba é um músico e ministro de adoração brasileiro, que, por muitos anos, tem ministrado por todo o Brasil e em outros países, inclusive no mundo árabe. Ele atua em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus e que se tornaram parte da hinologia cristã nacional. Entre os louvor de sua autoria mais conhecidos, estão Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza e muitos outros.
+                shortDesc: `Autor de, aproximadamente, mil canções, o pastor Adhemar de Campos é um dos mais notórios ministros de louvor e adoração do Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
+              },
+              {
+                name: "Asaph Borba",
+                longDesc: `Asaph Borba é um músico e ministro de adoração brasileiro, que, por muitos anos, tem ministrado por todo o Brasil e em outros países, inclusive no mundo árabe. Ele atua em encontros de louvor e em igrejas das mais diferentes denominações, gravando os cânticos que lhe foram dados por Deus e que se tornaram parte da hinologia cristã nacional. Entre os louvor de sua autoria mais conhecidos, estão Jesus em Tua Presença, Minh’alma Engrandece, Alto Preço, O meu Louvor é Fruto, Infinitamente Mais, Nós Somos o Povo a quem Deus Libertou, Superabundante Graça, Jesus, Deus é Amor, A Cada Manhã, Deus é Fiel, Rastros de Amor, Eu Escolhi Jesus, O Centro de Todas as Coisas, Profetiza e muitos outros.
 
 Jornalista por formação, também lançou diversos livros, entre os quais estão De um Pai para seus Filhos e História Por Trás da Música.
 
 Asaph também é um dos pais da Igreja em São Vicente e faz parte da nossa história desde a sua fundação.
 `,
-                  shortDesc: `Músico e ministro de adoração, há décadas trabalha para edificar, por meio de canções e livros, tanto a Igreja no Brasil quanto ao redor do planeta, inclusive no mundo árabe. É um dos pais da Igreja em São Vicente, fazendo parte de nossa história desde a fundação.`
-                },
-                {
-                  name: "Daniel Souza",
-                  longDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.
+                shortDesc: `Músico e ministro de adoração, há décadas trabalha para edificar, por meio de canções e livros, tanto a Igreja no Brasil quanto ao redor do planeta, inclusive no mundo árabe. É um dos pais da Igreja em São Vicente, fazendo parte de nossa história desde a fundação.`
+              },
+              {
+                name: "Daniel Souza",
+                longDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.
 
 Entre suas canções mais conhecidas, estão Corpo e Família, que integra a Harpa Cristã, e Declaramos, que já foi cantada por diversos outros intérpretes. Ele também criou a série Discípulos e Eterna Aliança.
 
 Daniel Souza também escreveu livros. Um deles é o Princípios absolutos para a vida do cristão.
 `,
-                  shortDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.`
-                },
-                {
-                  name: "Jan Gottfridson",
-                  longDesc: `Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país. Filho de missionários, tem três filhos, que se chamam Daniel, Jonathan e Michael, todos envolvidos no serviço do santos
+                shortDesc: `Ministro de louvor, que criou a conhecida série Frutos do Espírito, tem servido à Igreja desde o início dos anos 1990. Juntamente com a sua esposa, Selma, deu início à Igreja em São Vicente, sendo discipulado por Jan Gottfridsson e Asaph Borba.`
+              },
+              {
+                name: "Jan Gottfridson",
+                longDesc: `Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país. Filho de missionários, tem três filhos, que se chamam Daniel, Jonathan e Michael, todos envolvidos no serviço do santos
 
 Ele também é autor de livros, entre outros, sobre lideranças. Algumas de suas obras são Cinco Mãos e Liderança Espiritual.
 `,
-                  shortDesc:
-                    "Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país."
-                },
-                {
-                  name: "Morada",
-                  longDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: “Só Tu és Santo” e “É Tudo Sobre Você”.
+                shortDesc:
+                  "Jan, como é chamado pelas pessoas mais próximas, é um dos pastores da Igreja em Porto Alegre (RS) e um dos pais da Igreja em São Vicente. Natural da Suécia, está no Brasil desde a infância, levando o Evangelho do Reino a todas as regiões do país."
+              },
+              {
+                name: "Morada",
+                longDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: “Só Tu és Santo” e “É Tudo Sobre Você”.
 
 Este ministério tem alcançado cada vez mais um público diversificado, desde crianças até aos mais velhos, proporcionando, assim, momentos intensos e alegres entre as famílias. Isso se deve, em parte, à diversidade musical que a banda possui.
 `,
-                  shortDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: "Só Tu és Santo e É Tudo Sobre Você".`
+                shortDesc: `Um dos principais ministérios de adoração do Brasil na atualidade, a banda Morada, que é liderada pelo ministro Bruno Morada, o Brunão, está há mais de 10 anos na estrada, servindo e amando a Igreja. Algumas de suas músicas são: "Só Tu és Santo e É Tudo Sobre Você".`
+              }
+            ];
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return [
+                {
+                  name: "Fill Murray",
+                  birthYear: 1950,
+                  profilePicture: ["https://www.fillmurray.com/200/300"]
+                },
+                {
+                  name: "Place Cage",
+                  birthYear: 1950,
+                  profilePicture: ["https://www.placecage.com/200/300"]
                 }
               ];
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return [
-                  {
-                    name: "Fill Murray",
-                    birthYear: 1950,
-                    profilePicture: ["https://www.fillmurray.com/200/300"]
-                  },
-                  {
-                    name: "Place Cage",
-                    birthYear: 1950,
-                    profilePicture: ["https://www.placecage.com/200/300"]
-                  }
-                ];
-              }
-              throw e;
             }
-          })()}
-          name={"palestrantes" as const}
-        >
-          <ph.DataCtxReader>
-            {$ctx =>
-              p.renderPlasmicSlot({
-                defaultContents: null,
-                value: args.children
-              })
-            }
-          </ph.DataCtxReader>
-        </DataProvider>
-      </div>
-    ) : null
+            throw e;
+          }
+        })()}
+        name={"palestrantes"}
+      >
+        <ph.DataCtxReader>
+          {$ctx =>
+            p.renderPlasmicSlot({
+              defaultContents: null,
+              value: args.children
+            })
+          }
+        </ph.DataCtxReader>
+      </DataProvider>
+    </div>
   ) as React.ReactElement | null;
 }
 
@@ -224,7 +214,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   dataProvider: typeof DataProvider;
