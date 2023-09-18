@@ -39,7 +39,6 @@ import {
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
-import Faleconosco3 from "../../Faleconosco3"; // plasmic-import: koE18FDmK_B5/component
 import InscricaoButton from "../../InscricaoButton"; // plasmic-import: VrYzW9MhJk/component
 import { Participantes } from "../../code-components/Parallax"; // plasmic-import: rVe2Ib6zMg/codeComponent
 import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
@@ -74,7 +73,7 @@ export type PlasmicHomepage__OverridesType = {
   button?: p.Flex<typeof Button>;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   htmlVideo?: p.Flex<typeof Video>;
-  faleconosco3?: p.Flex<typeof Faleconosco3>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
   inscricaoButton?: p.Flex<typeof InscricaoButton>;
   participantes?: p.Flex<typeof Participantes>;
   palestrantesData?: p.Flex<typeof PalestrantesData>;
@@ -300,12 +299,61 @@ function PlasmicHomepage__RenderFunc(props: {
               src={"https://isv-site.vercel.app/video.mp4"}
             />
 
-            <Faleconosco3
-              data-plasmic-name={"faleconosco3"}
-              data-plasmic-override={overrides.faleconosco3}
-              className={classNames("__wab_instance", sty.faleconosco3)}
-            />
+            <div className={classNames(projectcss.all, sty.freeBox__sHxii)}>
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__bnoHj)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__rJcOg
+                  )}
+                >
+                  {"Ficou com alguma d\u00favida?"}
+                </div>
+                <p.Stack
+                  as={p.PlasmicLink}
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  hasGap={true}
+                  className={classNames(projectcss.all, projectcss.a, sty.link)}
+                  component={Link}
+                  href={"https://wa.me/+5513991259404"}
+                  platform={"nextjs"}
+                >
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__rszGq)}
+                    displayHeight={"75px"}
+                    displayMaxHeight={"none"}
+                    displayMaxWidth={"100%"}
+                    displayMinHeight={"0"}
+                    displayMinWidth={"0"}
+                    displayWidth={"75px"}
+                    loading={"lazy"}
+                    src={{
+                      src: "/plasmic/a_d_2/images/whatsapp.png",
+                      fullWidth: 600,
+                      fullHeight: 383,
+                      aspectRatio: undefined
+                    }}
+                  />
 
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__z2Zr
+                    )}
+                  >
+                    {"FALE CONOSCO"}
+                  </div>
+                </p.Stack>
+              </p.Stack>
+            </div>
             <p.Stack
               as={"div"}
               hasGap={true}
@@ -611,7 +659,7 @@ const PlasmicDescendants = {
     "button",
     "responsiveMenu",
     "htmlVideo",
-    "faleconosco3",
+    "link",
     "inscricaoButton",
     "participantes",
     "palestrantesData"
@@ -619,7 +667,7 @@ const PlasmicDescendants = {
   button: ["button"],
   responsiveMenu: ["responsiveMenu"],
   htmlVideo: ["htmlVideo"],
-  faleconosco3: ["faleconosco3"],
+  link: ["link"],
   inscricaoButton: ["inscricaoButton"],
   participantes: ["participantes"],
   palestrantesData: ["palestrantesData"]
@@ -632,7 +680,7 @@ type NodeDefaultElementType = {
   button: typeof Button;
   responsiveMenu: typeof ResponsiveMenu;
   htmlVideo: typeof Video;
-  faleconosco3: typeof Faleconosco3;
+  link: "a";
   inscricaoButton: typeof InscricaoButton;
   participantes: typeof Participantes;
   palestrantesData: typeof PalestrantesData;
@@ -701,7 +749,7 @@ export const PlasmicHomepage = Object.assign(
     button: makeNodeComponent("button"),
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    faleconosco3: makeNodeComponent("faleconosco3"),
+    link: makeNodeComponent("link"),
     inscricaoButton: makeNodeComponent("inscricaoButton"),
     participantes: makeNodeComponent("participantes"),
     palestrantesData: makeNodeComponent("palestrantesData"),
