@@ -15,6 +15,7 @@ export default async function handler(
       method: "POST",
       body: JSON.stringify({ a: req.body, bd: typeof req.body })
     });
+    res.status(200).json({success: true });
     return;
   } catch (err) {
     console.log("dale", err);
