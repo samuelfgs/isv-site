@@ -563,7 +563,27 @@ function PlasmicInscricao__RenderFunc(props: {
                         sty.text___2KRG
                       )}
                     >
-                      {"R$ 120,00"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return `R$ ${$props.adultPrice.toLocaleString(
+                              "fr",
+                              {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                              }
+                            )}`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "R$ 120,00";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                     <p.Stack
                       as={"div"}
@@ -710,7 +730,24 @@ function PlasmicInscricao__RenderFunc(props: {
                         sty.text__qySe
                       )}
                     >
-                      {"R$ 40,00"}
+                      <React.Fragment>
+                        {(() => {
+                          try {
+                            return `R$ ${$props.kidsPrice.toLocaleString("fr", {
+                              minimumFractionDigits: 2,
+                              maximumFractionDigits: 2
+                            })}`;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return "R$ 40,00";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </React.Fragment>
                     </div>
                     <p.Stack
                       as={"div"}
