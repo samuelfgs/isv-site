@@ -30,7 +30,8 @@ function Comprovante() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicComprovante />
+        {/* <PlasmicComprovante /> */}
+        <h1>Access Denied</h1>
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
