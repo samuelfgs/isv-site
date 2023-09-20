@@ -37,7 +37,7 @@ const MyEmailTemplate = () => (
   </Html>
 );
 
-const generateEmailHtml = () => {
+export const generateEmailHtml = () => {
   const html = ReactDOMServer.renderToStaticMarkup(<MyEmailTemplate />);
   return `<!DOCTYPE html>${html}`;
 };
@@ -70,7 +70,7 @@ const generateQRCode = async (text: string) => {
   }
 };
 
-const generateQRCodeSvg = async (id: string) => {
+export const generateQRCodeSvg = async (id: string) => {
   return new Promise(async (res, rej) => {
     const svg = await generateQRCode(id);
     if (!svg) {
@@ -88,7 +88,7 @@ export const sendEmail = async (body: any) => {
   const { name, cpf, email, price, kids, adultos, id } = body;
   const qrs: any[] = [];
   for (let i = 0; i < kids + adultos; i++) {
-    const svg = await generateQRCodeSvg(`${id}-${i}`);
+    const svg = await generateQRCodeSvg(`https://ad20.igrejasv.com/ingresso/${id}`);
     const buf = Buffer.from(svg as any);
     qrs.push(buf);
   }
