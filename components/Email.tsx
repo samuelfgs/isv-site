@@ -72,8 +72,8 @@ const PDFPage = ({person, svg, isKid, isFirst}: any) => {
                 flexDirection: "column",
                 lineHeight: 1.5
               }}>
-                <Text>Começa: 20/10/2023 - 09:00</Text>
-                <Text>Termina: 21/10/2023 - 22:00</Text>
+                <Text>Começa: 21/10/2023 - 09:00</Text>
+                <Text>Termina: 22/10/2023 - 22:00</Text>
               </View>
             </View>
             <View style={{
