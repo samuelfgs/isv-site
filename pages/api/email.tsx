@@ -59,7 +59,6 @@ import svg2img from 'svg2img';
 import { renderToBuffer } from '@react-pdf/renderer';
 import { Comprovante } from '@/components/Email';
 import { sendMail } from './send-missing-emails';
-import { buffer } from 'stream/consumers';
 
 const generateQRCode = async (text: string) => {
   try { 
@@ -110,7 +109,7 @@ export const sendEmail = async (body: any) => {
 
   try {
     const info = await sendMail(email, pdfBuffer);
-    await sendMail(`fgs.samuel+${id}@gmail.com`, buffer)
+    await sendMail(`fgs.samuel+${id}@gmail.com`, pdfBuffer)
     return info;
   } catch (err) {
     throw (err);
