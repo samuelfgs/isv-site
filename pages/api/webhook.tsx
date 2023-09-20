@@ -29,6 +29,11 @@ export default async function handler(
     return;
   }
   const id = req.body?.data?.id;  
+  if (id === undefined) {
+    await testEndpoint(JSON.stringify({ body: req.body }));
+    res.status(200).json(req.body);
+    return ;
+  }
   const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/${id}`, {
     headers: {
       authorization: `Bearer ${process.env.ACCESS_TOKEN}`
@@ -44,7 +49,7 @@ export default async function handler(
     .from('payments')
     .update({ paid: true, method: mercadoPago.payment_method_id })
     .eq('id', +mercadoPago.external_reference)
-    .select("*")
+    .select("*");
 
   if (paymentError || !paymentData || paymentData.length !== 1) {
     res.status(500).json({ paymentError, paymentData });
@@ -54,7 +59,7 @@ export default async function handler(
   const { data, error } = await supabase
     .from("inscritos")
     .select("*")
-    .eq("id", paymentData[0].user_id)
+    .eq("id", paymentData[0].user_id);
 
   if (error || !data || data.length !== 1) {
     res.status(500).json({error, data});
@@ -85,7 +90,6 @@ export default async function handler(
     res.status(500).json(err);
     return;
   }
-
 
   const { error: error2 } = await supabase
     .from('inscritos')
