@@ -50,7 +50,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: 'contato@igrejasv.com',
-    pass: 'c7L=j8ZXMN93'
+    pass: process.env.EMAIL_PASSWORD
   }
 });
 
