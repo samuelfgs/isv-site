@@ -13,7 +13,7 @@ export default async function handler(
   try {
     await fetch("https://eoukpp0g1g15gt3.m.pipedream.net", {
       method: "POST",
-      body: JSON.stringify({ a: req.body })
+      body: JSON.stringify({ a: req.body, bd: typeof req.body })
     });
     return;
   } catch (err) {
