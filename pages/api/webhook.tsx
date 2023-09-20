@@ -9,10 +9,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("dale", req.body);
+  console.log("dale", req.body, typeof req.body);
   await fetch("https://7c6c-2804-868-d048-af9-98ea-b75d-d839-827d.ngrok-free.app/api/collect", {
     method: "POST",
-    body: req.body
+    body: JSON.stringify(req.body)
   });
   const id = 22977802;
   // const id = req.body?.data?.id;
