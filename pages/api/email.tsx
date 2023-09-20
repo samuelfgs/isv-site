@@ -84,13 +84,8 @@ const generateQRCodeSvg = async (id: string) => {
   });
 };
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-
-  const { name, cpf, email, price, kids, adultos, id } = JSON.parse(req.body);
-
+export const sendEmail = async (body: any) => {
+  const { name, cpf, email, price, kids, adultos, id } = body;
   const qrs: any[] = [];
   for (let i = 0; i < kids + adultos; i++) {
     const svg = await generateQRCodeSvg(`${id}-${i}`);
@@ -98,7 +93,6 @@ export default async function handler(
     qrs.push(buf);
   }
 
-  console.log("dale", req.body);
   const pdfBuffer = await renderToBuffer(
     <Comprovante
       name={name}
@@ -125,15 +119,28 @@ export default async function handler(
     ]
   };
 
-  console.log("sending");
+  return new Promise((res, rej) => {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        rej(error);
+      } else {
+        res(info);
+      }
+    });
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log('Error occurred:', error.message);
-    } else {
-      console.log('Email sent successfully!', info);
-      res.status(200).json({ name: 'John Doe' })
-    }
-  });
+  })
+}
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+
+  const body = JSON.parse(req.body);
+  try {
+    const info = await sendEmail(body);
+    res.status(200).json({success: true })
+  } catch(err) {
+    res.status(500).json({err});
+  }
 
 }

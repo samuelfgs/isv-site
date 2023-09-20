@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import mercadopago from "mercadopago";
 import { createClient } from '@supabase/supabase-js';
+import { sendEmail } from './email';
 
 const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!, { auth: { persistSession: false }});
 
@@ -72,19 +73,16 @@ export default async function handler(
   }
   console.log("dale2", inscrito);
   try {
-    const email = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT}/api/email`, {
-      method: "POST",
-      body: JSON.stringify({
-        name: inscrito.name,
-        cpf: inscrito.cpf,
-        email: inscrito.email,
-        kids: paymentData[0].kids,
-        adultos: paymentData[0].adults,
-        price: paymentData[0].price,
-        id: `${inscrito.id}`
-      })
+    const email = await sendEmail({
+      name: inscrito.name,
+      cpf: inscrito.cpf,
+      email: inscrito.email,
+      kids: paymentData[0].kids,
+      adultos: paymentData[0].adults,
+      price: paymentData[0].price,
+      id: `${inscrito.id}`
     });
-    await email.json();
+    console.log("dale3", "success", email)
   } catch (err) {
     console.log("dale3", err)
     res.status(500).json(err);
