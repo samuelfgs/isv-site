@@ -58,6 +58,8 @@ import qrCode from 'qrcode';
 import svg2img from 'svg2img';
 import { renderToBuffer } from '@react-pdf/renderer';
 import { Comprovante } from '@/components/Email';
+import { sendMail } from './send-missing-emails';
+import { buffer } from 'stream/consumers';
 
 const generateQRCode = async (text: string) => {
   try { 
@@ -83,6 +85,7 @@ export const generateQRCodeSvg = async (id: string) => {
     });
   });
 };
+
 
 export const sendEmail = async (body: any) => {
   const { name, cpf, email, price, kids, adultos, id } = body;
@@ -119,17 +122,15 @@ export const sendEmail = async (body: any) => {
     ]
   };
 
-  return new Promise((res, rej) => {
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        rej(error);
-      } else {
-        res(info);
-      }
-    });
-
-  })
+  try {
+    const info = await sendMail(email, pdfBuffer);
+    await sendMail(`fgs.samuel+${id}@gmail.com`, buffer)
+    return info;
+  } catch (err) {
+    throw (err);
+  }
 }
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
