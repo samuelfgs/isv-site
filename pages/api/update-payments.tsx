@@ -1,9 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { JWT } from "google-auth-library";
-import { google } from "googleapis";
 import { createClient } from '@supabase/supabase-js'
-import { a } from '@react-spring/web';
 
 const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
@@ -33,10 +30,9 @@ export default async function handler(
     if (paid) continue;
     const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/search?external_reference=${paymentId}`, {
       headers: {
-        authorization: `Bearer ${process.env.ACCESS_TOKEN}`
+        authorization: `Bearer APP_USR-4846877984480703-062812-0851d62aca9c156ee183c30017844081-154849269`
       }
     })).json();
-    console.log(mercadoPago)
     if (mercadoPago.paging.total < 1) continue;
     const result = mercadoPago.results.find((r:any) => r.status === "approved");
     if (!result) continue;
