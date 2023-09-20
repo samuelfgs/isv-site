@@ -1127,6 +1127,20 @@
           "cssFilePath": "plasmic/a_d_2/PlasmicFaleconosco3.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "u2RfaeKZwHdY",
+          "name": "Comprovante",
+          "type": "managed",
+          "projectId": "eJV4HbfxnEVLnqrd4EbnFE",
+          "renderModuleFilePath": "plasmic/a_d_2/PlasmicComprovante.tsx",
+          "importSpec": {
+            "modulePath": "../pages/ingresso/[id].tsx"
+          },
+          "cssFilePath": "plasmic/a_d_2/PlasmicComprovante.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/ingresso/[id]"
         }
       ],
       "icons": [
@@ -1174,6 +1188,21 @@
           "id": "MpVPVACJ4",
           "name": "MenuIcon",
           "moduleFilePath": "plasmic/a_d_2/icons/PlasmicIcon__Menu.tsx"
+        },
+        {
+          "id": "Qu1zmzPg8rAr",
+          "name": "SquaresvgIcon",
+          "moduleFilePath": "plasmic/a_d_2/icons/PlasmicIcon__Squaresvg.tsx"
+        },
+        {
+          "id": "sUuXm2JmqfRr",
+          "name": "SquareCheckFilledsvgIcon",
+          "moduleFilePath": "plasmic/a_d_2/icons/PlasmicIcon__SquareCheckFilledsvg.tsx"
+        },
+        {
+          "id": "RxndnbDuA9pP",
+          "name": "SquareMinussvgIcon",
+          "moduleFilePath": "plasmic/a_d_2/icons/PlasmicIcon__SquareMinussvg.tsx"
         }
       ],
       "images": [
