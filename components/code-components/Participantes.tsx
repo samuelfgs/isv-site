@@ -2,6 +2,11 @@ import { DataProvider, registerGlobalContext } from "@plasmicapp/react-web/lib/h
 
 export const data  = [
   {
+    name: "Morada",
+    longDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. Com pouco mais de 10 anos de estrada, o ministério tem alcançado cada vez mais um público diversificado desde crianças aos mais velhos, proporcionando assim, momentos intensos e alegres entre as famílias por onde tem passado. Isso se deve à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som que tocou a todos.`,
+    shortDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
+  },
+  {
     name: "Adhemar de Campos",
     longDesc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo. Em 1985 gravou seu primeiro LP e em 1987, num pioneirismo ímpar, realizou a primeira gravação ao vivo de músicas cristãs. Sua história confunde-se com a da música gospel no Brasil, tanto que na década de 80 era um dos poucos produtores de cânticos cristãos com grande projeção. Seu ministério influenciou gerações com composições atemporais que até hoje nos tocam, oferecendo valores de uma vida cristã verdadeira. São mais de 45 anos de caminhada com Cristo, claramente perceptíveis no conjunto de sua obra.`,
     shortDesc: `Autor de aproximadamente 1000 canções, Pr. Adhemar de Campos é um dos mais notórios ministros de louvor e adoração no Brasil, dedicando sua vida a compor canções que ajudam muitos a experimentarem a presença de Deus de um modo profundo.`
@@ -20,11 +25,6 @@ export const data  = [
     name: "Jan Gottfridson",
     desc: "",
     shortDesc: "Jan, como é chamado pelos íntimos, é um dos pastores da Igreja em Porto Alegre e um dos pais da iSV, junto com Asaph Borba. São mais de 30 anos de pastoreio e cuidado."
-  },
-  {
-    name: "Morada",
-    longDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. Com pouco mais de 10 anos de estrada, o ministério tem alcançado cada vez mais um público diversificado desde crianças aos mais velhos, proporcionando assim, momentos intensos e alegres entre as famílias por onde tem passado. Isso se deve à diversidade musical que a banda possui e o cuidado que tem de sempre fazer um som que tocou a todos.`,
-    shortDesc: `Banda que tem por anseio “gritar nos telhados o que Deus tem sussurrado em seus ouvidos”. São mais de 10 anos de estrada servindo e amando a Igreja.`
   },
 ]
 

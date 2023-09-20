@@ -113,7 +113,7 @@ export default function GlobalContextsProvider(
         css={
           embedCssProps && "css" in embedCssProps
             ? embedCssProps.css!
-            : ".ant-input-number-input, .ant-input {\n    color: black !important\n}\n\n.ant-form-item .ant-form-item-label > label {\n    height: 100%\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number] {\n  -moz-appearance: textfield;\n}\n\n.formContainer .ant-form-item-required {\n  display: flex;\n  justify-content: flex-start;\n  width: var(--plasmic-token-form-min-width);\n}\n\n\n@media (min-width: 1100px) {\n  .formContainer .ant-form-item-required {\n    justify-content: flex-end;\n  }\n}"
+            : ".ant-modal-content, .ant-modal-footer {\n  padding: 0 !important;\n  margin-top: 0 !important;\n}\n\n.hideDiv {\n  display: none;\n}\n\n.ant-input-number-input, .ant-input {\n    color: black !important\n}\n\n.ant-form-item .ant-form-item-label > label {\n    height: 100%\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n/* Firefox */\ninput[type=number] {\n  -moz-appearance: textfield;\n}\n\n.formContainer .ant-form-item-required {\n  display: flex;\n  justify-content: flex-start;\n  width: var(--plasmic-token-form-min-width);\n}\n\n\n@media (min-width: 1100px) {\n  .formContainer .ant-form-item-required {\n    justify-content: flex-end;\n  }\n}"
         }
       >
         {children}

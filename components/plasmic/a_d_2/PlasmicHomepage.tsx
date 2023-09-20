@@ -36,6 +36,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { AntdModal } from "@plasmicpkgs/antd5/skinny/registerModal"; // plasmic-import: xx93QbkHH5i/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import Video from "../../code-components/Video"; // plasmic-import: ApNITBkBYT/codeComponent
@@ -54,6 +55,7 @@ import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_
 import projectcss from "./plasmic_a_d_2.module.css"; // plasmic-import: eJV4HbfxnEVLnqrd4EbnFE/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
 
+import ChevronDownsvgIcon from "./icons/PlasmicIcon__ChevronDownsvg"; // plasmic-import: nGK9Tff5vcb/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
 
@@ -70,10 +72,10 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
+  modal?: p.Flex<typeof AntdModal>;
+  fixado?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   htmlVideo?: p.Flex<typeof Video>;
-  link?: p.Flex<"a"> & Partial<LinkProps>;
   inscricaoButton?: p.Flex<typeof InscricaoButton>;
   participantes?: p.Flex<typeof Participantes>;
   palestrantesData?: p.Flex<typeof PalestrantesData>;
@@ -109,6 +111,30 @@ function PlasmicHomepage__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "modal.open",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
+      },
+      {
+        path: "modalImage",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsdu4QaJy8Zhmfq()
@@ -166,6 +192,217 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
+          <AntdModal
+            data-plasmic-name={"modal"}
+            data-plasmic-override={overrides.modal}
+            className={classNames("__wab_instance", sty.modal)}
+            closeIcon={
+              <div className={classNames(projectcss.all, sty.freeBox__fh8Hv)} />
+            }
+            defaultStylesClassName={classNames(
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+              plasmic_antd_5_hostless_css.plasmic_tokens,
+              plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens
+            )}
+            footer={
+              <div className={classNames(projectcss.all, sty.freeBox__b43KU)} />
+            }
+            modalScopeClassName={sty["modal__modal"]}
+            onOpenChange={p.generateStateOnChangeProp($state, [
+              "modal",
+              "open"
+            ])}
+            open={p.generateStateValueProp($state, ["modal", "open"])}
+            title={null}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__a442J)}>
+              {(() => {
+                try {
+                  return $state.modalImage === 0;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__noZd8)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/a_d_2/images/whatsAppImage20230918At232435Jpeg.jpg",
+                    fullWidth: 689,
+                    fullHeight: 689,
+                    aspectRatio: undefined
+                  }}
+                />
+              ) : null}
+              {(() => {
+                try {
+                  return $state.modalImage === 1;
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__oWfJa)}
+                  displayHeight={"100%"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/a_d_2/images/whatsAppImage20230918At232520Jpeg.jpg",
+                    fullWidth: 645,
+                    fullHeight: 645,
+                    aspectRatio: undefined
+                  }}
+                />
+              ) : null}
+              <div className={classNames(projectcss.all, sty.freeBox__dkKok)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__z7Hit)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["updateModalImage"] =
+                      $state.modalImage > 0
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modalImage"]
+                              },
+                              operation: 3
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = p.get(objRoot, variablePath);
+                              p.set(objRoot, variablePath, oldValue - 1);
+                              return oldValue - 1;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                    if (
+                      typeof $steps["updateModalImage"] === "object" &&
+                      typeof $steps["updateModalImage"].then === "function"
+                    ) {
+                      $steps["updateModalImage"] = await $steps[
+                        "updateModalImage"
+                      ];
+                    }
+                  }}
+                >
+                  <ChevronDownsvgIcon
+                    className={classNames(projectcss.all, sty.svg__ep5JI)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__mW46W)}>
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__gq8Pd)}
+                  onClick={async event => {
+                    const $steps = {};
+                    $steps["updateModalImage"] =
+                      $state.modalImage < 1
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["modalImage"]
+                              },
+                              operation: 2
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              const oldValue = p.get(objRoot, variablePath);
+                              p.set(objRoot, variablePath, oldValue + 1);
+                              return oldValue + 1;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                    if (
+                      typeof $steps["updateModalImage"] === "object" &&
+                      typeof $steps["updateModalImage"].then === "function"
+                    ) {
+                      $steps["updateModalImage"] = await $steps[
+                        "updateModalImage"
+                      ];
+                    }
+                  }}
+                >
+                  <ChevronDownsvgIcon
+                    className={classNames(projectcss.all, sty.svg__pv2EG)}
+                    role={"img"}
+                  />
+                </div>
+              </div>
+            </div>
+          </AntdModal>
+          <div
+            data-plasmic-name={"fixado"}
+            data-plasmic-override={overrides.fixado}
+            className={classNames(projectcss.all, sty.fixado)}
+          >
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__u44Ws)}
+              displayHeight={"75px"}
+              displayMaxHeight={"none"}
+              displayMaxWidth={"100%"}
+              displayMinHeight={"0"}
+              displayMinWidth={"0"}
+              displayWidth={"75px"}
+              loading={"lazy"}
+              src={{
+                src: "/plasmic/a_d_2/images/whatsapp.png",
+                fullWidth: 600,
+                fullHeight: 383,
+                aspectRatio: undefined
+              }}
+            />
+          </div>
           <p.Stack
             as={"div"}
             hasGap={true}
@@ -195,9 +432,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 </div>
               </div>
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                className={classNames("__wab_instance", sty.button___7CoOt)}
                 link={`/inscricao`}
               >
                 <div
@@ -250,32 +485,47 @@ function PlasmicHomepage__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__sMAat)}
             >
-              <div
+              <p.Stack
+                as={p.PlasmicLink}
+                hasGap={true}
                 className={classNames(
                   projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__fYk58
+                  projectcss.a,
+                  sty.link__w4Kf9
                 )}
+                component={Link}
+                href={"https://maps.app.goo.gl/3ZmB9Sp4tQ3oamP7A"}
+                platform={"nextjs"}
+                target={"_blank"}
               >
-                {hasVariant(globalVariants, "screen", "tablet")
-                  ? "Vamos celebrar os 20 anos de Adora\u00e7\u00e3o e Discipulado"
-                  : "Vamos celebrar os \n20 anos de \nAdora\u00e7\u00e3o e Discipulado"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___2U7OO
-                )}
-              >
-                {"E voc\u00ea pode fazer parte disso! "}
-              </div>
-            </p.Stack>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__d712)}
-            >
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__dfBc)}
+                  displayHeight={"auto"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"100%"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"50px"}
+                  loading={"lazy"}
+                  src={{
+                    src: "/plasmic/a_d_2/images/location.png",
+                    fullWidth: 980,
+                    fullHeight: 960,
+                    aspectRatio: undefined
+                  }}
+                />
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___2U7OO
+                  )}
+                >
+                  {"S\u00e3o Vicente"}
+                </div>
+              </p.Stack>
               <div
                 className={classNames(
                   projectcss.all,
@@ -287,7 +537,67 @@ function PlasmicHomepage__RenderFunc(props: {
                   ? "Dias 21 e 22 de outubro"
                   : "21 e 22 de outubro"}
               </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__aZs7V
+                )}
+              >
+                {"09H - 12H | 17H - 21H"}
+              </div>
             </p.Stack>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__cgz5P
+              )}
+            >
+              {
+                "Neste ano, celebramos a 20\u00aa edi\u00e7\u00e3o do Adora\u00e7\u00e3o & Discipulado. \nEvento que tem como objetivo compartilhar a mensagem do Prop\u00f3sito Eterno e a vis\u00e3o do Discipulado. "
+              }
+            </div>
+            <Button
+              className={classNames("__wab_instance", sty.button__pS05O)}
+              onClick={async event => {
+                const $steps = {};
+                $steps["updateModalOpen"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        variable: {
+                          objRoot: $state,
+                          variablePath: ["modal", "open"]
+                        },
+                        operation: 4
+                      };
+                      return (({
+                        variable,
+                        value,
+                        startIndex,
+                        deleteCount
+                      }) => {
+                        if (!variable) {
+                          return;
+                        }
+                        const { objRoot, variablePath } = variable;
+
+                        const oldValue = p.get(objRoot, variablePath);
+                        p.set(objRoot, variablePath, !oldValue);
+                        return !oldValue;
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  typeof $steps["updateModalOpen"] === "object" &&
+                  typeof $steps["updateModalOpen"].then === "function"
+                ) {
+                  $steps["updateModalOpen"] = await $steps["updateModalOpen"];
+                }
+              }}
+            >
+              {"CRONOGRAMA"}
+            </Button>
             <Video
               data-plasmic-name={"htmlVideo"}
               data-plasmic-override={overrides.htmlVideo}
@@ -305,21 +615,14 @@ function PlasmicHomepage__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__bnoHj)}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__rJcOg
-                  )}
-                >
-                  {"Ficou com alguma d\u00favida?"}
-                </div>
                 <p.Stack
                   as={p.PlasmicLink}
-                  data-plasmic-name={"link"}
-                  data-plasmic-override={overrides.link}
                   hasGap={true}
-                  className={classNames(projectcss.all, projectcss.a, sty.link)}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__kFfN
+                  )}
                   component={Link}
                   href={"https://wa.me/+5513991259404"}
                   platform={"nextjs"}
@@ -656,18 +959,18 @@ function PlasmicHomepage__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "button",
+    "modal",
+    "fixado",
     "responsiveMenu",
     "htmlVideo",
-    "link",
     "inscricaoButton",
     "participantes",
     "palestrantesData"
   ],
-  button: ["button"],
+  modal: ["modal"],
+  fixado: ["fixado"],
   responsiveMenu: ["responsiveMenu"],
   htmlVideo: ["htmlVideo"],
-  link: ["link"],
   inscricaoButton: ["inscricaoButton"],
   participantes: ["participantes"],
   palestrantesData: ["palestrantesData"]
@@ -677,10 +980,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
+  modal: typeof AntdModal;
+  fixado: "div";
   responsiveMenu: typeof ResponsiveMenu;
   htmlVideo: typeof Video;
-  link: "a";
   inscricaoButton: typeof InscricaoButton;
   participantes: typeof Participantes;
   palestrantesData: typeof PalestrantesData;
@@ -746,10 +1049,10 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
+    modal: makeNodeComponent("modal"),
+    fixado: makeNodeComponent("fixado"),
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     htmlVideo: makeNodeComponent("htmlVideo"),
-    link: makeNodeComponent("link"),
     inscricaoButton: makeNodeComponent("inscricaoButton"),
     participantes: makeNodeComponent("participantes"),
     palestrantesData: makeNodeComponent("palestrantesData"),

@@ -1261,6 +1261,26 @@
           "id": "bzeKMOF7tOBF",
           "name": "whatsapp",
           "filePath": "../public/plasmic/a_d_2/images/whatsapp.png"
+        },
+        {
+          "id": "PdwYCXXSTAr1",
+          "name": "location",
+          "filePath": "../public/plasmic/a_d_2/images/location.png"
+        },
+        {
+          "id": "VLGVR-mbGCki",
+          "name": "WhatsApp Image 2023-09-18 at 22.56.08.jpeg",
+          "filePath": "../public/plasmic/a_d_2/images/whatsAppImage20230918At225608Jpeg.jpg"
+        },
+        {
+          "id": "O9l_2cZCUrFV",
+          "name": "WhatsApp Image 2023-09-18 at 23.24.35.jpeg",
+          "filePath": "../public/plasmic/a_d_2/images/whatsAppImage20230918At232435Jpeg.jpg"
+        },
+        {
+          "id": "iamCC1X93WRZ",
+          "name": "WhatsApp Image 2023-09-18 at 23.25.20.jpeg",
+          "filePath": "../public/plasmic/a_d_2/images/whatsAppImage20230918At232520Jpeg.jpg"
         }
       ],
       "indirect": false,
