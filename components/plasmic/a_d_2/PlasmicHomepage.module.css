@@ -189,6 +189,9 @@
   min-width: 0;
   padding: 8px 30px 30px 8px;
 }
+.link__fEcyD {
+  display: flex;
+}
 .img__u44Ws {
   object-fit: cover;
   max-width: 100%;

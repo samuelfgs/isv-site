@@ -39,8 +39,8 @@ function Inscricao2() {
             }
           }}
           endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
-          adultPrice={0.2}
-          kidsPrice={0.1}
+          adultPrice={0.02}
+          kidsPrice={0.01}
           emailValidator={validate}
           isTest={true}
         />

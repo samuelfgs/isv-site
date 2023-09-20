@@ -6,7 +6,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_ANON_KEY!);
 
-const spreadsheetId = '1HLv2bfp5Pzc2Tj-2Qn3Zk2fyWLZzOYcPlp9lEQTEJD8';
+const spreadsheetId = process.env.SPREADSHEET_ID;
 const auth = new JWT({
   keyFile: './google-sheets.json',
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -62,10 +62,10 @@ export default async function handler(
     });
   }
 
-  const colOrder = ["name", "localidade", "discipulador", "birthdate", "email", "telefone", "method", "account", "lote", "cpf", "state", "city", "bairro", "logradouro", "number", "price"];
+  const colOrder = ["name", "localidade", "discipulador", "birthdate", "email", "telefone", "method", "account", "lote", "cpf", "state", "city", "bairro", "logradouro", "number", "price", "id"];
   const sheets = google.sheets({ version: 'v4', auth });
   for (const type of ["internal", "external"] as const) {
-    const range = `${data[type].name}!A2:P`;
+    const range = `${data[type].name}!A2:Z`;
     const values = [
       ...data[type].paid,
       ...data[type].nonPaid

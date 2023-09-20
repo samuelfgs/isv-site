@@ -385,23 +385,34 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.fixado}
             className={classNames(projectcss.all, sty.fixado)}
           >
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img__u44Ws)}
-              displayHeight={"75px"}
-              displayMaxHeight={"none"}
-              displayMaxWidth={"100%"}
-              displayMinHeight={"0"}
-              displayMinWidth={"0"}
-              displayWidth={"75px"}
-              loading={"lazy"}
-              src={{
-                src: "/plasmic/a_d_2/images/whatsapp.png",
-                fullWidth: 600,
-                fullHeight: 383,
-                aspectRatio: undefined
-              }}
-            />
+            <p.PlasmicLink
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                sty.link__fEcyD
+              )}
+              component={Link}
+              href={"https://wa.me/+5513991259404"}
+              platform={"nextjs"}
+            >
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__u44Ws)}
+                displayHeight={"75px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"100%"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"75px"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/a_d_2/images/whatsapp.png",
+                  fullWidth: 600,
+                  fullHeight: 383,
+                  aspectRatio: undefined
+                }}
+              />
+            </p.PlasmicLink>
           </div>
           <p.Stack
             as={"div"}

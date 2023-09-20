@@ -30,15 +30,16 @@ export default async function handler(
     const { id, name, owner_id, payments } = inscricao;
     const { id: paymentId, paid } = payments[0] ?? {};
 
+    if (paid) continue;
     const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/search?external_reference=${paymentId}`, {
       headers: {
-        authorization: "Bearer APP_USR-4846877984480703-062812-0851d62aca9c156ee183c30017844081-154849269"
+        authorization: `Bearer ${process.env.ACCESS_TOKEN}`
       }
     })).json();
-
+    console.log(mercadoPago)
     if (mercadoPago.paging.total < 1) continue;
-    const result = mercadoPago.results[0];
-    if (result.status !== "approved") continue;
+    const result = mercadoPago.results.find((r:any) => r.status === "approved");
+    if (!result) continue;
     const { error } = await supabase
       .from('payments')
       .update({ paid: true, method: result.payment_method_id })
