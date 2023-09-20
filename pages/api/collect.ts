@@ -7,5 +7,5 @@ export default async function handler(
   res: NextApiResponse
 ) {
   console.log("dale", req.body);
-  res.status(200).json({ b: req.body })
+  res.status(200).json({ bb: req.body })
 }
