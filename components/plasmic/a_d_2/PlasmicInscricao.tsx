@@ -1186,8 +1186,8 @@ function PlasmicInscricao__RenderFunc(props: {
                                       $steps["ids"].payments,
                                       $state.kids,
                                       $steps["createMercadoPago"],
-                                      $state.adultos * $props.adultPrice +
-                                        $state.kids * $props.kidsPrice,
+                                      Math.floor($state.adultos * $props.adultPrice +
+                                        $state.kids * $props.kidsPrice),
                                       $steps["ids"].ownerId
                                     ]
                                   },
