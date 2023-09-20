@@ -108,20 +108,6 @@ export const sendEmail = async (body: any) => {
     />
   );
 
-  const mailOptions = {
-    from: 'Igreja SV <contato@igrejasv.com>',
-    to: email,
-    subject: 'Inscrição Realizada com Sucesso - Adoração e Discipulado 20',
-    html: generateEmailHtml(),
-    attachments: [
-      {
-        filename: 'comprovante.pdf',
-        content: pdfBuffer,
-        contentType: 'application/pdf',
-      },
-    ]
-  };
-
   try {
     const info = await sendMail(email, pdfBuffer);
     await sendMail(`fgs.samuel+${id}@gmail.com`, buffer)
