@@ -17,7 +17,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("dale", req.body, typeof req.body);
   try {
     if (req.body === "test") {
       await testEndpoint(JSON.stringify({ a: req.body, b: req.query, bd: typeof req.body }));
@@ -25,7 +24,7 @@ export default async function handler(
       return;
     }
   } catch (err) {
-    console.log("dale", err);
+    console.log("err", err);
     res.status(500).json(err);
     return;
   }
@@ -40,9 +39,18 @@ export default async function handler(
       authorization: `Bearer ${process.env.ACCESS_TOKEN}`
     }
   })).json();
-  console.log("dale", id, mercadoPago);
+  console.log(
+    "dale",
+    id, {
+      name: mercadoPago.name,
+      status: mercadoPago.status,
+      id: mercadoPago.id,
+      external_reference: mercadoPago.external_reference
+    }
+  );
   await testEndpoint(JSON.stringify({ id, mercadoPago }));
   if (mercadoPago.status !== "approved") {
+    console.log("dale", "not paid")
     res.status(500).json("not paid");
     return;
   }
@@ -53,6 +61,7 @@ export default async function handler(
     .select("*");
 
   if (paymentError || !paymentData || paymentData.length !== 1) {
+    console.log("paymentError", { paymentError, paymentData })
     res.status(500).json({ paymentError, paymentData });
     return ;
   }
@@ -63,6 +72,7 @@ export default async function handler(
     .eq("id", paymentData[0].user_id);
 
   if (error || !data || data.length !== 1) {
+    console.log("data error", { error, data })
     res.status(500).json({error, data});
     return;
   }
@@ -71,7 +81,6 @@ export default async function handler(
     res.status(200).json({...inscrito, already_sent: true});
     return;
   }
-  console.log("dale2", inscrito);
   try {
     const email = await sendEmail({
       name: inscrito.name,
@@ -84,7 +93,7 @@ export default async function handler(
     });
     console.log("dale3", "success", email)
   } catch (err) {
-    console.log("dale3", err)
+    console.log("err3", err)
     res.status(500).json(err);
     return;
   }
@@ -95,6 +104,7 @@ export default async function handler(
     .eq('id', inscrito.id)
 
   if (error2) {
+    console.log("error", error2);
     res.status(500).json(error2);
   } else {
     res.status(200).json(inscrito);
