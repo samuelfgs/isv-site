@@ -6,6 +6,8 @@ import GlobalContextsProvider from "../components/plasmic/a_d_3/PlasmicGlobalCon
 import { ScreenVariantProvider } from "../components/plasmic/a_d_3/PlasmicGlobalVariant__Screen";
 import { PlasmicAdmin } from "../components/plasmic/a_d_3/PlasmicAdmin";
 import { useRouter } from "next/router";
+import ptBr from 'antd/locale/pt_BR';
+import { ConfigProvider } from "antd";
 
 function Admin() {
   // Use PlasmicAdmin to render this component as it was
@@ -30,6 +32,7 @@ function Admin() {
   }, []);
   return (
     <GlobalContextsProvider>
+      <ConfigProvider locale={ptBr}>
       <ph.PageParamsProvider
         params={useRouter()?.query}
         query={useRouter()?.query}
@@ -40,6 +43,7 @@ function Admin() {
           />
         }
       </ph.PageParamsProvider>
+      </ConfigProvider>
     </GlobalContextsProvider>
   );
 }
