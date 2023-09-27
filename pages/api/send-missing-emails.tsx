@@ -50,6 +50,17 @@ const sleep = (milliseconds: number) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
+const checkApproval = async (paymentId: string) => {
+  const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/search?external_reference=${paymentId}`, {
+      headers: {
+        authorization: `Bearer ${process.env.ACCESS_TOKEN}`
+      }
+    })).json();
+    if (mercadoPago.paging.total < 1) return false;
+    const result = mercadoPago.results.find((r:any) => r.status === "approved");
+    return !!result;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -82,7 +93,18 @@ export default async function handler(
       return;
     }
     if (payment.paid == false) {
-      continue;
+      const status = await checkApproval(payment.id);
+      if (!status) {
+        continue;
+      }
+      const { error: error7 } = await supabase
+        .from('inscritos')
+        .update({ paid: true })
+        .eq('id', payment.id);
+      if (error7) {
+        res.status(500).json({error7});
+        continue;
+      }
     }
     const svgs = [];
     for (const person of group) {

@@ -2,8 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d_2/PlasmicGlobalContextsProvider";
-import { PlasmicInscricao } from "../components/plasmic/a_d_2/PlasmicInscricao";
+import GlobalContextsProvider from "../components/plasmic/a_d_3/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_3/PlasmicGlobalVariant__Screen";
+import { PlasmicInscricao } from "../components/plasmic/a_d_3/PlasmicInscricao";
 import { useRouter } from "next/router";
 import { validate } from "email-validator";
 
@@ -30,17 +31,17 @@ function Inscricao() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-      <PlasmicInscricao 
-        form={{
-          onKeyPress: (event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-              }
-          }
-        }}
-        endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
-        emailValidator={validate}
-      />
+        <PlasmicInscricao 
+          form={{
+            onKeyPress: (event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                }
+            }
+          }}
+          endpoint={process.env.NEXT_PUBLIC_ENDPOINT!}
+          emailValidator={validate}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );

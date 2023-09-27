@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d_2/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d_2/PlasmicGlobalVariant__Screen";
-import { PlasmicPalestrantes } from "../components/plasmic/a_d_2/PlasmicPalestrantes";
+import GlobalContextsProvider from "../components/plasmic/a_d_3/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_3/PlasmicGlobalVariant__Screen";
+import { PlasmicPalestrantes } from "../components/plasmic/a_d_3/PlasmicPalestrantes";
 import { useRouter } from "next/router";
 
 import "slick-carousel/slick/slick-theme.css"
@@ -35,15 +35,15 @@ function Palestrantes() {
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-      <PlasmicPalestrantes 
-        onDotClick={(slide) => {
-          (ref.current as any).slickGoTo(slide);
-        }}
-        slider={{
-          render: (props: any, C: any) => <C {...props} ref={ref}  afterChange={(index: number) => setActiveSlide(index)}/>
-        }}
-        activeSlide={activeSlide}
-      />
+        <PlasmicPalestrantes 
+          onDotClick={(slide) => {
+            (ref.current as any).slickGoTo(slide);
+          }}
+          slider={{
+            render: (props: any, C: any) => <C {...props} ref={ref}  afterChange={(index: number) => setActiveSlide(index)}/>
+          }}
+          activeSlide={activeSlide}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );

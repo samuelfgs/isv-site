@@ -1115,14 +1115,26 @@
   --plasmic-mixin-extra-small-shadow_box-shadow: var(
     --mixin-U5t_vKFhZz8_cm_box-shadow
   );
+  --mixin-U5t_vKFhZz8_cm_white-space: pre-wrap;
+  --plasmic-mixin-extra-small-shadow_white-space: var(
+    --mixin-U5t_vKFhZz8_cm_white-space
+  );
   --mixin-JmP9XRUTNMbkDM_box-shadow: 0px 4px 8px 1px var(--token-Q8JlHNucMXwOBX);
   --plasmic-mixin-small-shadow_box-shadow: var(
     --mixin-JmP9XRUTNMbkDM_box-shadow
+  );
+  --mixin-JmP9XRUTNMbkDM_white-space: pre-wrap;
+  --plasmic-mixin-small-shadow_white-space: var(
+    --mixin-JmP9XRUTNMbkDM_white-space
   );
   --mixin-2IRsctPdxJ2syN_box-shadow: 0px 8px 32px -8px var(--token-c2l517FQiE3jhe),
     0px 8px 20px -16px var(--token-CR1Y_fR-Wr6Uyd);
   --plasmic-mixin-medium-shadow_box-shadow: var(
     --mixin-2IRsctPdxJ2syN_box-shadow
+  );
+  --mixin-2IRsctPdxJ2syN_white-space: pre-wrap;
+  --plasmic-mixin-medium-shadow_white-space: var(
+    --mixin-2IRsctPdxJ2syN_white-space
   );
 }
 
