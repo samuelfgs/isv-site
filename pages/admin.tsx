@@ -39,7 +39,7 @@ function Admin() {
       >
         {show && 
           <PlasmicAdmin 
-            password={process.env.ADMIN_PASSWORD}
+            password={process.env.NEXT_PUBLIC_ADMIN_PASSWORD}
           />
         }
       </ph.PageParamsProvider>
