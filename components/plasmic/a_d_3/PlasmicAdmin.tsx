@@ -333,39 +333,77 @@ function PlasmicAdmin__RenderFunc(props: {
             }
           })() ? (
             <div className={classNames(projectcss.all, sty.freeBox__cFaBz)}>
-              {(() => {
-                try {
-                  return $state.failed;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
+              <div className={classNames(projectcss.all, sty.freeBox__kXj3O)}>
+                {(() => {
+                  try {
+                    return $state.failed;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
                   }
-                  throw e;
-                }
-              })() ? (
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__ba7OO
-                  )}
-                >
-                  {"Usu\u00e1rio ou senha incorretos"}
-                </div>
-              ) : null}
+                })() ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__ba7OO
+                    )}
+                  >
+                    {"Usu\u00e1rio ou senha incorretos"}
+                  </div>
+                ) : null}
+              </div>
               {(() => {
                 const child$Props = {
                   className: classNames("__wab_instance", sty.form),
-                  extendedOnValuesChange:
+                  extendedOnValuesChange: async (...eventArgs: any) => {
                     p.generateStateOnChangePropForCodeComponents(
                       $state,
                       "value",
                       ["form", "value"],
                       FormWrapper_Helpers
-                    ),
+                    ).apply(null, eventArgs);
+                    (async (changedValues, allValues) => {
+                      const $steps = {};
+                      $steps["updateFailed"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              variable: {
+                                objRoot: $state,
+                                variablePath: ["failed"]
+                              },
+                              operation: 0,
+                              value: false
+                            };
+                            return (({
+                              variable,
+                              value,
+                              startIndex,
+                              deleteCount
+                            }) => {
+                              if (!variable) {
+                                return;
+                              }
+                              const { objRoot, variablePath } = variable;
+
+                              p.set(objRoot, variablePath, value);
+                              return value;
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        typeof $steps["updateFailed"] === "object" &&
+                        typeof $steps["updateFailed"].then === "function"
+                      ) {
+                        $steps["updateFailed"] = await $steps["updateFailed"];
+                      }
+                    }).apply(null, eventArgs);
+                  },
                   formItems: [
                     { label: "Name", name: "name", inputType: "Text" },
                     {
@@ -388,8 +426,8 @@ function PlasmicAdmin__RenderFunc(props: {
                             },
                             operation: 0,
                             value:
-                              $state.form.value.user === $props.user &&
-                              $state.form.value.password === $props.password
+                              $state.form.value.user !== $props.user ||
+                              $state.form.value.password !== $props.password
                           };
                           return (({
                             variable,
@@ -413,7 +451,7 @@ function PlasmicAdmin__RenderFunc(props: {
                     ) {
                       $steps["updateFailed"] = await $steps["updateFailed"];
                     }
-                    $steps["updateLogged"] = true
+                    $steps["updateLogged"] = !$steps.updateFailed
                       ? (() => {
                           const actionArgs = {
                             variable: {
@@ -421,7 +459,7 @@ function PlasmicAdmin__RenderFunc(props: {
                               variablePath: ["logged"]
                             },
                             operation: 0,
-                            value: !$steps.updateFailed
+                            value: true
                           };
                           return (({
                             variable,
