@@ -7278,7 +7278,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                               "string" &&
                                                               value.length >
                                                                 0 &&
-                                                              +value < 31;
+                                                              +value <= 31;
                                                       }
                                                     }
                                                   ]}
