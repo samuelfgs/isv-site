@@ -510,7 +510,7 @@ function PlasmicInscricao__RenderFunc(props: {
                   }
                   <React.Fragment>
                     {
-                      "\n\nA data final da venda do 2\u00ba Lote vai at\u00e9 30/09/2023.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 2\u00ba Lote.\n\nValor Promocional 2\u00ba Lote: R$ 120,00\n\n1\u00ba Lote: ESGOTADO\n2\u00ba Lote: At\u00e9 30/09/2023\n3\u00ba Lote: A partir de 01/10/2023"
+                      "\n\nA data final da venda do 2\u00ba Lote vai at\u00e9 15/10/2023.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 2\u00ba Lote.\n\nValor Promocional 2\u00ba Lote: R$ 120,00\n\n1\u00ba Lote: ESGOTADO\n2\u00ba Lote: PRORROGADO at\u00e9 15/10/2023\n3\u00ba Lote: A partir de 16/10/2023"
                     }
                   </React.Fragment>
                 </React.Fragment>
