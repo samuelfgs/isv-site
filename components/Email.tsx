@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const PDFPage = ({person, svg, isKid, isFirst}: any) => {
+const PDFPage = ({person, svg, isKid, isFirst, ticketType}: any) => {
   const idx = person.email.indexOf("@");
   return <Page size="A4" style={styles.page}>
       <View style={styles.section}>
@@ -55,6 +55,13 @@ const PDFPage = ({person, svg, isKid, isFirst}: any) => {
             alignItems: "flex-start"
           }}>
             <Text>Ingresso Kids (5 - 10 anos)</Text>
+          </View> : null}
+          {ticketType !== "full" ? <View style={{
+            display: "flex",
+            gap: 5,
+            alignItems: "flex-start"
+          }}>
+            <Text>Ingresso válido apenas para {ticketType === "saturday" ? "Sábado" : "Domingo"}</Text>
           </View> : null}
           <View style={{
             display: "flex",
@@ -133,16 +140,19 @@ interface ComprovanteProps {
   adultos: number,
   svgs: any[];
   price: string;
+  ticketType: string;
 }
+
 export const Comprovante = (props: ComprovanteProps) => {
-  const { name, email, cpf, kids, adultos, svgs } = props;
+  const { name, email, cpf, kids, adultos, svgs, ticketType } = props;
   const inscricoes = [
     ...([...(new Array(adultos).keys() as any)].map((x:any) => "adulto")),
     ...([...(new Array(kids).keys() as any)].map((x:any) => "kid")),
   ];
   return <Document>
     {inscricoes.map((inscType, idx) => 
-      <PDFPage 
+      <PDFPage
+        ticketType={ticketType}
         person={{
           doc: cpf,
           email,

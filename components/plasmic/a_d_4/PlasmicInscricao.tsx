@@ -46,6 +46,8 @@ import {
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import FaleConosco2 from "../../FaleConosco2"; // plasmic-import: tKxiz2LS2HRq/component
 import Faleconosco3 from "../../Faleconosco3"; // plasmic-import: koE18FDmK_B5/component
+import { AntdRadioGroup } from "@plasmicpkgs/antd5/skinny/registerRadio"; // plasmic-import: PZQhrvIGy1/codeComponent
+import { AntdRadio } from "@plasmicpkgs/antd5/skinny/registerRadio"; // plasmic-import: -CXVV9tXtP/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { BreakpontProvider } from "../../code-components/Providers"; // plasmic-import: 4UvjbdArrC/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: TgJFzUZpvQ/codeComponent
@@ -108,6 +110,7 @@ export type PlasmicInscricao__OverridesType = {
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   faleConosco2?: p.Flex<typeof FaleConosco2>;
   faleconosco3?: p.Flex<typeof Faleconosco3>;
+  ticketType?: p.Flex<typeof AntdRadioGroup>;
   breakpointProvider?: p.Flex<typeof BreakpontProvider>;
   form?: p.Flex<typeof FormWrapper>;
   dataProvider?: p.Flex<typeof DataProvider>;
@@ -288,6 +291,33 @@ function PlasmicInscricao__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "ticketType.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "full"
+      },
+      {
+        path: "adultTicketPrice",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $state.ticketType.value === "full"
+                ? $props.adultPrice
+                : 80;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return 0;
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -381,95 +411,6 @@ function PlasmicInscricao__RenderFunc(props: {
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__vZu6)}
-              style={(() => {
-                try {
-                  return {
-                    order: $state.inForm ? 0 : 1
-                  };
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return undefined;
-                  }
-                  throw e;
-                }
-              })()}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___1VuWm
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>
-                    {"Falta pouco para garantir sua vaga no AD 20 anos.\n\n"}
-                  </React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ textDecorationLine: "underline" }}
-                  >
-                    {"Fique atento aos valores:"}
-                  </span>
-                  <React.Fragment>
-                    {
-                      "\n\nPessoas de 0 a 4 anos: gratuito*\n\nPessoas de 5 a 10 anos: R$ "
-                    }
-                  </React.Fragment>
-                  {
-                    <span
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.span,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.span__sYPfD
-                      )}
-                    >
-                      <React.Fragment>
-                        {$props.kidsPrice.toLocaleString("fr", {
-                          minimumFractionDigits: 2,
-                          maximumFractionDigits: 2
-                        })}
-                      </React.Fragment>
-                    </span>
-                  }
-                  <React.Fragment>
-                    {"**\n\nPessoas a partir de 11 anos: R$ "}
-                  </React.Fragment>
-                  {
-                    <span
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.span,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.span__b8Fzq
-                      )}
-                    >
-                      <React.Fragment>
-                        {$props.adultPrice.toLocaleString("fr", {
-                          minimumFractionDigits: 2,
-                          maximumFractionDigits: 2
-                        })}
-                      </React.Fragment>
-                    </span>
-                  }
-                  <React.Fragment>
-                    {
-                      "\n\n* Crian\u00e7as desta faixa de et\u00e1ria n\u00e3o poder\u00e3o ocupar lugares de pessoas pagantes. Tamb\u00e9m n\u00e3o haver\u00e1 atividades recreativas direcionadas a este p\u00fablico.\n\n** Crian\u00e7as nessa faixa et\u00e1ria ter\u00e3o \u00e1rea exclusiva com ministra\u00e7\u00e3o destinada para elas, portanto n\u00e3o poder\u00e3o ocupar os lugares do audit\u00f3rio principal. Aten\u00e7\u00e3o: as vagas destinadas para essa faixa et\u00e1ria s\u00e3o limitadas!"
-                    }
-                  </React.Fragment>
-                </React.Fragment>
-              </div>
-            </p.Stack>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__oNpL5)}
               style={(() => {
                 try {
@@ -509,44 +450,38 @@ function PlasmicInscricao__RenderFunc(props: {
                       {"ATEN\u00c7\u00c3O"}
                     </span>
                   }
+                  <React.Fragment>{""}</React.Fragment>
+                </React.Fragment>
+              </div>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xjS8K
+                )}
+              >
+                <React.Fragment>
                   <React.Fragment>
                     {
-                      "\n\nA data final da venda do 2\u00ba Lote vai at\u00e9 30/09/2023.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 2\u00ba Lote.\n\nValor Promocional 2\u00ba Lote: R$ "
+                      "A data final da venda do 2\u00ba Lote vai at\u00e9 15/10/2023.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 2\u00ba Lote.\n\nValor do Ingresso para a Confer\u00eancia AD20:\nIngresso para os 2 dias: "
                     }
                   </React.Fragment>
-                  {
-                    <span
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.span,
-                        projectcss.__wab_text,
-                        projectcss.plasmic_default__inline,
-                        sty.span__aR3M4
-                      )}
-                    >
-                      <React.Fragment>
-                        {(() => {
-                          try {
-                            return $props.adultPrice.toLocaleString("fr", {
-                              maximumFractionDigits: 2,
-                              minimumFractionDigits: 2
-                            });
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "120,00";
-                            }
-                            throw e;
-                          }
-                        })()}
-                      </React.Fragment>
-                    </span>
-                  }
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ textDecorationLine: "line-through" }}
+                  >
+                    {"R$ 160,00"}
+                  </span>
+                  <React.Fragment>{"\n"}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
+                  >
+                    {"Ingresso Promocional 2\u00ba Lote: R$ 120,00"}
+                  </span>
                   <React.Fragment>
                     {
-                      "\n\n1\u00ba Lote: ESGOTADO\n2\u00ba Lote: ESGOTADO\n3\u00ba Lote: At\u00e9 20/10/2023\n"
+                      "\nIngresso avulso: (Apenas 1 dia) R$ 80,00\n\n1\u00ba Lote: ESGOTADO\n2\u00ba Lote: PRORROGADO AT\u00c9 15/10/2023\n3\u00ba Lote: A PARTIR DE 16/10/2023"
                     }
                   </React.Fragment>
                 </React.Fragment>
@@ -562,6 +497,38 @@ function PlasmicInscricao__RenderFunc(props: {
                 data-plasmic-override={overrides.faleconosco3}
                 className={classNames("__wab_instance", sty.faleconosco3)}
               />
+            </p.Stack>
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__vZu6)}
+              style={(() => {
+                try {
+                  return {
+                    order: $state.inForm ? 0 : 1
+                  };
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return undefined;
+                  }
+                  throw e;
+                }
+              })()}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__d0F86
+                )}
+              >
+                {
+                  "* Crian\u00e7as de 0-4 anos n\u00e3o poder\u00e3o ocupar lugares de pessoas pagantes. Tamb\u00e9m n\u00e3o haver\u00e1 atividades recreativas direcionadas a este p\u00falbico\n\n** Crian\u00e7as nessa faixa et\u00e1ria ter\u00e3o \u00e1rea exclusiva com ministra\u00e7\u00e3o destinada para elas, portanto n\u00e3o poder\u00e3o ocupar os lugares do audit\u00f3rio principal. Aten\u00e7\u00e3o: as vagas destinadas para essa faixa et\u00e1ria s\u00e3o limitadas!"
+                }
+              </div>
             </p.Stack>
             {(() => {
               try {
@@ -581,6 +548,121 @@ function PlasmicInscricao__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__hopBn)}
               >
+                <div
+                  className={classNames(projectcss.all, sty.freeBox___7BHyo)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__rWafp
+                    )}
+                  >
+                    {"Escolha seu ingresso"}
+                  </div>
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox___8TDq)}
+                  >
+                    <AntdRadioGroup
+                      data-plasmic-name={"ticketType"}
+                      data-plasmic-override={overrides.ticketType}
+                      className={classNames("__wab_instance", sty.ticketType)}
+                      defaultValue={"full"}
+                      onChange={p.generateStateOnChangeProp($state, [
+                        "ticketType",
+                        "value"
+                      ])}
+                      options={[
+                        { value: "option1", label: "Option 1" },
+                        { value: "option2", label: "Option 2" }
+                      ]}
+                      useChildren={true}
+                      value={p.generateStateValueProp($state, [
+                        "ticketType",
+                        "value"
+                      ])}
+                    >
+                      <AntdRadio
+                        className={classNames(
+                          "__wab_instance",
+                          sty.radio__hrjs3
+                        )}
+                        value={"full"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__jllGk
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>
+                              {"Dois dias - R$ 120,00 "}
+                            </React.Fragment>
+                            {
+                              <span
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.span,
+                                  projectcss.__wab_text,
+                                  projectcss.plasmic_default__inline,
+                                  sty.span__zZcYk
+                                )}
+                              >
+                                <React.Fragment>
+                                  <span
+                                    className={
+                                      "plasmic_default__all plasmic_default__span"
+                                    }
+                                    style={{ fontWeight: 700 }}
+                                  >
+                                    {"(Pre\u00e7o Promocional)"}
+                                  </span>
+                                </React.Fragment>
+                              </span>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+                      </AntdRadio>
+                      <AntdRadio
+                        className={classNames(
+                          "__wab_instance",
+                          sty.radio__jCmsU
+                        )}
+                        value={"saturday"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__kFuYt
+                          )}
+                        >
+                          {"S\u00e1bado (21/10/2023) - R$ 80,00"}
+                        </div>
+                      </AntdRadio>
+                      <AntdRadio
+                        className={classNames(
+                          "__wab_instance",
+                          sty.radio__hiYNn
+                        )}
+                        value={"sunday"}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__mpaPw
+                          )}
+                        >
+                          {"Domingo (22/10/2023) - R$ 80,00"}
+                        </div>
+                      </AntdRadio>
+                    </AntdRadioGroup>
+                  </div>
+                </div>
                 <div className={classNames(projectcss.all, sty.freeBox__pedVd)}>
                   <div
                     className={classNames(
@@ -604,7 +686,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       <React.Fragment>
                         {(() => {
                           try {
-                            return `R$ ${$props.adultPrice.toLocaleString(
+                            return `R$ ${$state.adultTicketPrice.toLocaleString(
                               "fr",
                               {
                                 minimumFractionDigits: 2,
@@ -920,7 +1002,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       {(() => {
                         try {
                           return `Total: R$ ${(
-                            $props.adultPrice * $state.adultos +
+                            $state.adultTicketPrice * $state.adultos +
                             $props.kidsPrice * $state.kids
                           ).toLocaleString("fr", {
                             minimumFractionDigits: 2,
@@ -941,6 +1023,22 @@ function PlasmicInscricao__RenderFunc(props: {
                 </div>
                 <Button
                   className={classNames("__wab_instance", sty.button__po4Dg)}
+                  isDisabled={(() => {
+                    try {
+                      return (
+                        $state.adultos + $state.kids === 0 ||
+                        $state.ticketType.value == null
+                      );
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return [];
+                      }
+                      throw e;
+                    }
+                  })()}
                   onClick={async event => {
                     const $steps = {};
                     $steps["updateStep"] =
@@ -1093,7 +1191,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                           $state.adultos,
                                                         currency_id: "BRL",
                                                         unit_price:
-                                                          $props.adultPrice
+                                                          $state.adultTicketPrice
                                                       }
                                                     ]
                                                   : []),
@@ -1165,14 +1263,16 @@ function PlasmicInscricao__RenderFunc(props: {
                                             ...inscrito,
                                             birthdate: `${parts[2]}-${parts[1]}-${parts[0]}`,
                                             id: $steps["ids"].ownerId,
-                                            price: 0
+                                            price: 0,
+                                            ticket_type: $state.ticketType.value
                                           };
                                         } else {
                                           obj = {
                                             ...inscrito,
                                             birthdate: `${inscrito.birthdate2.year}-${inscrito.birthdate2.month}-${inscrito.birthdate2.day}`,
                                             id: $steps["ids"].ownerId,
-                                            price: 0
+                                            price: 0,
+                                            ticket_type: $state.ticketType.value
                                           };
                                         }
                                         delete obj["birthdate2"];
@@ -1229,7 +1329,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                       $steps["ids"].payments,
                                       $state.kids,
                                       $steps["createMercadoPago"],
-                                      $state.adultos * $props.adultPrice +
+                                      $state.adultos * $state.adultTicketPrice +
                                         $state.kids * $props.kidsPrice,
                                       $steps["ids"].ownerId
                                     ]
@@ -7853,7 +7953,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                       return `Total: R$ ${(
                                                         $props.kidsPrice *
                                                           $state.kids +
-                                                        $props.adultPrice *
+                                                        $state.adultTicketPrice *
                                                           $state.adultos
                                                       ).toLocaleString("fr", {
                                                         minimumFractionDigits: 2,
@@ -8005,6 +8105,7 @@ const PlasmicDescendants = {
     "responsiveMenu",
     "faleConosco2",
     "faleconosco3",
+    "ticketType",
     "breakpointProvider",
     "form",
     "dataProvider",
@@ -8024,6 +8125,7 @@ const PlasmicDescendants = {
   responsiveMenu: ["responsiveMenu"],
   faleConosco2: ["faleConosco2"],
   faleconosco3: ["faleconosco3"],
+  ticketType: ["ticketType"],
   breakpointProvider: [
     "breakpointProvider",
     "form",
@@ -8113,6 +8215,7 @@ type NodeDefaultElementType = {
   responsiveMenu: typeof ResponsiveMenu;
   faleConosco2: typeof FaleConosco2;
   faleconosco3: typeof Faleconosco3;
+  ticketType: typeof AntdRadioGroup;
   breakpointProvider: typeof BreakpontProvider;
   form: typeof FormWrapper;
   dataProvider: typeof DataProvider;
@@ -8193,6 +8296,7 @@ export const PlasmicInscricao = Object.assign(
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     faleConosco2: makeNodeComponent("faleConosco2"),
     faleconosco3: makeNodeComponent("faleconosco3"),
+    ticketType: makeNodeComponent("ticketType"),
     breakpointProvider: makeNodeComponent("breakpointProvider"),
     form: makeNodeComponent("form"),
     dataProvider: makeNodeComponent("dataProvider"),
