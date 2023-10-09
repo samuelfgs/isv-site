@@ -38,7 +38,7 @@ const MyEmailTemplate = () => (
 );
 
 export const generateEmailHtml = () => {
-  const html = ReactDOMServer.renderToStaticMarkup(<MyEmailTemplate />);
+  const html = ReactDOMServer.renderToStaticMarkup(<MyEmailTemplate /> as any);
   return `<!DOCTYPE html>${html}`;
 };
 
