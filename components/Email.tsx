@@ -61,7 +61,7 @@ const PDFPage = ({person, svg, isKid, isFirst, ticketType}: any) => {
             gap: 5,
             alignItems: "flex-start"
           }}>
-            <Text>Ingresso válido apenas para {ticketType === "saturday" ? "Sábado" : "Domingo"}</Text>
+            <Text>Ingresso válido apenas para {ticketType === "saturday" ? "sábado" : "domingo"}</Text>
           </View> : null}
           <View style={{
             display: "flex",
