@@ -59,7 +59,7 @@ import RequiredField from "../../RequiredField"; // plasmic-import: w_AtHBUrSY/c
 import Select from "../../Select"; // plasmic-import: lCsb7GpUU0b/component
 import Loading from "../../Loading"; // plasmic-import: Of-Yy5_cNa/component
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_4/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -68,11 +68,11 @@ import plasmic_antd_5_hostless_2_css from "../imported_dep_2/plasmic_imported_de
 import plasmic_antd_5_hostless_css from "../imported_dep_8/plasmic_imported_dep_8.module.css"; // plasmic-import: kEs6HGEd6eEHXTXYJv3dXn/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_imported_dep_4.module.css"; // plasmic-import: 4Vuf7Faviq4HnBF9hV4YyE/projectcss
 import projectcss from "./plasmic_a_d_3.module.css"; // plasmic-import: ugFFj82Q2N1H3o8TBWt2M5/projectcss
-import sty from "./PlasmicInscricao.module.css"; // plasmic-import: dYFvLDGEBe/css
+import sty from "../a_d_4/PlasmicInscricao.module.css"; // plasmic-import: dYFvLDGEBe/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
+import ChecksvgIcon from "../a_d_4/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import IconIcon from "../a_d_4/icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
+import SearchsvgIcon from "../a_d_4/icons/PlasmicIcon__Searchsvg"; // plasmic-import: rlqzA49ld7A/icon
 
 createPlasmicElementProxy;
 
@@ -288,6 +288,7 @@ function PlasmicInscricao__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = p.useDollarState(stateSpecs, {
@@ -314,6 +315,7 @@ function PlasmicInscricao__RenderFunc(props: {
           property="og:title"
           content={PlasmicInscricao.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -325,6 +327,7 @@ function PlasmicInscricao__RenderFunc(props: {
           property="og:image"
           content={PlasmicInscricao.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -437,6 +440,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       </React.Fragment>
                     </span>
                   }
+
                   <React.Fragment>
                     {"**\n\nPessoas a partir de 11 anos: R$ "}
                   </React.Fragment>
@@ -458,6 +462,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       </React.Fragment>
                     </span>
                   }
+
                   <React.Fragment>
                     {
                       "\n\n* Crian\u00e7as desta faixa de et\u00e1ria n\u00e3o poder\u00e3o ocupar lugares de pessoas pagantes. Tamb\u00e9m n\u00e3o haver\u00e1 atividades recreativas direcionadas a este p\u00fablico.\n\n** Crian\u00e7as nessa faixa et\u00e1ria ter\u00e3o \u00e1rea exclusiva com ministra\u00e7\u00e3o destinada para elas, portanto n\u00e3o poder\u00e3o ocupar os lugares do audit\u00f3rio principal. Aten\u00e7\u00e3o: as vagas destinadas para essa faixa et\u00e1ria s\u00e3o limitadas!"
@@ -508,6 +513,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       {"ATEN\u00c7\u00c3O"}
                     </span>
                   }
+
                   <React.Fragment>
                     {
                       "\n\nA data final da venda do 2\u00ba Lote vai at\u00e9 15/10/2023.\nEnt\u00e3o n\u00e3o perca a oportunidade de comprar o seu ingresso com desconto nesse 2\u00ba Lote.\n\nValor Promocional 2\u00ba Lote: R$ 120,00\n\n1\u00ba Lote: ESGOTADO\n2\u00ba Lote: PRORROGADO at\u00e9 15/10/2023\n3\u00ba Lote: A partir de 16/10/2023"
@@ -8049,6 +8055,7 @@ const PlasmicDescendants = {
     "input29",
     "loading"
   ],
+
   responsiveMenu: ["responsiveMenu"],
   faleConosco2: ["faleConosco2"],
   faleconosco3: ["faleconosco3"],
@@ -8068,6 +8075,7 @@ const PlasmicDescendants = {
     "input27",
     "input29"
   ],
+
   form: [
     "form",
     "dataProvider",
@@ -8083,6 +8091,7 @@ const PlasmicDescendants = {
     "input27",
     "input29"
   ],
+
   dataProvider: [
     "dataProvider",
     "toastProvider",
@@ -8097,6 +8106,7 @@ const PlasmicDescendants = {
     "input27",
     "input29"
   ],
+
   toastProvider: [
     "toastProvider",
     "formProvider",
@@ -8110,6 +8120,7 @@ const PlasmicDescendants = {
     "input27",
     "input29"
   ],
+
   formProvider: [
     "formProvider",
     "input4",
@@ -8122,6 +8133,7 @@ const PlasmicDescendants = {
     "input27",
     "input29"
   ],
+
   input4: ["input4"],
   formFieldGroup: ["formFieldGroup", "input8", "select2", "input12"],
   input8: ["input8"],
@@ -8163,6 +8175,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicInscricao__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

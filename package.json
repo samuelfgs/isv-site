@@ -10,8 +10,7 @@
   },
   "dependencies": {
     "@ant-design/pro-components": "^2.6.28",
-    "@plasmicapp/cli": "^0.1.307",
-    "@plasmicapp/react-web": "^0.2.249",
+    "@plasmicapp/react-web": "^0.2.268",
     "@plasmicpkgs/antd5": "^0.0.122",
     "@plasmicpkgs/plasmic-basic-components": "^0.0.158",
     "@plasmicpkgs/plasmic-embed-css": "^0.1.133",

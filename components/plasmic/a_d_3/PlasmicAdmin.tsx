@@ -56,7 +56,7 @@ import { RichTable } from "@plasmicpkgs/plasmic-rich-components"; // plasmic-imp
 import { tableHelpers as RichTable_Helpers } from "@plasmicpkgs/plasmic-rich-components"; // plasmic-import: k4RvFQUTZKCU/codeComponentHelper
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_4/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -65,7 +65,7 @@ import plasmic_antd_5_hostless_2_css from "../imported_dep_2/plasmic_imported_de
 import plasmic_antd_5_hostless_css from "../imported_dep_8/plasmic_imported_dep_8.module.css"; // plasmic-import: kEs6HGEd6eEHXTXYJv3dXn/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_imported_dep_4.module.css"; // plasmic-import: 4Vuf7Faviq4HnBF9hV4YyE/projectcss
 import projectcss from "./plasmic_a_d_3.module.css"; // plasmic-import: ugFFj82Q2N1H3o8TBWt2M5/projectcss
-import sty from "./PlasmicAdmin.module.css"; // plasmic-import: n_LmzxAtzKgu/css
+import sty from "../a_d_4/PlasmicAdmin.module.css"; // plasmic-import: n_LmzxAtzKgu/css
 
 createPlasmicElementProxy;
 
@@ -221,6 +221,7 @@ function PlasmicAdmin__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "comeco"
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = p.useDollarState(stateSpecs, {
@@ -412,6 +413,7 @@ function PlasmicAdmin__RenderFunc(props: {
                       inputType: "Text Area"
                     }
                   ],
+
                   labelCol: { span: 8, horizontalOnly: true },
                   layout: "vertical",
                   mode: "advanced",
@@ -499,6 +501,7 @@ function PlasmicAdmin__RenderFunc(props: {
                       plasmicStateName: "form.value"
                     }
                   ],
+
                   [],
                   FormWrapper_Helpers ?? {},
                   child$Props
@@ -551,6 +554,7 @@ function PlasmicAdmin__RenderFunc(props: {
                               plasmicStateName: "input.value"
                             }
                           ],
+
                           [],
                           AntdInput_Helpers ?? {},
                           child$Props
@@ -609,6 +613,7 @@ function PlasmicAdmin__RenderFunc(props: {
                               plasmicStateName: "passwordInput.value"
                             }
                           ],
+
                           [],
                           AntdPassword_Helpers ?? {},
                           child$Props
@@ -702,6 +707,7 @@ function PlasmicAdmin__RenderFunc(props: {
                       { label: null, value: null },
                       { label: null, value: null }
                     ];
+
                     __composite["0"]["value"] = "comeco";
                     __composite["0"]["label"] = "Desde o come\u00e7o";
                     __composite["1"]["value"] = "3";
@@ -925,6 +931,7 @@ function PlasmicAdmin__RenderFunc(props: {
                       { key: "adults", fieldId: "adults", title: null },
                       { key: "kids", fieldId: "kids", title: null }
                     ];
+
                     __composite["0"]["title"] = "ID";
                     __composite["0"]["dataType"] = "string";
                     __composite["1"]["dataType"] = "string";
@@ -1012,6 +1019,7 @@ function PlasmicAdmin__RenderFunc(props: {
                       plasmicStateName: "table.selectedRowKeys"
                     }
                   ],
+
                   [],
                   RichTable_Helpers ?? {},
                   child$Props
@@ -1045,6 +1053,7 @@ const PlasmicDescendants = {
     "select",
     "table"
   ],
+
   responsiveMenu: ["responsiveMenu"],
   form: ["form", "input", "passwordInput", "button"],
   input: ["input"],
@@ -1074,6 +1083,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicAdmin__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
