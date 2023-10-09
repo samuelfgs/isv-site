@@ -2135,7 +2135,8 @@
       ],
       "indirect": true,
       "globalContextsFilePath": "",
-      "codeComponents": []
+      "codeComponents": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "gQCdhFYKbJPBgMdpKows7F",
@@ -2187,7 +2188,8 @@
             "importPath": "@plasmicpkgs/plasmic-rich-components"
           }
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ouSbC2XoeRJw8hN6QJ1aQq",
@@ -2509,7 +2511,8 @@
           "displayName": "plasmic-antd5-rate",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerRate"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "iYTxVYJngSkpvg1D2Z7h9E",
@@ -2529,7 +2532,8 @@
           "displayName": "hostless-loading-boundary",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "dEkKvbt59jEBy9iRXhzC4H",
@@ -2549,7 +2553,8 @@
           "displayName": "hostless-slider",
           "componentImportPath": "react-slick"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "67485NXjrVFyhobdBDSvkS",
@@ -2593,7 +2598,8 @@
           "displayName": "hostless-condition-guard",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "54wgRuMFb3pyBi78Mo7riY",
@@ -2613,7 +2619,8 @@
           "displayName": "global-embed-css",
           "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "sJ7Q2xHXjtdMNANtYDfUU4",
@@ -2825,7 +2832,8 @@
           "displayName": "plasmic-antd5-date-picker",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerDatePicker"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "gaUgJw14zgC2h2RkxhZpNV",
@@ -2844,7 +2852,8 @@
       ],
       "indirect": true,
       "globalContextsFilePath": "",
-      "codeComponents": []
+      "codeComponents": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "4e8xJRxm6TCFH21WJFauki",
@@ -3434,7 +3443,8 @@
           "displayName": "Breakpoint Provider",
           "componentImportPath": "./components/code-components/Providers"
         }
-      ]
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {
@@ -3469,6 +3479,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.309",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.309/dist/plasmic.schema.json"
+  "cliVersion": "0.1.314",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.314/dist/plasmic.schema.json"
 }

@@ -179,7 +179,7 @@ function PlasmicAdmin__RenderFunc(props: {
         path: "logged",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => true
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       },
       {
         path: "table.selectedRowKey",
@@ -919,7 +919,13 @@ function PlasmicAdmin__RenderFunc(props: {
                         dataType: null,
                         title: null
                       },
-                      { key: "localidade", fieldId: "localidade", title: null }
+                      { key: "localidade", fieldId: "localidade", title: null },
+                      {
+                        key: "tel1",
+                        fieldId: "tel1",
+                        title: null,
+                        dataType: null
+                      }
                     ];
                     __composite["0"]["title"] = "ID";
                     __composite["0"]["dataType"] = "string";
@@ -940,6 +946,8 @@ function PlasmicAdmin__RenderFunc(props: {
                     __composite["10"]["dataType"] = "string";
                     __composite["10"]["title"] = "Telefone";
                     __composite["11"]["title"] = "Localidade";
+                    __composite["12"]["title"] = "Telefone";
+                    __composite["12"]["dataType"] = "string";
                     return __composite;
                   })(),
                   hideDensity: true,
