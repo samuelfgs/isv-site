@@ -149,9 +149,15 @@
           "name": "ConditionGuard",
           "displayName": "hostless-condition-guard",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "K-mWGqrHefEp",
+          "name": "SideEffect",
+          "displayName": "hostless-side-effect",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "jsBundleThemes": []
+      "customFunctions": []
     },
     {
       "projectId": "r3ASNrnyvLLLAtDvzUioQ",
@@ -3227,6 +3233,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/admin"
+        },
+        {
+          "id": "qPb5MDxDszRV",
+          "name": "NewPage2",
+          "type": "managed",
+          "projectId": "4e8xJRxm6TCFH21WJFauki",
+          "renderModuleFilePath": "plasmic/a_d_4/PlasmicNewPage2.tsx",
+          "importSpec": {
+            "modulePath": "../pages/cortesia/[id].tsx"
+          },
+          "cssFilePath": "plasmic/a_d_4/PlasmicNewPage2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/cortesia/[id]"
         }
       ],
       "icons": [

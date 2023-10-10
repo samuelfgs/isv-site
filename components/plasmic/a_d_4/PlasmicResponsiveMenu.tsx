@@ -273,6 +273,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
             })}
             onClick={async event => {
               const $steps = {};
+
               $steps["updateIsOpen"] = true
                 ? (() => {
                     const actionArgs = {
@@ -413,6 +414,7 @@ function PlasmicResponsiveMenu__RenderFunc(props: {
               })}
               onClick={async event => {
                 const $steps = {};
+
                 $steps["updateIsOpen"] = true
                   ? (() => {
                       const actionArgs = {

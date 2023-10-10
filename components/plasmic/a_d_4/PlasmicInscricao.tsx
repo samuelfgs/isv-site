@@ -717,6 +717,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         )}
                         onClick={async event => {
                           const $steps = {};
+
                           $steps["updateAdultos"] =
                             $state.adultos > 0
                               ? (() => {
@@ -789,6 +790,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         )}
                         onClick={async event => {
                           const $steps = {};
+
                           $steps["updateAdultos"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -881,6 +883,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         )}
                         onClick={async event => {
                           const $steps = {};
+
                           $steps["updateKids"] =
                             $state.kids > 0
                               ? (() => {
@@ -951,6 +954,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         )}
                         onClick={async event => {
                           const $steps = {};
+
                           $steps["updateKids"] = true
                             ? (() => {
                                 const actionArgs = {
@@ -1041,6 +1045,7 @@ function PlasmicInscricao__RenderFunc(props: {
                   })()}
                   onClick={async event => {
                     const $steps = {};
+
                     $steps["updateStep"] =
                       $state.adultos + $state.kids > 0
                         ? (() => {
@@ -1142,6 +1147,7 @@ function PlasmicInscricao__RenderFunc(props: {
                       mode={undefined}
                       onFinish={async values => {
                         const $steps = {};
+
                         $steps["ids"] = true
                           ? (() => {
                               const actionArgs = {
@@ -1167,6 +1173,7 @@ function PlasmicInscricao__RenderFunc(props: {
                         ) {
                           $steps["ids"] = await $steps["ids"];
                         }
+
                         $steps["createMercadoPago"] = true
                           ? (() => {
                               const actionArgs = {
@@ -1243,6 +1250,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             "createMercadoPago"
                           ];
                         }
+
                         $steps["postgresInscrito"] = true
                           ? (() => {
                               const actionArgs = {
@@ -1317,6 +1325,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             "postgresInscrito"
                           ];
                         }
+
                         $steps["postgresPayment"] = true
                           ? (() => {
                               const actionArgs = {
@@ -1371,6 +1380,7 @@ function PlasmicInscricao__RenderFunc(props: {
                             "postgresPayment"
                           ];
                         }
+
                         $steps["goToPage"] = !!$steps.createMercadoPago
                           ? (() => {
                               const actionArgs = {
@@ -7989,6 +7999,7 @@ function PlasmicInscricao__RenderFunc(props: {
                                                 )}
                                                 onClick={async event => {
                                                   const $steps = {};
+
                                                   $steps["updateStep"] = true
                                                     ? (() => {
                                                         const actionArgs = {

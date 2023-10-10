@@ -359,6 +359,7 @@ function PlasmicAdmin__RenderFunc(props: {
                     ).apply(null, eventArgs);
                     (async (changedValues, allValues) => {
                       const $steps = {};
+
                       $steps["updateFailed"] = true
                         ? (() => {
                             const actionArgs = {
@@ -406,6 +407,7 @@ function PlasmicAdmin__RenderFunc(props: {
                   mode: "advanced",
                   onFinish: async values => {
                     const $steps = {};
+
                     $steps["updateFailed"] = true
                       ? (() => {
                           const actionArgs = {
@@ -440,6 +442,7 @@ function PlasmicAdmin__RenderFunc(props: {
                     ) {
                       $steps["updateFailed"] = await $steps["updateFailed"];
                     }
+
                     $steps["updateLogged"] = !$steps.updateFailed
                       ? (() => {
                           const actionArgs = {

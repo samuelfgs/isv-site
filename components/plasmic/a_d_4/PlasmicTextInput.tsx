@@ -349,6 +349,7 @@ function PlasmicTextInput__RenderFunc(props: {
         }}
         onKeyDown={async event => {
           const $steps = {};
+
           $steps["runOnBlur"] =
             event.keyCode === 13
               ? (() => {

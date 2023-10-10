@@ -292,6 +292,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__z7Hit)}
                   onClick={async event => {
                     const $steps = {};
+
                     $steps["updateModalImage"] =
                       $state.modalImage > 0
                         ? (() => {
@@ -340,6 +341,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__gq8Pd)}
                   onClick={async event => {
                     const $steps = {};
+
                     $steps["updateModalImage"] =
                       $state.modalImage < 1
                         ? (() => {
@@ -578,6 +580,7 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.button__pS05O)}
               onClick={async event => {
                 const $steps = {};
+
                 $steps["updateModalOpen"] = true
                   ? (() => {
                       const actionArgs = {

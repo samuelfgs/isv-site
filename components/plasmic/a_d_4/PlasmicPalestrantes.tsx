@@ -263,6 +263,7 @@ function PlasmicPalestrantes__RenderFunc(props: {
                   key={currentIndex}
                   onClick={async event => {
                     const $steps = {};
+
                     $steps["runOnDotClick"] = true
                       ? (() => {
                           const actionArgs = {
