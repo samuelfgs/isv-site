@@ -48,10 +48,10 @@ import plasmic_antd_5_hostless_2_css from "../imported_dep_2/plasmic_imported_de
 import plasmic_antd_5_hostless_css from "../imported_dep_8/plasmic_imported_dep_8.module.css"; // plasmic-import: ouSbC2XoeRJw8hN6QJ1aQq/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_imported_dep_4.module.css"; // plasmic-import: 2FYXZ1NU3BnbJ2Q5KYH4Tr/projectcss
 import projectcss from "./plasmic_a_d_4.module.css"; // plasmic-import: 4e8xJRxm6TCFH21WJFauki/projectcss
-import sty from "./PlasmicSelect.module.css"; // plasmic-import: lCsb7GpUU0b/css
+import sty from "../a_d_5/PlasmicSelect.module.css"; // plasmic-import: lCsb7GpUU0b/css
 
-import ChevronDownsvgIcon from "./icons/PlasmicIcon__ChevronDownsvg"; // plasmic-import: nGK9Tff5vcb/icon
-import ChevronUpsvgIcon from "./icons/PlasmicIcon__ChevronUpsvg"; // plasmic-import: 9F312AYt-I8/icon
+import ChevronDownsvgIcon from "../a_d_5/icons/PlasmicIcon__ChevronDownsvg"; // plasmic-import: nGK9Tff5vcb/icon
+import ChevronUpsvgIcon from "../a_d_5/icons/PlasmicIcon__ChevronUpsvg"; // plasmic-import: 9F312AYt-I8/icon
 
 createPlasmicElementProxy;
 
@@ -216,6 +216,7 @@ function PlasmicSelect__RenderFunc(props: {
         onChangeProp: "onChange"
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = p.useDollarState(stateSpecs, {
@@ -645,6 +646,7 @@ const PlasmicDescendants = {
     "overlay",
     "optionsContainer"
   ],
+
   trigger: ["trigger", "contentContainer", "dropdownIcon"],
   contentContainer: ["contentContainer"],
   dropdownIcon: ["dropdownIcon"],
@@ -668,6 +670,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicSelect__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

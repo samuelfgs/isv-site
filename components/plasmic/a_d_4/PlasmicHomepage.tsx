@@ -45,7 +45,7 @@ import { Participantes } from "../../code-components/Parallax"; // plasmic-impor
 import PalestrantesData from "../../PalestrantesData"; // plasmic-import: PXPe8ME1DQ/component
 import Palestrante from "../../Palestrante"; // plasmic-import: 5UuQ-pHvfY/component
 
-import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
+import { useScreenVariants as useScreenVariantsdu4QaJy8Zhmfq } from "../a_d_5/PlasmicGlobalVariant__Screen"; // plasmic-import: Du4QaJY8zhmfq/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -54,11 +54,11 @@ import plasmic_antd_5_hostless_2_css from "../imported_dep_2/plasmic_imported_de
 import plasmic_antd_5_hostless_css from "../imported_dep_8/plasmic_imported_dep_8.module.css"; // plasmic-import: ouSbC2XoeRJw8hN6QJ1aQq/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_imported_dep_4.module.css"; // plasmic-import: 2FYXZ1NU3BnbJ2Q5KYH4Tr/projectcss
 import projectcss from "./plasmic_a_d_4.module.css"; // plasmic-import: 4e8xJRxm6TCFH21WJFauki/projectcss
-import sty from "./PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
+import sty from "../a_d_5/PlasmicHomepage.module.css"; // plasmic-import: EhA9mUBKziYx/css
 
-import ChevronDownsvgIcon from "./icons/PlasmicIcon__ChevronDownsvg"; // plasmic-import: nGK9Tff5vcb/icon
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
+import ChevronDownsvgIcon from "../a_d_5/icons/PlasmicIcon__ChevronDownsvg"; // plasmic-import: nGK9Tff5vcb/icon
+import ChecksvgIcon from "../a_d_5/icons/PlasmicIcon__Checksvg"; // plasmic-import: DFUukaBqwOq/icon
+import IconIcon from "../a_d_5/icons/PlasmicIcon__Icon"; // plasmic-import: fpqx2Qlomeq/icon
 
 createPlasmicElementProxy;
 
@@ -130,6 +130,7 @@ function PlasmicHomepage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = p.useDollarState(stateSpecs, {
@@ -153,6 +154,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:title"
           content={PlasmicHomepage.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -164,6 +166,7 @@ function PlasmicHomepage__RenderFunc(props: {
           property="og:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -996,6 +999,7 @@ const PlasmicDescendants = {
     "participantes",
     "palestrantesData"
   ],
+
   modal: ["modal"],
   fixado: ["fixado"],
   responsiveMenu: ["responsiveMenu"],
@@ -1023,6 +1027,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicHomepage__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

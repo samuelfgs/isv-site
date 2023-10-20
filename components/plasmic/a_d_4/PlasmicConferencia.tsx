@@ -45,7 +45,7 @@ import plasmic_antd_5_hostless_2_css from "../imported_dep_2/plasmic_imported_de
 import plasmic_antd_5_hostless_css from "../imported_dep_8/plasmic_imported_dep_8.module.css"; // plasmic-import: ouSbC2XoeRJw8hN6QJ1aQq/projectcss
 import plasmic_plasmic_kit_q_4_color_tokens_css from "../imported_dep_4/plasmic_imported_dep_4.module.css"; // plasmic-import: 2FYXZ1NU3BnbJ2Q5KYH4Tr/projectcss
 import projectcss from "./plasmic_a_d_4.module.css"; // plasmic-import: 4e8xJRxm6TCFH21WJFauki/projectcss
-import sty from "./PlasmicConferencia.module.css"; // plasmic-import: pFpBRd8Rc1x/css
+import sty from "../a_d_5/PlasmicConferencia.module.css"; // plasmic-import: pFpBRd8Rc1x/css
 
 createPlasmicElementProxy;
 
@@ -140,6 +140,7 @@ function PlasmicConferencia__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
+
     [$props, $ctx, $refs]
   );
   const $state = p.useDollarState(stateSpecs, {
@@ -159,6 +160,7 @@ function PlasmicConferencia__RenderFunc(props: {
           property="og:title"
           content={PlasmicConferencia.pageMetadata.title}
         />
+
         <meta
           key="twitter:title"
           name="twitter:title"
@@ -170,6 +172,7 @@ function PlasmicConferencia__RenderFunc(props: {
           property="og:image"
           content={PlasmicConferencia.pageMetadata.ogImageSrc}
         />
+
         <meta
           key="twitter:image"
           name="twitter:image"
@@ -292,6 +295,7 @@ type NodeOverridesType<T extends NodeNameType> = Pick<
   PlasmicConferencia__OverridesType,
   DescendantsType<T>
 >;
+
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {

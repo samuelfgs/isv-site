@@ -4,7 +4,7 @@ import * as React from "react";
 import {
   PlasmicFaleConosco2,
   DefaultFaleConosco2Props
-} from "./plasmic/a_d_4/PlasmicFaleConosco2";
+} from "./plasmic/a_d_5/PlasmicFaleConosco2";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can

@@ -2,43 +2,47 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../../components/plasmic/a_d_4/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../../components/plasmic/a_d_4/PlasmicGlobalVariant__Screen";
-import { PlasmicNewPage2 } from "../../components/plasmic/a_d_4/PlasmicNewPage2";
+import GlobalContextsProvider from "../../components/plasmic/a_d_5/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../../components/plasmic/a_d_5/PlasmicGlobalVariant__Screen";
+import { PlasmicCortesia } from "../../components/plasmic/a_d_5/PlasmicCortesia";
 import { useRouter } from "next/router";
 
-function NewPage2() {
-  // Use PlasmicNewPage2 to render this component as it was
+function Cortesia() {
+  // Use PlasmicCortesia to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
   // can also install whatever React hooks you need here to manage state or
   // fetch data.
   //
-  // Props you can pass into PlasmicNewPage2 are:
+  // Props you can pass into PlasmicCortesia are:
   // 1. Variants you want to activate,
   // 2. Contents for slots you want to fill,
   // 3. Overrides for any named node in the component to attach behavior and data,
   // 4. Props to set on the root node.
   //
-  // By default, PlasmicNewPage2 is wrapped by your project's global
+  // By default, PlasmicCortesia is wrapped by your project's global
   // variant context providers. These wrappers may be moved to
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter();
+  const [loading, isLoading] = React.useState(false);
   React.useEffect(() => {
-    router.push("/")
-  }, [])
-  return (
+    const st = localStorage.get("isLogged");
+    isLoading(true);
+    if (!st) {
+      router.push("/");
+    }
+  }, []);
+  return !loading ? (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
-        path={useRouter()?.pathname}
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <></>
+        <PlasmicCortesia />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
-  );
+  ) : null
 }
 
-export default NewPage2;
+export default Cortesia;

@@ -2,13 +2,10 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d_4/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d_4/PlasmicGlobalVariant__Screen";
-import { PlasmicPalestrantes } from "../components/plasmic/a_d_4/PlasmicPalestrantes";
+import GlobalContextsProvider from "../components/plasmic/a_d_5/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_5/PlasmicGlobalVariant__Screen";
+import { PlasmicPalestrantes } from "../components/plasmic/a_d_5/PlasmicPalestrantes";
 import { useRouter } from "next/router";
-
-import "slick-carousel/slick/slick-theme.css"
-import "slick-carousel/slick/slick.css"
 
 function Palestrantes() {
   // Use PlasmicPalestrantes to render this component as it was

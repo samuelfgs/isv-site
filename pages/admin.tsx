@@ -2,12 +2,12 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d_4/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d_4/PlasmicGlobalVariant__Screen";
-import { PlasmicAdmin } from "../components/plasmic/a_d_4/PlasmicAdmin";
-import { useRouter } from "next/router";
+import GlobalContextsProvider from "../components/plasmic/a_d_5/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_5/PlasmicGlobalVariant__Screen";
+import { PlasmicAdmin } from "../components/plasmic/a_d_5/PlasmicAdmin";
+import { useRouter } from "next/router"
 import ptBr from 'antd/locale/pt_BR';
-import { ConfigProvider } from "antd";
+import { ConfigProvider } from "antd";;
 
 function Admin() {
   // Use PlasmicAdmin to render this component as it was
@@ -40,6 +40,9 @@ function Admin() {
         {show && 
           <PlasmicAdmin 
             password={process.env.NEXT_PUBLIC_ADMIN_PASSWORD}
+            onLogin={() => {
+              localStorage.set("isLogged", true)
+            }}
           />
         }
       </ph.PageParamsProvider>

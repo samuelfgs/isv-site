@@ -2,9 +2,9 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import * as ph from "@plasmicapp/react-web/lib/host";
-import GlobalContextsProvider from "../components/plasmic/a_d_4/PlasmicGlobalContextsProvider";
-import { ScreenVariantProvider } from "../components/plasmic/a_d_4/PlasmicGlobalVariant__Screen";
-import { PlasmicNewPage } from "../components/plasmic/a_d_4/PlasmicNewPage";
+import GlobalContextsProvider from "../components/plasmic/a_d_5/PlasmicGlobalContextsProvider";
+import { ScreenVariantProvider } from "../components/plasmic/a_d_5/PlasmicGlobalVariant__Screen";
+import { PlasmicNewPage } from "../components/plasmic/a_d_5/PlasmicNewPage";
 import { useRouter } from "next/router";
 
 function NewPage() {

@@ -1,0 +1,26 @@
+.root:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 80px;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+.text {
+  padding-bottom: 0px;
+  font-size: 20px;
+}
+.svg__h1OOb {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
