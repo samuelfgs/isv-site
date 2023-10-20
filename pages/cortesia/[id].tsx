@@ -27,7 +27,7 @@ function Cortesia() {
   const router = useRouter();
   const [loading, isLoading] = React.useState(false);
   React.useEffect(() => {
-    const st = localStorage.get("isLogged");
+    const st = localStorage.getItem("isLogged");
     isLoading(true);
     if (!st) {
       router.push("/");

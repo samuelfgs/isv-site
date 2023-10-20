@@ -41,7 +41,7 @@ function Admin() {
           <PlasmicAdmin 
             password={process.env.NEXT_PUBLIC_ADMIN_PASSWORD}
             onLogin={() => {
-              localStorage.set("isLogged", true)
+              localStorage.setItem("isLogged", "true")
             }}
           />
         }

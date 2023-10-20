@@ -26,7 +26,7 @@ function CheckIn() {
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [pageState, setPageState] = React.useState<string>("loading");
   React.useEffect(() => {
-    const st = localStorage.get("isLogged");
+    const st = localStorage.getItem("isLogged");
     setPageState(st ? "ok" : "denied");
   }, []);
   return (

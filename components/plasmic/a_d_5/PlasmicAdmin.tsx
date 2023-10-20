@@ -1002,6 +1002,33 @@ function PlasmicAdmin__RenderFunc(props: {
                       RichTable_Helpers
                     ).apply(null, eventArgs);
                   },
+                  rowActions: (() => {
+                    const __composite = [
+                      { type: "item", label: null, onClick: null }
+                    ];
+                    __composite["0"]["label"] = "Check-in";
+                    __composite["0"]["onClick"] = async (rowKey, row) => {
+                      const $steps = {};
+
+                      $steps["goToPage"] = true
+                        ? (() => {
+                            const actionArgs = {
+                              destination: `/ingresso/${row.id}`
+                            };
+                            return (({ destination }) => {
+                              __nextRouter?.push(destination);
+                            })?.apply(null, [actionArgs]);
+                          })()
+                        : undefined;
+                      if (
+                        typeof $steps["goToPage"] === "object" &&
+                        typeof $steps["goToPage"].then === "function"
+                      ) {
+                        $steps["goToPage"] = await $steps["goToPage"];
+                      }
+                    };
+                    return __composite;
+                  })(),
                   scopeClassName: sty["table__instance"],
                   selectedRowKey: p.generateStateValueProp($state, [
                     "table",
