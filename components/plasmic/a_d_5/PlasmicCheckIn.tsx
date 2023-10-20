@@ -458,6 +458,52 @@ function PlasmicCheckIn__RenderFunc(props: {
                             </React.Fragment>
                           </div>
                         </p.Stack>
+                        <p.Stack
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__k7JMb
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text___5MCrn
+                            )}
+                          >
+                            {"Ingresso"}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ngFzx
+                            )}
+                          >
+                            <React.Fragment>
+                              {(() => {
+                                try {
+                                  return inscricao.ticket_type == "saturday"
+                                    ? "SOMENTE SÁBADO"
+                                    : inscricao.ticket_type == "sunday"
+                                    ? "SOMENTE DOMINGO"
+                                    : "DOIS DIAS";
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return "";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            </React.Fragment>
+                          </div>
+                        </p.Stack>
                         <Button
                           data-plasmic-name={"button"}
                           data-plasmic-override={overrides.button}
