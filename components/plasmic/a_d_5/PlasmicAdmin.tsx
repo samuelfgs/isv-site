@@ -79,12 +79,14 @@ export type PlasmicAdmin__ArgsType = {
   user?: string;
   password?: string;
   onLogin?: () => void;
+  skipLogin?: boolean;
 };
 type ArgPropType = keyof PlasmicAdmin__ArgsType;
 export const PlasmicAdmin__ArgProps = new Array<ArgPropType>(
   "user",
   "password",
-  "onLogin"
+  "onLogin",
+  "skipLogin"
 );
 
 export type PlasmicAdmin__OverridesType = {
@@ -123,7 +125,8 @@ function PlasmicAdmin__RenderFunc(props: {
       Object.assign(
         {
           user: "admin",
-          password: "admin"
+          password: "admin",
+          skipLogin: false
         },
         props.args
       ),
@@ -182,7 +185,20 @@ function PlasmicAdmin__RenderFunc(props: {
         path: "logged",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => false
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $props.skipLogin;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return false;
+              }
+              throw e;
+            }
+          })()
       },
       {
         path: "table.selectedRowKey",
@@ -1016,7 +1032,16 @@ function PlasmicAdmin__RenderFunc(props: {
                               destination: `/ingresso/${row.id}`
                             };
                             return (({ destination }) => {
-                              __nextRouter?.push(destination);
+                              if (
+                                typeof destination === "string" &&
+                                destination.startsWith("#")
+                              ) {
+                                document
+                                  .getElementById(destination.substr(1))
+                                  .scrollIntoView({ behavior: "smooth" });
+                              } else {
+                                __nextRouter?.push(destination);
+                              }
                             })?.apply(null, [actionArgs]);
                           })()
                         : undefined;

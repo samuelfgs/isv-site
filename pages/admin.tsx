@@ -27,8 +27,10 @@ function Admin() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const [show, setShow] = React.useState(false);
+  const [isLogged, setIsLogged] = React.useState(false);
   React.useEffect(() => {
     setShow(true);
+    setIsLogged(!!localStorage.getItem("isLogged"));
   }, []);
   return (
     <GlobalContextsProvider>
@@ -40,6 +42,7 @@ function Admin() {
         {show && 
           <PlasmicAdmin 
             password={process.env.NEXT_PUBLIC_ADMIN_PASSWORD}
+            skipLogin={isLogged}
             onLogin={() => {
               localStorage.setItem("isLogged", "true")
             }}

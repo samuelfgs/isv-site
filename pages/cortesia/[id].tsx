@@ -25,15 +25,16 @@ function Cortesia() {
   // Next.js Custom App component
   // (https://nextjs.org/docs/advanced-features/custom-app).
   const router = useRouter();
-  const [loading, isLoading] = React.useState(false);
+  const [loaded, setIsLoaded] = React.useState(false);
   React.useEffect(() => {
     const st = localStorage.getItem("isLogged");
-    isLoading(true);
+    setIsLoaded(true);
+    console.log("dale", st);
     if (!st) {
       router.push("/");
     }
   }, []);
-  return !loading ? (
+  return loaded ? (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter()?.query}

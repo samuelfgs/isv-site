@@ -890,10 +890,10 @@
   dependencies:
     antd "^5.7.3"
 
-"@plasmicpkgs/plasmic-basic-components@^0.0.158":
-  version "0.0.158"
-  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-basic-components/-/plasmic-basic-components-0.0.158.tgz#63a0aa3cd4eb27eb89f7ce23fc253825fcb91c23"
-  integrity sha512-BKQYmmLkobM6T+g3DwxH5g9qliCth+d998EZboNx0i6h29fD2EZ116PsnBLvu3t5U0o+5/0g1I+ub0G/8hNOrQ==
+"@plasmicpkgs/plasmic-basic-components@^0.0.193":
+  version "0.0.193"
+  resolved "https://registry.yarnpkg.com/@plasmicpkgs/plasmic-basic-components/-/plasmic-basic-components-0.0.193.tgz#d400f704f8c86a68539176ab53c07b902f85507e"
+  integrity sha512-vZIsHCePlImcQYy8BkvIoUJ0SeUBlUP+HLeBLbQzqT2DEC7tRrheeilldS/o2xEa4Hyjyt8ApJWMRdBS+qPBxg==
 
 "@plasmicpkgs/plasmic-embed-css@^0.1.133":
   version "0.1.153"

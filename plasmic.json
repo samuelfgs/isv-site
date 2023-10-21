@@ -5107,20 +5107,6 @@
           "componentType": "component"
         },
         {
-          "id": "u2RfaeKZwHdY",
-          "name": "CheckIn",
-          "type": "managed",
-          "projectId": "4F6Va19MyMHcyNpURbn1mE",
-          "renderModuleFilePath": "plasmic/a_d_5/PlasmicCheckIn.tsx",
-          "importSpec": {
-            "modulePath": "../pages/ingresso/[id].tsx"
-          },
-          "cssFilePath": "plasmic/a_d_5/PlasmicCheckIn.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/ingresso/[id]"
-        },
-        {
           "id": "n_LmzxAtzKgu",
           "name": "Admin",
           "type": "managed",
@@ -5147,6 +5133,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/cortesia/[id]"
+        },
+        {
+          "id": "u2RfaeKZwHdY",
+          "name": "Ingresso",
+          "type": "managed",
+          "projectId": "4F6Va19MyMHcyNpURbn1mE",
+          "renderModuleFilePath": "plasmic/a_d_5/PlasmicIngresso.tsx",
+          "importSpec": {
+            "modulePath": "../pages/ingresso/[id].tsx"
+          },
+          "cssFilePath": "plasmic/a_d_5/PlasmicIngresso.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/ingresso/[id]"
+        },
+        {
+          "id": "6DNSb8icHa66",
+          "name": "CheckIn",
+          "type": "managed",
+          "projectId": "4F6Va19MyMHcyNpURbn1mE",
+          "renderModuleFilePath": "plasmic/a_d_5/PlasmicCheckIn.tsx",
+          "importSpec": {
+            "modulePath": "../pages/check-in.tsx"
+          },
+          "cssFilePath": "plasmic/a_d_5/PlasmicCheckIn.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/check-in"
         }
       ],
       "icons": [

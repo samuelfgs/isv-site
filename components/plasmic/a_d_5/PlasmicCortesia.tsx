@@ -43,7 +43,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { SideEffect } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: K-mWGqrHefEp/codeComponent
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
@@ -74,7 +73,6 @@ export const PlasmicCortesia__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicCortesia__OverridesType = {
   root?: p.Flex<"div">;
-  sideEffect?: p.Flex<typeof SideEffect>;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
   button?: p.Flex<typeof Button>;
 };
@@ -167,30 +165,6 @@ function PlasmicCortesia__RenderFunc(props: {
             sty.root
           )}
         >
-          <SideEffect
-            data-plasmic-name={"sideEffect"}
-            data-plasmic-override={overrides.sideEffect}
-            className={classNames("__wab_instance", sty.sideEffect)}
-            onMount={async () => {
-              const $steps = {};
-
-              $steps["goToHomepage"] = true
-                ? (() => {
-                    const actionArgs = { destination: `/` };
-                    return (({ destination }) => {
-                      __nextRouter?.push(destination);
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                typeof $steps["goToHomepage"] === "object" &&
-                typeof $steps["goToHomepage"].then === "function"
-              ) {
-                $steps["goToHomepage"] = await $steps["goToHomepage"];
-              }
-            }}
-          />
-
           <ResponsiveMenu
             data-plasmic-name={"responsiveMenu"}
             data-plasmic-override={overrides.responsiveMenu}
@@ -340,8 +314,7 @@ function PlasmicCortesia__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "sideEffect", "responsiveMenu", "button"],
-  sideEffect: ["sideEffect"],
+  root: ["root", "responsiveMenu", "button"],
   responsiveMenu: ["responsiveMenu"],
   button: ["button"]
 } as const;
@@ -350,7 +323,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  sideEffect: typeof SideEffect;
   responsiveMenu: typeof ResponsiveMenu;
   button: typeof Button;
 };
@@ -415,7 +387,6 @@ export const PlasmicCortesia = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    sideEffect: makeNodeComponent("sideEffect"),
     responsiveMenu: makeNodeComponent("responsiveMenu"),
     button: makeNodeComponent("button"),
 
