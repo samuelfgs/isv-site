@@ -27,7 +27,6 @@ function CheckIn2() {
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
-        route={useRouter()?.pathname}
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
