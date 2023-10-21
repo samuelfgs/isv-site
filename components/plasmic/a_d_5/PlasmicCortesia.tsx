@@ -74,7 +74,6 @@ export const PlasmicCortesia__ArgProps = new Array<ArgPropType>();
 export type PlasmicCortesia__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
-  button?: p.Flex<typeof Button>;
 };
 
 export interface DefaultCortesiaProps {}
@@ -199,9 +198,7 @@ function PlasmicCortesia__RenderFunc(props: {
             ) : null}
           </div>
           <Button
-            data-plasmic-name={"button"}
-            data-plasmic-override={overrides.button}
-            className={classNames("__wab_instance", sty.button)}
+            className={classNames("__wab_instance", sty.button__zd8Wv)}
             isDisabled={(() => {
               try {
                 return $queries.query.data.find(
@@ -290,23 +287,10 @@ function PlasmicCortesia__RenderFunc(props: {
                 sty.text__ftuly
               )}
             >
-              <React.Fragment>
-                {(() => {
-                  try {
-                    return $queries.query.data.length;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return "Total de cortesias";
-                    }
-                    throw e;
-                  }
-                })()}
-              </React.Fragment>
+              <React.Fragment>{$queries.query.data.length}</React.Fragment>
             </div>
           </p.Stack>
+          <Button className={classNames("__wab_instance", sty.button__p7OF)} />
         </div>
       </div>
     </React.Fragment>
@@ -314,9 +298,8 @@ function PlasmicCortesia__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "responsiveMenu", "button"],
-  responsiveMenu: ["responsiveMenu"],
-  button: ["button"]
+  root: ["root", "responsiveMenu"],
+  responsiveMenu: ["responsiveMenu"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -324,7 +307,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
-  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -388,7 +370,6 @@ export const PlasmicCortesia = Object.assign(
   {
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
-    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicCortesia
     internalVariantProps: PlasmicCortesia__VariantProps,

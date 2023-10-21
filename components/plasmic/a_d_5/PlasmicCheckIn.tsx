@@ -668,7 +668,7 @@ function PlasmicCheckIn__RenderFunc(props: {
                           ? true
                           : row.name
                               .toLowerCase()
-                              .includes($state.textInput.value) ||
+                              .includes($state.textInput.value.toLowerCase()) ||
                             row.id.includes($state.textInput.value)
                       );
                     } catch (e) {

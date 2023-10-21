@@ -49,7 +49,7 @@
   text-align: center;
   min-width: 0;
 }
-.button:global(.__wab_instance) {
+.button__zd8Wv:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -112,4 +112,21 @@
   text-align: center;
   font-size: 50px;
   min-width: 0;
+}
+.button__p7OF:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  display: none;
+}
+.svg__lcQtx {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__gveKm {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }
