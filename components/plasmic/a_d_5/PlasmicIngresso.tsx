@@ -44,6 +44,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
+import { SupabaseMutation } from "../../supabase/supabase"; // plasmic-import: n899xRAn9Nd0/codeComponent
+import { SupabaseFetcher } from "../../supabase/supabase"; // plasmic-import: MLOELpD8aLSS/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
 
@@ -74,6 +76,7 @@ export const PlasmicIngresso__ArgProps = new Array<ArgPropType>();
 export type PlasmicIngresso__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
+  supabaseMutation?: p.Flex<typeof SupabaseMutation>;
 };
 
 export interface DefaultIngressoProps {}
@@ -117,18 +120,6 @@ function PlasmicIngresso__RenderFunc(props: {
   const plasmicInvalidate = usePlasmicInvalidate();
 
   const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    inscricao: usePlasmicDataOp(() => {
-      return {
-        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-        opId: "30229dd8-44cf-40bc-835e-3576095a3349",
-        userArgs: {
-          filters: [$ctx.params.id]
-        },
-        cacheKey: `plasmic.$.30229dd8-44cf-40bc-835e-3576095a3349.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    }),
     payment: usePlasmicDataOp(() => {
       return {
         sourceId: "du8jW5s7JnVfk4bHYp38RF",
@@ -184,549 +175,661 @@ function PlasmicIngresso__RenderFunc(props: {
             className={classNames("__wab_instance", sty.responsiveMenu)}
           />
 
-          <p.Stack
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__kbOrY)}
+          <SupabaseMutation
+            data-plasmic-name={"supabaseMutation"}
+            data-plasmic-override={overrides.supabaseMutation}
+            className={classNames("__wab_instance", sty.supabaseMutation)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__mf9Ac
-              )}
-            >
-              {"Inscri\u00e7\u00e3o"}
-            </div>
-            {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-              (() => {
-                try {
-                  return $queries.payment.data;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return [];
-                  }
-                  throw e;
-                }
-              })()
-            ).map((__plasmic_item_0, __plasmic_idx_0) => {
-              const payment = __plasmic_item_0;
-              const currentIndex = __plasmic_idx_0;
-              return (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__chFNj)}
-                  key={currentIndex}
-                >
-                  {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                    (() => {
-                      try {
-                        return $queries.inscricao.data;
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return [];
+            <ph.DataCtxReader>
+              {$ctx => (
+                <SupabaseFetcher
+                  className={classNames(
+                    "__wab_instance",
+                    sty.supabaseFetcher__mLgDh
+                  )}
+                  filters={(() => {
+                    try {
+                      return [
+                        {
+                          column: "id",
+                          operator: "eq",
+                          value: $ctx.params.id
                         }
-                        throw e;
+                      ];
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return undefined;
                       }
-                    })()
-                  ).map((__plasmic_item_1, __plasmic_idx_1) => {
-                    const inscricao = __plasmic_item_1;
-                    const currentIndex = __plasmic_idx_1;
-                    return (
-                      <p.Stack
-                        as={"div"}
-                        hasGap={true}
+                      throw e;
+                    }
+                  })()}
+                  name={"inscricao"}
+                  table={"inscritos"}
+                >
+                  <ph.DataCtxReader>
+                    {$ctx => (
+                      <SupabaseFetcher
                         className={classNames(
-                          projectcss.all,
-                          sty.freeBox__jwgwc
+                          "__wab_instance",
+                          sty.supabaseFetcher__j2Emt
                         )}
-                        key={currentIndex}
-                      >
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__nu37W
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___3WWJt
-                            )}
-                          >
-                            {"C\u00f3digo de inscri\u00e7\u00e3o:"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__yaSDh
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return inscricao.id;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__bOr4F
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__ax4Gk
-                            )}
-                          >
-                            {"Nome:"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__o0MHq
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return inscricao.name;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__ymcqh
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__dseoS
-                            )}
-                          >
-                            {"CPF:"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__suRpF
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return inscricao.cpf;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__nPohA
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__zAtDz
-                            )}
-                          >
-                            {"Adultos:"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___8PTht
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return payment.adults;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__hYq3G
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__mgWte
-                            )}
-                          >
-                            {"Crian\u00e7as"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__tbfyq
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return payment.kids;
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__k7JMb
-                          )}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___5MCrn
-                            )}
-                          >
-                            {"Ingresso"}
-                          </div>
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__ngFzx
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
-                                try {
-                                  return inscricao.ticket_type == "saturday"
-                                    ? "SOMENTE SÁBADO"
-                                    : inscricao.ticket_type == "sunday"
-                                    ? "SOMENTE DOMINGO"
-                                    : "DOIS DIAS";
-                                } catch (e) {
-                                  if (
-                                    e instanceof TypeError ||
-                                    e?.plasmicType ===
-                                      "PlasmicUndefinedDataError"
-                                  ) {
-                                    return "";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            </React.Fragment>
-                          </div>
-                        </p.Stack>
-                        <Button
-                          className={classNames(
-                            "__wab_instance",
-                            sty.button___7R7Re
-                          )}
-                          isDisabled={(() => {
-                            try {
-                              return (() => {
-                                const payment = $queries.payment.data[0];
-                                const total = payment.adults + payment.kids;
-                                const checked =
-                                  payment.checkedAdults + payment.checkedKids;
-                                return checked >= total;
-                              })();
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return [];
+                        filters={(() => {
+                          try {
+                            return [
+                              {
+                                column: "user_id",
+                                operator: "eq",
+                                value: $ctx.inscricao[0].owner_id
+                                  ? $ctx.inscricao[0].owner_id
+                                  : $ctx.inscricao[0].id
                               }
-                              throw e;
+                            ];
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
                             }
-                          })()}
-                          onClick={async event => {
-                            const $steps = {};
-
-                            $steps["checkAdult"] =
-                              $queries.payment.data[0].checkedAdults <
-                              $queries.payment.data[0].adults
-                                ? (() => {
-                                    const actionArgs = {
-                                      dataOp: {
-                                        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-                                        opId: "07b23ebd-b3a0-4cd6-985e-764260124114",
-                                        userArgs: {
-                                          keys: [$queries.payment.data[0].id],
-                                          variables: [
-                                            $queries.payment.data[0]
-                                              .checkedAdults + 1
-                                          ]
-                                        },
-                                        cacheKey: `plasmic.$.07b23ebd-b3a0-4cd6-985e-764260124114.$.`,
-                                        invalidatedKeys: [
-                                          "plasmic_refresh_all"
-                                        ],
-                                        roleId: null
-                                      }
-                                    };
-                                    return (async ({
-                                      dataOp,
-                                      continueOnError
-                                    }) => {
-                                      try {
-                                        const response =
-                                          await executePlasmicDataOp(dataOp, {
-                                            userAuthToken:
-                                              dataSourcesCtx?.userAuthToken,
-                                            user: dataSourcesCtx?.user
-                                          });
-                                        await plasmicInvalidate(
-                                          dataOp.invalidatedKeys
-                                        );
-                                        return response;
-                                      } catch (e) {
-                                        if (!continueOnError) {
+                            throw e;
+                          }
+                        })()}
+                        table={"payments"}
+                      >
+                        <ph.DataCtxReader>
+                          {$ctx => (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__cpXRl
+                              )}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__n20Sm
+                                )}
+                              >
+                                {"Inscri\u00e7\u00e3o"}
+                              </div>
+                              {(_par =>
+                                !_par
+                                  ? []
+                                  : Array.isArray(_par)
+                                  ? _par
+                                  : [_par])(
+                                (() => {
+                                  try {
+                                    return $ctx.supabase;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return [];
+                                    }
+                                    throw e;
+                                  }
+                                })()
+                              ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                                const payment = __plasmic_item_0;
+                                const currentIndex = __plasmic_idx_0;
+                                return (
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.freeBox__deDh9
+                                    )}
+                                    key={currentIndex}
+                                  >
+                                    {(_par =>
+                                      !_par
+                                        ? []
+                                        : Array.isArray(_par)
+                                        ? _par
+                                        : [_par])(
+                                      (() => {
+                                        try {
+                                          return $ctx.inscricao;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return [];
+                                          }
                                           throw e;
                                         }
-                                        return e;
-                                      }
-                                    })?.apply(null, [actionArgs]);
-                                  })()
-                                : undefined;
-                            if (
-                              typeof $steps["checkAdult"] === "object" &&
-                              typeof $steps["checkAdult"].then === "function"
-                            ) {
-                              $steps["checkAdult"] = await $steps["checkAdult"];
-                            }
+                                      })()
+                                    ).map(
+                                      (__plasmic_item_1, __plasmic_idx_1) => {
+                                        const inscricao = __plasmic_item_1;
+                                        const currentIndex = __plasmic_idx_1;
+                                        return (
+                                          <p.Stack
+                                            as={"div"}
+                                            hasGap={true}
+                                            className={classNames(
+                                              projectcss.all,
+                                              sty.freeBox__vqRt7
+                                            )}
+                                            key={currentIndex}
+                                          >
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__k6GX
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__eArNc
+                                                )}
+                                              >
+                                                {
+                                                  "C\u00f3digo de inscri\u00e7\u00e3o:"
+                                                }
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__ksUn6
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return inscricao.id;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox___0XaY4
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__zgm1X
+                                                )}
+                                              >
+                                                {"Nome:"}
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__zu7Ak
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return inscricao.name;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__tlo6Y
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__pmkgk
+                                                )}
+                                              >
+                                                {"CPF:"}
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__wsZZj
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return inscricao.cpf;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__xvhEr
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__nQfOa
+                                                )}
+                                              >
+                                                {"Adultos:"}
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__ljH3K
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return payment.adults;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox___7ERKh
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__deNqr
+                                                )}
+                                              >
+                                                {"Crian\u00e7as"}
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__oKtge
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return payment.kids;
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <p.Stack
+                                              as={"div"}
+                                              hasGap={true}
+                                              className={classNames(
+                                                projectcss.all,
+                                                sty.freeBox__l2ER
+                                              )}
+                                            >
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text___7RJdI
+                                                )}
+                                              >
+                                                {"Ingresso"}
+                                              </div>
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.__wab_text,
+                                                  sty.text__kv681
+                                                )}
+                                              >
+                                                <React.Fragment>
+                                                  {(() => {
+                                                    try {
+                                                      return inscricao.ticket_type ==
+                                                        "saturday"
+                                                        ? "SOMENTE SÁBADO"
+                                                        : inscricao.ticket_type ==
+                                                          "sunday"
+                                                        ? "SOMENTE DOMINGO"
+                                                        : "DOIS DIAS";
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof
+                                                          TypeError ||
+                                                        e?.plasmicType ===
+                                                          "PlasmicUndefinedDataError"
+                                                      ) {
+                                                        return "";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </React.Fragment>
+                                              </div>
+                                            </p.Stack>
+                                            <Button
+                                              className={classNames(
+                                                "__wab_instance",
+                                                sty.button__jAhJ
+                                              )}
+                                              isDisabled={(() => {
+                                                try {
+                                                  return (() => {
+                                                    const total =
+                                                      payment.adults +
+                                                      payment.kids;
+                                                    const checked =
+                                                      payment.checkedAdults +
+                                                      payment.checkedKids;
+                                                    return checked >= total;
+                                                  })();
+                                                } catch (e) {
+                                                  if (
+                                                    e instanceof TypeError ||
+                                                    e?.plasmicType ===
+                                                      "PlasmicUndefinedDataError"
+                                                  ) {
+                                                    return [];
+                                                  }
+                                                  throw e;
+                                                }
+                                              })()}
+                                              onClick={async event => {
+                                                const $steps = {};
 
-                            $steps["checkKid"] = !$steps.checkAdult
-                              ? (() => {
-                                  const actionArgs = {
-                                    dataOp: {
-                                      sourceId: "du8jW5s7JnVfk4bHYp38RF",
-                                      opId: "2d2f6a73-54f6-48b8-87c5-167d925512bc",
-                                      userArgs: {
-                                        keys: [$queries.payment.data[0].id],
-                                        variables: [
-                                          $queries.payment.data[0].checkedKids +
-                                            1
-                                        ]
-                                      },
-                                      cacheKey: `plasmic.$.2d2f6a73-54f6-48b8-87c5-167d925512bc.$.`,
-                                      invalidatedKeys: ["plasmic_refresh_all"],
-                                      roleId: null
-                                    }
-                                  };
-                                  return (async ({
-                                    dataOp,
-                                    continueOnError
-                                  }) => {
-                                    try {
-                                      const response =
-                                        await executePlasmicDataOp(dataOp, {
-                                          userAuthToken:
-                                            dataSourcesCtx?.userAuthToken,
-                                          user: dataSourcesCtx?.user
-                                        });
-                                      await plasmicInvalidate(
-                                        dataOp.invalidatedKeys
-                                      );
-                                      return response;
-                                    } catch (e) {
-                                      if (!continueOnError) {
+                                                $steps["runCode"] = true
+                                                  ? (() => {
+                                                      const actionArgs = {
+                                                        customFunction:
+                                                          async () => {
+                                                            return (async () => {
+                                                              if (
+                                                                payment.checkedAdults <
+                                                                payment.adults
+                                                              ) {
+                                                                await $ctx.supabaseMutation.upsert(
+                                                                  {
+                                                                    table:
+                                                                      "payments",
+                                                                    upsertValues:
+                                                                      [
+                                                                        {
+                                                                          id: payment.id,
+                                                                          checkedAdults:
+                                                                            payment.checkedAdults +
+                                                                            1
+                                                                        }
+                                                                      ]
+                                                                  }
+                                                                );
+                                                              } else {
+                                                                await $ctx.supabaseMutation.upsert(
+                                                                  {
+                                                                    table:
+                                                                      "payments",
+                                                                    upsertValues:
+                                                                      [
+                                                                        {
+                                                                          id: payment.id,
+                                                                          checkedKids:
+                                                                            payment.checkedKids +
+                                                                            1
+                                                                        }
+                                                                      ]
+                                                                  }
+                                                                );
+                                                              }
+                                                            })();
+                                                          }
+                                                      };
+                                                      return (({
+                                                        customFunction
+                                                      }) => {
+                                                        return customFunction();
+                                                      })?.apply(null, [
+                                                        actionArgs
+                                                      ]);
+                                                    })()
+                                                  : undefined;
+                                                if (
+                                                  typeof $steps["runCode"] ===
+                                                    "object" &&
+                                                  typeof $steps["runCode"]
+                                                    .then === "function"
+                                                ) {
+                                                  $steps["runCode"] =
+                                                    await $steps["runCode"];
+                                                }
+
+                                                $steps["refreshData"] = true
+                                                  ? (() => {
+                                                      const actionArgs = {
+                                                        queryInvalidation: [
+                                                          "plasmic_refresh_all"
+                                                        ]
+                                                      };
+                                                      return (async ({
+                                                        queryInvalidation
+                                                      }) => {
+                                                        if (
+                                                          !queryInvalidation
+                                                        ) {
+                                                          return;
+                                                        }
+                                                        await plasmicInvalidate(
+                                                          queryInvalidation
+                                                        );
+                                                      })?.apply(null, [
+                                                        actionArgs
+                                                      ]);
+                                                    })()
+                                                  : undefined;
+                                                if (
+                                                  typeof $steps[
+                                                    "refreshData"
+                                                  ] === "object" &&
+                                                  typeof $steps["refreshData"]
+                                                    .then === "function"
+                                                ) {
+                                                  $steps["refreshData"] =
+                                                    await $steps["refreshData"];
+                                                }
+                                              }}
+                                            >
+                                              {"CONFIRMAR CHECK-IN"}
+                                            </Button>
+                                          </p.Stack>
+                                        );
+                                      }
+                                    )}
+                                  </div>
+                                );
+                              })}
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__crsXn
+                                )}
+                              >
+                                {"Check-in realizados"}
+                              </div>
+                              <p.Stack
+                                as={"div"}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__wfIwc
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__jNuLu
+                                  )}
+                                >
+                                  {"Adultos:"}
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___9Vn51
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return $ctx.supabase[0].checkedAdults;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "";
+                                        }
                                         throw e;
                                       }
-                                      return e;
-                                    }
-                                  })?.apply(null, [actionArgs]);
-                                })()
-                              : undefined;
-                            if (
-                              typeof $steps["checkKid"] === "object" &&
-                              typeof $steps["checkKid"].then === "function"
-                            ) {
-                              $steps["checkKid"] = await $steps["checkKid"];
-                            }
-                          }}
-                        >
-                          {"CONFIRMAR CHECK-IN"}
-                        </Button>
-                      </p.Stack>
-                    );
-                  })}
-                </div>
-              );
-            })}
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zjLef
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </p.Stack>
+                              <p.Stack
+                                as={"div"}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox___0FBmq
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___2BkrI
+                                  )}
+                                >
+                                  {"Crian\u00e7as"}
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__tIc0
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return $ctx.supabase[0].checkedKids;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </p.Stack>
+                            </p.Stack>
+                          )}
+                        </ph.DataCtxReader>
+                      </SupabaseFetcher>
+                    )}
+                  </ph.DataCtxReader>
+                </SupabaseFetcher>
               )}
-            >
-              {"Check-in realizados"}
-            </div>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox___0Wb9E)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__ounD
-                )}
-              >
-                {"Adultos:"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xmKkl
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $queries.payment.data[0].checkedAdults;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </p.Stack>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__slue)}
-            >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__jL4Wv
-                )}
-              >
-                {"Crian\u00e7as"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__aTJq9
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $queries.payment.data[0].checkedKids;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </p.Stack>
-          </p.Stack>
+            </ph.DataCtxReader>
+          </SupabaseMutation>
           <Button
             className={classNames("__wab_instance", sty.button__uDlM)}
             link={(() => {
@@ -752,8 +855,9 @@ function PlasmicIngresso__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "responsiveMenu"],
-  responsiveMenu: ["responsiveMenu"]
+  root: ["root", "responsiveMenu", "supabaseMutation"],
+  responsiveMenu: ["responsiveMenu"],
+  supabaseMutation: ["supabaseMutation"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -761,6 +865,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
+  supabaseMutation: typeof SupabaseMutation;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -824,6 +929,7 @@ export const PlasmicIngresso = Object.assign(
   {
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
+    supabaseMutation: makeNodeComponent("supabaseMutation"),
 
     // Metadata about props expected for PlasmicIngresso
     internalVariantProps: PlasmicIngresso__VariantProps,

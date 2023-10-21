@@ -5377,6 +5377,24 @@
           "name": "BreakpontProvider",
           "displayName": "Breakpoint Provider",
           "componentImportPath": "./components/code-components/Providers"
+        },
+        {
+          "id": "MLOELpD8aLSS",
+          "name": "SupabaseFetcher",
+          "displayName": "SupabaseFetcher",
+          "componentImportPath": "./components/supabase/supabase"
+        },
+        {
+          "id": "ALI8RvsWZNg0",
+          "name": "PreQueries",
+          "displayName": "Supabase PreQueries",
+          "componentImportPath": "./components/supabase/supabase"
+        },
+        {
+          "id": "n899xRAn9Nd0",
+          "name": "SupabaseMutation",
+          "displayName": "Supabase Mutation",
+          "componentImportPath": "./components/supabase/supabase"
         }
       ],
       "customFunctions": []

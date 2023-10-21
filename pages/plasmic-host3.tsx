@@ -15,6 +15,7 @@ import { registerVideo } from '@/components/code-components/Video';
 import { registerProviders } from '@/components/code-components/Providers';
 import { registerParticipantes } from '@/components/code-components/Participantes';
 import { registerForm, registerFormGroup, registerFormItem } from 'test_antd5';
+import { registerSupabase } from '@/components/supabase/supabase';
 registerParallax();
 registerVideo();
 registerProviders();
@@ -24,6 +25,9 @@ registerProviders();
 // registerFormItem();
 
 // registerParticipantes();
+
+
+registerSupabase();
 
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;

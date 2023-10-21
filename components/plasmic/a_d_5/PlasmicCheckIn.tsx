@@ -626,86 +626,100 @@ function PlasmicCheckIn__RenderFunc(props: {
               })()}
             </div>
           ) : null}
-          <div className={classNames(projectcss.all, sty.freeBox___0DbEx)}>
-            <div className={classNames(projectcss.all, sty.freeBox__xbfOe)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xBQjx
-                )}
-              >
-                {"Adultos"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__boDyS
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $queries.query.data.reduce(
-                        (acc, row) =>
-                          acc + (row.owner_id ? 0 : row.checkedAdults),
+          {(() => {
+            try {
+              return $state.logged;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox___0DbEx)}>
+              <div className={classNames(projectcss.all, sty.freeBox__xbfOe)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xBQjx
+                  )}
+                >
+                  {"Adultos"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__boDyS
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data.reduce(
+                          (acc, row) =>
+                            acc + (row.owner_id ? 0 : row.checkedAdults),
 
-                        0
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
+                          0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+              <div className={classNames(projectcss.all, sty.freeBox__vEcbv)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__n2Nrl
+                  )}
+                >
+                  {"Crian\u00e7as"}
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xpDwi
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data.reduce(
+                          (acc, row) =>
+                            acc + (row.owner_id ? 0 : row.checkedKids),
+
+                          0
+                        );
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
               </div>
             </div>
-            <div className={classNames(projectcss.all, sty.freeBox__vEcbv)}>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__n2Nrl
-                )}
-              >
-                {"Crian\u00e7as"}
-              </div>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__xpDwi
-                )}
-              >
-                <React.Fragment>
-                  {(() => {
-                    try {
-                      return $queries.query.data.reduce(
-                        (acc, row) =>
-                          acc + (row.owner_id ? 0 : row.checkedKids),
-
-                        0
-                      );
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return "";
-                      }
-                      throw e;
-                    }
-                  })()}
-                </React.Fragment>
-              </div>
-            </div>
-          </div>
+          ) : null}
           {(() => {
             try {
               return $state.logged;
