@@ -94,6 +94,7 @@ export type PlasmicCheckIn2__OverridesType = {
   form?: p.Flex<typeof FormWrapper>;
   input?: p.Flex<typeof AntdInput>;
   passwordInput?: p.Flex<typeof AntdPassword>;
+  img?: p.Flex<typeof p.PlasmicImg>;
 };
 
 export interface DefaultCheckIn2Props {}
@@ -200,6 +201,12 @@ function PlasmicCheckIn2__RenderFunc(props: {
               throw e;
             }
           })()
+      },
+      {
+        path: "isLoading",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => false
       }
     ],
     [$props, $ctx, $refs]
@@ -648,55 +655,185 @@ function PlasmicCheckIn2__RenderFunc(props: {
               ) {
                 $steps["updateGenerated"] = await $steps["updateGenerated"];
               }
+
+              $steps["updateIsLoading"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["isLoading"]
+                      },
+                      operation: 4
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      const oldValue = p.get(objRoot, variablePath);
+                      p.set(objRoot, variablePath, !oldValue);
+                      return !oldValue;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                typeof $steps["updateIsLoading"] === "object" &&
+                typeof $steps["updateIsLoading"].then === "function"
+              ) {
+                $steps["updateIsLoading"] = await $steps["updateIsLoading"];
+              }
+
+              $steps["runCode"] = true
+                ? (() => {
+                    const actionArgs = {
+                      customFunction: async () => {
+                        return (async () => {
+                          const sleep = ms =>
+                            new Promise(resolve => setTimeout(resolve, ms));
+                          await sleep(5000);
+                        })();
+                      }
+                    };
+                    return (({ customFunction }) => {
+                      return customFunction();
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                typeof $steps["runCode"] === "object" &&
+                typeof $steps["runCode"].then === "function"
+              ) {
+                $steps["runCode"] = await $steps["runCode"];
+              }
+
+              $steps["updateIsLoading2"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["isLoading"]
+                      },
+                      operation: 4
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      const oldValue = p.get(objRoot, variablePath);
+                      p.set(objRoot, variablePath, !oldValue);
+                      return !oldValue;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                typeof $steps["updateIsLoading2"] === "object" &&
+                typeof $steps["updateIsLoading2"].then === "function"
+              ) {
+                $steps["updateIsLoading2"] = await $steps["updateIsLoading2"];
+              }
             }}
           >
             {"SORTEAR"}
           </Button>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__qpn4J
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $queries.query.data[$state.generated].id;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
+          <div className={classNames(projectcss.all, sty.freeBox___9H6Aj)}>
+            {(() => {
+              try {
+                return $state.isLoading;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
                 }
-              })()}
-            </React.Fragment>
-          </div>
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__tahIm
-            )}
-          >
-            <React.Fragment>
-              {(() => {
-                try {
-                  return $queries.query.data[$state.generated].name;
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return "";
-                  }
-                  throw e;
+                throw e;
+              }
+            })() ? (
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"300px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"300px"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"100%"}
+                loading={"lazy"}
+                src={{
+                  src: "/plasmic/a_d_5/images/loadinggif.gif",
+                  fullWidth: 176,
+                  fullHeight: 3520,
+                  aspectRatio: undefined
+                }}
+              />
+            ) : null}
+            {(() => {
+              try {
+                return $state.generated && !$state.isLoading;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return true;
                 }
-              })()}
-            </React.Fragment>
+                throw e;
+              }
+            })() ? (
+              <div className={classNames(projectcss.all, sty.freeBox__bf8Op)}>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__qpn4J
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[$state.generated].id;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__tahIm
+                  )}
+                >
+                  <React.Fragment>
+                    {(() => {
+                      try {
+                        return $queries.query.data[$state.generated].name;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return "";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </React.Fragment>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -705,11 +842,12 @@ function PlasmicCheckIn2__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "responsiveMenu", "form", "input", "passwordInput"],
+  root: ["root", "responsiveMenu", "form", "input", "passwordInput", "img"],
   responsiveMenu: ["responsiveMenu"],
   form: ["form", "input", "passwordInput"],
   input: ["input"],
-  passwordInput: ["passwordInput"]
+  passwordInput: ["passwordInput"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -720,6 +858,7 @@ type NodeDefaultElementType = {
   form: typeof FormWrapper;
   input: typeof AntdInput;
   passwordInput: typeof AntdPassword;
+  img: typeof p.PlasmicImg;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -786,6 +925,7 @@ export const PlasmicCheckIn2 = Object.assign(
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     passwordInput: makeNodeComponent("passwordInput"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicCheckIn2
     internalVariantProps: PlasmicCheckIn2__VariantProps,
