@@ -5161,6 +5161,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/check-in"
+        },
+        {
+          "id": "eNYeTR37wRs-",
+          "name": "CheckIn2",
+          "type": "managed",
+          "projectId": "4F6Va19MyMHcyNpURbn1mE",
+          "renderModuleFilePath": "plasmic/a_d_5/PlasmicCheckIn2.tsx",
+          "importSpec": {
+            "modulePath": "../pages/sorteio.tsx"
+          },
+          "cssFilePath": "plasmic/a_d_5/PlasmicCheckIn2.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/sorteio"
         }
       ],
       "icons": [
