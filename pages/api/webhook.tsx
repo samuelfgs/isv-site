@@ -28,38 +28,33 @@ export default async function handler(
     res.status(500).json(err);
     return;
   }
-  const id = req.body?.data?.id;  
-  if (id === undefined) {
-    await testEndpoint(JSON.stringify({ body: req.body }));
-    res.status(200).json(req.body);
-    return ;
-  }
-  const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/${id}`, {
-    headers: {
-      authorization: `Bearer ${process.env.ACCESS_TOKEN}`
-    }
-  })).json();
-  console.log(
-    "dale",
-    id, {
-      name: mercadoPago.name,
-      status: mercadoPago.status,
-      id: mercadoPago.id,
-      external_reference: mercadoPago.external_reference
-    }
-  );
-  await testEndpoint(JSON.stringify({ id, mercadoPago }));
-  if (mercadoPago.status !== "approved") {
-    console.log("dale", "not paid")
-    res.status(500).json("not paid");
-    return;
+  // const id = req.body?.data?.id;  
+  // if (id === undefined) {
+  //   await testEndpoint(JSON.stringify({ body: req.body }));
+  //   res.status(200).json(req.body);
+  //   return ;
+  // }
+  // const mercadoPago = await (await fetch(`https://api.mercadopago.com/v1/payments/${id}`, {
+  //   headers: {
+  //     authorization: `Bearer ${process.env.ACCESS_TOKEN}`
+  //   }
+  // })).json();
+  // await testEndpoint(JSON.stringify({ id, mercadoPago }));
+  // if (mercadoPago.status !== "approved") {
+  //   console.log("dale", "not paid")
+  //   res.status(500).json("not paid");
+  //   return;
+  // }
+  const mercadoPago = {
+    payment_method_id: "pix",
+    external_reference: 93298272
   }
   const { data: paymentData, error: paymentError } = await supabase
     .from('payments')
     .update({ paid: true, method: mercadoPago.payment_method_id })
     .eq('id', +mercadoPago.external_reference)
     .select("*");
-
+  console.log("dale", paymentData);
   if (paymentError || !paymentData || paymentData.length !== 1) {
     console.log("paymentError", { paymentError, paymentData })
     res.status(500).json({ paymentError, paymentData });

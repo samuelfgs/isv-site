@@ -52,6 +52,7 @@ import { AntdPassword } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasm
 import { inputHelpers as AntdPassword_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: RW4q13RFtAd/codeComponentHelper
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton"; // plasmic-import: bx9Xzvf5_eu/codeComponent
 import Select from "../../Select"; // plasmic-import: lCsb7GpUU0b/component
+import { AntdDatePicker } from "@plasmicpkgs/antd5/skinny/registerDatePicker"; // plasmic-import: lKdkQL67fv/codeComponent
 import { RichTable } from "@plasmicpkgs/plasmic-rich-components"; // plasmic-import: k4RvFQUTZKCU/codeComponent
 import { tableHelpers as RichTable_Helpers } from "@plasmicpkgs/plasmic-rich-components"; // plasmic-import: k4RvFQUTZKCU/codeComponentHelper
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
@@ -98,6 +99,8 @@ export type PlasmicAdmin__OverridesType = {
   button?: p.Flex<typeof AntdButton>;
   data?: p.Flex<"div">;
   select?: p.Flex<typeof Select>;
+  startDate?: p.Flex<typeof AntdDatePicker>;
+  endDate?: p.Flex<typeof AntdDatePicker>;
   table?: p.Flex<typeof RichTable>;
 };
 
@@ -240,6 +243,18 @@ function PlasmicAdmin__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "comeco"
+      },
+      {
+        path: "startDate.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "endDate.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -255,30 +270,51 @@ function PlasmicAdmin__RenderFunc(props: {
     query: usePlasmicDataOp(() => {
       return {
         sourceId: "du8jW5s7JnVfk4bHYp38RF",
-        opId: "e328efc2-60b3-46eb-b4e6-362918cd0e3f",
+        opId: "2b7c4b2f-f397-438f-96c7-913a9ea8b006",
         userArgs: {
           query: [
             (() => {
-              const today = new Date();
-              const previousDate = new Date(
-                today.getTime() -
-                  ($state.select.value === "comeco"
-                    ? 150
-                    : +($state.select.value ?? 1)) *
-                    24 *
-                    60 *
-                    60 *
-                    1000
-              );
+              if ($state.select.value !== "outro") {
+                const today = new Date();
+                const previousDate = new Date(
+                  today.getTime() -
+                    ($state.select.value === "comeco"
+                      ? 150
+                      : +($state.select.value ?? 1)) *
+                      24 *
+                      60 *
+                      60 *
+                      1000
+                );
 
-              const formattedPreviousDate = previousDate
-                .toISOString()
-                .slice(0, 10);
-              return `${formattedPreviousDate}`;
+                const formattedPreviousDate = previousDate
+                  .toISOString()
+                  .slice(0, 10);
+                return `${formattedPreviousDate}`;
+              } else {
+                const today = new Date();
+                const previousDate = new Date(
+                  today.getTime() - 150 * 24 * 60 * 60 * 1000
+                );
+                const formattedPreviousDate = previousDate
+                  .toISOString()
+                  .slice(0, 10);
+                return $state.startDate.value ?? formattedPreviousDate;
+              }
+            })(),
+            (() => {
+              const today = new Date(
+                new Date().getTime() + 24 * 60 * 60 * 1000
+              );
+              // const previousDate = new Date(today.getTime() -
+              //     ($state.select.value === "comeco" ? 150 : +($state.select.value ?? 1)) * 24 * 60 * 60 * 1000);
+
+              const formattedPreviousDate = today.toISOString().slice(0, 10);
+              return $state.endDate.value ?? formattedPreviousDate;
             })()
           ]
         },
-        cacheKey: `plasmic.$.e328efc2-60b3-46eb-b4e6-362918cd0e3f.$.`,
+        cacheKey: `plasmic.$.2b7c4b2f-f397-438f-96c7-913a9ea8b006.$.`,
         invalidatedKeys: null,
         roleId: null
       };
@@ -729,7 +765,8 @@ function PlasmicAdmin__RenderFunc(props: {
                       { value: null, label: null },
                       { value: null, label: null },
                       { label: null, value: null },
-                      { label: null, value: null }
+                      { label: null, value: null },
+                      { value: null, label: null }
                     ];
                     __composite["0"]["value"] = "comeco";
                     __composite["0"]["label"] = "Desde o come\u00e7o";
@@ -739,11 +776,84 @@ function PlasmicAdmin__RenderFunc(props: {
                     __composite["2"]["value"] = "7";
                     __composite["3"]["label"] = "\u00daltimos 15 dias";
                     __composite["3"]["value"] = "15";
+                    __composite["4"]["value"] = "outro";
+                    __composite["4"]["label"] = "Outro";
                     return __composite;
                   })()}
                   value={p.generateStateValueProp($state, ["select", "value"])}
                 />
               </p.Stack>
+              {(() => {
+                try {
+                  return $state.select.value === "outro";
+                } catch (e) {
+                  if (
+                    e instanceof TypeError ||
+                    e?.plasmicType === "PlasmicUndefinedDataError"
+                  ) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <p.Stack
+                  as={"div"}
+                  hasGap={true}
+                  className={classNames(projectcss.all, sty.freeBox__zIxsO)}
+                >
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__eQceZ
+                    )}
+                  >
+                    {"Intervalo"}
+                  </div>
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.freeBox__a3UAg)}
+                  >
+                    <AntdDatePicker
+                      data-plasmic-name={"startDate"}
+                      data-plasmic-override={overrides.startDate}
+                      className={classNames("__wab_instance", sty.startDate)}
+                      onChange={p.generateStateOnChangeProp($state, [
+                        "startDate",
+                        "value"
+                      ])}
+                      value={p.generateStateValueProp($state, [
+                        "startDate",
+                        "value"
+                      ])}
+                    />
+
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__sbyu6
+                      )}
+                    >
+                      {"-"}
+                    </div>
+                    <AntdDatePicker
+                      data-plasmic-name={"endDate"}
+                      data-plasmic-override={overrides.endDate}
+                      className={classNames("__wab_instance", sty.endDate)}
+                      onChange={p.generateStateOnChangeProp($state, [
+                        "endDate",
+                        "value"
+                      ])}
+                      value={p.generateStateValueProp($state, [
+                        "endDate",
+                        "value"
+                      ])}
+                    />
+                  </p.Stack>
+                </p.Stack>
+              ) : null}
               <p.Stack
                 as={"div"}
                 hasGap={true}
@@ -1127,6 +1237,8 @@ const PlasmicDescendants = {
     "button",
     "data",
     "select",
+    "startDate",
+    "endDate",
     "table"
   ],
   responsiveMenu: ["responsiveMenu"],
@@ -1134,8 +1246,10 @@ const PlasmicDescendants = {
   input: ["input"],
   passwordInput: ["passwordInput"],
   button: ["button"],
-  data: ["data", "select", "table"],
+  data: ["data", "select", "startDate", "endDate", "table"],
   select: ["select"],
+  startDate: ["startDate"],
+  endDate: ["endDate"],
   table: ["table"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1150,6 +1264,8 @@ type NodeDefaultElementType = {
   button: typeof AntdButton;
   data: "div";
   select: typeof Select;
+  startDate: typeof AntdDatePicker;
+  endDate: typeof AntdDatePicker;
   table: typeof RichTable;
 };
 
@@ -1220,6 +1336,8 @@ export const PlasmicAdmin = Object.assign(
     button: makeNodeComponent("button"),
     data: makeNodeComponent("data"),
     select: makeNodeComponent("select"),
+    startDate: makeNodeComponent("startDate"),
+    endDate: makeNodeComponent("endDate"),
     table: makeNodeComponent("table"),
 
     // Metadata about props expected for PlasmicAdmin
