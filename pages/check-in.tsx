@@ -38,6 +38,7 @@ function CheckIn() {
       >
         <PlasmicCheckIn
           skipLogin={isLogged}
+          password={process.env.NEXT_PUBLIC_ADMIN_PASSWORD}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

@@ -44,8 +44,9 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
+import { SupabaseMutation } from "../../supabase/supabase"; // plasmic-import: n899xRAn9Nd0/codeComponent
+import { SupabaseFetcher } from "../../supabase/supabase"; // plasmic-import: MLOELpD8aLSS/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -74,6 +75,9 @@ export const PlasmicCortesia__ArgProps = new Array<ArgPropType>();
 export type PlasmicCortesia__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
+  supabaseMutation?: p.Flex<typeof SupabaseMutation>;
+  supabaseFetcher?: p.Flex<typeof SupabaseFetcher>;
+  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultCortesiaProps {}
@@ -109,30 +113,8 @@ function PlasmicCortesia__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  let [$queries, setDollarQueries] = React.useState<
-    Record<string, ReturnType<typeof usePlasmicDataOp>>
-  >({});
-
   const dataSourcesCtx = usePlasmicDataSourceContext();
   const plasmicInvalidate = usePlasmicInvalidate();
-
-  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    query: usePlasmicDataOp(() => {
-      return {
-        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-        opId: "20b4dd95-ebd9-4d99-b11f-c118d9725c6b",
-        userArgs: {},
-        cacheKey: `plasmic.$.20b4dd95-ebd9-4d99-b11f-c118d9725c6b.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    })
-  };
-  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
-    setDollarQueries(new$Queries);
-
-    $queries = new$Queries;
-  }
 
   return (
     <React.Fragment>
@@ -170,127 +152,141 @@ function PlasmicCortesia__RenderFunc(props: {
             className={classNames("__wab_instance", sty.responsiveMenu)}
           />
 
-          <div className={classNames(projectcss.all, sty.freeBox___5MnoI)}>
-            {(() => {
-              try {
-                return $queries.query.data.find(
-                  row => row.id === $ctx.params.id
-                );
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return true;
-                }
-                throw e;
-              }
-            })() ? (
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__msm2T
-                )}
-              >
-                {"Check-in j\u00e1 realizado"}
-              </div>
-            ) : null}
-          </div>
-          <Button
-            className={classNames("__wab_instance", sty.button__zd8Wv)}
-            isDisabled={(() => {
-              try {
-                return $queries.query.data.find(
-                  row => row.id === $ctx.params.id
-                );
-              } catch (e) {
-                if (
-                  e instanceof TypeError ||
-                  e?.plasmicType === "PlasmicUndefinedDataError"
-                ) {
-                  return [];
-                }
-                throw e;
-              }
-            })()}
-            onClick={async event => {
-              const $steps = {};
+          <SupabaseMutation
+            data-plasmic-name={"supabaseMutation"}
+            data-plasmic-override={overrides.supabaseMutation}
+            className={classNames("__wab_instance", sty.supabaseMutation)}
+          >
+            <ph.DataCtxReader>
+              {$ctx => (
+                <SupabaseFetcher
+                  data-plasmic-name={"supabaseFetcher"}
+                  data-plasmic-override={overrides.supabaseFetcher}
+                  className={classNames("__wab_instance", sty.supabaseFetcher)}
+                  table={"cortesia"}
+                >
+                  <ph.DataCtxReader>
+                    {$ctx => (
+                      <React.Fragment>
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__zd8Wv
+                          )}
+                          isDisabled={(() => {
+                            try {
+                              return $ctx.supabase.find(
+                                row => row.id === $ctx.params.id
+                              );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()}
+                          onClick={async event => {
+                            const $steps = {};
 
-              $steps["postgresCreate"] = true
-                ? (() => {
-                    const actionArgs = {
-                      dataOp: {
-                        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-                        opId: "10d1a668-aee6-4af3-8795-0f16ff2153d8",
-                        userArgs: {
-                          variables: [$ctx.params.id]
-                        },
-                        cacheKey: `plasmic.$.10d1a668-aee6-4af3-8795-0f16ff2153d8.$.`,
-                        invalidatedKeys: ["plasmic_refresh_all"],
-                        roleId: null
-                      }
-                    };
-                    return (async ({ dataOp, continueOnError }) => {
-                      try {
-                        const response = await executePlasmicDataOp(dataOp, {
-                          userAuthToken: dataSourcesCtx?.userAuthToken,
-                          user: dataSourcesCtx?.user
-                        });
-                        await plasmicInvalidate(dataOp.invalidatedKeys);
-                        return response;
-                      } catch (e) {
-                        if (!continueOnError) {
-                          throw e;
-                        }
-                        return e;
-                      }
-                    })?.apply(null, [actionArgs]);
-                  })()
-                : undefined;
-              if (
-                typeof $steps["postgresCreate"] === "object" &&
-                typeof $steps["postgresCreate"].then === "function"
-              ) {
-                $steps["postgresCreate"] = await $steps["postgresCreate"];
-              }
-            }}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__quazd
+                            $steps["runCode"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    customFunction: async () => {
+                                      return $ctx.supabaseMutation.create({
+                                        table: "cortesia",
+                                        insertValues: [{ id: $ctx.params.id }]
+                                      });
+                                    }
+                                  };
+                                  return (({ customFunction }) => {
+                                    return customFunction();
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["runCode"] === "object" &&
+                              typeof $steps["runCode"].then === "function"
+                            ) {
+                              $steps["runCode"] = await $steps["runCode"];
+                            }
+
+                            $steps["refreshData"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    queryInvalidation: ["plasmic_refresh_all"]
+                                  };
+                                  return (async ({ queryInvalidation }) => {
+                                    if (!queryInvalidation) {
+                                      return;
+                                    }
+                                    await plasmicInvalidate(queryInvalidation);
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["refreshData"] === "object" &&
+                              typeof $steps["refreshData"].then === "function"
+                            ) {
+                              $steps["refreshData"] = await $steps[
+                                "refreshData"
+                              ];
+                            }
+                          }}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__quazd
+                            )}
+                          >
+                            {"CONFIRMAR CORTESIA"}
+                          </div>
+                        </Button>
+                        <p.Stack
+                          as={"div"}
+                          data-plasmic-name={"freeBox"}
+                          data-plasmic-override={overrides.freeBox}
+                          hasGap={true}
+                          className={classNames(projectcss.all, sty.freeBox)}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__puYnM
+                            )}
+                          >
+                            {"Total de cortesias"}
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__ftuly
+                            )}
+                          >
+                            <React.Fragment>
+                              {$ctx.supabase.length}
+                            </React.Fragment>
+                          </div>
+                        </p.Stack>
+                        <Button
+                          className={classNames(
+                            "__wab_instance",
+                            sty.button__p7OF
+                          )}
+                        />
+                      </React.Fragment>
+                    )}
+                  </ph.DataCtxReader>
+                </SupabaseFetcher>
               )}
-            >
-              {"CONFIRMAR CORTESIA"}
-            </div>
-          </Button>
-          <p.Stack
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__yqxgQ)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__puYnM
-              )}
-            >
-              {"Total de cortesias"}
-            </div>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__ftuly
-              )}
-            >
-              <React.Fragment>{$queries.query.data.length}</React.Fragment>
-            </div>
-          </p.Stack>
-          <Button className={classNames("__wab_instance", sty.button__p7OF)} />
+            </ph.DataCtxReader>
+          </SupabaseMutation>
         </div>
       </div>
     </React.Fragment>
@@ -298,8 +294,17 @@ function PlasmicCortesia__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "responsiveMenu"],
-  responsiveMenu: ["responsiveMenu"]
+  root: [
+    "root",
+    "responsiveMenu",
+    "supabaseMutation",
+    "supabaseFetcher",
+    "freeBox"
+  ],
+  responsiveMenu: ["responsiveMenu"],
+  supabaseMutation: ["supabaseMutation", "supabaseFetcher", "freeBox"],
+  supabaseFetcher: ["supabaseFetcher", "freeBox"],
+  freeBox: ["freeBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -307,6 +312,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
+  supabaseMutation: typeof SupabaseMutation;
+  supabaseFetcher: typeof SupabaseFetcher;
+  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -370,6 +378,9 @@ export const PlasmicCortesia = Object.assign(
   {
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
+    supabaseMutation: makeNodeComponent("supabaseMutation"),
+    supabaseFetcher: makeNodeComponent("supabaseFetcher"),
+    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicCortesia
     internalVariantProps: PlasmicCortesia__VariantProps,

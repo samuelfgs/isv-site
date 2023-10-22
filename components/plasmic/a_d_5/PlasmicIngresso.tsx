@@ -47,7 +47,6 @@ import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh
 import { SupabaseMutation } from "../../supabase/supabase"; // plasmic-import: n899xRAn9Nd0/codeComponent
 import { SupabaseFetcher } from "../../supabase/supabase"; // plasmic-import: MLOELpD8aLSS/codeComponent
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -112,32 +111,8 @@ function PlasmicIngresso__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  let [$queries, setDollarQueries] = React.useState<
-    Record<string, ReturnType<typeof usePlasmicDataOp>>
-  >({});
-
   const dataSourcesCtx = usePlasmicDataSourceContext();
   const plasmicInvalidate = usePlasmicInvalidate();
-
-  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    payment: usePlasmicDataOp(() => {
-      return {
-        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-        opId: "8023b1d3-864b-4cc9-b64b-9faa8a4a7cb7",
-        userArgs: {
-          query: [$ctx.params.id, $ctx.params.id]
-        },
-        cacheKey: `plasmic.$.8023b1d3-864b-4cc9-b64b-9faa8a4a7cb7.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    })
-  };
-  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
-    setDollarQueries(new$Queries);
-
-    $queries = new$Queries;
-  }
 
   return (
     <React.Fragment>

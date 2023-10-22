@@ -21,12 +21,6 @@ import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/react-web/lib/host";
 
 import {
-  executePlasmicDataOp,
-  usePlasmicDataOp,
-  usePlasmicInvalidate
-} from "@plasmicapp/react-web/lib/data-sources";
-
-import {
   hasVariant,
   classNames,
   wrapWithClassName,
@@ -43,6 +37,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import ResponsiveMenu from "../../ResponsiveMenu"; // plasmic-import: EjDwpL97hh/component
+import { PreQueries } from "../../supabase/supabase"; // plasmic-import: ALI8RvsWZNg0/codeComponent
 import { FormWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: TgJFzUZpvQ/codeComponent
 import { formHelpers as FormWrapper_Helpers } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: TgJFzUZpvQ/codeComponentHelper
 import { FormItemWrapper } from "@plasmicpkgs/antd5/skinny/registerForm"; // plasmic-import: EYHwZh9ILg/codeComponent
@@ -51,9 +46,9 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdPassword } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: RW4q13RFtAd/codeComponent
 import { inputHelpers as AntdPassword_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: RW4q13RFtAd/codeComponentHelper
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton"; // plasmic-import: bx9Xzvf5_eu/codeComponent
+import { AntdCheckbox } from "@plasmicpkgs/antd5/skinny/registerCheckbox"; // plasmic-import: aFHKFWNvs7/codeComponent
 import TextInput from "../../TextInput"; // plasmic-import: nehhorfRRWX/component
 import Button from "../../Button"; // plasmic-import: 7rzM78mJWkH/component
-import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: 7GMXgnERt-hcm/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -93,9 +88,11 @@ export const PlasmicCheckIn__ArgProps = new Array<ArgPropType>(
 export type PlasmicCheckIn__OverridesType = {
   root?: p.Flex<"div">;
   responsiveMenu?: p.Flex<typeof ResponsiveMenu>;
+  supabasePreQueries?: p.Flex<typeof PreQueries>;
   form?: p.Flex<typeof FormWrapper>;
   input?: p.Flex<typeof AntdInput>;
   passwordInput?: p.Flex<typeof AntdPassword>;
+  checkbox?: p.Flex<typeof AntdCheckbox>;
   textInput?: p.Flex<typeof TextInput>;
 };
 
@@ -124,7 +121,7 @@ function PlasmicCheckIn__RenderFunc(props: {
         {
           user: "admin",
           password: "admin",
-          skipLogin: false
+          skipLogin: true
         },
         props.args
       ),
@@ -143,9 +140,6 @@ function PlasmicCheckIn__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  let [$queries, setDollarQueries] = React.useState<
-    Record<string, ReturnType<typeof usePlasmicDataOp>>
-  >({});
   const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
@@ -203,6 +197,12 @@ function PlasmicCheckIn__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "checkbox.checked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
     [$props, $ctx, $refs]
@@ -210,27 +210,9 @@ function PlasmicCheckIn__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries: $queries,
+    $queries: {},
     $refs
   });
-
-  const new$Queries: Record<string, ReturnType<typeof usePlasmicDataOp>> = {
-    query: usePlasmicDataOp(() => {
-      return {
-        sourceId: "du8jW5s7JnVfk4bHYp38RF",
-        opId: "b291ad28-aeb6-47f5-a82d-a3dbb73e97b0",
-        userArgs: {},
-        cacheKey: `plasmic.$.b291ad28-aeb6-47f5-a82d-a3dbb73e97b0.$.`,
-        invalidatedKeys: null,
-        roleId: null
-      };
-    })
-  };
-  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
-    setDollarQueries(new$Queries);
-
-    $queries = new$Queries;
-  }
 
   return (
     <React.Fragment>
@@ -268,692 +250,824 @@ function PlasmicCheckIn__RenderFunc(props: {
             className={classNames("__wab_instance", sty.responsiveMenu)}
           />
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__yrn5F
-            )}
+          <PreQueries
+            data-plasmic-name={"supabasePreQueries"}
+            data-plasmic-override={overrides.supabasePreQueries}
+            className={classNames("__wab_instance", sty.supabasePreQueries)}
+            query={"fullInscritos"}
           >
-            {"Check-in realizados"}
-          </div>
-          {(() => {
-            try {
-              return !$state.logged;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox__q5CEa)}>
-              <div className={classNames(projectcss.all, sty.freeBox__zm9W)}>
-                {(() => {
-                  try {
-                    return $state.failed;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return true;
-                    }
-                    throw e;
-                  }
-                })() ? (
+            <ph.DataCtxReader>
+              {$ctx => (
+                <div className={classNames(projectcss.all, sty.freeBox__p2Xm8)}>
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__yv2UQ
+                      sty.text___8O1Kk
                     )}
                   >
-                    {"Usu\u00e1rio ou senha incorretos"}
+                    <React.Fragment>
+                      {(() => {
+                        try {
+                          return undefined;
+                        } catch (e) {
+                          if (
+                            e instanceof TypeError ||
+                            e?.plasmicType === "PlasmicUndefinedDataError"
+                          ) {
+                            return "";
+                          }
+                          throw e;
+                        }
+                      })()}
+                    </React.Fragment>
                   </div>
-                ) : null}
-              </div>
-              {(() => {
-                const child$Props = {
-                  className: classNames("__wab_instance", sty.form),
-                  extendedOnValuesChange: async (...eventArgs: any) => {
-                    p.generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "value",
-                      ["form", "value"],
-                      FormWrapper_Helpers
-                    ).apply(null, eventArgs);
-                    (async (changedValues, allValues) => {
-                      const $steps = {};
-
-                      $steps["updateFailed"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              variable: {
-                                objRoot: $state,
-                                variablePath: ["failed"]
-                              },
-                              operation: 0,
-                              value: false
-                            };
-                            return (({
-                              variable,
-                              value,
-                              startIndex,
-                              deleteCount
-                            }) => {
-                              if (!variable) {
-                                return;
-                              }
-                              const { objRoot, variablePath } = variable;
-
-                              p.set(objRoot, variablePath, value);
-                              return value;
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        typeof $steps["updateFailed"] === "object" &&
-                        typeof $steps["updateFailed"].then === "function"
-                      ) {
-                        $steps["updateFailed"] = await $steps["updateFailed"];
-                      }
-                    }).apply(null, eventArgs);
-                  },
-                  formItems: [
-                    { label: "Name", name: "name", inputType: "Text" },
-                    {
-                      label: "Message",
-                      name: "message",
-                      inputType: "Text Area"
-                    }
-                  ],
-                  labelCol: { span: 8, horizontalOnly: true },
-                  layout: "vertical",
-                  mode: "advanced",
-                  onFinish: async values => {
-                    const $steps = {};
-
-                    $steps["updateFailed"] = true
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["failed"]
-                            },
-                            operation: 0,
-                            value:
-                              $state.form.value.user !== $props.user ||
-                              $state.form.value.password !== $props.password
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            p.set(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      typeof $steps["updateFailed"] === "object" &&
-                      typeof $steps["updateFailed"].then === "function"
-                    ) {
-                      $steps["updateFailed"] = await $steps["updateFailed"];
-                    }
-
-                    $steps["updateLogged"] = !$steps.updateFailed
-                      ? (() => {
-                          const actionArgs = {
-                            variable: {
-                              objRoot: $state,
-                              variablePath: ["logged"]
-                            },
-                            operation: 0,
-                            value: true
-                          };
-                          return (({
-                            variable,
-                            value,
-                            startIndex,
-                            deleteCount
-                          }) => {
-                            if (!variable) {
-                              return;
-                            }
-                            const { objRoot, variablePath } = variable;
-
-                            p.set(objRoot, variablePath, value);
-                            return value;
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      typeof $steps["updateLogged"] === "object" &&
-                      typeof $steps["updateLogged"].then === "function"
-                    ) {
-                      $steps["updateLogged"] = await $steps["updateLogged"];
-                    }
-
-                    $steps["runOnLogin"] = true
-                      ? (() => {
-                          const actionArgs = { eventRef: $props["onLogin"] };
-                          return (({ eventRef, args }) => {
-                            return eventRef?.(...(args ?? []));
-                          })?.apply(null, [actionArgs]);
-                        })()
-                      : undefined;
-                    if (
-                      typeof $steps["runOnLogin"] === "object" &&
-                      typeof $steps["runOnLogin"].then === "function"
-                    ) {
-                      $steps["runOnLogin"] = await $steps["runOnLogin"];
-                    }
-                  },
-                  ref: ref => {
-                    $refs["form"] = ref;
-                  },
-                  submitSlot: null,
-                  validateTrigger: ["onSubmit"],
-                  wrapperCol: { span: 16, horizontalOnly: true }
-                };
-                p.initializeCodeComponentStates(
-                  $state,
-                  [
-                    {
-                      name: "value",
-                      plasmicStateName: "form.value"
-                    }
-                  ],
-                  [],
-                  FormWrapper_Helpers ?? {},
-                  child$Props
-                );
-
-                return (
-                  <FormWrapper
-                    data-plasmic-name={"form"}
-                    data-plasmic-override={overrides.form}
-                    {...child$Props}
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yrn5F
+                    )}
                   >
-                    <FormItemWrapper
-                      className={classNames(
-                        "__wab_instance",
-                        sty.formField__eRrqR
-                      )}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__cHcNw
-                          )}
-                        >
-                          {"Usuario"}
-                        </div>
-                      }
-                      name={"user"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames("__wab_instance", sty.input),
-                          onChange:
-                            p.generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["input", "value"],
-                              AntdInput_Helpers
-                            ),
-                          value: p.generateStateValueProp($state, [
-                            "input",
-                            "value"
-                          ])
-                        };
-                        p.initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "input.value"
-                            }
-                          ],
-                          [],
-                          AntdInput_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdInput
-                            data-plasmic-name={"input"}
-                            data-plasmic-override={overrides.input}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <FormItemWrapper
-                      className={classNames(
-                        "__wab_instance",
-                        sty.formField__paeBb
-                      )}
-                      label={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__kzjlG
-                          )}
-                        >
-                          {"Senha"}
-                        </div>
-                      }
-                      name={"password"}
-                    >
-                      {(() => {
-                        const child$Props = {
-                          className: classNames(
-                            "__wab_instance",
-                            sty.passwordInput
-                          ),
-                          onChange:
-                            p.generateStateOnChangePropForCodeComponents(
-                              $state,
-                              "value",
-                              ["passwordInput", "value"],
-                              AntdPassword_Helpers
-                            ),
-                          value: p.generateStateValueProp($state, [
-                            "passwordInput",
-                            "value"
-                          ])
-                        };
-                        p.initializeCodeComponentStates(
-                          $state,
-                          [
-                            {
-                              name: "value",
-                              plasmicStateName: "passwordInput.value"
-                            }
-                          ],
-                          [],
-                          AntdPassword_Helpers ?? {},
-                          child$Props
-                        );
-
-                        return (
-                          <AntdPassword
-                            data-plasmic-name={"passwordInput"}
-                            data-plasmic-override={overrides.passwordInput}
-                            {...child$Props}
-                          />
-                        );
-                      })()}
-                    </FormItemWrapper>
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__tsQzI)}
-                    >
-                      <AntdButton
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__rewvS
-                        )}
-                        submitsForm={true}
-                        type={"primary"}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__zrqzC
-                          )}
-                        >
-                          {"Entrar"}
-                        </div>
-                      </AntdButton>
-                    </div>
-                  </FormWrapper>
-                );
-              })()}
-            </div>
-          ) : null}
-          {(() => {
-            try {
-              return $state.logged;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <div className={classNames(projectcss.all, sty.freeBox___0DbEx)}>
-              <div className={classNames(projectcss.all, sty.freeBox__xbfOe)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xBQjx
-                  )}
-                >
-                  {"Adultos"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__boDyS
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.query.data.reduce(
-                          (acc, row) =>
-                            acc + (row.owner_id ? 0 : row.checkedAdults),
-
-                          0
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__vEcbv)}>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__n2Nrl
-                  )}
-                >
-                  {"Crian\u00e7as"}
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xpDwi
-                  )}
-                >
-                  <React.Fragment>
-                    {(() => {
-                      try {
-                        return $queries.query.data.reduce(
-                          (acc, row) =>
-                            acc + (row.owner_id ? 0 : row.checkedKids),
-
-                          0
-                        );
-                      } catch (e) {
-                        if (
-                          e instanceof TypeError ||
-                          e?.plasmicType === "PlasmicUndefinedDataError"
-                        ) {
-                          return "";
-                        }
-                        throw e;
-                      }
-                    })()}
-                  </React.Fragment>
-                </div>
-              </div>
-            </div>
-          ) : null}
-          {(() => {
-            try {
-              return $state.logged;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__ibqdl)}
-            >
-              <TextInput
-                data-plasmic-name={"textInput"}
-                data-plasmic-override={overrides.textInput}
-                className={classNames("__wab_instance", sty.textInput)}
-                onChange={(...eventArgs) => {
-                  p.generateStateOnChangeProp($state, ["textInput", "value"])(
-                    (e => e.target?.value).apply(null, eventArgs)
-                  );
-                }}
-                placeholder={"Buscar..."}
-                value={
-                  p.generateStateValueProp($state, ["textInput", "value"]) ?? ""
-                }
-              />
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__z2NLy
-                )}
-              >
-                {"Check-in"}
-              </div>
-              <div className={classNames(projectcss.all, sty.freeBox__pd3Qe)}>
-                {(_par => (!_par ? [] : Array.isArray(_par) ? _par : [_par]))(
-                  (() => {
+                    {"Check-in realizados"}
+                  </div>
+                  {(() => {
                     try {
-                      return $queries.query.data.filter(row =>
-                        $state.textInput.value.length === 0
-                          ? true
-                          : row.name
-                              .toLowerCase()
-                              .includes($state.textInput.value.toLowerCase()) ||
-                            row.id.includes($state.textInput.value)
-                      );
+                      return !$state.logged;
                     } catch (e) {
                       if (
                         e instanceof TypeError ||
                         e?.plasmicType === "PlasmicUndefinedDataError"
                       ) {
-                        return [];
+                        return true;
                       }
                       throw e;
                     }
-                  })()
-                ).map((__plasmic_item_0, __plasmic_idx_0) => {
-                  const currentItem = __plasmic_item_0;
-                  const currentIndex = __plasmic_idx_0;
-                  return (
-                    <p.Stack
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__jbTi)}
-                      key={(() => {
-                        try {
-                          return currentItem.id;
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
-                      style={(() => {
-                        try {
-                          return currentItem.checkedAdults +
-                            currentItem.checkedKids ===
-                            currentItem.adults + currentItem.kids
-                            ? { backgroundColor: "#99EDC3" }
-                            : {};
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return undefined;
-                          }
-                          throw e;
-                        }
-                      })()}
+                  })() ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__q5CEa)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__xBSaU
+                          sty.freeBox__zm9W
                         )}
                       >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return currentItem.id;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__o5Snh
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return currentItem.name;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__r4KlU
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return `${currentItem.adults} Adulto${
-                                currentItem.adults === 1 ? "" : "s"
-                              }`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__rNv7B
-                        )}
-                      >
-                        <React.Fragment>
-                          {(() => {
-                            try {
-                              return `${currentItem.kids} Criança${
-                                currentItem.kids === 1 ? "" : "s"
-                              }`;
-                            } catch (e) {
-                              if (
-                                e instanceof TypeError ||
-                                e?.plasmicType === "PlasmicUndefinedDataError"
-                              ) {
-                                return "";
-                              }
-                              throw e;
-                            }
-                          })()}
-                        </React.Fragment>
-                      </div>
-                      <Button
-                        className={classNames(
-                          "__wab_instance",
-                          sty.button__haVum
-                        )}
-                        link={(() => {
+                        {(() => {
                           try {
-                            return `/ingresso/${currentItem.id}?backUrl=/check-in`;
+                            return $state.failed;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return undefined;
+                              return true;
                             }
                             throw e;
                           }
-                        })()}
+                        })() ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__yv2UQ
+                            )}
+                          >
+                            {"Usu\u00e1rio ou senha incorretos"}
+                          </div>
+                        ) : null}
+                      </div>
+                      {(() => {
+                        const child$Props = {
+                          className: classNames("__wab_instance", sty.form),
+                          extendedOnValuesChange: async (...eventArgs: any) => {
+                            p.generateStateOnChangePropForCodeComponents(
+                              $state,
+                              "value",
+                              ["form", "value"],
+                              FormWrapper_Helpers
+                            ).apply(null, eventArgs);
+                            (async (changedValues, allValues) => {
+                              const $steps = {};
+
+                              $steps["updateFailed"] = true
+                                ? (() => {
+                                    const actionArgs = {
+                                      variable: {
+                                        objRoot: $state,
+                                        variablePath: ["failed"]
+                                      },
+                                      operation: 0,
+                                      value: false
+                                    };
+                                    return (({
+                                      variable,
+                                      value,
+                                      startIndex,
+                                      deleteCount
+                                    }) => {
+                                      if (!variable) {
+                                        return;
+                                      }
+                                      const { objRoot, variablePath } =
+                                        variable;
+
+                                      p.set(objRoot, variablePath, value);
+                                      return value;
+                                    })?.apply(null, [actionArgs]);
+                                  })()
+                                : undefined;
+                              if (
+                                typeof $steps["updateFailed"] === "object" &&
+                                typeof $steps["updateFailed"].then ===
+                                  "function"
+                              ) {
+                                $steps["updateFailed"] = await $steps[
+                                  "updateFailed"
+                                ];
+                              }
+                            }).apply(null, eventArgs);
+                          },
+                          formItems: [
+                            { label: "Name", name: "name", inputType: "Text" },
+                            {
+                              label: "Message",
+                              name: "message",
+                              inputType: "Text Area"
+                            }
+                          ],
+                          labelCol: { span: 8, horizontalOnly: true },
+                          layout: "vertical",
+                          mode: "advanced",
+                          onFinish: async values => {
+                            const $steps = {};
+
+                            $steps["updateFailed"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["failed"]
+                                    },
+                                    operation: 0,
+                                    value:
+                                      $state.form.value.user !== $props.user ||
+                                      $state.form.value.password !==
+                                        $props.password
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    p.set(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["updateFailed"] === "object" &&
+                              typeof $steps["updateFailed"].then === "function"
+                            ) {
+                              $steps["updateFailed"] = await $steps[
+                                "updateFailed"
+                              ];
+                            }
+
+                            $steps["updateLogged"] = !$steps.updateFailed
+                              ? (() => {
+                                  const actionArgs = {
+                                    variable: {
+                                      objRoot: $state,
+                                      variablePath: ["logged"]
+                                    },
+                                    operation: 0,
+                                    value: true
+                                  };
+                                  return (({
+                                    variable,
+                                    value,
+                                    startIndex,
+                                    deleteCount
+                                  }) => {
+                                    if (!variable) {
+                                      return;
+                                    }
+                                    const { objRoot, variablePath } = variable;
+
+                                    p.set(objRoot, variablePath, value);
+                                    return value;
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["updateLogged"] === "object" &&
+                              typeof $steps["updateLogged"].then === "function"
+                            ) {
+                              $steps["updateLogged"] = await $steps[
+                                "updateLogged"
+                              ];
+                            }
+
+                            $steps["runOnLogin"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    eventRef: $props["onLogin"]
+                                  };
+                                  return (({ eventRef, args }) => {
+                                    return eventRef?.(...(args ?? []));
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["runOnLogin"] === "object" &&
+                              typeof $steps["runOnLogin"].then === "function"
+                            ) {
+                              $steps["runOnLogin"] = await $steps["runOnLogin"];
+                            }
+                          },
+                          ref: ref => {
+                            $refs["form"] = ref;
+                          },
+                          submitSlot: null,
+                          validateTrigger: ["onSubmit"],
+                          wrapperCol: { span: 16, horizontalOnly: true }
+                        };
+                        p.initializeCodeComponentStates(
+                          $state,
+                          [
+                            {
+                              name: "value",
+                              plasmicStateName: "form.value"
+                            }
+                          ],
+                          [],
+                          FormWrapper_Helpers ?? {},
+                          child$Props
+                        );
+
+                        return (
+                          <FormWrapper
+                            data-plasmic-name={"form"}
+                            data-plasmic-override={overrides.form}
+                            {...child$Props}
+                          >
+                            <FormItemWrapper
+                              className={classNames(
+                                "__wab_instance",
+                                sty.formField__eRrqR
+                              )}
+                              label={
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__cHcNw
+                                  )}
+                                >
+                                  {"Usuario"}
+                                </div>
+                              }
+                              name={"user"}
+                            >
+                              {(() => {
+                                const child$Props = {
+                                  className: classNames(
+                                    "__wab_instance",
+                                    sty.input
+                                  ),
+                                  onChange:
+                                    p.generateStateOnChangePropForCodeComponents(
+                                      $state,
+                                      "value",
+                                      ["input", "value"],
+                                      AntdInput_Helpers
+                                    ),
+                                  value: p.generateStateValueProp($state, [
+                                    "input",
+                                    "value"
+                                  ])
+                                };
+                                p.initializeCodeComponentStates(
+                                  $state,
+                                  [
+                                    {
+                                      name: "value",
+                                      plasmicStateName: "input.value"
+                                    }
+                                  ],
+                                  [],
+                                  AntdInput_Helpers ?? {},
+                                  child$Props
+                                );
+
+                                return (
+                                  <AntdInput
+                                    data-plasmic-name={"input"}
+                                    data-plasmic-override={overrides.input}
+                                    {...child$Props}
+                                  />
+                                );
+                              })()}
+                            </FormItemWrapper>
+                            <FormItemWrapper
+                              className={classNames(
+                                "__wab_instance",
+                                sty.formField__paeBb
+                              )}
+                              label={
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__kzjlG
+                                  )}
+                                >
+                                  {"Senha"}
+                                </div>
+                              }
+                              name={"password"}
+                            >
+                              {(() => {
+                                const child$Props = {
+                                  className: classNames(
+                                    "__wab_instance",
+                                    sty.passwordInput
+                                  ),
+                                  onChange:
+                                    p.generateStateOnChangePropForCodeComponents(
+                                      $state,
+                                      "value",
+                                      ["passwordInput", "value"],
+                                      AntdPassword_Helpers
+                                    ),
+                                  value: p.generateStateValueProp($state, [
+                                    "passwordInput",
+                                    "value"
+                                  ])
+                                };
+                                p.initializeCodeComponentStates(
+                                  $state,
+                                  [
+                                    {
+                                      name: "value",
+                                      plasmicStateName: "passwordInput.value"
+                                    }
+                                  ],
+                                  [],
+                                  AntdPassword_Helpers ?? {},
+                                  child$Props
+                                );
+
+                                return (
+                                  <AntdPassword
+                                    data-plasmic-name={"passwordInput"}
+                                    data-plasmic-override={
+                                      overrides.passwordInput
+                                    }
+                                    {...child$Props}
+                                  />
+                                );
+                              })()}
+                            </FormItemWrapper>
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__tsQzI
+                              )}
+                            >
+                              <AntdButton
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button__rewvS
+                                )}
+                                submitsForm={true}
+                                type={"primary"}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__zrqzC
+                                  )}
+                                >
+                                  {"Entrar"}
+                                </div>
+                              </AntdButton>
+                            </div>
+                          </FormWrapper>
+                        );
+                      })()}
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.logged;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        sty.freeBox___0DbEx
+                      )}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__xbfOe
+                        )}
                       >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__p4CPd
+                            sty.text__xBQjx
                           )}
                         >
-                          {"CHECK-IN"}
+                          {"Adultos"}
                         </div>
-                      </Button>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__boDyS
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $ctx.supabase.reduce(
+                                  (acc, row) =>
+                                    acc +
+                                    (row.owner_id ? 0 : row.checkedAdults),
+
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__vEcbv
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__n2Nrl
+                          )}
+                        >
+                          {"Crian\u00e7as"}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__xpDwi
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $ctx.supabase.reduce(
+                                  (acc, row) =>
+                                    acc + (row.owner_id ? 0 : row.checkedKids),
+
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+                  {(() => {
+                    try {
+                      return $state.logged;
+                    } catch (e) {
+                      if (
+                        e instanceof TypeError ||
+                        e?.plasmicType === "PlasmicUndefinedDataError"
+                      ) {
+                        return true;
+                      }
+                      throw e;
+                    }
+                  })() ? (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__ibqdl)}
+                    >
+                      <AntdCheckbox
+                        data-plasmic-name={"checkbox"}
+                        data-plasmic-override={overrides.checkbox}
+                        checked={p.generateStateValueProp($state, [
+                          "checkbox",
+                          "checked"
+                        ])}
+                        className={classNames("__wab_instance", sty.checkbox)}
+                        onChange={p.generateStateOnChangeProp($state, [
+                          "checkbox",
+                          "checked"
+                        ])}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__mGeLd
+                          )}
+                        >
+                          {"Filtrar por pendentes"}
+                        </div>
+                      </AntdCheckbox>
+                      <TextInput
+                        data-plasmic-name={"textInput"}
+                        data-plasmic-override={overrides.textInput}
+                        className={classNames("__wab_instance", sty.textInput)}
+                        onChange={(...eventArgs) => {
+                          p.generateStateOnChangeProp($state, [
+                            "textInput",
+                            "value"
+                          ])((e => e.target?.value).apply(null, eventArgs));
+                        }}
+                        placeholder={"Buscar..."}
+                        value={
+                          p.generateStateValueProp($state, [
+                            "textInput",
+                            "value"
+                          ]) ?? ""
+                        }
+                      />
+
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__z2NLy
+                        )}
+                      >
+                        {"Check-in"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__pd3Qe
+                        )}
+                      >
+                        {(_par =>
+                          !_par ? [] : Array.isArray(_par) ? _par : [_par])(
+                          (() => {
+                            try {
+                              return $ctx.supabase
+                                .filter(row =>
+                                  $state.textInput.value.length === 0
+                                    ? true
+                                    : row.name
+                                        .toLowerCase()
+                                        .includes(
+                                          $state.textInput.value.toLowerCase()
+                                        ) ||
+                                      row.id
+                                        .toString()
+                                        .includes($state.textInput.value)
+                                )
+                                .filter(row =>
+                                  $state.checkbox.checked
+                                    ? row.checkedAdults + row.checkedKids <
+                                      row.adults + row.kids
+                                    : true
+                                );
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()
+                        ).map((__plasmic_item_0, __plasmic_idx_0) => {
+                          const currentItem = __plasmic_item_0;
+                          const currentIndex = __plasmic_idx_0;
+                          return (
+                            <p.Stack
+                              as={"div"}
+                              hasGap={true}
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__jbTi
+                              )}
+                              key={(() => {
+                                try {
+                                  return currentItem.id;
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                              style={(() => {
+                                try {
+                                  return currentItem.checkedAdults +
+                                    currentItem.checkedKids >=
+                                    currentItem.adults + currentItem.kids
+                                    ? { backgroundColor: "#99EDC3" }
+                                    : {};
+                                } catch (e) {
+                                  if (
+                                    e instanceof TypeError ||
+                                    e?.plasmicType ===
+                                      "PlasmicUndefinedDataError"
+                                  ) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            >
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__xBSaU
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return currentItem.id;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__o5Snh
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return currentItem.name;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__r4KlU
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return `${currentItem.adults} Adulto${
+                                        currentItem.adults === 1 ? "" : "s"
+                                      }`;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__rNv7B
+                                )}
+                              >
+                                <React.Fragment>
+                                  {(() => {
+                                    try {
+                                      return `${currentItem.kids} Criança${
+                                        currentItem.kids === 1 ? "" : "s"
+                                      }`;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return "";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                </React.Fragment>
+                              </div>
+                              <Button
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button__haVum
+                                )}
+                                link={(() => {
+                                  try {
+                                    return `/ingresso/${currentItem.id}?backUrl=/check-in`;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return undefined;
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__p4CPd
+                                  )}
+                                >
+                                  {"CHECK-IN"}
+                                </div>
+                              </Button>
+                            </p.Stack>
+                          );
+                        })}
+                      </div>
                     </p.Stack>
-                  );
-                })}
-              </div>
-            </p.Stack>
-          ) : null}
+                  ) : null}
+                </div>
+              )}
+            </ph.DataCtxReader>
+          </PreQueries>
         </div>
       </div>
     </React.Fragment>
@@ -964,15 +1078,26 @@ const PlasmicDescendants = {
   root: [
     "root",
     "responsiveMenu",
+    "supabasePreQueries",
     "form",
     "input",
     "passwordInput",
+    "checkbox",
     "textInput"
   ],
   responsiveMenu: ["responsiveMenu"],
+  supabasePreQueries: [
+    "supabasePreQueries",
+    "form",
+    "input",
+    "passwordInput",
+    "checkbox",
+    "textInput"
+  ],
   form: ["form", "input", "passwordInput"],
   input: ["input"],
   passwordInput: ["passwordInput"],
+  checkbox: ["checkbox"],
   textInput: ["textInput"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -981,9 +1106,11 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   responsiveMenu: typeof ResponsiveMenu;
+  supabasePreQueries: typeof PreQueries;
   form: typeof FormWrapper;
   input: typeof AntdInput;
   passwordInput: typeof AntdPassword;
+  checkbox: typeof AntdCheckbox;
   textInput: typeof TextInput;
 };
 
@@ -1048,9 +1175,11 @@ export const PlasmicCheckIn = Object.assign(
   {
     // Helper components rendering sub-elements
     responsiveMenu: makeNodeComponent("responsiveMenu"),
+    supabasePreQueries: makeNodeComponent("supabasePreQueries"),
     form: makeNodeComponent("form"),
     input: makeNodeComponent("input"),
     passwordInput: makeNodeComponent("passwordInput"),
+    checkbox: makeNodeComponent("checkbox"),
     textInput: makeNodeComponent("textInput"),
 
     // Metadata about props expected for PlasmicCheckIn

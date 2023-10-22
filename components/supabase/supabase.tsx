@@ -82,6 +82,47 @@ export function PreQueries(props: {
     });
     data = queryData
     console.log("dale", query, data, error, isLoading);
+  } else if (query === "fullInscritos") {
+    const { data: queryData, error, isLoading } = usePlasmicQueryData(query, async () => {
+      const { data: inscritos, error: err1 } = await supabase.from("inscritos").select().limit(1000);
+      const { data: payments, error: err2 } = await supabase.from("payments").select().limit(1000);
+      if (err1 || err2) {
+        throw err1 || err2;
+      }
+      const finalData: any[] = [];
+      for (const inscrito of inscritos) {
+        const payment = payments.find(p => inscrito.owner_id ? +p.user_id === +inscrito.owner_id : p.user_id === inscrito.id);
+        console.log("dale7", payment, inscrito);
+        const owner = inscritos.find(insc => insc.id === inscrito.onwer_id);
+        if (!payment?.paid) continue;
+        finalData.push({
+          id: inscrito.id,
+          name: inscrito.name,
+          owner_id: inscrito.owner_id,
+          created_at: inscrito.created_at,
+          city: inscrito.city,
+          sent_email: inscrito.sent_email,
+          state: inscrito.state,
+          paid: payment?.paid,
+          adults: !inscrito.owner_id 
+                    ? payment?.adults
+                    : inscrito.price > 40
+                    ? 1
+                    : 0,
+          kids: !inscrito.owner_id
+                    ? payment?.kids
+                    : inscrito.price  > 0 && inscrito.price < 50
+                    ? 1
+                    : 0,
+          tel1: inscrito.telefone,
+          localidade: inscrito.localidade,
+          checkedAdults: payment?.checkedAdults,
+          checkedKids: payment?.checkedKids,
+        })
+      }
+      return finalData;
+    });
+    data = queryData
   }
   return <DataProvider data={data} name={"supabase"}>
     {children}
@@ -146,7 +187,8 @@ export function registerSupabase() {
       query: {
         type: "choice",
         options: [
-          "fullProducts"
+          "fullProducts",
+          "fullInscritos"
         ]
       },
       children: "slot"

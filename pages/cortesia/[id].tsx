@@ -29,7 +29,6 @@ function Cortesia() {
   React.useEffect(() => {
     const st = localStorage.getItem("isLogged");
     setIsLoaded(true);
-    console.log("dale", st);
     if (!st) {
       router.push("/");
     }
