@@ -51,6 +51,7 @@ import { inputHelpers as AntdInput_Helpers } from "@plasmicpkgs/antd5/skinny/reg
 import { AntdPassword } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: RW4q13RFtAd/codeComponent
 import { inputHelpers as AntdPassword_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: RW4q13RFtAd/codeComponentHelper
 import { AntdButton } from "@plasmicpkgs/antd5/skinny/registerButton"; // plasmic-import: bx9Xzvf5_eu/codeComponent
+import { LoadingBoundary } from "@plasmicpkgs/plasmic-basic-components"; // plasmic-import: u-J0rH0B-4/codeComponent
 import Select from "../../Select"; // plasmic-import: lCsb7GpUU0b/component
 import { AntdDatePicker } from "@plasmicpkgs/antd5/skinny/registerDatePicker"; // plasmic-import: lKdkQL67fv/codeComponent
 import { RichTable } from "@plasmicpkgs/plasmic-rich-components"; // plasmic-import: k4RvFQUTZKCU/codeComponent
@@ -97,6 +98,7 @@ export type PlasmicAdmin__OverridesType = {
   input?: p.Flex<typeof AntdInput>;
   passwordInput?: p.Flex<typeof AntdPassword>;
   button?: p.Flex<typeof AntdButton>;
+  loadingBoundary?: p.Flex<typeof LoadingBoundary>;
   data?: p.Flex<"div">;
   select?: p.Flex<typeof Select>;
   startDate?: p.Flex<typeof AntdDatePicker>;
@@ -717,510 +719,587 @@ function PlasmicAdmin__RenderFunc(props: {
               })()}
             </div>
           ) : null}
-          {(() => {
-            try {
-              return $state.logged;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <p.Stack
-              as={"div"}
-              data-plasmic-name={"data"}
-              data-plasmic-override={overrides.data}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.data)}
-            >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__jGnig)}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__szaoJ
-                  )}
-                >
-                  {"Buscar resultados"}
-                </div>
-                <Select
-                  data-plasmic-name={"select"}
-                  data-plasmic-override={overrides.select}
-                  className={classNames("__wab_instance", sty.select)}
-                  onChange={(...eventArgs) => {
-                    p.generateStateOnChangeProp($state, ["select", "value"])(
-                      eventArgs[0]
-                    );
-                  }}
-                  options={(() => {
-                    const __composite = [
-                      { value: null, label: null },
-                      { value: null, label: null },
-                      { label: null, value: null },
-                      { label: null, value: null },
-                      { value: null, label: null }
-                    ];
-                    __composite["0"]["value"] = "comeco";
-                    __composite["0"]["label"] = "Desde o come\u00e7o";
-                    __composite["1"]["value"] = "3";
-                    __composite["1"]["label"] = "\u00daltimos 3 dias";
-                    __composite["2"]["label"] = "\u00daltimos 7 dias";
-                    __composite["2"]["value"] = "7";
-                    __composite["3"]["label"] = "\u00daltimos 15 dias";
-                    __composite["3"]["value"] = "15";
-                    __composite["4"]["value"] = "outro";
-                    __composite["4"]["label"] = "Outro";
-                    return __composite;
-                  })()}
-                  value={p.generateStateValueProp($state, ["select", "value"])}
-                />
-              </p.Stack>
-              {(() => {
-                try {
-                  return $state.select.value === "outro";
-                } catch (e) {
-                  if (
-                    e instanceof TypeError ||
-                    e?.plasmicType === "PlasmicUndefinedDataError"
-                  ) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__zIxsO)}
-                >
+          <LoadingBoundary
+            data-plasmic-name={"loadingBoundary"}
+            data-plasmic-override={overrides.loadingBoundary}
+            className={classNames("__wab_instance", sty.loadingBoundary)}
+            loadingState={
+              <ph.DataCtxReader>
+                {$ctx => (
                   <div
                     className={classNames(
                       projectcss.all,
                       projectcss.__wab_text,
-                      sty.text__eQceZ
+                      sty.text__t0JK
                     )}
                   >
-                    {"Intervalo"}
+                    {"Loading..."}
                   </div>
+                )}
+              </ph.DataCtxReader>
+            }
+          >
+            <ph.DataCtxReader>
+              {$ctx =>
+                (() => {
+                  try {
+                    return $state.logged;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return true;
+                    }
+                    throw e;
+                  }
+                })() ? (
                   <p.Stack
                     as={"div"}
+                    data-plasmic-name={"data"}
+                    data-plasmic-override={overrides.data}
                     hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__a3UAg)}
+                    className={classNames(projectcss.all, sty.data)}
                   >
-                    <AntdDatePicker
-                      data-plasmic-name={"startDate"}
-                      data-plasmic-override={overrides.startDate}
-                      className={classNames("__wab_instance", sty.startDate)}
-                      onChange={p.generateStateOnChangeProp($state, [
-                        "startDate",
-                        "value"
-                      ])}
-                      value={p.generateStateValueProp($state, [
-                        "startDate",
-                        "value"
-                      ])}
-                    />
-
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__sbyu6
-                      )}
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__jGnig)}
                     >
-                      {"-"}
-                    </div>
-                    <AntdDatePicker
-                      data-plasmic-name={"endDate"}
-                      data-plasmic-override={overrides.endDate}
-                      className={classNames("__wab_instance", sty.endDate)}
-                      onChange={p.generateStateOnChangeProp($state, [
-                        "endDate",
-                        "value"
-                      ])}
-                      value={p.generateStateValueProp($state, [
-                        "endDate",
-                        "value"
-                      ])}
-                    />
-                  </p.Stack>
-                </p.Stack>
-              ) : null}
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__tGlG0)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__ocJ1A)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__uxAx
-                    )}
-                  >
-                    {"Adultos Inscritos"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__w9OJf
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $queries.query.data.reduce(
-                            (acc, row) => acc + +row.adults,
-                            0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__szaoJ
+                        )}
+                      >
+                        {"Buscar resultados"}
+                      </div>
+                      <Select
+                        data-plasmic-name={"select"}
+                        data-plasmic-override={overrides.select}
+                        className={classNames("__wab_instance", sty.select)}
+                        onChange={(...eventArgs) => {
+                          p.generateStateOnChangeProp($state, [
+                            "select",
+                            "value"
+                          ])(eventArgs[0]);
+                        }}
+                        options={(() => {
+                          const __composite = [
+                            { value: null, label: null },
+                            { value: null, label: null },
+                            { label: null, value: null },
+                            { label: null, value: null },
+                            { value: null, label: null }
+                          ];
+                          __composite["0"]["value"] = "comeco";
+                          __composite["0"]["label"] = "Desde o come\u00e7o";
+                          __composite["1"]["value"] = "3";
+                          __composite["1"]["label"] = "\u00daltimos 3 dias";
+                          __composite["2"]["label"] = "\u00daltimos 7 dias";
+                          __composite["2"]["value"] = "7";
+                          __composite["3"]["label"] = "\u00daltimos 15 dias";
+                          __composite["3"]["value"] = "15";
+                          __composite["4"]["value"] = "outro";
+                          __composite["4"]["label"] = "Outro";
+                          return __composite;
+                        })()}
+                        value={p.generateStateValueProp($state, [
+                          "select",
+                          "value"
+                        ])}
+                      />
+                    </p.Stack>
+                    {(() => {
+                      try {
+                        return $state.select.value === "outro";
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return true;
                         }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__osUwp)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__hx4W
-                    )}
-                  >
-                    {"Adultos Pagantes"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eHq0H
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $queries.query.data.reduce(
-                            (acc, row) => acc + (row.paid ? +row.adults : 0),
-                            0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-              </p.Stack>
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__k5UOj)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__tRF1)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__wj4MA
-                    )}
-                  >
-                    {"Crian\u00e7as Inscritas"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__vjtMw
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $queries.query.data.reduce(
-                            (acc, row) => acc + +row.kids,
-                            0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-                <div className={classNames(projectcss.all, sty.freeBox__fDJe4)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__zDAk
-                    )}
-                  >
-                    {"Crian\u00e7as Pagantes"}
-                  </div>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__gt7Mg
-                    )}
-                  >
-                    <React.Fragment>
-                      {(() => {
-                        try {
-                          return $queries.query.data.reduce(
-                            (acc, row) => acc + (row.paid ? +row.kids : 0),
-                            0
-                          );
-                        } catch (e) {
-                          if (
-                            e instanceof TypeError ||
-                            e?.plasmicType === "PlasmicUndefinedDataError"
-                          ) {
-                            return "";
-                          }
-                          throw e;
-                        }
-                      })()}
-                    </React.Fragment>
-                  </div>
-                </div>
-              </p.Stack>
-              {(() => {
-                const child$Props = {
-                  className: classNames("__wab_instance", sty.table),
-                  data: (() => {
-                    try {
-                      return $queries.query;
-                    } catch (e) {
-                      if (
-                        e instanceof TypeError ||
-                        e?.plasmicType === "PlasmicUndefinedDataError"
-                      ) {
-                        return undefined;
+                        throw e;
                       }
-                      throw e;
-                    }
-                  })(),
-                  fields: (() => {
-                    const __composite = [
-                      { key: "id", fieldId: "id", title: null, dataType: null },
-                      {
-                        key: "owner_id",
-                        fieldId: "owner_id",
-                        dataType: null,
-                        isHidden: null
-                      },
-                      { key: "name", fieldId: "name", title: null },
-                      {
-                        key: "created_at",
-                        fieldId: "created_at",
-                        title: null,
-                        dataType: null,
-                        dateStyle: null
-                      },
-                      {
-                        key: "city",
-                        fieldId: "city",
-                        title: null,
-                        isHidden: null
-                      },
-                      {
-                        key: "state",
-                        fieldId: "state",
-                        title: null,
-                        isHidden: null
-                      },
-                      { key: "paid", fieldId: "paid", title: null },
-                      { key: "sent_email", fieldId: "sent_email", title: null },
-                      { key: "adults", fieldId: "adults", title: null },
-                      { key: "kids", fieldId: "kids", title: null },
-                      {
-                        key: "telefone",
-                        fieldId: "telefone",
-                        dataType: null,
-                        title: null
-                      },
-                      { key: "localidade", fieldId: "localidade", title: null },
-                      {
-                        key: "tel1",
-                        fieldId: "tel1",
-                        title: null,
-                        dataType: null
-                      }
-                    ];
-                    __composite["0"]["title"] = "ID";
-                    __composite["0"]["dataType"] = "string";
-                    __composite["1"]["dataType"] = "string";
-                    __composite["1"]["isHidden"] = true;
-                    __composite["2"]["title"] = "Nome";
-                    __composite["3"]["title"] = "Data de inscri\u00e7\u00e3o";
-                    __composite["3"]["dataType"] = "datetime";
-                    __composite["3"]["dateStyle"] = "medium";
-                    __composite["4"]["title"] = "Cidade";
-                    __composite["4"]["isHidden"] = true;
-                    __composite["5"]["title"] = "Estado";
-                    __composite["5"]["isHidden"] = true;
-                    __composite["6"]["title"] = "Pago";
-                    __composite["7"]["title"] = "Email";
-                    __composite["8"]["title"] = "Adultos";
-                    __composite["9"]["title"] = "Crian\u00e7as";
-                    __composite["10"]["dataType"] = "string";
-                    __composite["10"]["title"] = "Telefone";
-                    __composite["11"]["title"] = "Localidade";
-                    __composite["12"]["title"] = "Telefone";
-                    __composite["12"]["dataType"] = "string";
-                    return __composite;
-                  })(),
-                  hideDensity: true,
-                  hideExports: true,
-                  onRowSelectionChanged: async (...eventArgs: any) => {
-                    p.generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "selectedRowKey",
-                      ["table", "selectedRowKey"],
-                      RichTable_Helpers
-                    ).apply(null, eventArgs);
-                    p.generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "selectedRow",
-                      ["table", "selectedRow"],
-                      RichTable_Helpers
-                    ).apply(null, eventArgs);
-                    p.generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "selectedRows",
-                      ["table", "selectedRows"],
-                      RichTable_Helpers
-                    ).apply(null, eventArgs);
-                    p.generateStateOnChangePropForCodeComponents(
-                      $state,
-                      "selectedRowKeys",
-                      ["table", "selectedRowKeys"],
-                      RichTable_Helpers
-                    ).apply(null, eventArgs);
-                  },
-                  rowActions: (() => {
-                    const __composite = [
-                      { type: "item", label: null, onClick: null }
-                    ];
-                    __composite["0"]["label"] = "Check-in";
-                    __composite["0"]["onClick"] = async (rowKey, row) => {
-                      const $steps = {};
+                    })() ? (
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__zIxsO
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__eQceZ
+                          )}
+                        >
+                          {"Intervalo"}
+                        </div>
+                        <p.Stack
+                          as={"div"}
+                          hasGap={true}
+                          className={classNames(
+                            projectcss.all,
+                            sty.freeBox__a3UAg
+                          )}
+                        >
+                          <AntdDatePicker
+                            data-plasmic-name={"startDate"}
+                            data-plasmic-override={overrides.startDate}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.startDate
+                            )}
+                            onChange={p.generateStateOnChangeProp($state, [
+                              "startDate",
+                              "value"
+                            ])}
+                            value={p.generateStateValueProp($state, [
+                              "startDate",
+                              "value"
+                            ])}
+                          />
 
-                      $steps["goToPage"] = true
-                        ? (() => {
-                            const actionArgs = {
-                              destination: `/ingresso/${row.id}`
-                            };
-                            return (({ destination }) => {
-                              if (
-                                typeof destination === "string" &&
-                                destination.startsWith("#")
-                              ) {
-                                document
-                                  .getElementById(destination.substr(1))
-                                  .scrollIntoView({ behavior: "smooth" });
-                              } else {
-                                __nextRouter?.push(destination);
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__sbyu6
+                            )}
+                          >
+                            {"-"}
+                          </div>
+                          <AntdDatePicker
+                            data-plasmic-name={"endDate"}
+                            data-plasmic-override={overrides.endDate}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.endDate
+                            )}
+                            onChange={p.generateStateOnChangeProp($state, [
+                              "endDate",
+                              "value"
+                            ])}
+                            value={p.generateStateValueProp($state, [
+                              "endDate",
+                              "value"
+                            ])}
+                          />
+                        </p.Stack>
+                      </p.Stack>
+                    ) : null}
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__tGlG0)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__ocJ1A
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__uxAx
+                          )}
+                        >
+                          {"Adultos Inscritos"}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__w9OJf
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.query.data.reduce(
+                                  (acc, row) => acc + +row.adults,
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
                               }
-                            })?.apply(null, [actionArgs]);
-                          })()
-                        : undefined;
-                      if (
-                        typeof $steps["goToPage"] === "object" &&
-                        typeof $steps["goToPage"].then === "function"
-                      ) {
-                        $steps["goToPage"] = await $steps["goToPage"];
-                      }
-                    };
-                    return __composite;
-                  })(),
-                  scopeClassName: sty["table__instance"],
-                  selectedRowKey: p.generateStateValueProp($state, [
-                    "table",
-                    "selectedRowKey"
-                  ]),
-                  selectedRowKeys: p.generateStateValueProp($state, [
-                    "table",
-                    "selectedRowKeys"
-                  ]),
-                  themeResetClassName: classNames(
-                    projectcss.root_reset,
-                    projectcss.root_reset_tags,
-                    projectcss.plasmic_default_styles,
-                    projectcss.plasmic_mixins,
-                    projectcss.plasmic_tokens,
-                    plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
-                    plasmic_antd_5_hostless_2_css.plasmic_tokens,
-                    plasmic_antd_5_hostless_3_css.plasmic_tokens,
-                    plasmic_antd_5_hostless_4_css.plasmic_tokens,
-                    plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens
-                  )
-                };
-                p.initializeCodeComponentStates(
-                  $state,
-                  [
-                    {
-                      name: "selectedRowKey",
-                      plasmicStateName: "table.selectedRowKey"
-                    },
-                    {
-                      name: "selectedRow",
-                      plasmicStateName: "table.selectedRow"
-                    },
-                    {
-                      name: "selectedRows",
-                      plasmicStateName: "table.selectedRows"
-                    },
-                    {
-                      name: "selectedRowKeys",
-                      plasmicStateName: "table.selectedRowKeys"
-                    }
-                  ],
-                  [],
-                  RichTable_Helpers ?? {},
-                  child$Props
-                );
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__osUwp
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__hx4W
+                          )}
+                        >
+                          {"Adultos Pagantes"}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__eHq0H
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.query.data.reduce(
+                                  (acc, row) =>
+                                    acc + (row.paid ? +row.adults : 0),
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    </p.Stack>
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.freeBox__k5UOj)}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__tRF1
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__wj4MA
+                          )}
+                        >
+                          {"Crian\u00e7as Inscritas"}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__vjtMw
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.query.data.reduce(
+                                  (acc, row) => acc + +row.kids,
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__fDJe4
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zDAk
+                          )}
+                        >
+                          {"Crian\u00e7as Pagantes"}
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__gt7Mg
+                          )}
+                        >
+                          <React.Fragment>
+                            {(() => {
+                              try {
+                                return $queries.query.data.reduce(
+                                  (acc, row) =>
+                                    acc + (row.paid ? +row.kids : 0),
+                                  0
+                                );
+                              } catch (e) {
+                                if (
+                                  e instanceof TypeError ||
+                                  e?.plasmicType === "PlasmicUndefinedDataError"
+                                ) {
+                                  return "";
+                                }
+                                throw e;
+                              }
+                            })()}
+                          </React.Fragment>
+                        </div>
+                      </div>
+                    </p.Stack>
+                    {(() => {
+                      const child$Props = {
+                        className: classNames("__wab_instance", sty.table),
+                        data: (() => {
+                          try {
+                            return $queries.query;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })(),
+                        fields: (() => {
+                          const __composite = [
+                            {
+                              key: "id",
+                              fieldId: "id",
+                              title: null,
+                              dataType: null
+                            },
+                            {
+                              key: "owner_id",
+                              fieldId: "owner_id",
+                              dataType: null,
+                              isHidden: null
+                            },
+                            { key: "name", fieldId: "name", title: null },
+                            {
+                              key: "created_at",
+                              fieldId: "created_at",
+                              title: null,
+                              dataType: null,
+                              dateStyle: null
+                            },
+                            {
+                              key: "city",
+                              fieldId: "city",
+                              title: null,
+                              isHidden: null
+                            },
+                            {
+                              key: "state",
+                              fieldId: "state",
+                              title: null,
+                              isHidden: null
+                            },
+                            { key: "paid", fieldId: "paid", title: null },
+                            {
+                              key: "sent_email",
+                              fieldId: "sent_email",
+                              title: null
+                            },
+                            { key: "adults", fieldId: "adults", title: null },
+                            { key: "kids", fieldId: "kids", title: null },
+                            {
+                              key: "telefone",
+                              fieldId: "telefone",
+                              dataType: null,
+                              title: null
+                            },
+                            {
+                              key: "localidade",
+                              fieldId: "localidade",
+                              title: null
+                            },
+                            {
+                              key: "tel1",
+                              fieldId: "tel1",
+                              title: null,
+                              dataType: null
+                            }
+                          ];
+                          __composite["0"]["title"] = "ID";
+                          __composite["0"]["dataType"] = "string";
+                          __composite["1"]["dataType"] = "string";
+                          __composite["1"]["isHidden"] = true;
+                          __composite["2"]["title"] = "Nome";
+                          __composite["3"]["title"] =
+                            "Data de inscri\u00e7\u00e3o";
+                          __composite["3"]["dataType"] = "datetime";
+                          __composite["3"]["dateStyle"] = "medium";
+                          __composite["4"]["title"] = "Cidade";
+                          __composite["4"]["isHidden"] = true;
+                          __composite["5"]["title"] = "Estado";
+                          __composite["5"]["isHidden"] = true;
+                          __composite["6"]["title"] = "Pago";
+                          __composite["7"]["title"] = "Email";
+                          __composite["8"]["title"] = "Adultos";
+                          __composite["9"]["title"] = "Crian\u00e7as";
+                          __composite["10"]["dataType"] = "string";
+                          __composite["10"]["title"] = "Telefone";
+                          __composite["11"]["title"] = "Localidade";
+                          __composite["12"]["title"] = "Telefone";
+                          __composite["12"]["dataType"] = "string";
+                          return __composite;
+                        })(),
+                        hideDensity: true,
+                        hideExports: true,
+                        onRowSelectionChanged: async (...eventArgs: any) => {
+                          p.generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "selectedRowKey",
+                            ["table", "selectedRowKey"],
+                            RichTable_Helpers
+                          ).apply(null, eventArgs);
+                          p.generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "selectedRow",
+                            ["table", "selectedRow"],
+                            RichTable_Helpers
+                          ).apply(null, eventArgs);
+                          p.generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "selectedRows",
+                            ["table", "selectedRows"],
+                            RichTable_Helpers
+                          ).apply(null, eventArgs);
+                          p.generateStateOnChangePropForCodeComponents(
+                            $state,
+                            "selectedRowKeys",
+                            ["table", "selectedRowKeys"],
+                            RichTable_Helpers
+                          ).apply(null, eventArgs);
+                        },
+                        rowActions: (() => {
+                          const __composite = [
+                            { type: "item", label: null, onClick: null }
+                          ];
+                          __composite["0"]["label"] = "Check-in";
+                          __composite["0"]["onClick"] = async (rowKey, row) => {
+                            const $steps = {};
 
-                return (
-                  <RichTable
-                    data-plasmic-name={"table"}
-                    data-plasmic-override={overrides.table}
-                    {...child$Props}
-                  />
-                );
-              })()}
-            </p.Stack>
-          ) : null}
+                            $steps["goToPage"] = true
+                              ? (() => {
+                                  const actionArgs = {
+                                    destination: `/ingresso/${row.id}`
+                                  };
+                                  return (({ destination }) => {
+                                    if (
+                                      typeof destination === "string" &&
+                                      destination.startsWith("#")
+                                    ) {
+                                      document
+                                        .getElementById(destination.substr(1))
+                                        .scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                      __nextRouter?.push(destination);
+                                    }
+                                  })?.apply(null, [actionArgs]);
+                                })()
+                              : undefined;
+                            if (
+                              typeof $steps["goToPage"] === "object" &&
+                              typeof $steps["goToPage"].then === "function"
+                            ) {
+                              $steps["goToPage"] = await $steps["goToPage"];
+                            }
+                          };
+                          return __composite;
+                        })(),
+                        scopeClassName: sty["table__instance"],
+                        selectedRowKey: p.generateStateValueProp($state, [
+                          "table",
+                          "selectedRowKey"
+                        ]),
+                        selectedRowKeys: p.generateStateValueProp($state, [
+                          "table",
+                          "selectedRowKeys"
+                        ]),
+                        themeResetClassName: classNames(
+                          projectcss.root_reset,
+                          projectcss.root_reset_tags,
+                          projectcss.plasmic_default_styles,
+                          projectcss.plasmic_mixins,
+                          projectcss.plasmic_tokens,
+                          plasmic_copy_of_plasmic_kit_q_4_color_tokens_css.plasmic_tokens,
+                          plasmic_antd_5_hostless_2_css.plasmic_tokens,
+                          plasmic_antd_5_hostless_3_css.plasmic_tokens,
+                          plasmic_antd_5_hostless_4_css.plasmic_tokens,
+                          plasmic_plasmic_kit_q_4_color_tokens_css.plasmic_tokens
+                        )
+                      };
+                      p.initializeCodeComponentStates(
+                        $state,
+                        [
+                          {
+                            name: "selectedRowKey",
+                            plasmicStateName: "table.selectedRowKey"
+                          },
+                          {
+                            name: "selectedRow",
+                            plasmicStateName: "table.selectedRow"
+                          },
+                          {
+                            name: "selectedRows",
+                            plasmicStateName: "table.selectedRows"
+                          },
+                          {
+                            name: "selectedRowKeys",
+                            plasmicStateName: "table.selectedRowKeys"
+                          }
+                        ],
+                        [],
+                        RichTable_Helpers ?? {},
+                        child$Props
+                      );
+
+                      return (
+                        <RichTable
+                          data-plasmic-name={"table"}
+                          data-plasmic-override={overrides.table}
+                          {...child$Props}
+                        />
+                      );
+                    })()}
+                  </p.Stack>
+                ) : null
+              }
+            </ph.DataCtxReader>
+          </LoadingBoundary>
         </div>
       </div>
     </React.Fragment>
@@ -1235,6 +1314,7 @@ const PlasmicDescendants = {
     "input",
     "passwordInput",
     "button",
+    "loadingBoundary",
     "data",
     "select",
     "startDate",
@@ -1246,6 +1326,14 @@ const PlasmicDescendants = {
   input: ["input"],
   passwordInput: ["passwordInput"],
   button: ["button"],
+  loadingBoundary: [
+    "loadingBoundary",
+    "data",
+    "select",
+    "startDate",
+    "endDate",
+    "table"
+  ],
   data: ["data", "select", "startDate", "endDate", "table"],
   select: ["select"],
   startDate: ["startDate"],
@@ -1262,6 +1350,7 @@ type NodeDefaultElementType = {
   input: typeof AntdInput;
   passwordInput: typeof AntdPassword;
   button: typeof AntdButton;
+  loadingBoundary: typeof LoadingBoundary;
   data: "div";
   select: typeof Select;
   startDate: typeof AntdDatePicker;
@@ -1334,6 +1423,7 @@ export const PlasmicAdmin = Object.assign(
     input: makeNodeComponent("input"),
     passwordInput: makeNodeComponent("passwordInput"),
     button: makeNodeComponent("button"),
+    loadingBoundary: makeNodeComponent("loadingBoundary"),
     data: makeNodeComponent("data"),
     select: makeNodeComponent("select"),
     startDate: makeNodeComponent("startDate"),

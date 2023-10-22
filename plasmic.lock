@@ -144,7 +144,7 @@
     },
     {
       "projectId": "9Vr5YWkf3w7jj6SsTcCEta",
-      "version": "0.1.0",
+      "version": "0.5.0",
       "dependencies": {},
       "lang": "ts",
       "fileLocks": [
@@ -1743,7 +1743,8 @@
         "o9jabQtPLWcLuuT9GgDLMk": "0.0.1",
         "2yBVkrB5WKt49ho2FJ5Tnq": "0.0.1",
         "2xrkvoGMeCr8HmCJeU43qJ": "0.0.1",
-        "5h3hfYgzoL5QqV3vheBsGq": "0.0.1"
+        "5h3hfYgzoL5QqV3vheBsGq": "0.0.1",
+        "9Vr5YWkf3w7jj6SsTcCEta": "0.5.0"
       },
       "lang": "ts",
       "fileLocks": [
@@ -2020,12 +2021,12 @@
         {
           "type": "renderModule",
           "assetId": "n_LmzxAtzKgu",
-          "checksum": "99bd618d6ce0e2558238fd153ff744d4"
+          "checksum": "b6087343736436b4992c4519d526e83f"
         },
         {
           "type": "cssRules",
           "assetId": "n_LmzxAtzKgu",
-          "checksum": "99bd618d6ce0e2558238fd153ff744d4"
+          "checksum": "b6087343736436b4992c4519d526e83f"
         },
         {
           "type": "renderModule",
